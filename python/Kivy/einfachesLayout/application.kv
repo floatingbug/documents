@@ -1,0 +1,34 @@
+#root: referenziert auf das Wurzel-Widget (Das Fenster, hier MyWidget).
+#self: referenziert auf das aktuelle Widget
+#app:  referenziert auf die Instanz der Aplikation, hier
+#app = Application(), also auf app.
+
+<MyWidget>:
+    # Python-Code-Referenz : ID
+    name: name
+    email: email
+
+
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Name: "
+                multiline: False
+            TextInput:
+                id: name
+
+            Label:
+                text: "Email: "
+                multiline: False
+            TextInput:
+                id: email
+
+        Button:
+            text: "Submit"
+            on_press: root.btn()

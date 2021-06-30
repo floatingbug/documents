@@ -1,0 +1,63 @@
+---Einführung---
+-> Aufgaben des Requirements Engineering: Herausfinden und festlegen was ein zu 
+	erstellende System alles können soll, welche Funktionen werden im Detail gefordert?
+-> Vor der Konstruktion muss bestimmt werde, welches Ziel mit der Software erreicht werden soll.
+	-> Grobe Zielbestimmung erfolgt in der Phase Planung.
+-> Ausgehend vom Ziel der Software müssen alle Funktionen und Eigenschaften des Systems ermittelt werden, 
+	welche die Software nach Abschluss der Entwicklung unterstützen soll.
+-> Requirements Engineering: Ermittlung, Dokumentation, Prüfen und Abstimmung, Verwaltung.
+	-> Kooperativer, iterativer (Verfahren werden mehrmals durchlaufen), inkrementeller (nach 
+		jedem durchlauf kommen Anforderungen hinzu/werden verfeinert) Prozess.
+-> Ziele Requirements Engineering
+	-> Alle relevanten Anforderungen sollen bekannt und im Detail verstanden sein.
+	-> Alle Anforderungen müssen gemäß der Dokumentationsvorschriften dokumentiert und alle Spezifikationen
+		gemäß der Spezifikationsvorschriften spezifiziert sein.
+	-> Alle involvierten Stakeholder müssen ausreichende Übereinstimmungen über die Anforderungen haben.
+	
+---Kernaktivitäten des RE
+-> Ermittlung, Dokumentation, Prüfung und Abstimmung
+	-> Der Requirements Engineer entscheidet welche der drei Aktivitäten als nächstes durchgeführt wird.
+-> Ermittlung von Anforderungen
+	-> Indentifikation der Anforderung an das System die benötigt werden, damit die software ihr ziel erreichen kann.
+-> Dokumentation von Anforderungen
+	-> Sicherung des Kenntnisstandes für alle Stakeholder.
+		-> Dadurch kann sich jeder Beteiligte zur jeder Zeit einen Überblick verschaffen.
+	-> Anforderungsdokumente sind Bestandteil von rechtsgültigen Verträgen.
+		-> Mit diesen Dokumenten wird geprüft, ob der Softwarehersteller alle Leistungen erbracht hat.
+	-> Neben Texten können auch Grafiken (Softwaremodelle) eingesetzt werden. 	
+-> Prüfen und Abstimmen von Anforderungen
+	-> Dokumentierte Anforderungen Prüfen und mit relevanten Stakeholdern Abstimmen.
+	-> Durch das Prüfen der dokumentierten Anforderungen kann die Qualität bezüglich der Kriterien 
+		Inhalt, Dokumentation und Abgestimmtheit sichergestellt werden.
+			-> Hohe Dokumentationsqualität
+			-> Missverständnisse durch Mehrdeutigkeit vermieden
+			-> Konkurrierende Anforderungen identifiziert.
+			
+---Zusammenhang zwischen Problem, Anforderung und System (System zur lösung eines Problems).
+-> Es besteht ein Problem, welches gelöst werden muss. Es gibt verschiedene lösungswege (Systeme), um das Problem zu lösen.
+	Für die verschiedenen Lösungswege/Systeme werden dann Anforderungen benötigt (Funktionen, Eigenschaften). 
+		-> Das Fachliche Problem könnte sein: Welche Uhrzeit ist es zum Zeitpunkt XY.
+			Die Anforderungen können bspw. sein: Mechanische Uhr, elektrische Uhr, Uhr im Mobiltelefon.
+			Die Anforderung elektrischer Uhr löst das fachliche Problem, wenn diese Anforderung als System zur Uhrzeitbestimmung 				genutzt wird.
+				->Es gibt nun mehrere Alternativen an Anforderungen, wenn man unterschiedliche Systeme betrachtet, die zur 
+					Lösung des Problems führen.
+					-> Stakeholder sollten deshalb wissen, dass es mehrere Lösungen/Systeme geben kann, nicht nur die
+						Anforderung elektrische Uhr kann das Problem lösen, sondern auch Uhr im Mobiltelefon.
+					-> sind die Unterschiede den Stakeholdern bekannt, stehen mehrere Alternativen zur Auswahl.
+-> Zusammengefasst: Dem Stakeholder muss bekannt sein, dass es auch andere Lösungswege gibt und dadurch auch alternative 			Anforderungen.
+					
+---Arten von Anforderungen
+-> Funktionale Anforderungen
+	-> Definieren Funktionen die von der Software bereitgestellt werden müssen.
+	-> Es sind fachliche Funktione wie: Anzeigen aller verfügbaren Waren, das Versenden einer Bestellung per Email...
+-> Qualitätseigenschaften
+	-> Qualitative Eigenschaften die Erfüllt werden müssen: 1000 Bestellvorgänge pro Sekunde, 
+		Reaktionsgeschwindigkeit von weniger als einer Sekunde.
+-> Randbedingungen 
+	-> Gesetze oder regulatorische Vorschriften von Behörden, firmeninterne Vorgaben und Richtlinien wie ein Corporate Style Guide 			oder die Vorgabe eines technischen Rahmens wie die Programmiersprache oder die Zielplattform wie Windows, Linux, Android 			oder iOS.
+		
+					
+					
+					
+					
+					

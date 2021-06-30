@@ -1,0 +1,4 @@
+->authentication: Indentifizieren eines Users z.B. anhand der session_id in form eines cookies.
+->autorization: Welche Rechte hat der User.
+->validation: überprüfen, bestätigen das Daten korrekt sind.
+->valid: gültig.

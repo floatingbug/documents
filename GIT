@@ -1,0 +1,78 @@
+﻿GIT
+
+Repository:
+→ beinhaltet Ordner, die Versionen eines Projektes repräsentieren, z.B. ist in einem Ordner (einer Version) noch eine zusätzliche Datei.
+
+Workspace:
+→ Repository ist Unterordner von Workspace.
+→ in Workspace kann eine Version (ein Ordner) geladen werden z.B:
+Die Version 3 wird geladen und wird mit einer neueren Version, z.B. Version 2.1 gemerged (fusionieren, verschmelzen), die Version 3.1 entsteht.
+
+Origin/Maser:
+-> origin: Name für das Repository auf dem Server (der Name repräsentiert die URL des Repositories auf dem Server.
+-> master: maser-branch. 
+
+commit:
+-> commit ist die speicherung des Workspaces in das Repository (.git) als neue version.
+
+HEAD:
+-> HEAD zeigt immer auf den aktuellen branch, z.B. master
+-> cat .git/HEAD //Ausgabe: refs/heads/master
+
+Neues Repository erstellen:
+→ in Ordern /test navigieren in welchem ein Repository erstellt werden soll.
+→ mit $ git init  wird ein neues Repository erstellet.
+→ es wird in dem Ordner ein .git Ordner erstellt, welches das Repository ist.
+→ der Ordner /test ist der Workspace in dem sich das Repository .git befindet.
+
+Dateien die sich im Workspace befinden, in das Repository einfügen (version speichern):
+→ $ git add test.txt  die Datei wird erst Vorgemerkt (noch nicht in das Repository geschrieben).
+→ $ git add –all  alle dateien werden Vorgemerkt.
+→ $ git commit -m „was wurde geändert“  alle vorgemerkten Dateien werden als neue Version in das Repository geschrieben (commit = neue Version).
+
+Remote und Push:
+-> git remote add "name" AdresseZumRepository // Mit dem remote namen (name) spricht man das Repository auf gitHub an (AdresseZumRepository).
+-> git push -u "name" master // Inhalt des localen workspace wird auf den master-branch des gitHub repository gepushed.
+
+Git pull, reset, fetch
+-> git fetch // Läd alle Dateien und Änderungen an Dateien in .git herunter.
+Erst mit git merge werden Dateien und Änderungen an Dateien mit dem lokalen Master gemerged.
+-> git pull // shorthand für git fetch, git merge
+-> git reset --hard FETCH_HEAD // reset bewirkt, dass alles im Workinspace durch ein commit (z.B. von github-repository) ersetzt wird. --hard bewirkt, dass alles ausgewählt wird (von FETCH_HEAD). FETCH_HEAD zeigt auf alle neuen Daten und Änderungen in Dateien (vorher git fetch ausführen).
+-> statt git reset --hard FETCH_HEAD geht auch git reset --hard origin/master (vorher wieder 
+git fetch ausführen).
+ 
+Pull und fetch
+-> git pull //Speichert das Repository vom Server in das localae Workspace und die Verseion in .git
+-> git fetch origin //
+
+Auf vorherige Version zurückspringen:
+$ git reset –hard HEAD  der –hard flag ladet die komplette Version des letzten commits in den Workspace, HEAD zeigt auf den aktuellen branch.
+
+Anzeigen lassen, was sich in einer Datei geändert hat:
+$ git diff test.txt
+
+Anzeigen lassen, was sich im workspace geändert hat:
+$ git status
+
+Anzeigen lassen, auf welchem branch man sich befindet:
+$ git branch
+
+Andere Versionen laden:
+$ git log  alle commits bzw. Versionen werden mit ihren Hash codes angezeigt.
+$ git checkout Hashcode  Version wird in den Workspace geladen.
+
+Branches:
+% git checkout -b „GUI“ ein neuer Zweig mit dem Namen GUI wird erstellt, auf dem sich genau EINE Versionen für ein bestimmtes Teilgebiet des Projektes befinden, z.B. GUI. Die branches können wieder zusammen gemerged werden.
+→ master ist der Haupt Entwicklungsstrang.
+→ neue Versionen werden nur auf den Zweig geschrieben, auf dem man sich befindet.
+$ git branch -d nameDesZweiges  löscht einen Zweig
+$ git checkout master  wechsel auf den master branche.
+$ git checkout GUI  wechsel auf den GUI branch.
+
+Datei löschen:
+$ git rm test.txt
+$ git commit -m „datei test.txt gelöscht“
+
+Mergen:
+$ git merge nameDesZweiges

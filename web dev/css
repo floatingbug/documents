@@ -1,0 +1,82 @@
+--document-flow
+-> Elemente beeinflussen sich untereinender.
+-> Befindet sich ein Element nicht im document-flow, überlappt
+    das Element die anderen.
+
+-----Positioning-----
+
+--static
+-> Keine positionierung (kein: top, left, right...).
+-> Standarteinstellung bei jedem Element.
+
+--absolute
+-> Das Element richtet sich relativ zum Elternelement hin aus, wenn
+    das Elternelement nicht static ist, also der Standart.
+-> Das Element nimmt nicht mehr die komplette Zeile ein.
+-> Das Element berücksichtigt nicht die anderen Elemente.
+-> Das Element befindet sich nicht mehr im document-flow.
+
+--relative
+-> Element richtet sich relativ zur Position aus, bei der es selber ist.
+-> Wird die Position geändert und das Element erscheit an anderer stelle,
+    bleiben die anderen Elemente an der Selben stelle. Der Grund ist,
+    dass sich das verschobene Element eig. noch an der selben stelle
+    befindet, es wird nur an einer anderen Stelle dargestellt.
+-> Element befindet sich nicht mehr im document-flow.
+
+--fixed
+-> Richtet sich immer zum html-document hin aus.
+-> Bleibt immer an selber stelle, auch beim scrolen.
+
+-----Display-----
+
+--block
+-> Element nimmt komplette Seite in Anspruch.
+
+--inline
+-> Element nimmt nur minimale Breite der Zeile ein, dadurch können
+    Elemente die inline sind, auf der selben Zeile dargestellt werden.
+-> Positionierung funktioniert nicht (kein margin, lef, height....).
+
+--inline-block
+-> Wie inline, nur das die Positionierung funktioniert.
+
+--none
+-> Element wird nicht dargestellt. 
+
+--float
+-> floated man ein Element bspw. nach links (float: left;), erscheint es am 
+	linken, oberen Rand des Elternelementes und der Inhalt des Elternelementes
+	fließt um das gefloatede Element herum.
+
+-----margin-----
+--margin: 0 auto
+-> Zentriert das Element in der Mitte des Elternelementes.
+-> 0 bedeutet hier, dass top und bottom kein margin bekommt.
+-> Damit margin auto funktioniert, darf das Element nicht position: absolute oder fixed haben. 
+	Es sei denn, das Element hat left: 0; und right: 0;
+	-> Wenn margin: auto auto; also auch oben und unter zentriert werden soll, muss auch top: 0; bottom: 0;
+		sein oder position nicht absolute oder fixed.
+	-> Element muss float: none; sein.
+	-> Element muss display: block; sein.
+	-> Element darf kein auto width haben 
+		-> width muss angegeben sein z.B. width: 100%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

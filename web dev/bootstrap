@@ -1,0 +1,44 @@
+-----------------------------------------Grid System--------------------------------------------------
+
+→ Extra smal device (mobile phone) Bootstrap-Class: .col-xs-“number of coloms“
+→ Smal device (tablets) Bootstrap-Class: .col-sm-“number of coloms“
+→ Medium device Bootstrap-Class: .col-md-“number of coloms“
+→ Large device Bootstrap-Class: .col-lg-“number of coloms“
+
+-> Jede Zeile ist in 12 Spalten aufgeteilt.
+	-> Wieviele Spalten ein Element belegt kann angegeben werden.
+		<div class='row'>
+			<div class='col-xs-6'><h2>Hello There</h2></div>
+			<div class='col-xs-6'><h2>Hello :)</h2></div>	
+		</div>
+---Layout mit bootstrap---
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-2'>
+			Left Sidebar
+		</div>
+		<div class='col-md-8'>
+			Main Content
+		</div>
+		<div class='col-md-2'>
+			Right Sidebar
+		</div>
+	</div>
+</div>
+
+-> Offset
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-offset-2'>
+			Left Sidebar
+		</div>
+		<div class='col-md-2'>
+			Right Sidebar
+		</div>
+	</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,23 @@
+﻿→Session:
+
+Was ist Session?
+Session ist ein Objekt, dass in jedem req-objekt erstellt wird und in dem ein Objekt, mit beispielsweise Userdaten, erstellt werden kann z.B: req.session.user. 
+
+Wie wird das richtige Objekt geladen?
+Der Browser sendet per cookie die session-id. Session gleicht sie mit der
+session-id, die in req.session.id gespeichert ist ab. Anhand dieser id, fügt session die Daten hinzu z.B.: req.session.user.
+Session sendet eine session-id via cookie im res.header, wenn in req.session ein Objekt hinzugefügt wird, z.B. req.session.user, und anschließend ein res gemacht wird.
+
+Cookie Verhalten ändern
+Wurde anhand der session-id, die richtige session geladen, kann man über session.cookie das verhalten des cookies ändern, z.B.: nach ablauf angegebener Zeit, soll cookie nicht mehr gültig sein → req.session.cookie.expires = new Date(Date.now() + hour); (expires = ablaufen).
+
+Middleware:
+app.use(session({
+  secret: 'sdfui324h23uhro4h78fhh8h483fuiedhsjkhf348f',
+  resave: true,                 
+  saveUninitialized: false     
+}));
+
+->saveUninitialized: false -> wird im req.session ordner nichts hinzugefügt oder verändert, bleibt die alte req.session im RAM und es wird nicht nach jedem req ein cookie gesendet.
+    Bei true wird, auch wenn req.session nicht verändert wurde, ein neues coockie gesendet.
+->resave: true -> auch wenn in bspw. req.session.user keine änderung vorgenommen wurden, wird req.session.user trotzdem wieder in den RAM gespeichert und die Daten bleiben.

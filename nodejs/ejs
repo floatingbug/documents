@@ -1,0 +1,10 @@
+- Ejs-Dateien in andere Ejs-Dateien einbinden:
+	<%- include("relative/path/to/file") %>
+
+	-> Der Bindestrich in <%- weist ejs an, rohes HTML zu rendern.
+	-> Der Pfad zur anderen Ejs-Datei ist relativ.
+
+- Eine Variable Darstellen:
+	<%= variablenname %>
+	
+	

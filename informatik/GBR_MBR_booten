@@ -1,0 +1,27 @@
+--Partitions-Tabellen--
+-> es gibt: MBR und GPT.
+-> bevor ein Medium geladen werden kann, brauch es eine Partitions-Tabelle.
+	Partitions-Tabelle Teilt das Medium in Partitionen auf.
+-> GPT benötigt ein BIOS das UEFI
+-> MBR ist im ersten Sektor und 512 Byte groß.
+	-> besteht aus: primärem Boot Loader, Partitions-Tabelle, MBR der die Partitions-Tabelle abfragt.
+		-> der MBR fragt die Tabelle nach der Partition ab die geladen werden muss (OS wird in den RAM geladen).
+		-> der Boot Loader läd dann das OS in den RAM.
+
+--BIOS--
+-> auch legacy-boot
+-> sucht nach einem bootbaren Speichermedium (Medium mit einem OS).
+-> verbindet alle Geräte mit dem OS.
+-> nach dem Booten ist das BIOS inaktiv, nur noch das OS verwaltet.
+-> nutzt MBR.
+
+--UIFI--
+-> nutzt GPT.
+	-> steht für: GUID Partition Table.
+		-> GUID steht für: Global Unique IDentifier.
+		
+
+--Bootvorgang--
+-> BIOS sucht nach MBR, UEFI sucht nach GPT.
+-> bei mehreren installierten OS's startet ein Bootloader z.B. GRUB.
+

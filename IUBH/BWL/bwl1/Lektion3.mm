@@ -1,0 +1,208 @@
+<map version="freeplane 1.6.0">
+<!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
+<node TEXT="Lektion3" FOLDED="false" ID="ID_238365613" CREATED="1578409180720" MODIFIED="1578409860728" STYLE="oval">
+<font SIZE="18"/>
+<hook NAME="MapStyle">
+    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
+
+<map_styles>
+<stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
+<font SIZE="24"/>
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="default" ICON_SIZE="12.0 pt" COLOR="#000000" STYLE="fork">
+<font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.details"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.attributes">
+<font SIZE="9"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.note" COLOR="#000000" BACKGROUND_COLOR="#ffffff" TEXT_ALIGN="LEFT"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.floating">
+<edge STYLE="hide_edge"/>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.topic" COLOR="#18898b" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subtopic" COLOR="#cc3300" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subsubtopic" COLOR="#669900">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.important">
+<icon BUILTIN="yes"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" COLOR="#000000" STYLE="oval" SHAPE_HORIZONTAL_MARGIN="10.0 pt" SHAPE_VERTICAL_MARGIN="10.0 pt">
+<font SIZE="18"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,1" COLOR="#0033ff">
+<font SIZE="16"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,2" COLOR="#00b439">
+<font SIZE="14"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,3" COLOR="#990000">
+<font SIZE="12"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,4" COLOR="#111111">
+<font SIZE="10"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,5"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,6"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,7"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,8"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,9"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,10"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,11"/>
+</stylenode>
+</stylenode>
+</map_styles>
+</hook>
+<hook NAME="AutomaticEdgeColor" COUNTER="4" RULE="ON_BRANCH_CREATION"/>
+<node TEXT="Unternehmensziehle" POSITION="right" ID="ID_106205346" CREATED="1578409220491" MODIFIED="1578409860727" HGAP_QUANTITY="33.49999941885473 pt" VSHIFT_QUANTITY="-32.24999903887513 pt">
+<edge COLOR="#ff0000"/>
+<node TEXT="Smart" ID="ID_1287862686" CREATED="1578409242862" MODIFIED="1578409864786" HGAP_QUANTITY="25.999999642372142 pt" VSHIFT_QUANTITY="-18.749999441206473 pt">
+<node TEXT="Spezifisch, Messbar, Anspuruchsvoll und Akzeptiert, Relevant, Terminiert" ID="ID_770599459" CREATED="1578409250439" MODIFIED="1578409864783" HGAP_QUANTITY="28.24999957531692 pt" VSHIFT_QUANTITY="-24.749999262392542 pt">
+<node TEXT="Spezifisch" ID="ID_1143980280" CREATED="1578409321671" MODIFIED="1578409846831" HGAP_QUANTITY="28.99999955296518 pt" VSHIFT_QUANTITY="5.249999843537812 pt">
+<node TEXT="Konkret und Eindeutig formuliertes Ziel" ID="ID_1482847169" CREATED="1578409360914" MODIFIED="1578409846830" HGAP_QUANTITY="61.24999859184031 pt" VSHIFT_QUANTITY="-12.7499996200204 pt"/>
+</node>
+<node TEXT="Messbar" ID="ID_1051813728" CREATED="1578409329035" MODIFIED="1578409850509" HGAP_QUANTITY="43.2499991282821 pt" VSHIFT_QUANTITY="17.99999946355821 pt">
+<node TEXT="Zielerreichung ist messbar" ID="ID_975661261" CREATED="1578409397564" MODIFIED="1578409850509" HGAP_QUANTITY="43.2499991282821 pt" VSHIFT_QUANTITY="-14.24999957531692 pt"/>
+</node>
+<node TEXT="Anspruchsvoll und&#xa;Akzeptiert" ID="ID_156975083" CREATED="1578409331427" MODIFIED="1578409828144" HGAP_QUANTITY="46.24999903887513 pt" VSHIFT_QUANTITY="30.749999083578615 pt">
+<node TEXT="Ziel soll anspruchsvoll und Erreichbar (von&#xa;Mitarbeiter akzeptiert) sein." ID="ID_840215109" CREATED="1578409556855" MODIFIED="1578409828142" HGAP_QUANTITY="23.749999709427364 pt" VSHIFT_QUANTITY="23.249999307096026 pt"/>
+</node>
+<node TEXT="Relevant" ID="ID_369482463" CREATED="1578409346959" MODIFIED="1578409825572" HGAP_QUANTITY="40.249999217689066 pt" VSHIFT_QUANTITY="26.99999919533732 pt">
+<node TEXT="Zielsetzung soll zum Unternehmen passen" ID="ID_185361463" CREATED="1578409698166" MODIFIED="1578409825571" HGAP_QUANTITY="44.749999083578615 pt" VSHIFT_QUANTITY="24.749999262392542 pt"/>
+</node>
+<node TEXT="Terminiert" ID="ID_1436232834" CREATED="1578409353099" MODIFIED="1578409823300" HGAP_QUANTITY="34.999999374151244 pt" VSHIFT_QUANTITY="20.999999374151248 pt">
+<node TEXT="Ziel auf Zeitpunkt ausrichten." ID="ID_1841546662" CREATED="1578409747042" MODIFIED="1578409823300" HGAP_QUANTITY="43.2499991282821 pt" VSHIFT_QUANTITY="24.749999262392542 pt"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="Zielmerkmale" POSITION="left" ID="ID_716948097" CREATED="1578409971616" MODIFIED="1578410494118">
+<edge COLOR="#0000ff"/>
+<node TEXT="Zielarten" ID="ID_1574757468" CREATED="1578409989727" MODIFIED="1578410467130" HGAP_QUANTITY="28.249999575316917 pt" VSHIFT_QUANTITY="-22.499999329447768 pt">
+<node TEXT="&#xf6;konomische Ziele" ID="ID_906118310" CREATED="1578410105414" MODIFIED="1578410698224">
+<node TEXT="z.B. mehr Geld" ID="ID_516454361" CREATED="1578410676378" MODIFIED="1578410698223" HGAP_QUANTITY="21.49999977648259 pt" VSHIFT_QUANTITY="-14.249999575316918 pt">
+<node TEXT="&#xf6;konomisches Ziel ist wichtigstes Ziel" ID="ID_618919027" CREATED="1578410892155" MODIFIED="1578410911228">
+<node TEXT="nicht erreichen bedeutet insolvenz" ID="ID_124678829" CREATED="1578410914634" MODIFIED="1578410943100"/>
+<node TEXT="sicherstellung der Liquidit&#xe4;t (Zahlungsf&#xe4;higkeit)" ID="ID_1194099502" CREATED="1578410976639" MODIFIED="1579610649512">
+<node TEXT="Berechnen durch: Einzahlung - Auszahlung" ID="ID_1795403317" CREATED="1578411050679" MODIFIED="1579610649511" HGAP_QUANTITY="16.999999910593036 pt" VSHIFT_QUANTITY="14.249999575316918 pt"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="sachorientierte Ziele" ID="ID_1276678145" CREATED="1578410151168" MODIFIED="1578410232847">
+<node TEXT="z.B. Produkt- und Leistungsspektrum erweitern" ID="ID_885549842" CREATED="1578410702683" MODIFIED="1578410753418"/>
+</node>
+<node TEXT="soziale Ziele" ID="ID_1085678809" CREATED="1578410164908" MODIFIED="1578410171503">
+<node TEXT="z.B. Verhalten gegen&#xfc;ber Stakeholder Verbessern" ID="ID_45329772" CREATED="1578410759418" MODIFIED="1578410796352"/>
+</node>
+<node TEXT="umweltorientierte Ziele" ID="ID_263747724" CREATED="1578410172149" MODIFIED="1578410179177">
+<node TEXT="z.B. umweltfreundlicher werden" ID="ID_1376017948" CREATED="1578410807590" MODIFIED="1578410833815"/>
+</node>
+</node>
+<node TEXT="Zielbeziehungen" ID="ID_285223690" CREATED="1578410012132" MODIFIED="1578410472924" HGAP_QUANTITY="96.49999754130847 pt" VSHIFT_QUANTITY="-23.999999284744284 pt">
+<node TEXT="komplement&#xe4;re Ziele" ID="ID_1882818815" CREATED="1578410246510" MODIFIED="1578410265638">
+<node TEXT="Erf&#xfc;llung des einen Ziels unterst&#xfc;tzt das erreichen des anderen Ziels" ID="ID_1098007553" CREATED="1578411125945" MODIFIED="1578411172903"/>
+</node>
+<node TEXT="konkurrierende Ziele" ID="ID_56305677" CREATED="1578410267414" MODIFIED="1578410301058">
+<node TEXT="Zielerf&#xfc;llung des einen Ziels brenst die Erf&#xfc;llung des anderen Ziels" ID="ID_83402626" CREATED="1578411187168" MODIFIED="1578411217158"/>
+</node>
+<node TEXT="indifferente Ziele" ID="ID_1020565487" CREATED="1578410288228" MODIFIED="1579003304705">
+<node TEXT="Ziele sind voneinander unabh&#xe4;ngig" ID="ID_990948051" CREATED="1578411222905" MODIFIED="1579003304704" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="9.749999709427366 pt"/>
+</node>
+</node>
+<node TEXT="Zielpr&#xe4;ferenz" ID="ID_1455490785" CREATED="1578410018706" MODIFIED="1578410478463" HGAP_QUANTITY="132.4999964684249 pt" VSHIFT_QUANTITY="-25.4999992400408 pt">
+<node TEXT="Priorit&#xe4;ten" ID="ID_1226807293" CREATED="1578410326783" MODIFIED="1578410478462" HGAP_QUANTITY="26.7499996200204 pt" VSHIFT_QUANTITY="8.999999731779106 pt">
+<node TEXT="Damit jeder wei&#xdf;, was als erstes zu tun ist und was eine h&#xf6;here Priorit&#xe4;t hat (Zeitersparnis), gibt es eine Pr&#xe4;ferenzordnung, in der alle Ziele, um bspw. Ein Produkt herzustellen, priorisiert werden." ID="ID_723871058" CREATED="1578411252422" MODIFIED="1578411282843">
+<node TEXT="1. Ziele werden Beschrieben: Hohe Haftkraft, wenig Abrieb, Kostenminimierung&#x2026; ." ID="ID_1219956698" CREATED="1578411292055" MODIFIED="1578411316892"/>
+<node TEXT="2. Priorit&#xe4;tsziffern: Hohe Haftkraft = 2, wenig Abrieb = 3, Kostenminimierung = 1" ID="ID_68091681" CREATED="1578411318841" MODIFIED="1578411332551"/>
+<node TEXT="3. Ordnung nach Priorit&#xe4;tsziffern: 1 Kostenminimierung, 2 Hohe Haftkraft, 3 wenig Abrieb." ID="ID_590902188" CREATED="1578411333024" MODIFIED="1578411358747"/>
+</node>
+</node>
+</node>
+<node TEXT="Rangordnung" ID="ID_700341974" CREATED="1578410029522" MODIFIED="1578410486213" HGAP_QUANTITY="124.99999669194231 pt" VSHIFT_QUANTITY="-0.7499999776482589 pt">
+<node TEXT="Oberziel" ID="ID_162902352" CREATED="1578410348960" MODIFIED="1578411851468">
+<node TEXT="aus dem Oberziel Zwischenziele formulieren" ID="ID_769580178" CREATED="1578411429658" MODIFIED="1578411851467" VSHIFT_QUANTITY="-5.999999821186071 pt"/>
+</node>
+<node TEXT="Zwischenziel" ID="ID_441890902" CREATED="1578410359479" MODIFIED="1578410365577">
+<node TEXT="aus Zwischenziele Unzerziele formulieren" ID="ID_978398396" CREATED="1578411461106" MODIFIED="1578411520338"/>
+</node>
+<node TEXT="Unterziel" ID="ID_1640109700" CREATED="1578410367166" MODIFIED="1578411855436">
+<node TEXT="werden ben&#xf6;tigt um Zwischenziele zu erreichen" ID="ID_1886682786" CREATED="1578411529250" MODIFIED="1578411855436" VSHIFT_QUANTITY="8.999999731779106 pt"/>
+</node>
+</node>
+<node TEXT="Zeitbezug" ID="ID_510193887" CREATED="1578410038159" MODIFIED="1578410490795" HGAP_QUANTITY="112.99999704957017 pt" VSHIFT_QUANTITY="20.999999374151248 pt">
+<node TEXT="kurzfristige Ziele" ID="ID_41968220" CREATED="1578410385508" MODIFIED="1578411838668">
+<node TEXT="innerhalb eines Jahres" ID="ID_467159748" CREATED="1578411575993" MODIFIED="1578411838667" VSHIFT_QUANTITY="-8.999999731779106 pt"/>
+</node>
+<node TEXT="langfristige Ziele" ID="ID_1800843073" CREATED="1578410396092" MODIFIED="1578411840726">
+<node TEXT="bis 5 Jahre" ID="ID_1049299300" CREATED="1578411585249" MODIFIED="1578411840725" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="-2.9999999105930355 pt"/>
+</node>
+<node TEXT="mittelfristige Ziele" ID="ID_279417919" CREATED="1578410402883" MODIFIED="1578411846766">
+<node TEXT="&#xfc;ber 5 Jahre" ID="ID_657026328" CREATED="1578411595526" MODIFIED="1578411846766" VSHIFT_QUANTITY="12.7499996200204 pt"/>
+</node>
+</node>
+<node TEXT="Zielbedeutung" ID="ID_258685512" CREATED="1578410045236" MODIFIED="1578410494117" HGAP_QUANTITY="52.99999883770946 pt" VSHIFT_QUANTITY="17.99999946355821 pt">
+<node TEXT="operative Ziele" ID="ID_1659775082" CREATED="1578410416928" MODIFIED="1578411830048">
+<node TEXT="detaillieren taktische Ziele" ID="ID_748946369" CREATED="1578411744116" MODIFIED="1578411830047" HGAP_QUANTITY="16.999999910593036 pt" VSHIFT_QUANTITY="-10.499999687075624 pt">
+<node TEXT="kurzfristig" ID="ID_1579439193" CREATED="1578411761066" MODIFIED="1578411765513"/>
+</node>
+</node>
+<node TEXT="taktische Ziele" ID="ID_1967783145" CREATED="1578410427034" MODIFIED="1578410432178">
+<node TEXT="Vorteile gegen&#xfc;ber Konkurrenz" ID="ID_1235519034" CREATED="1578411790713" MODIFIED="1578411803234">
+<node TEXT="mittelfristig" ID="ID_720427956" CREATED="1578411812737" MODIFIED="1578411816969"/>
+</node>
+</node>
+<node TEXT="strategische Ziele" ID="ID_1603940394" CREATED="1578410432651" MODIFIED="1578411833665">
+<node TEXT="Grundlegende (extenzielle) Bedeutung" ID="ID_832624839" CREATED="1578411660967" MODIFIED="1578411833665" HGAP_QUANTITY="12.500000044703482 pt" VSHIFT_QUANTITY="11.999999642372142 pt">
+<node TEXT="daher langfristig" ID="ID_1621277306" CREATED="1578411683444" MODIFIED="1578411688371"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="Entscheidungsprozess" POSITION="right" ID="ID_1908221744" CREATED="1578411899176" MODIFIED="1579007071775">
+<edge COLOR="#00ff00"/>
+<node TEXT="Formulieren von Zielen&#xa;z.B. Gewinnmaximierung" ID="ID_1875232431" CREATED="1578411912009" MODIFIED="1579004969961" HGAP_QUANTITY="16.999999910593036 pt" VSHIFT_QUANTITY="21.749999351799502 pt">
+<node TEXT="Aus formulierten Zielen&#xa;Handlungen Ableiten&#xa;z.B. Neues Produkt&#xa;entwickeln" ID="ID_1036915116" CREATED="1579004241319" MODIFIED="1579007111080" HGAP_QUANTITY="20.749999798834327 pt" VSHIFT_QUANTITY="6.749999798834331 pt">
+<node TEXT="Handlungsalternativen:&#xa;Produkte: A, B oder C." ID="ID_899999803" CREATED="1579004388408" MODIFIED="1579007111077" HGAP_QUANTITY="22.999999731779106 pt" VSHIFT_QUANTITY="29.249999128282095 pt">
+<node TEXT="Entscheidung welche&#xa;Handlung genutzt werden&#xa;soll" ID="ID_1977289110" CREATED="1579004498240" MODIFIED="1579004565809" HGAP_QUANTITY="17.749999888241295 pt" VSHIFT_QUANTITY="22.499999329447768 pt"/>
+</node>
+</node>
+</node>
+<node TEXT="Notwendige Schritte im&#xa;Entscheidungsprozess" ID="ID_15124293" CREATED="1579004579679" MODIFIED="1579007071773" HGAP_QUANTITY="18.499999865889553 pt" VSHIFT_QUANTITY="-16.499999508261695 pt">
+<node TEXT="Erkenntnis der Problemsituation&#xa;z.B. Gewinn muss maximiert werden&#xa;aber es kann nur ein Produkt von&#xa;dreien Gew&#xe4;hlt werden das&#xa;entwickelt werden kann" ID="ID_707411431" CREATED="1579005371948" MODIFIED="1579610113019" HGAP_QUANTITY="20.74999979883433 pt" VSHIFT_QUANTITY="16.499999508261695 pt"/>
+<node TEXT="Entscheidungsfindung: welche&#xa;Handlungsalternative soll&#xa;gew&#xe4;hlt werden" ID="ID_504819550" CREATED="1579005481610" MODIFIED="1579005569691" HGAP_QUANTITY="25.249999664723884 pt" VSHIFT_QUANTITY="16.499999508261695 pt"/>
+</node>
+<node TEXT="Entscheidungsprozess" ID="ID_1584151713" CREATED="1579005580690" MODIFIED="1579007060777">
+<node TEXT="Problemformulierung" ID="ID_553944385" CREATED="1579005626762" MODIFIED="1579007060776" HGAP_QUANTITY="32.74999944120647 pt" VSHIFT_QUANTITY="20.999999374151248 pt">
+<node TEXT="Gewinn soll durch neue Produkte&#xa;maximiert werden, es kann aber nur&#xa;ein neues Produkt entwickelt werden" ID="ID_1325127125" CREATED="1579005728652" MODIFIED="1579005965663"/>
+</node>
+<node TEXT="Auffindung von Handlungsalternativen" ID="ID_372632379" CREATED="1579005638935" MODIFIED="1579007263365" HGAP_QUANTITY="27.499999597668662 pt" VSHIFT_QUANTITY="24.749999262392542 pt">
+<node TEXT="Produkte: A, B oder C" ID="ID_506831884" CREATED="1579005925175" MODIFIED="1579007263365" HGAP_QUANTITY="13.250000022351742 pt" VSHIFT_QUANTITY="-7.499999776482589 pt"/>
+</node>
+<node TEXT="Analyse der Umweltbedingungen" ID="ID_502737245" CREATED="1579005651329" MODIFIED="1579007048105" HGAP_QUANTITY="25.249999664723884 pt" VSHIFT_QUANTITY="23.249999307096026 pt">
+<node TEXT="Durch Analyse der internen&#xa;und externen Umweltbedingungen,&#xa;m&#xf6;gliche Gewinne (Ergebnis) der einzelnen&#xa;Produkte und Wahrscheinlichkeit&#xa;ob es zu dem Ergebins kommen wird berechnen" ID="ID_1529090229" CREATED="1579006119500" MODIFIED="1579006632359"/>
+</node>
+<node TEXT="Bewertung der Handlungsalternativen" ID="ID_1460368180" CREATED="1579005683608" MODIFIED="1579007041450" HGAP_QUANTITY="18.499999865889553 pt" VSHIFT_QUANTITY="23.999999284744284 pt">
+<node TEXT="Bewertung = (Ergebniswert * Wahrscheinlichkeit) + (Ergebniswert * Wahrscheinlichkeit) + (Ergebniswert * Wahrscheinlichkeit)..." ID="ID_133775246" CREATED="1579006657122" MODIFIED="1579007037377" VSHIFT_QUANTITY="-8.249999754130846 pt"/>
+<node TEXT="Beispiel" ID="ID_271936226" CREATED="1579006897318" MODIFIED="1579006901205">
+<node TEXT="A = 200 &#xb7; 0,4 + 50 &#xb7; 0,3 &#x2212; 220 &#xb7; 0,3 = 29" ID="ID_1544968948" CREATED="1579006909724" MODIFIED="1579006946009"/>
+<node TEXT="B = 100 &#xb7; 0,4 + 20 &#xb7; 0,3 &#x2212; 120 &#xb7; 0,3 = 10" ID="ID_69540720" CREATED="1579006947061" MODIFIED="1579006961466"/>
+</node>
+</node>
+<node TEXT="Treffen der Entscheidung" ID="ID_1594848070" CREATED="1579005710320" MODIFIED="1579007026592">
+<node TEXT="Alternative A wird gew&#xe4;hlt." ID="ID_628260723" CREATED="1579006970979" MODIFIED="1579007026591" HGAP_QUANTITY="18.499999865889553 pt" VSHIFT_QUANTITY="17.249999485909953 pt"/>
+</node>
+</node>
+</node>
+</node>
+</map>

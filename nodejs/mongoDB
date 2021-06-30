@@ -1,0 +1,48 @@
+-----MongoDB Konsole-----
+-> Datenbanken anzeigen: show dbs
+-> Anzeigen in welcher Datenbank man sich befindet: db
+-> In andere Datenbank wechseln: use <name der Datenbank>
+-> Collections in Datenbank anzeigen: show collections
+-> records in Collection anzeigen: db.“name der collection“.find();
+-> Collection löschen: db.collection.drop()
+
+-----Mongoose-----
+-> Mit der Datenbank verbinden: mongoose.connect('mongodb://localhost/dantenbankName', {useNewUrlParser: true, 
+																						useUnifiedTopology: true});
+-> Zeigen ob Verbindung zur Datenbank steht oder ein Feheler aufgetreten ist: 
+	
+	let db = mongoose.connection;
+	db.on('error', ()=>{
+		console.log("Verbindung zu db fehlgeschlagen");	
+	});											
+	db.once('open', ()=>{
+		console.log("verbindung zu db hergestellt");
+	});												
+								
+-----Schema und Model-----
+//neues schema erstellen
+let schemaName = new mongoose.Schema({
+	name: String	
+});
+
+//model mit dem schema erstellen
+//mit models kann man records/documents für die collection erstellen.
+let modelName = mongoose.model('collectionName', schemaName);
+
+//records/documents in collection speichern
+let name = new modelName({
+	name: "bla",
+	surname: "blabla"
+});
+
+name.save((err)=>{
+	if(err){}
+	else{}
+});
+											
+											
+											
+											
+											
+											
+											

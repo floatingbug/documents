@@ -1,0 +1,100 @@
+-> Ermittlung für: Funktionale Anforderungen, Qualitätsanforderungen, Randbedingungen.
+-> Das System muss später in eine bestehende Umgebung eingebunden werden.
+	-> Daher: Analyse der Umgebung um Quellen für Anforderungen zu ermitteln.
+		-> Aus den Quellen Anforderungen, mit Ermittlungstechniken, ermitteln.
+
+---Schritte zur Ermittlung von Anforderungen---
+-> Systemkontext bestimmen: Es wird analysiert, welche Stakeholder und welche anderen Systeme direkte Abhängigkeiten zu dem erstellenden System haben, um eine Idee über die konkreten Quellen für Anforderungen zu bekommen.
+
+-> Quellen für Anforderungen ermitteln: Typische Quellen für Anforderungen sind Stakeholder, Dokumente (z. B. Gesetze, Richtlinien) und andere Systeme (z. B. abzulösende Altsysteme oder Konkurrenzsysteme).
+
+-> Geeignete Ermittlungstechniken auswählen: Je nach Anforderungsquelle, Projekt­situation und Art der Anforderungen muss eine geeignete Ermittlungstechnik oder eine Kombination aus verschiedenen Ermittlungstechniken ausgewählt werden (z. B. Befragungstechnik, Kreativitätstechnik, Beobachtungstechnik, Erstellen von GUI-Prototypen).
+
+-> Anforderungen unter Einsatz der Techniken ermitteln: Aus den bestimmten Quellen mit den gewählten Ermittlungstechniken werden Anforderungen in dem für die aktuelle Situation erforderlichen Detailgrad ermittelt. 
+
+---Zusammenhang von: System, Systemkontext und irrelevanter Umgebung---
+- Systemgrenze
+	-> Trennt das System von anderen entities in dem Systemkontext
+	-> Systemgrenze ändert sich im laufe des Requirement Engineering. Bspw. könnte entschieden werden, dass 
+		eine Datenbank nun in das System integriert wird, dadurch ist die Datenbank in der Systemgrenze und nicht 
+		mehr in dem Systemkontext.
+- Kontextgrenze 
+	-> In ihr befinden sich der Systemkontext: Stakeholde, Dokumente, Umsysteme und das zu erstellende System mit seiner Systemgrenze.
+		-> In der Kontextgrenze befindet sich der, für das System relevante, Systemkontext. Alles was sich außerhalb 
+			der Kontextgrenze befindet ist irrelevant.
+	-> Analyse was zum Systemkontext gehört liefert Aufschluss welche Quellen für Anforderungen existieren.	
+	-> Kann sich wärend des Requirement Engineering ändern, evtl. gelangen andere Gesetzestexte, die vorher außerhalb der 
+		Kontextgrenze lagen, innerhalb des Systemkontexts.
+		
+---Bestimmung der Quellen von Anforderungen---
+- Neben Umsystemen und Gesetzestexte haben Stakeholder den größtenteil an Anforderungen.
+- Mögliche Stakeholder, die Anforderungen haben:  Auftraggeber, Benutzer, Mitarbeiter der Rechtsabteilung oder auch Architekten und der IT-Betrieb.
+- Durch Menge an unterschiedlichen Stakeholder gibt es meist unterschiedliche Vorstellungen an Anforderungen.
+	-> Beispiel: Auftraggeber investiert wenig Geld zur Entwicklung, dadurch ist GUI nicht ausgereift und Anwender suchen sich
+		Alternativen.
+		-> Daher ist Stakeholder Management notwendig.
+
+---Stakeholder Management---
+	-> Elementarer Bestandteil des Requirement Engineering.
+	-> Motive und Einflussnahme, der einzelnen Stakeholder, auf das Projekt bestimmen.
+	-> Jeder Stakeholder hat eigene Sichtweise und Priorität auf das zu erstellende System.
+	-> Erst müssen relevante Stakeholder identifiziert und deren Interessen und Einfluss analysiert werden.
+		-> Dann werden Stakeholder in eine Stakeholder-Priorisierungsmatrix eingtragen.
+	-> Priorisierungsmatrix:
+		-> Macht und Interesse gering: Im Auge behalten. 
+		-> Macht gering und Interesse hoch: Informieren. Informieren z. B. durch veröffentlichung von Anforderungen durch ein wiki.
+		-> Macht hoch und Interesse gering: Zufriedenstellen. Dürfen ihre Macht nicht gegen Interessen des Projekts einsetzen.
+		-> Macht und Interesse hoch: Eng einbinden.
+	-> Stakeholder-Tabelle:
+		Name: Meier, Rolle: Sachbearbeiter, Macht: Gering, Interesse: Hoch, Unterstützung des Projekts durch: Quelle für 
+			GUI-Anforderungen, Liefert benötigte Informationen: Verbesserungsforschläge.
+	-> Herstellung und Aufrechterhaltung der Koorperationsbereitschaft.
+		-> Mögliche Ursachen für unzureichende Kooperationsbereitschaft: Motivationsmangel, Unzufriedenheit mit Altsystem, 
+			Angst vor Veränderung.
+	-> Umgang mit Stakeholder:
+		Regelmäßige Statusbesprechungen: Stakeholder über den aktuellen Stand auf dem Laufenden halten, damit sich diese einbezogen fühlen.
+
+		Aus Projektbetroffenen durch Motivation Projektbeteiligte machen: Wenn Stakeholder sich durch das Projekt negativ beeinflusst fühlen, muss der Requirements Engineer das Projekt erläutern und 			die Stakeholder motivieren, aktiv mitzuwirken.
+
+		Aufmerksamkeit: Anliegen von Stakeholdern müssen stets ernst genommen werden und durch entsprechende Reaktionen wertgeschätzt werden.
+
+		Positiv eingestellte Stakeholder halten, negativ eingestellte Stakeholder überzeugen: Positiv eingestellte Stakeholder sind durch aktive Einbeziehung und regelmäßige Informationsweitergabe 			zu bestärken, negativ eingestellte Stakeholder sind durch Erläuterung und Motivation zu überzeugen.
+
+		Festlegen von Aufgaben, Verantwortungsbereichen und Weisungsbefugnissen zur Vermeidung von Missverständnissen: Eine klare Zuteilung von Aufgaben und Verantwortungen fördern die Wertschätzung 			und vermeiden Gerangel um Kompetenz.		
+	
+---Arten von Dokumenten---
+	-> 	Leitlinien, Unternehmens- oder IT-Strategien, Nachhaltigkeitsberichten 
+		und Sicherheitskonzepten, Gesetzen, Verordnungen und Dokumentation von Altsystemen um Anforderungen für ein System zu finden, das das alte System ablösen soll.
+	
+---Ermittlungstechniken---
+-Befragungstechniken
+	-> Voraussetzung: Stakeholder sind fähig Anforderungen zu nennen, Zeit für Befragung, willen zur Durchführung der Befragung.
+	-> Beispiele: Interviews, Fragebögen.
+-Kreativitätstechniken
+	-> Zur gewinnung innovativer Anforderung und geimeinsammer Systemvision durch kreativer Zusammenarbeit.
+	-> Weniger detaillierte Anforderungen.
+	-> Beispiele: Brainstorming, Perspektivwechsel.
+-Dokumentenzentrierte Techniken
+	-> Ermittlung grundlegender Anforderung durch Benutzung von Referenzen bestehender Systeme oder Dokumentationen.
+		-> Anforderungen wurden in bereits bestehenden Systemen angewendet und werden nun wiederverwendet.
+	-> Beispiele: Systemarchäologie, perspektivenbasiertes Lesen.
+-Beobachtungstechniken
+	-> Zur Gewinnung grundlegender Funktionalität durch Beobachtung und dokumentieren von Arbeitsabläufen.
+	-> Beispiele: Feldbeobachtung, Apprenticing.
+-Prototyping
+	-> Zur Gewinnung innovativer Anforderungen durch erstellung initialer Systemversionen.
+	-> Beispiele: Analoge Handskizzen, 	digitale Prototypen.
+
+---Einflussfaktoren auf die Wahl der Ermittlungstechniken---
+- Menschliche Einflussfaktoren
+	-> Beispiel: Stakeholder sieht Wissen als Selbstverständlich an. Daher eher Beobachtungstechniken als Befragungstechniken.
+- Organisatorische Einflussfaktoren 	
+	-> Beispiel: Budget ist niedrig. Daher eher keine Kreativitätstechniken sondern Techniken mit denne Basisfunktionalitat
+		und explizit geforderte Anforderungen ermittelt werden, beispielsweise Befragungstechniken. Auch die Zeitknappheit der 
+		Stakeholder Spielt eine Rolle bei der Auswahl der Technik.
+- Fachliche/Inhaltliche Einflussfaktoren
+	-> Für komplexe Systeme geeignete Technik nutzen, für weniger komplexe Systeme geeignete Techik nutzen :)
+	
+---Anforderungen unter Einsatz der Techniken Ermitteln---
+-
+

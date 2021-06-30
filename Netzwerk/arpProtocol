@@ -1,0 +1,13 @@
+-> Übersetzt IP-Adressen in MAC-Adressen.
+	-> MAC-Adressen werden für LANs verwendet.
+
+-> In der arp-Tabelle eines Computers stehen IP-Adressen die MAC-Adressen zugeordnet sind.
+	-> Sendet Computer_A ein Paket an Computer_B, kapselt Computer_A die MAC-Adresse 
+		in den Eathernet-Header, so weiß der Switch, dass das Paket an Computer_B geht.
+
+-> ARP-Request.
+	-> Computer_B steht noch nicht in der arp-Tabelle und fragt alle Computer nach
+		der MAC-Adresse von der IP des Computer_B.
+
+-> arp-Tabelle anzeigen.
+	-> mit # arp -a kann man die arp-Tabelle anzeigen lassen.

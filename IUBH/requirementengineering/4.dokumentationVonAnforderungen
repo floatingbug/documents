@@ -1,0 +1,69 @@
+-----Aktivitäten zur Dokumentation von Anforderungen-----
+- Ziel: Sicherung aktuellen Kenntnisstands.
+- Anforderungen unterstützen die Kommunikation (jeder kann Anforderungen einsehen).
+- Kommunikationsunterstützung in Form von dokumentierten Anforderungen:
+	-> Alle folgenden Aktivitäten im Softwareprozess sind von den Anforderungen Abhängig (z. B. Implementierung).
+	-> Anforderungen haben rechtliche Relevanz. Sie sind die Grundlagen für Verbindlichkeiten und Verträge.
+	-> Sehr komplexe Anforderungen.
+	-> Anforderungen müssen wärend des gesamten Lebenszyklus vorhanden sein, da andere Nutzer hinzukommen können.
+- Vier Schritte der Systematischen Dokumentation:
+	-> Bestimmung von Zweck und Zielgruppen.
+	-> Auswahl der Detailebene und Dokumentationsform.
+	-> Dokumentation der Anforderungen.
+	-> Prüfen, ob Dokumentation noch zu Zweck und Zielgruppe passt.
+- Bestimmung von Zweck und Zielgruppen
+	-> Anforderungen sollen die Kommunikation der Stakeholder in einer Zielgruppe unterstützen.
+		-> Beispiel: Ein Programmierer in der Zielgruppe A hat Fragen zu einer Anforderung und Kommuniziert
+			daher mit einem anderen Programmierer in der Zielgruppe A. Dabei wurde die Dokumentation mit 
+			UML vorgenommen.
+	-> Typische Ziele:
+		-> Anforderungen müssen geklärt oder priorisiert werden.
+		-> Anforderungen werden dem Architekt oder Entwickler übergeben.
+		-> Anforderungen als Wissensspeicher oder Referenz für Beschlüsse.
+		-> Verbindlichkeit von Aussagen und Klärung im Streitfall.
+	-> Typische Kommunikationssituationen sind unter anderem:
+		-> Diskussionen mit Fachbereich über funktionale Anforderungen,
+		-> Entscheidungsvorlage für Management zum Freigeben des Budgets oder die
+		-> Schätzung von Dauer und Umgang der Umsetzung durch Softwarearchitekten und Entwickler.
+- Auswahl der Detailebene und Dokumentationsform
+	-> Auswahl der Detailebene und Darstellungsart z. B. UML.
+	-> Vorwissen und Interessen Berücksichtigen.
+	-> Dokumentationsformen von Anforderungen sind Softwaremodelle, Prototypen, Skizzen, Tabellen und Text.
+- Dokumentation der Anforderungen
+- Prüfen ob Dokumentation noch zu Zweck und Zielgruppe passt
+
+-----Typische Elemente der Anforderungsdokumentation-----
+- Meist durch Unternehmen Vorgegebene Struktur (Dokumenten-Template).
+	-> RE hat so etwas wie eine Checkliste.
+	-> RE hat eine Hilfestellung beim Verfassen.
+	-> Erleichtert die Einarbeitung in die Dokumente.
+	-> Schnelleres Zurechtfinden in den Dokumenten.
+- Grobe Orientierung von Elementen der Anforderungsdokumente
+	-> Projektvision.
+	-> Überblicksebene.
+	-> Detailierte Anforderungen
+	-> Glossar
+- Projektvision
+	-> beschreibt Vorgaben, Ziele und Erwartungen des Auftraggebers.
+		-> Vorgaben und Anforderungen des Auftraggebers Ermitteln, Dokumentieren und Abstimmen.
+	-> Von erster Projektidee Ausgehend, Identifizierung und Festlegung von: Vorgaben, Ziele und Erwartungen des Auftraggebers.
+	-> Ausformulierung der Projektvision als Text.
+		-> Hilft dem Team als Verständnis über die Projektvision und Kommunikation mit den Stakeholdern.
+	-> Inhalt der Projektvision:
+		-> Zweck und Ziel des Projektes (Was soll mit dem Projekt erreicht werden).
+		-> Motivation für das Projekt (Gründe warum es das Projekt gibt).
+		-> Deteilebene der Anforderung (Für welche Ziehlgruppe ist das Dokument). 
+- Überblicksebene
+	-> stellt Hauptfunktionen des Systems, die technischen Schnittstellen, die Nutzer sowie die Einordnung in die Systemlandschaft 			dar.
+- Detaillierte Anforderungen
+	-> Beschreibt die Anforderungen zu jeder Systemfunktion detailliert. Zu jeder Anforderung werden alle Informationen zusammengestellt, die das Entwicklungsteam benötigt, um mit der Implementierung des Systems zu beginnen. Das schließt insbesondere alle relevanten funktionalen Anforderungen, Qualitätsanforderungen und Randbedingungen ein. Diese Anforderungen können in Form von Texten, als Aufzählungen, Tabellen, fachliche Modelle, Referenzen auf externe Dokumente und Screenshots von Prototypen
+- Glossar
+	-> Abkürzungen die innerhalb eines Projektes verwendet werden.
+	-> Spezifische Begriffe erklären, die innzerhalb des Projektes verwendet werden.
+	
+-----Dokumentationsformen-----
+- Text und Tabellen.
+- Skizzen und einfache Grafiken.
+- Modelle.
+- GUI-Prototypen.
+- Mischformen von versch. Dokumentationsformen.

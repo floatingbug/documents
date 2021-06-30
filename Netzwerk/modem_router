@@ -1,0 +1,19 @@
+---Modem---
+-> Modulator/Demodulator
+-> Im LAN werden die Daten digital (Strom aus Strom an) weitergeleitet. 
+	Um Daten in das Internet zu versenden, werden sie vom Modem in
+	Analoge Signale umgewandelt und von Analoge in Digitale, wenn 
+	sie aus dem Internet in das LAN gehen.
+
+---Router---
+-> Verbindet ein LAN mit dem Internet.
+-> Erreicht ein Paket den Router vom ISP, mit der IP des Routers im IP-Header,
+	ersetzt der Router die public-IP zur private-IP und leitet das Paket
+	an den Switch.
+	-> Ein Router beim ISP hat die IP des home-Routers vergeben und leitet 
+		die Pakete an den home-router. 
+
+---Unterschied zwischen Router und Switch---
+-> Switch erstellt Netzwerke.
+-> Router verbinden Netzwerke.
+

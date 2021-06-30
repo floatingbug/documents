@@ -1,0 +1,307 @@
+- Menschliche, organisatorische und fachliche bzw. inhaltliche Faktoren haben Einfluss auf die Wahl der geeigneten Ermittlungstechnik.
+	-> Beispiel Menschliche Einflussfaktoren: Bei schlechte kommutative Fähigkeiten ist verbales Brainstorming nicht
+		geeignet.
+	-> Beispiel für fachliche/inhaltliche Einflussfaktoren: Wenn keine Erfahrung im Fachgebiet vorhanden ist, ist apprenticing eine geeignete Ermittlungstechnik. Oder: Grobe Anforderung gesucht, detaillierte Anforderung gesucht... .
+	-> Beispiel für organisatorische Einflussfaktoren: Bei hohe örtliche Verteilung der Stakeholder ist ein Fragebogen eine gute Ermittlungstechnik.
+	
+---Kreativitätstechniken---
+- Erhebung innovativer Anforderungen oder Systemvision (wie soll das System einmal aussehen).
+- Weniger zur Ermittlung von detaillierte Anforderungen geeignet.
+- Beispiel: Perspektivenwechsels, Brainstorming, verbales Brainstorming, Workshop.
+- Perspektivwechsel
+	-> Problem aus verschiedenen Blickwinkel betrachten.
+	-> Sechs-Hut-Denken (Variante des Perspektivwechsels)
+		-> Jeder Hut stellt eine Rolle dar, die der jeweilige Stakeholder annimmt, um das Problem von einem anderen Blickwinkel zu betrachten.
+			-> Der weiße Hut steht für Objektivität und Neutralität. Der Stakeholder achtet vor allem auf Zahlen und Fakten.
+
+			-> Der rote Hut steht für eine subjektive Meinung und persönliche Empfindungen. Der Stakeholder äußert seine Gefühle, Ängste und Hoffnungen.
+
+			-> Der schwarze Hut lässt den Stakeholder objektiv, aber negativ argumentieren.
+
+			-> Der gelbe Hut lässt einen Stakeholder auch objektiv, jedoch eher positiv argumentieren.
+
+			-> Der grüne Hut stellt die Kreativität in den Vordergrund. Der Stakeholder ist darauf bedacht neue Ideen einzubringen.
+
+			-> Der blaue Hut steht für Kontrolle und Organisation des gesamten Denkprozesses. Die Person mit dem blauen Hut moderiert und koordiniert den Prozess der Ideenfindung. Auch diese Perspektive wird von unterschiedlichen Stakeholdern eingenommen und nicht nur vom Requirements Engineer, der typischerweise moderiert.
+	-> Einsatzszenarien
+
+		-> Wenn ein Gesamtüberblick über das Projekt gewonnen werden soll
+
+		-> Wenn festgefahrene Meinungen aufgebrochen werden sollen
+
+	-> Stärken
+
+		-> Umfassende Betrachtung aus den Perspektiven
+
+	-> Schwächen
+
+		-> Für begrenzte Teilnehmerzahl anwendbar
+
+		-> Problematisch bei konservativen und intro­vertierten Stakeholdern
+		
+- Verbales Brainstorming
+	-> Stakeholder äußern Ideen. Bei heterogenen Gruppen können Ideen als anstoß für neue Ideen sein.
+	-> Requirement Engineer notiert alle Ideen.
+	-> Alle Ideen werden akzeptiert, es darf keine Bewertung stattfinden.
+	-> Keine äußerung von Kritik.
+	-> Einsatzszenarien
+
+		-> Wenn innovative Anforderungen gewonnen werden sollen
+
+		-> Wenn Stakeholder heterogen zusammengesetzt sind
+
+		-> Wenn eine Vision entstehen soll
+
+	-> Stärken
+
+		-> Ermittlung innovativer Anforderungen möglich
+
+		-> Stakeholder müssen nicht vor Ort sein
+
+	-> Schwächen
+
+		-> Für maximal 8–10 Teilnehmer anwendbar
+
+		-> Problematisch bei gruppendynamischen Effekten, dominierenden Stakeholdern oder Hierarchiekonflikten	
+		
+- Schriftliches Brainstorming mit User-Stories
+	-> Schema: <<Benutzerrolle>> <<funktionale Anforderung>> <<Begründung, warum das Ziel erreicht werden soll>>
+		-> Beispiel: Als Kunde möchte ich meine Verträge online verwalten können, damit ich auch außerhalb der Geschäftszeiten Änderungen an meinen Verträgen vornehmen kann.		
+		
+		-> Einsatzszenarien
+
+			-> Wenn innovative Anforderungen gewonnen werden sollen
+
+			-> Wenn Stakeholder heterogen zusammengesetzt sind
+
+			-> Wenn negative gruppendynamische Effekte zu erwarten sind
+
+		-> Stärken
+
+			-> Ermittlung innovativer Anforderungen möglich
+
+			-> Ideen können nicht aus Versehen in der Diskussion untergehen
+
+			-> Der Requirements Engineer muss die Ideen nicht protokollieren
+
+			-> Kann negative Gruppendynamik und Hierarchiekonflikte verhindern
+
+		-> Schwächen
+
+			-> Für begrenzte Teilnehmerzahl anwendbar
+
+			-> Die Spontanität und Inspiration der eigenen Kreativität durch Ideen anderer geht verloren, wenn nur eine Iteration durchgeführt wird
+			
+- Workshop
+	-> Zusammenkunft verschiedener Interessensvertreter von Stakeholder-Gruppen.
+	-> Drei Phasen:
+		-Vorbereitung
+			-> RE definiert Ziele des Workshops.
+			-> Definition der: Zeit, Ort, Dauer, Raum... .
+			-> RE sucht und läd die Stakeholder ein und stimmt dann mit ihnen die Ziele ab.
+			-> RE vergibt Rolle des Protokollanden.
+		-Durchführung
+			-> RE Begrüßt alle Stakeholder. 
+			-> RE muss Ziele und Vorgehen erläutern.
+				-> Beispielsweise: Erläuterung des schriftlichen Brainstormings.
+				-> Regeln festlegen wie ausreden lassen.
+			-> RE Moderiert die durchführung wärend der Protokolland alle Arbeitsergebnisse protokolliert.
+			-> Abschluss mit einer Sammlung von offenen Fragen und Retrospektive des Workshops.
+		-Nachbearbeitung
+			-> RE bereitet die Arbeitsergebnisse auf.
+			-> Genehmigung der Arbeitsergebnisse durch alle beteiligten Stakeholder.
+
+		-> Einsatzszenarien
+
+			-> Zur Klärung offener Fragen
+
+			-> Ermittlung abgestimmter und geordneter Anforderungen
+
+		-> Stärken
+
+			-> Konflikte werden direkt offensichtlich
+
+			-> Abgestimmte Anforderungen
+
+		-> Schwächen
+
+			-> Gruppendynamische Effekte können auftreten
+
+			-> Räumliche Zusammenarbeit notwendig	
+
+-----Befragungstechniken-----
+- Voraussetzungen: Steakholder sind in der Lage, Anforderungen explizit zu äußern, zeit haben, willen zur Befragung.
+- Mögliche erhebung an Anforderungen: Eplizit gewünschte, innovative, grundlegende.
+- Interview
+	-> Phase 1
+		-> RE muss Fachsprache beherrschen und nutzen.
+		-> Definition Interviewziele, Auswahl und Einladung der Teilnehmern, Gestaltung der Fragen.
+		-> Offene oder geschlossene Fragen
+		-> Bei geschlossene Fragen könnte man eine gerade Anzahl als Antwrotmöglichkeiten geben, damit der Stakeholder gezwungen wird, eine Tendenz zu liefern.
+	-> Phase 2
+		-> Durchführung beginnt mit der Vorstellung.
+		-> Danken.
+		-> Interviewunabhängige Frage stellen um Eis zu brechen.
+		-> RE erläutert Ziel des Interviews.
+		-> Begin der Befragung.
+		-> Aufzeichnung durch Protokollant oder Sprachaufnahme.
+		-> RE muss Prüfen, ob er die Antworden richtig verstanden hat, daher muss er Rückmeldung geben.
+		-> RE fasst Ergebnisse zusammen, bedankt sich, äußert dem Befragten, dass er die Zusammenfassung ausgehändigt bekommt.
+	-> Phase 3
+		-> Aufbereitung des Protokolls.
+		-> Protokoll zur Bestätigung an den Befragten senden.
+		
+	-> Einsatzszenarien
+
+		-> Wenn die Anzahl der zu befragenden Stakeholder begrenzt ist
+
+		-> Wenn sehr detaillierte und unbewusste
+			Anforderungen ermittelt werden müssen
+
+	-> Stärken
+
+		-> Ermittlung detaillierter Anforderungen möglich
+
+		-> Möglichkeit der expliziten Steuerung durch den Requirements Engineer
+
+	-> Schwächen
+
+		-> Für begrenzte Teilnehmerzahl anwendbar
+
+		-> Stakeholder müssen vor Ort sein
+-Fragebogen
+	-> Große anzahl an Stakeholder abfragbar.
+	-> Einsatzszenarien
+
+		-> Wenn viele Stakeholder befragt werden müssen
+
+		-> Wenn Stakeholder räumlich nicht greifbar sind
+
+	-> Stärken
+
+		-> Befragung vieler Stakeholder möglich
+
+		-> Einfache Auswertung digitaler Fragebögen mit geschlossenen Antworten
+
+		-> Stakeholder müssen nicht vor Ort sein
+
+	-> Schwächen
+
+		-> Implizites Wissen ist schlecht erfragbar
+
+		-> Der Requirements Engineer hat keinen Einfluss auf die Befragung und kann keine Verständnisfragen klären oder selbst nachfragen
+		
+-----Beobachtungstechniken-----
+- Anforderungen sind für Stakeholder manchmal selbstverständlich und werden daher nicht geäußert. Beim Beobachten können sie dann ermittelt werden.
+- Feldbeobachtung
+	-> RE beobachtet unmittelbar die Geschäftsprozesse.
+	-> RE Ermittelt Arbeitsabläufe.
+	-> RE lässt sich gegebenenfalls Arbeitsabläufe erklären.
+	-> Verfälschung der Arbeitsabläufe durch Beobachtung der Stakeholder, dadurch verfälschung der Anforderungen.
+	-> Einsatzszenarien
+
+		-> Wenn Abläufe schwer vermittelbar sind
+
+		-> Wenn unbewusste, als selbstverständlich vorausgesetzte Anforderungen ermittelt werden sollen
+
+	-> Stärken
+
+		-> Ermittlung unbewusster Anforderungen
+
+		-> Ermittlung schwer in Worte zu fassender Anforderungen
+
+		-> Ist auch umsetzbar, wenn Stakeholder zeitlich schlecht verfügbar sind
+
+		-> Feststellung von Abweichungen in Prozessen möglich
+
+	-> Schwächen
+
+		-> Abläufe müssen beobachtbar sein
+
+		-> Der Requirements Engineer kann als Aufpasser wahrgenommen werden, was das Verhalten der Leute und damit die Anforderungen beeinflusst 		
+		
+		
+- Apprentizing
+	-> Heißt auf detsch sinngemäß "in die Lehre gehen".
+	-> RE führt Arbeitsschritte selbst aus.
+	-> RE geht bei Stakeholder in die Lehre und erlernt deren Tätigkeit.
+	-> Einsatzszenarien
+
+		-> Wenn Abläufe schwer vermittelbar sind
+
+		-> Wenn unbewusste, als selbstverständlich vorausgesetzte Anforderungen ermittelt werden sollen
+
+	-> Stärken
+
+		-> Ermittlung unbewusster Anforderungen
+
+		-> Ermittlung schwer in Worte zu fassender Anforderungen
+
+		-> „Lehrer“ statt „Beobachteter“ zu sein, fördert die Kooperationsbereitschaft der Stakeholder
+
+		-> In schwierigen Situationen kann Unwissen zeigen den Stakeholdern die Angst nehmen, dies auch zu tun
+
+	-> Schwächen
+
+	-> Nicht in sicherheitskritischem Arbeitsumfeld anwendbar
+
+	-> Menge der Stakeholder ist nicht klar begrenzt
+	
+	
+-----Prototyping-----
+-> Erlangung eines tieferen Problemverständnisses durch erstellung der Prototypen.
+	-> Aus dem Verständnis Anforderung ermitteln.
+-> Analoge, Digitale Prototypen.
+-> Wegwerfprototypen
+-> Evolutionäre/inkrementelle Prototypen.
+-> Horizontale Prototypen: Setzen eine Schicht der Softwarearchitektur um (z. B. Datenhaltungsschicht).
+-> Vertikale Prototyp/Durchstichprototyp: Setzt EINE Funktionalität über alle Softwareschichten um.
+- Handskizzen
+	-> Einsatzszenarien
+
+		-> Handskizzen zur Erstellung erster Konzepte und zur initialen Abstimmung, also in frühen Projektphasen
+
+	-> Stärken
+
+		-> schnell erstellt, benötigt kein Werkzeug
+
+		-> schnell änderbar, auch direkt in Workshop
+
+		-> technologieunabhängig
+
+	-> Schwächen
+
+		-> nur Konzepte, keine Details
+
+		-> ungeeignet für große Prototypen
+
+		-> physisch begrenzt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
