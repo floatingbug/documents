@@ -47,7 +47,20 @@ name.save((err)=>{
 	if(err){}
 	else{}
 });
-											
+
+-----mongoDB-----
+-> mongoDB speichert die Daten nich in JSON auf ein Speichermedium sondern in BSON (Binary JSON)
+- Importieren und Exportieren von Datenbank zu Datenbank
+	- JSON
+		-> mongoimport
+		-> mongoexport
+	- BSON
+		-> mongorestore
+			-> $ mongo
+		-> mongodump
+			-> $ mongodump --uri "<Atlas Cluster URI>"
+				-> Holt Daten in BSON-Format
+										
 -----Replica Sets-----
 - Mehrere MongoDB-/Datenbanksystem-/mongod-Instanzen
 	-> Jede Instanz läuft auf einem eigenen Rechner.
@@ -62,7 +75,42 @@ name.save((err)=>{
 - Clusters
 	-> Gruppe von Server zum speichern der Daten
 		-> Replica Set
-			-> Atlas Konfiguriert automatisch Replica Sets also Cluser										
+			-> Atlas Konfiguriert automatisch Replica Sets also Cluser	
+-----Commands-----									
+// Schreibt alle collections in die angegebenen Datenbank in den Ordner backup-dir.
+// Die Daten werden im BSON Format gespeichert.
+// srv ermöglicht eine sichere Verbindung.
+// Damit man die Daten Anfordern kann, müssen die Daten erst gelesen werden (alle documents in den collections).
+// Mit --forceTableScan stellt man sicher, dass auch alle Daten gelesen werden bzw. gescant werden.
+
+$ sudo mongodump --forceTableScan --uri "mongodb+srv://"Username":"Password"@"cluster uri".mongodb.net/"datenbanknamen"" --out "backup-dir"											
+											
+// Schreiben der angegebenen collection in die angegebene Datei 
+// Die Daten werden im JSON Format gespeichert.
+											
+$ sudo mongoexport --forceTableScan --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq.mongodb.net/sample_supplies" --collection=sales --out=sales.json
+											
+// Neue collection Anlegen.
+// Format ist BSON
+// Am Ende des Strings muss der Ordner mit den Datei im BSON Format angegeben werden (Dateien enthalten die collections).
+// Mit drop werden die collections in der Datenbank sample_supplies vorher gelöscht.
+
+$ sudo mongorestore --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq.mongodb.net/sample_supplies" --drop "OrdnerMitDerBSONdatei"									
+
+// Wie mongorestore nur mit dem JSON Format
+$ sudo mongoimport --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq.mongodb.net/sample_supplies" --drop backup-dir/
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
 											
 											
 											
