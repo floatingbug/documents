@@ -1,3 +1,11 @@
+-----Database Zugriff-----
+- Datenbanksystem unter informatik/datenbanksysteme
+- Der standart Driver ist mongoDB
+	-> der Driver kommuniziert mit dem mongoDB/mongod (mongod ist der mongoDB Prozess also der Datenbankserver)
+	-> mongoose setzt auf den Driver mongoDB auf 
+- mongo
+	-> Ist die shell mit der man sich mit dem DBMS/mongoDB/mongod verbinden kann.
+		-> Standartmäßig verbindet sich die shell automatisch mit dem localhost und dem port von mongod
 -----MongoDB Konsole-----
 -> Datenbanken anzeigen: show dbs
 -> Anzeigen in welcher Datenbank man sich befindet: db
@@ -40,9 +48,21 @@ name.save((err)=>{
 	else{}
 });
 											
-											
-											
-											
+-----Replica Sets-----
+- Mehrere MongoDB-/Datenbanksystem-/mongod-Instanzen
+	-> Jede Instanz läuft auf einem eigenen Rechner.
+	-> Jede Instanz speichert und pflegt die selben Daten											
+	-> Fällt ein Server in dem Replica Set aus, gibt es noch andere, auf denen ein mongod 
+		Prozess läuft.
+	-> Nach jeder Änderung an einem document oder einer collection werden diese änderung 
+		an allen Server/Rechner gleichermaßen vorgenommen.										
+-----Atlas-----
+- Datenbank in der Clout (Databas as a Service, DaaS)
+- DBMS ist MongoDB
+- Clusters
+	-> Gruppe von Server zum speichern der Daten
+		-> Replica Set
+			-> Atlas Konfiguriert automatisch Replica Sets also Cluser										
 											
 											
 											

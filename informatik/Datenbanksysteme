@@ -1,0 +1,29 @@
+-Datenbank besteht aus zwei Teilen: Datenbankmanagementsystem DBMS und die Datenbank
+-> Datenbankmanagementsystem DBMS
+	-> Programme zum Schreiben und Lesen aus einer Datenbank
+	-> Erstellt die Datenbanken
+	-> Z.B. MySQL, Oracle, MongoDB... .
+
+- Funktionsweise:
+	-> Applikation -> Driver -> DBMS -> Datenbank
+	-> Mit Datenbanksprachen wie SQL kommuniziert man mit dem DBMS, das dann die Operationen ausführt.
+		-> Damit die Applikation mit dem DBMS kommunizieren kann, benötigt es einen Driver.
+	-> Dr Driver wird, in Form von Klassen oder Modulen, in die Applikatin integriert und mit dessen 
+		Hilfe wird die Verbindung zum DBMS aufgebaut. Das DBMS ist ein eigenständiges Programm.
+		
+- Open Database Connectivity (ODBC, offene Datenbank Verbindungsfähigkeit)
+	-> Datenbankschnittstelle. 
+		-> Liegt zwischen der Applikation und der Datenbank und wird in die Applikation direkt eingebunden.
+		-> Mit ODBC aber auch JDBC basierte Treiber, kann man mit unterschiedliche DBMS kommunizieren.
+		-> Damit ODBC mit DBMS und DBMS mit ODBC kommuniziren kann, müssen die ODBC-Queries in DBMS-Queries, 
+			und von DBMS in ODBC Befehle konvertiert werden.
+			-> Die Konvertierung übernimmt der driver.
+				-> das Protokoll ODBC oder auch JDBC sind in dem Driver implementiert.
+					-> Driver können bspw. in Form von Klassen oder Modulen importiert werden. 
+	-> Verwendete Datenbanksprache ist SQL.
+	-> Details für den Zugriff auf eine Datenbank wird unter einem Namen abgelegt.
+		Mit dem Namen kann dann eine Verbindung zur Datenbank hergestellt werden.
+		-> Details sind: Name des Datenbankservers (IP-Adresse), Port für den Netzwerkzugriff auf die Datenbank, 
+			Datenbankname (Es können Mehrere Datenbanken vorhanden sein), 
+			Benutzername des Datenbankbenutzers und dessen Passwort. 
+	
