@@ -10,6 +10,7 @@
 -> Datenbanken anzeigen: show dbs
 -> Anzeigen in welcher Datenbank man sich befindet: db
 -> In andere Datenbank wechseln: use <name der Datenbank>
+	-> Ist man in eine Datenbank gewechselt, zeigt das db-Objekt auf diese.
 -> Collections in Datenbank anzeigen: show collections
 -> records in Collection anzeigen: db.“name der collection“.find();
 -> Collection löschen: db.collection.drop()
@@ -72,10 +73,10 @@ name.save((err)=>{
 -----Atlas-----
 - Datenbank in der Clout (Databas as a Service, DaaS)
 - DBMS ist MongoDB
-- Clusters
-	-> Gruppe von Server zum speichern der Daten
-		-> Replica Set
-			-> Atlas Konfiguriert automatisch Replica Sets also Cluser	
+- Atlas Cluster
+	-> Ein Set an Komfigurationen z.B. kann konfiguriert werden, dass Replica Sets
+		verwendet werden sollen.	
+
 -----Commands-----									
 // Schreibt alle collections in die angegebenen Datenbank in den Ordner backup-dir.
 // Die Daten werden im BSON Format gespeichert.
@@ -100,9 +101,17 @@ $ sudo mongorestore --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq
 // Wie mongorestore nur mit dem JSON Format
 $ sudo mongoimport --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq.mongodb.net/sample_supplies" --drop backup-dir/
 											
+- Find command
+
+// Ist value eine Zahl, werden die Anführungszeichen weggelassen.
+
+$ db."collectionname".find({"name": "value"})
+										
+- cursor ist ein Objekt das von dem find()-Kommando zurückgegeben wird.
+	-> cursor ist ein Pointer der auf die Adressen im Speicher zeigt auf denen die documents gespeichert sind.
 											
-											
-											
+- it
+	-> mit it kann man über den cursor iterieren											
 											
 											
 											
