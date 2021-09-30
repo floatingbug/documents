@@ -1,64 +1,79 @@
 /*	
-	-Promise ist ein Objekt, das zurückgegeben wird.
-		-> An welches callback-Funktionen angehängt werden können.
-	-Anstatt callbacks an Funktionen zu übergeben, werden callbacks an ein Promise-Objekt angehängt.
-		-> Die Funktion then() des zurückgegebenen Promise-Objekts wird Aufgerufen, wenn im Objekt
-			entweder result oder reject aufgerufen wurden. Der callback Funktion innerhalb von then() 
-			wird das übergeben was reject oder result zurückgegeben haben. Dann wird then() in die
-			callback-queue gelegt.
+	- Promise ist ein Objekt. Wenn eine Funktion eine asynchrone Operation durchführt, wird diese nicht
+		im stack des Interpreters ausgeführt, sondern in einem anderen stack/thread z.B. libuv-workerthread.
+		Nach der Operation, erhält das Promise-Objekt das Resultat.
+	
+	- States in dem ein Promise-Objekt sein kann
+		- Pending
+			-> Das eventuelle Resultat ist noch nicht vorhanden
+		- Fulfilled
+			-> Asynchrone Operation ist abgeschlossen und das Promise-Objekt hat das Resultat erhalten.
+		- Rejected
+			-> Die Asynchrone Operation ist fehlgeschlagen und das Promise-Objekt erhält als Resultat einen Fehler.
 */
 
-// Beispiel: Die Funktion createAudioFileAsync erstellt eine Audio-Datei. Wurde die Datei erstellt, übergibt sie 
-// einer der Beiden Callback-Funktionen das Ergebnis, aber erst, wenn die Datei auch erstellt wurde oder das 
-// Erstellen fehlgeschlagen wurde.
-function successCallback(result) {
-  console.log("Audio-Datei bereit unter URL: " + result);
-}
-
-function failureCallback(error) {
-  console.error("Fehlerhafte Generierung der Audio-Datei: " + error);
-}
-
-createAudioFileAsync(audioSettings, successCallback, failureCallback);
-
-// Man könnte createAudioFileAsync so umschreiben, dass es ein Promise-Objekt zurückgibt.
-// In der ersten Zeile wird createAudioFileAsync ausgeführt und zwas Asynchron (nicht auf dem Stack sondern z.B. von
-// einer C++ Funktion.
-// Nach Beendigung der Operation, gibt createAudioFileAsync das Promise-Objekt zurück und die Funktion then() des Promise-
-// Objekts wird aufgerufen. einer der beiden Callback-Funktionen wird dann das Ergebnis als Argument übergeben und
-// auf die callback-queue gelegt. 
-const promise = createAudioFileAsync(audioSettings);
-promise.then(successCallback, failureCallback);
-
-// Kurzschreibweise
-createAudioFileAsync(audioSettings).then(successCallback, failureCallback)
-
-// Mehrere Promises nacheinander Aufrufen (möglich da then() immer ein Promise zurückgibt)
-const promise = doSomething();
-const promise2 = promise.then(successCallback, failureCallback);
-
-
-// Kurzschreibweise
-const promise2 = doSomething().then(successCallback, failureCallback);
-
-// Allgemeinse Beispiel
-function cleaningRoom(){
+// Beispiel 1:
+function getUserID(id){
 	return new Promise((resolve, reject)=>{
-  	if(true){
-    	resolve("ergebnis der Asynchronen Operation.")
-    }
-    else{
-    	reject("Asynchrone Operation fehlgeschlagen.")
-    }
-  })
+		//asynchrone Operation
+		
+		resolve('Ergebnis der asynchronen Operation')
+	})
 }
 
-// Wurde resolve oder reject aufgerufen, wird das Promiseobjekt zurückgegeben.
-// Wurde reject aufgerufen, wird statt then() catch() ausgeführt und dessen callback als Argument
-// übergeben, was reject() zurückgegeben hat.
-promise = cleaningRoom()
-promise.then((result)=>{
-	console.log(result)
-}).catch((result)=>{
-	console.log("Asynchrone Operation fehlgeschlagen: " + result)
+// Wird getUserID ausgefürht, gibt die Funktion ein Promise-Objekt zurück, das in ergebnis gespeichert wird.
+// Das Promise-Objekt (ergebnis) befindet sich im Zustand Pending, wärend die asynchrone Operation ausgeführt wird.
+// Wurde resolve aufgerufen, ist der Zustand Fulfilled und then wird das Ergebnis übergeben.
+// Wurde reject aufgerufen, ist der Zustand Rejected und then wird der Fehler übergeben.
+let ergebnis = getUserID(25)
+
+ergebnis.then((result)=>{
+	
 })
+
+// Kurzschreibweise
+// Das zurückgegebene Promise-Objekt wird nicht zwischengespeichert.
+// then ist eine Funktion, die jedes Promis-Objekt verfügt und erst aufgerufen wird,
+// wenn resolv oder reject aufgerufen wurde.
+getUserID(35).then(()=>{
+
+})
+
+
+
+
+// Beispiel 2:
+// Das Promise-Object p befindet sich im Zustand Pending bis resolve oder reject aufgerufen wurden.
+
+let p = new Promise((resolve, reject)=>{
+	//asynchrone Operation stehen hier
+	
+	//das Ergebnis wird im Promise-Objekt gespeichert
+	resolve('Ergebnis der asynchronen Operation')
+	
+	//der Fehler wird im Promise-Objekt gespeichert
+	reject('Fehlerbeschreibung der asynchronen Operation')
+})
+
+
+// then wartet bis das Promise-Objekt (p) einen Wert bekommen hat (entweder Ergebnis oder Fehler).
+// Dem Promise-Objekt wird der Wert durch das Aufrufen der Funktion resolve oder reject hinzugefügt.
+// Dann übergibt then das Ergebnis an einer Callback-Funktion.
+// then ist eine Funktion die in jedem Promise-Objekt vorhanden ist und nur aufgerufen wird,
+// wenn resolve oder reject, des Promise-Objekts, aufgerufen wurde. 
+p.then((Ergebnis)=>{
+	console.log(Ergebnis)
+}).catch((Fehler)=>{
+	console.log(Fehler)
+}).finally(()=>{
+	//optionale opperation die immer ausgeführt wird.
+})
+
+
+
+
+
+
+
+
+

@@ -1,49 +1,71 @@
-// Jede async-function gibt ein Promise-Objekt zurück, wenn die Funktion abgeschlossen ist.
-// Anschließend hat man auf die then()-function des Promise-Objects Zugriff.
+/*
+	- Funktionen die mit async deklariert werden, können Promise-Objekte zurück liefern.
+	- Innerhalb einer mit async deklarierten Funktion können Funktionen aufgerufen werden,
+		die ein Promise zurück liefern.
+		-> Wenn die Funktionen mit await deklariert werden, wird solange gewartet, bis der
+			zurück gelieferte Promise entweder den Status Fulfilled oder Rejected ist.
+*/
 
+// asyncFunction liefert ein Promise zurück.
+// der Zustand des Promise-Objekts (ergebnis) kann in dem Zustand Pending sein, auch wenn
+// then des Promise-Objekts p aufgerufen wird.
+// Da createFileAsync mit async deklariert wurde, kann die Funktion ein Promise zurück liefern.
 async function createFileAsync(){
-	// asynchroner code
+	let ergebnis = asyncFunction()
 	
-	return "Das ist ein String"
+	return ergebnis
 }
 
-createFileAsync().then((resolve)=>{
-	console.log(resolve)
+let p = createFileAsync();
+
+p.then((e)=>{
+	console.log(e)
 })
 
-// Beispiel
+// Kurzschreibweise
+createFileAsync().then((e)=>{
+	console.log(e)
+})
 
-function a(){
-	return new Promise((resolve, reject)=>{
-		operationSuccess = false;
-		
-		if(true){
-			operationSuccess = true;
-			resolve(operationSuccess)
-		}
-	})
-}
 
-function b(argument1){
-	return new Promise((resolve, reject)=>{
-		
-		if(argument1 == true){
-			resolve(true)
-		}
-	})
-}
-
-// Durch await wird solange gewartet, bis das Promise-Objekt zurückgegeben wurde.
-// Erst dann werden die nachfolgenden Zeilen ausgeführt.
-
+// Damit ergebnis nicht im Zustand Pending ist, kann mit await darauf 
+// gewartet werden, bis ergebnis den Zustand Fulfilled hat und
+// dann erst das Promise-Objekt ergebnis zurückgegeben wird.
+// Solange asyncFunction ausgeführt wird, ist der stack/thread frei.
 async function createFileAsync(){
+	let ergebnis = await asyncFunction()
 	
-	let var_a = await a()
-	console.log("erstes Promise-Objekt wurde zurückgegeben")
-	
-	let var_b = await b(var_a)
-	console.log("zweites Promise-Objekt wurde zurückgegeben")
+	return ergebnis
 }
+
+createFileAsync().then((e)=>{
+	console.log(e)
+})
+
+
+// Problem: befinden sich mehrere Funktionen mit await in einer async Funktion,
+// werden diese alle nacheinander abgearbeitet.
+// Lösung: Alle Promise-Objekte (ergebnis_1, ergebnis_2, ergebnis_3) gleichzeitig ausführen.
+async function createFileAsync(){
+	let ergebnis_1 = await asyncFunction_1()
+	let ergebnis_2 = await asyncFunction_2()
+	let ergebnis_3 = await asyncFunction_3()
+	
+	let ergebnis = await Promise.all([ergebnis_1, ergebnis_2, ergebnis_3])
+	
+	return ergebnis
+}
+
+createFileAsync().then((e)=>{
+	console.log(e)
+})
+
+
+
+
+
+
+
 
 
 

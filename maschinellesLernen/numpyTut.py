@@ -8,17 +8,15 @@ a = np.array([1,2,3])
 
 #Zwei-Dimensionales-Array bzw. Matrix.
 #In dem Array befinden sich 4 Arrays.
-#Jedes Array kann mit einem Index angesprogen werden,
+#Jedes Array kann mit einem Index angesprochen werden,
 #z.B. das dritte Array, zweites Element mit: m[2,1]
 m = np.array([[1,4], [3,2], [7,8], [9,6]])
 
 
-#Vor dem Doppelpunkt in [:,0] steht nichts, dass 
-#bedeutet dass das erste Array ausgewählt wird.
-#nach dem Doppelpunkt steht nichts, was bedeutet,
-#dass alle Arrays von 0 bis Ende nacheinander 
-#ausgewählt werden. Nach dem Komma steht, welches
-#Element ausgewählt wird. 
-plt.plot(m[:,0], m[:,1], "go")
+a = np.array([[1,2,3,4,5], [6,7,8,9,10]])
 
-
+# mit 0 wird das 1. array ausgewählt. 
+# mit 2 wird das 3. Element ausgewählt (inklusive dem 3. Element).
+# mit 4 wird bis zum 5. Element ausgewählt (exklusive dem 5. Element).
+# in b wird das 3. und 4. Element gespeichert. 
+b=a[0,2:4]

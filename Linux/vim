@@ -43,7 +43,9 @@
 -> Optionen anzeigen lassen: m
 -> Datei in neuem tab anzeigen: t
 
-
+--Visual Mode--
+-> Mit der taste (v) geht geht man in den visual mode.
+-> Mit (V) markiert man immer ganze Zeilen.
 
 
 
