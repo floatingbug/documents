@@ -1,7 +1,7 @@
 -----Database Zugriff-----
 - Datenbanksystem unter informatik/datenbanksysteme
 - Der standart Driver ist mongoDB
-	-> der Driver kommuniziert mit dem mongoDB/mongod (mongod ist der mongoDB Prozess also der Datenbankserver)
+	-> der Driver kommuniziert mit dem mongoDB/mongod (mongod ist der mongoDB Prozess also der Datenbankserver/DBMS)
 	-> mongoose setzt auf den Driver mongoDB auf 
 - mongo
 	-> Ist die shell mit der man sich mit dem DBMS/mongoDB/mongod verbinden kann.
@@ -75,15 +75,26 @@ name.save((err)=>{
 - Clusters
 	-> Gruppe von Server zum speichern der Daten
 		-> Replica Set
-			-> Atlas Konfiguriert automatisch Replica Sets also Cluser	
+			-> Atlas Konfiguriert automatisch Replica Sets auf jeden einzelnen Server des Clusters
 -----Commands-----									
+- Es gibt 2 Befehle um Daten in JSON zu im- und exportieren.
+	-> mongoimport
+	-> mongoexport
+		-> $ mongoexport --uri "<Atlas Cluster URI>"
+			-> Weitere Optionen:
+				-> --collection=<collection name>
+				-> --out=<filename>.json
+- Es gibt 2 befehle um Daten in BSON zu im- und exportieren.
+	-> mongorestore
+	-> mongodump (exportieren)
+		-> $ mongodump --uri "<Atlas Cluster URI>"
 // Schreibt alle collections in die angegebenen Datenbank in den Ordner backup-dir.
+
 // Die Daten werden im BSON Format gespeichert.
 // srv ermöglicht eine sichere Verbindung.
 // Damit man die Daten Anfordern kann, müssen die Daten erst gelesen werden (alle documents in den collections).
 // Mit --forceTableScan stellt man sicher, dass auch alle Daten gelesen werden bzw. gescant werden.
-
-$ sudo mongodump --forceTableScan --uri "mongodb+srv://"Username":"Password"@"cluster uri".mongodb.net/"datenbanknamen"" --out "backup-dir"											
+$ sudo mongodump --forceTableScan --uri "mongodb+srv://"Username":"Password"@"cluster uri".mongodb.net/"datenbanknamen"" --out=backup-dir											
 											
 // Schreiben der angegebenen collection in die angegebene Datei 
 // Die Daten werden im JSON Format gespeichert.
@@ -99,8 +110,15 @@ $ sudo mongorestore --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq
 
 // Wie mongorestore nur mit dem JSON Format
 $ sudo mongoimport --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq.mongodb.net/sample_supplies" --drop backup-dir/
+
+-----Queries-----
+// Nach bestimmten documents in der collection suchen
+db.collectionname.find({"name": "name"})
+	// find gibt ein courser-pointer zurück, der auf ein object zeigt, das alle documents speichert.
+	// Der courser zeigt immer auf 10 documents des objects, um die nächsten anzuzeigen muss man it in dem Terminal eingeben (mit it iteriert man durch das object).
 											
-											
+// Anzahl von documents anzeigen
+db.collectionname.find(query).count()											
 											
 											
 											

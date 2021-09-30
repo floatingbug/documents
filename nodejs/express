@@ -7,7 +7,8 @@
 	-> Wird bei jedem Request ausgeführt.
 
 -> Beispiel 2: app.post('/api/sayHello', upload.array(), (req, res)=>{...});
-	-> Wird nur beim Aufruf der angegebenen Ressource aufgerufen.
+	-> upload.array() ist hier die middleware.
+	-> Wird nur beim Aufruf der angegebenen Ressource (/api/sayHello) aufgerufen.
 
 -> Ausführung der Beiden Funktionen bei einem Request:
 	[query]->[expressInit]->[Url Encoded]->[Upload Array]->[Anonym Function]
@@ -31,7 +32,7 @@ app.use(consoleWriter);
 	-> Zugriff auf einer Variable eines Modules von einem anderem Module aus mit: app.set("var1", "module1.var2");
 		-> var1 ist dann eine Variable, die von jedem Modul mit app.get("var1") erreichbar ist. Ihr wird der Wert der 
 			Variable aus dem anderen Module (module1) zugewiesen.
--> process ist eine Funktion mit der man auf Systemvariablen zugreiffen kann Bsp.: process.env.PORT 
+-> In dem Objekt env befinden sich Systemvariablen bsp.: process.env.PORT 
 	-> app.set("port", process.env.PORT || 8000);
 		app.listen(app.get('port'), ()=>{
 			console.log("server listen on port: " app.get('port');

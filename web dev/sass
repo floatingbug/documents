@@ -1,0 +1,8 @@
+-> sass-code wird in .scss-Dateien geschrieben.
+-> Der css-präprozessor, von ruby, wandelt den sass-code in css-code um und speichert diesen in eine .css-Datei.
+	-> Dafür muss der css-präprozessor im Terminal laufen, der bei jeder änderung (abspeicherung der .scss-Datei) in der .scss-Datei, css-code
+		generiert und diesen in die .css-Datei parset.
+-> Man benötigt den ruby-package-manager gem um sass-listen zu installieren (sudo gem install sass-listen) und
+	ruby-listen (sudo apt install ruby-listen).
+-> Anwendungsbeispiel:
+	sass --watch "path/to/file.scss":"path/to/file.css
