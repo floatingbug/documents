@@ -16,8 +16,14 @@ commit:
 -> commit ist die speicherung des Workspaces in das Repository (.git) als neue version.
 
 HEAD:
--> HEAD zeigt immer auf den aktuellen branch, z.B. master
--> cat .git/HEAD //Ausgabe: refs/heads/master
+-> Ist eine Referenz auf den zu letzt gemachten commit im aktuellen branch.
+	-> HEAD~1 Zeigt auf den 2. commit, HEAD~2 auf den 3. usw.
+		-> Beispiel: Unterschied zwischen aktuellen commit und dritten commit anzeigen lassen:
+			$ git difftool HEAD HEAD~2
+
+log:
+-> Zeigt alle commits an
+	-> $ git log 
 
 Neues Repository erstellen:
 → in Ordern /test navigieren in welchem ein Repository erstellt werden soll.
