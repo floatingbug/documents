@@ -1,0 +1,16 @@
+- Information alle Installierbaren Pakete, die in den repositories im Netz verfügbar sind,  sind in .db Dateien unter /var/lib/pcman/ gespeichert.
+    -> Es sind Datenbank-Dateien die von Pacman verwaltet werden.
+    -> Aktualisierung dieser lokalen Datenbank:
+
+        $ sudo pacman -Sy
+
+    -> .sig Dateien sind nur für inoffizielle Repos erforderlich und vorhanden (Textdatei)
+
+- Zusätzliche repositories hinzufügen durch anhängen in der Datei unter /etc/pacman.conf
+    -> Beispiel:
+        Server = https://arch.alerque.com/$arch
+
+- Lokale Paketdatenbank mit Repository synchronisieren (ist das Paket noch nicht in der Paketdatenbank aufgeführt,
+    wird es heruntergeladen und installiert.
+
+    $ sudo pacman -S <packagename>
