@@ -1,0 +1,18 @@
+- Drei Verschlüsselungen:
+    -> Symmetrische: Verwendet einen Schlüssel.
+    -> Asymmetrische: Verwendet zwei Schlüssel.
+    -> Hybrid: Kombiniert beide Verfahren.
+
+- Symmetrische Verschlüsselung
+    -> Sender und Empfänger besitzen den selben Schlüssel zum Ver- und Entschlüsseln.
+
+- Asymmetrische Verschlüsselung
+    -> Sender verschlüsselt mit einem public-key (öffentlicher Schlüssel) die Nachricht.
+    -> Der Empfänger kann mit seinem private-key (privater Schlüssel) die Nachricht Entschlüsseln.
+
+- Hybrid
+    -> Sender Verschlüsselt die Nachricht mit einem session-key.
+    -> session-key wird mit dem public-key verschlüsselt.
+    -> Der verschlüsselte session-key wird an die Nachricht angehängt.
+    -> Der Empfänger Entschlüsselt den session-key mit dem private-key.
+    -> Der Empfänger Entschlüsselt die Nachricht mit dem session-key.

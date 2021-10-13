@@ -1,2 +1,14 @@
--> Fingerprint: ist ein Identifizierer für ein Public-Key
--> Binding: Verbindung zwischen einer Person oder Organisation und dem Key/Schlüssel
+- Für den Austausch von Daten kann jeder public-keys zur Verfügung stellen.
+    -> Damit man sicher gehen kann, dass der public-key auch von der angegebenen Person stammt,
+        muss man die Authentizität (Echtheit bzw. wirklich vom Urheber) des Schlüssels prüfen können.
+
+- Die Echtheit des public-key kann von einer Instanz durch ein digitales-Zertifikat (sign) bestätigt werden.
+    -> Bei Public-Key-Infrastrukturen ist dies eine Zertifizierungsstelle;
+        im Web of Trust hingegen übernehmen alle Teilnehmer diese Funktion.
+
+- Im WOT vertraut man darauf, dass die von anderen user erstellten Zertifikate für ein public-key
+    korrekt ist.
+    -> Die Zertifikate sind fingerprints.
+
+- Funktionsprinzip:
+    -> Der Sender berechnet zu seinem public-key, mit seinem private-key, einen Wert, der

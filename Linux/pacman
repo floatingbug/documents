@@ -1,3 +1,7 @@
+- Bei jedem Download eines package hängt der sender (Repository) eine verschlüsselte Signatur
+    an das package.
+    -> pacman entschlüsselt die Signatur und prüft ob diese korrekt ist (vergliche Informatik/PNG).
+
 - Information alle Installierbaren Pakete, die in den repositories im Netz verfügbar sind,  sind in .db Dateien unter /var/lib/pcman/ gespeichert.
     -> Es sind Datenbank-Dateien die von Pacman verwaltet werden.
     -> Aktualisierung dieser lokalen Datenbank:
@@ -6,9 +10,30 @@
 
     -> .sig Dateien sind nur für inoffizielle Repos erforderlich und vorhanden (Textdatei)
 
-- Zusätzliche repositories hinzufügen durch anhängen in der Datei unter /etc/pacman.conf
+- Zusätzliche unofficial repositories hinzufügen durch anhängen in der Datei unter /etc/pacman.conf
     -> Beispiel:
-        Server = https://arch.alerque.com/$arch
+
+            Server = https://arch.alerque.com/$arch
+
+    -> Damit der public key, zum entschlüsseln der Signatur für die packages aus dem unofficial repository,
+        zur verfügung steht, muss dieser erst pacman hinzugefügt werden.
+        -> Hinzufügen des public keys:
+
+            wenn der Key auf einem Keyserver liegt:
+
+            # pacman-key --recv-keys keyid
+
+            oder der key als Datei vorliegt:
+
+            # pacman-key --add /path/to/downloaded/keyfile
+
+    -> Den key fingerprinten und mit der Signatur/fingerprint vom Sender/repository vergleichen:
+
+            $ pacman-key --finger keyid
+
+    -> Den key signieren:
+
+            # pacman-key --lsign-key keyid
 
 - Lokale Paketdatenbank mit Repository synchronisieren (ist das Paket noch nicht in der Paketdatenbank aufgeführt,
     wird es heruntergeladen und installiert.
