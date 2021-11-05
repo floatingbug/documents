@@ -1,0 +1,8 @@
+- Funktionale Programmierung.
+    -> Funktionen werden als Parameter oder Rückgabewerte anderer Funktionen übergeben:
+
+        funktion_a(funktion_b){
+            return funktion_c;
+        }
+
+        -> Die Funktion funktione_a nennt man auch "Funktionen höherer Ordnung"
