@@ -12,9 +12,10 @@
 --absolute
 -> Das Element richtet sich relativ zum Elternelement hin aus, wenn
     das Elternelement nicht static ist, also der Standart.
--> Das Element nimmt nicht mehr die komplette Zeile ein.
--> Das Element berücksichtigt nicht die anderen Elemente.
 -> Das Element befindet sich nicht mehr im document-flow.
+    -> Dadurch berücksichtigen andere Elemente nicht mehr das
+        Element und nehmen den Platz ein, indem das Element vor
+        absolute war.
 
 --relative
 -> Element richtet sich relativ zur Position aus, bei der es selber ist.
@@ -22,7 +23,6 @@
     bleiben die anderen Elemente an der Selben stelle. Der Grund ist,
     dass sich das verschobene Element eig. noch an der selben stelle
     befindet, es wird nur an einer anderen Stelle dargestellt.
--> Element befindet sich nicht mehr im document-flow.
 
 --fixed
 -> Richtet sich immer zum html-document hin aus.
@@ -48,6 +48,38 @@
 -> floated man ein Element bspw. nach links (float: left;), erscheint es am 
 	linken, oberen Rand des Elternelementes und der Inhalt des Elternelementes
 	fließt um das gefloatede Element herum.
+
+--flex
+-> apply display: flex; allways in the parent container.
+    -> child-elements werden zu flex-items
+- justify-content richtet die Elemente horizontal aus.
+- align-items richtet die Elemente Vertikal aus.
+
+- justify-content
+    -> justify heißt justieren oder ausrichten.
+    -> justify-content: center;
+        -> Richtet alle child-elements zur Mitte hin haus.
+    -> justify-content: space-between;
+        -> Alle elemente haben einen gleichen maximalen Abstand zueinander.
+    -> Es existieren noch weiter Einstellungen für justify-content.
+
+- align-items
+    -> align-items: stretch;
+        -> Wenn ein Element höher ist als die anderen, nehmen die anderen automatisch die
+            gleiche Höhe an.
+            -> Ist der standard Wert.
+    -> align-items: center;
+        -> Wenn ein Element höher ist als die anderen, behalten die anderen ihre eingestellten
+            Werte.
+            -> Die Elemente Zentrieren sich vertikal zum größten Element.
+    -> Es existieren noch weitere Einstellungen für align-items.
+
+- flex-direction
+    -> flex-direction: row;
+        -> Elemente befinden sich alle in einer Zeile.
+    -> flex-direction: column;
+        -> Jedes Element befindet sich auf einer eigenen Zeile.
+    -> Es existieren noch weitere Einstellungen für flex-direction.
 
 -----margin-----
 --margin: 0 auto

@@ -1,8 +1,43 @@
-- Funktionale Programmierung.
-    -> Funktionen werden als Parameter oder Rückgabewerte anderer Funktionen übergeben:
+- Es gibt zwei übergeordnete Paradigmen-Gruppen:
+    -> Ipmerative Programmierung.
+    -> Deklarative Programmierung.
 
-        funktion_a(funktion_b){
-            return funktion_c;
-        }
+- Imperative Programmierung
+    -> Bei der imperativen Programmierung gibt man dem Rechner vor WIE etwas zu tun ist.
+        -> Jeder einzelne Anweisung wird nacheinander programmiert, sodass man erkennen kann
+            WIE man zum Ergebnis gelangt.
+            -> Beispiel:
+                array = [1,2,3,4]
+                for(i = 1; i < array.length; i++){
+                    print(array[i];
+                }
 
-        -> Die Funktion funktione_a nennt man auch "Funktionen höherer Ordnung"
+    -> Untergeordnete Programmierparadigmen sind:
+        -> Objektorientierte Programmierung.
+        -> Strukturierte Programmierung.
+        -> Prozedurale Programmierung.
+            -> Sequenzielle Abfolge von Befehlen.
+            -> Teile die öfter als einmal verwendet werden, werden in Funktionen ausgelagert.
+                -> Funktionen werden als Prozeduren bezeichnet.
+        -> Modulare Programmierung.
+
+- Deklarative Programmierung
+    -> Bei der deklarativen Programmierung gibt man dem Rechner vor WAS zu tun ist.
+        -> Es wird nicht programmiert wie man zum Ergebnis gelang, sondern WAS für ein ergebnis man möchte.
+    -> Es gibt keine Seitenefekte (Seitenefekt: beim Aufruf einer Funktion wird etwas verändert z.B.: Variable
+        oder Datenbank).
+        -> Jede Eingabe bei einer Funktion hat auch immer genau eine Ausgabe.
+            -> z.B. wird f(x)=x² immer 25 ausgeben wenn man 5 eingibt.
+                -> Jede Funktion in der funktionale Programmierung hat für jede Eingabe genau eine Ausgab.
+                    Die Ausgabe hängt niemals davon ab, in welchem Zustand sich das Programm befindet.
+                -> Eine Funktion ist nie von einem Zustand abhängig.
+                    -> Bei der Ausführung von funktionalen code findet keine überprüfung von Zuständen ab.
+                        Würde eine überprüfung stattfinden, würde die Ausgabe einer Funktion vom Zustand abhängen.
+            -> Beispiel:
+                array = [3,1,4,2]
+                print(sorted(array))
+                >>> [1, 2, 3, 4]
+
+                -> Einer Funktion (sorted) wird ein array übergeben. Die Funktion sortiert das arra und
+                    gibt es zurück. Auserdem gab es keine Seitenefekte, da das übergebene array
+                    nicht verändert wurde.
