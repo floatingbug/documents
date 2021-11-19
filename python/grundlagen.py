@@ -14,6 +14,9 @@
 #Variablen
 #**************
 
+#Alle Variablen in python sind Objekte.
+#In den Variablen werden die Referenzen zu den Objekten gespeichert.
+
 #integer
 int_variable = 1000
 
@@ -31,6 +34,25 @@ string_mit_mehreren_zeilen = """
     mit mehreren
     zeilen.
 """
+#In a wird die Referenz zum Objekt mit dem Wert 1 gespeichert.
+#Dann wird ein neues Objekt mit dem Wert 2 erstellt und die Referenz in a gespeichert.
+a = 1
+a = 2
+
+#Wenn eine Variable (a) einem Parameter einer Funktion übergeben wird (para_a),
+#wird immer eine neue Referenz erzeugt die auf die übergebene Variable bzw. Objekt verweißt
+#(sowohl a als auch para_a verweißen auf das selbe Objekt).
+#Wird mit der neuen Referenz ein Wert zugewießen (para_a = "neuer wert"), wird ein neues Objekt,
+#inklusive Referenz auf dieses, erstellt (para_a beinhaltet nicht mehr die Referenz auf das übergebene Objekt).
+#Nur wenn man ein mutable Objekt dem Parameter einer Funktion übergibt, kann man das Objekt verändern.
+
+#mutable Objekte
+def add2(var):
+    var[0] = var[0]+2
+
+a = [23]
+
+add2(a) #output: 25
 
 #Initialisierung mehrerer Variablen in einer zeile
 #x = 22, y = 32, z = 1
@@ -38,17 +60,6 @@ x, y, z = 22, 32, 1
 
 #x und y bekommen den gleichen Wert zugewiesen
 x = y = 22
-
-#Alle Typen, auch primitive, sind Instanzen (Objekte) von Klassen z.B. int
-x = 5
-print(type(x))
-print(type(1.1))
-print(type(True))
-print(type(""))
-#ausgabe: <class 'int'>
-#         <class 'float'>
-#         <class 'bool'>
-#         <class 'str'>
 
 #---------------------------------------------------------------------------
 #Ein int-Objekt wird erstellt, x besitzt die Speicheradresse zu dem Objekt

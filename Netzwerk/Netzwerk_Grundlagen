@@ -27,14 +27,15 @@
 	-> Hat der Computer die Anfrage Akzeptiert, erstellt er ein Socket.
 		-> Der Sender kann jetzt IP-Pakete an den empfänger senden.
 		-> Die Daten im Payload (befinden sich hinter dem Ethernet-header, ip-header,
-			tcp-header) werden an den Socket geleitet, von dem dan
+			tcp-header) werden an den Socket geleitet, von dem dann
 			die Daten vom Programm bzw. Prozess abgeholt werden.
 			-> Ein Socket ist also wie eine Datei, in die ein Programm (Client
 				oder Server) Schreiben und von ihr Lesen kann.
 			-> Sendet ein Programm eine größere Datei, Schreibt das Programm
 				in den Socket und TCP verpackt simultan die einkommenden
 				Daten im Socket in kleinere Pakete.
-			-> Empfängt ein Programm Daten in Form von Paketen, entpakt TCP die ankommenden Pakete und legt die Daten nach und 					nach im Socket ab, wo das Programm nach und nach die Daten abholt.	
+			-> Empfängt ein Programm Daten in Form von Paketen, entpakt TCP die ankommenden Pakete und
+                legt die Daten nach und nach im Socket ab, wo das Programm nach und nach die Daten abholt.
 			
 ---Socket Programmierung
 -> Ein Server-Socket muss vom OS erstellt werden, der für das Server-Programm eine
@@ -48,9 +49,9 @@
 	jetzt mitgeteilt, dass es den Server-Socket erstellen soll.
 	-> ss.listen()
 		-> Dem ss-object wird noch die server-socket-id vom os mitgeteilt.
--> Das Server-Programm muss jetzt in einer Schleife ständing mittels IPC den Server-Socket
-	abhören, bis eine Verbindung zustande gekommen ist. Ist dies der fall, erstellt
-	das OS einen Socket für die Verbindung.
+-> Das Server-Programm wartet in einer Schleife, bis der server-socket eine Verbindung
+    akzeptiert und einen socket für den Datenaustausch erstellt. Wurde dieser socket erstellt,
+    teilt das os dem Server-Programm die socket-id mit.
 	-> s = ss.accept()
 		-> accept() erzeugt die Schleife. hat der server-socket ein socket erstellt, 
 			gibt accept ein socket-object incl. die ID des OS-Socket zur Indentifikation zurück. 
