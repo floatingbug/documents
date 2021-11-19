@@ -11,29 +11,43 @@
     -> .sig Dateien sind nur für inoffizielle Repos erforderlich und vorhanden (Textdatei)
 
 - Zusätzliche unofficial repositories hinzufügen durch anhängen in der Datei unter /etc/pacman.conf
+        -> GPG:
+            -> private-key: Zum entschlüsseln und signieren von Daten.
+                -> Signierung durch fingerprint der Daten und anhängen des fingerprints an die Daten.
+            -> public-key: verschlüsseln von Daten und überprüfung von signierten Daten.
+                -> Mit diesem key können Daten weder entschlüsselt noch signiert werden.
+                    -> Daher besteht bei Weitergabe kein Risiko.
+            -> Man benötigt beide keys um Daten entschlüsseln zu können und wieder zu verschlüsseln.
+            -> GPG überprüft, ob die Daten mit einem bestimmten Schlüssel verschlüsselt und signiert wurden.
+            -> Entwickler und Trusted User besitzen individuelle GPG-Schlüssel mit denen sie ihre eigenen
+                Pakete Signieren.
+
     -> Beispiel:
 
-            Server = https://arch.alerque.com/$arch
+        ->  Zuerst muss das unofficial repository am ende er Datei /etc/pacman.conf eingetragen werden.
 
-    -> Damit der public key, zum entschlüsseln der Signatur für die packages aus dem unofficial repository,
-        zur verfügung steht, muss dieser erst pacman hinzugefügt werden.
-        -> Hinzufügen des public keys:
+                Server = https://arch.alerque.com/$arch
 
-            wenn der Key auf einem Keyserver liegt:
+        -> Damit der public-key, zum verifizieren der Signatur Pacman zur Verfügung steht,
+            muss er erst hinzugefügt werden.
 
-            # pacman-key --recv-keys keyid
+            -> Hinzufügen des public keys:
 
-            oder der key als Datei vorliegt:
+                wenn der Key auf einem Keyserver liegt:
 
-            # pacman-key --add /path/to/downloaded/keyfile
+                # pacman-key --recv-keys keyid
 
-    -> Den key fingerprinten und mit der Signatur/fingerprint vom Sender/repository vergleichen:
+                oder der key als Datei vorliegt:
 
-            $ pacman-key --finger keyid
+                # pacman-key --add /path/to/downloaded/keyfile
 
-    -> Den key signieren:
+        -> Den key fingerprinten und mit der Signatur/fingerprint vom Sender/repository vergleichen:
 
-            # pacman-key --lsign-key keyid
+                $ pacman-key --finger keyid
+
+        -> Den key des Entwicklers (des repositories) mit dem eigenen key signieren.:
+
+                # pacman-key --lsign-key keyid
 
 - Lokale Paketdatenbank mit Repository synchronisieren (ist das Paket noch nicht in der Paketdatenbank aufgeführt,
     wird es heruntergeladen und installiert.

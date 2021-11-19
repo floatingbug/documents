@@ -16,3 +16,4 @@
     -> Der verschlüsselte session-key wird an die Nachricht angehängt.
     -> Der Empfänger Entschlüsselt den session-key mit dem private-key.
     -> Der Empfänger Entschlüsselt die Nachricht mit dem session-key.
+    -> Die Nachrichten werden jetzt mit dem session-key ver- und entschlüsselt.

@@ -1,0 +1,28 @@
+-> Die Daten werden verschlüsselt zwischen Browser und Webserver ausgetauscht.
+    -> Ende-zu-Ende Verschlüsselung (nur client und server können Nachrichten ver- und entschlüsseln).
+-> Der Webserver muss sich mit einem Zertifikat ausweisen, dass er auch der ist für den er sich ausgibt (Authentifizierung).
+-> SSL/TLS sind für die Verschlüsselung und der Authentifizierung verantwortlich.
+    -> Befindet sich zwischen HTTP und dem Transportprotokoll TCP.
+    -> Steht auch anderen Anwendungen zur Verfügung, z.B.: SMTPS oder FTPS.
+-> http nutzt port 80, https 443.
+-> Heute kommt nur noch TLS zum einsatz, man verwendet aber häufeg den Begriff SSL.
+
+- Ablauf der Authentifizierung (Abwiklung des Protokolls):
+
+1. client kontaktiert den server mit Verschlüsselungsoptionen (Server muss eine dieser Optionen erfüllen können).
+2. Der Server nimmt die Verbindung an und schickt sein Zertifikat mit dem öffentlichen Schlüssel seines Schlüsselpaares zur Authentifizierung an den Client.
+    -> Der client fragt bei einer Zertifizierungsstelle (Certificate Authority, CA) nach, ob das Zertifikat gültig ist (validierung).
+        -> Dafür wird OCSP (Online Certificate Status Protocol) benutzt.
+3. Der Client überprüft das Server-Zertifikat und dessen Gültigkeit (Validierung). Erkennt der Client das Zertifikat als ungültig wird die Verbindung an dieser Stelle abgebrochen.
+4. Erkennt der Client das Zertifikat als gültig erzeugt der Client den symmetrischen Sitzungsschlüssel.
+5. Mit dem öffentlichen Schlüssel des Servers verschlüsselt der Client den Sitzungsschlüssel und schickt ihn an den Server.
+6. Mit seinem privaten Schlüssel kann der Server den verschlüsselten Sitzungsschlüssel entschlüsseln.
+7. Der Server bestätigt den geheimen Sitzungsschlüssel.
+8. Danach werden alle HTTP-Requests und -Responses verschlüsselt, bis die Verbindung abgebaut wird.
+    -> Das Ver- und Entschlüsseln geschieht nun mit dem Sitzungsschlüssel (session-key).
+
+- Problem:
+-> Erhält der Browser von der CA längere Zeit keine Antwort, akzeptiert der Browser das Zertifikat.
+    -> Von einer ausenstehenden Person könnte die Validierung behindert werden.
+        -> Er könnte dann den Verbindungsaufbau manipulieren und sich zwischen den client und server schalten.
+            -> Dies nennt man-in-the-middle.

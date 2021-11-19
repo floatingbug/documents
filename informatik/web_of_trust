@@ -11,4 +11,8 @@
     -> Die Zertifikate sind fingerprints.
 
 - Funktionsprinzip:
-    -> Der Sender berechnet zu seinem public-key, mit seinem private-key, einen Wert, der
+    -> Eine Person signiert (sign) einen public-key.
+        -> Die Signierung ist ein fingerprint der dem public-key hinzugefügt wird.
+    -> Der public-key wird zusammen mit der Signatur/fingerprint auf einen Schlüsselserver hochgeladen.
+    -> Personen die den Schlüsselinhaber nicht kennen, vertrauen auf die Zertifikate, die dem Schlüssel auf dem
+        Schlüsselserver hinzugefügt wurden.
