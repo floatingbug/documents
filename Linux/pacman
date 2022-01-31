@@ -2,13 +2,14 @@
     an das package.
     -> pacman entschlüsselt die Signatur und prüft ob diese korrekt ist (vergliche Informatik/PNG).
 
-- Information alle Installierbaren Pakete, die in den repositories im Netz verfügbar sind,  sind in .db Dateien unter /var/lib/pcman/ gespeichert.
+- Informationen alle Installierbaren Pakete, die in den repositories im Netz verfügbar sind,  sind in .db Dateien unter /var/lib/pcman/ gespeichert.
     -> Es sind Datenbank-Dateien die von Pacman verwaltet werden.
     -> Aktualisierung dieser lokalen Datenbank:
 
         $ sudo pacman -Sy
 
-    -> .sig Dateien sind nur für inoffizielle Repos erforderlich und vorhanden (Textdatei)
+    -> .sig Dateien sind nur für inoffizielle Repos erforderlich.
+        -> .sig Dateien sind Textdateien.
 
 - Zusätzliche unofficial repositories hinzufügen durch anhängen in der Datei unter /etc/pacman.conf
         -> GPG:
