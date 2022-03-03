@@ -8,52 +8,53 @@ Workspace:
 → in Workspace kann eine Version (ein Ordner) geladen werden z.B:
 Die Version 3 wird geladen und wird mit einer neueren Version, z.B. Version 2.1 gemerged (fusionieren, verschmelzen), die Version 3.1 entsteht.
 
-Origin/Maser:
+Origin/Master:
 -> origin: Name für das Repository auf dem Server (der Name repräsentiert die URL des Repositories auf dem Server.
--> master: maser-branch. 
+-> master: master-branch. 
 
 commit:
 -> commit ist die speicherung des Workspaces in das Repository (.git) als neue version.
 
-HEAD:
--> Ist eine Referenz auf den zu letzt gemachten commit im aktuellen branch.
-	-> HEAD~1 Zeigt auf den 2. commit, HEAD~2 auf den 3. usw.
-		-> Beispiel: Unterschied zwischen aktuellen commit und dritten commit anzeigen lassen:
-			$ git difftool HEAD HEAD~2
+Pointer/References:
+    -> Helfen git commits wieder zu finden.
+    -> Branch-Pointer 
+        -> Zeigen auf das letzte commit.
+        -> Der Branch-Pointer des Hauptbranches heißt meistens master.    
+    -> HEAD-Pointer
+        -> Zeigt auf den commit, der aktuell in den Workspace geladen wurde.
+            -> Eig. zeigt er auf den Branch-Pointer der wiederum auf den commit zeigt, der aktuell in den Workspace geladen wurde.        
+        -> Kann auf einen Branch-Pointer oder commit zeigen. 
+    -> Der HEAD-Pointer zeigt im normalfall auf den Branch-Pointer.
+        -> [HEAD-Pointer]->[Branch-Pointer]->[der letzt commit]
 
 log:
 -> Zeigt alle commits an
-	-> $ git log 
+	-> $ git log
+-> Kurze Ausgabe
+    -> $ git log --oneline
 
-Neues Repository erstellen:
-→ in Ordern /test navigieren in welchem ein Repository erstellt werden soll.
-→ mit $ git init  wird ein neues Repository erstellet.
-→ es wird in dem Ordner ein .git Ordner erstellt, welches das Repository ist.
-→ der Ordner /test ist der Workspace in dem sich das Repository .git befindet.
+Versionen aus .git in den workspace laden:
+-> Der HEAD-Pointer zeigt immer auf den commit, der sich aktuell im workspace befindet.
+    -> Wird der HEAD-Pointer auf ein anderen commit bewegt, zeigt er nicht mehr auf den Branch-Pointer, sondern auf 
+        auf ein commit der automatisch in den workspace geladen wird.
+        -> $ git checkout "hash-wert des commits"
+    -> Es ist auch möglich, dass statt den Hash-Wert zu nutzen, Zahlen anzugeben z.B.:
+        HEAD~1 zeigt auf den zweiten commit und HEAD~2 zeigt auf den dritten commit.
+        -> $ git checkout HEAD~1
+    -> Man kann den HEAD-Pointer wieder auf den Branch-Pointer zeigen lassen
+        -> $ git checkout master
+            -> Dadurch befindet sich wieder der letzte gemachte commit im workspace.
 
-Dateien die sich im Workspace befinden, in das Repository einfügen (version speichern):
-→ $ git add test.txt  die Datei wird erst Vorgemerkt (noch nicht in das Repository geschrieben).
-→ $ git add –all  alle dateien werden Vorgemerkt.
-→ $ git commit -m „was wurde geändert“  alle vorgemerkten Dateien werden als neue Version in das Repository geschrieben (commit = neue Version).
+commits löschen:
+-> git reset --hard "hash-wert auf den der Branch-Pointer zeigen soll"
+    -> dadurch wandert der Branch-Pointer zu einen früheren commit, wodurch alle vorherigen commits abgehängt
+        und somit gelöscht werden.
 
-Remote und Push:
--> git remote add "name" AdresseZumRepository // Mit dem remote namen (name) spricht man das Repository auf gitHub an (AdresseZumRepository).
--> git push -u "name" master // Inhalt des localen workspace wird auf den master-branch des gitHub repository gepushed.
 
-Git pull, reset, fetch
--> git fetch // Läd alle Dateien und Änderungen an Dateien in .git herunter.
-Erst mit git merge werden Dateien und Änderungen an Dateien mit dem lokalen Master gemerged.
--> git pull // shorthand für git fetch, git merge
--> git reset --hard FETCH_HEAD // reset bewirkt, dass alles im Workinspace durch ein commit (z.B. von github-repository) ersetzt wird. --hard bewirkt, dass alles ausgewählt wird (von FETCH_HEAD). FETCH_HEAD zeigt auf alle neuen Daten und Änderungen in Dateien (vorher git fetch ausführen).
--> statt git reset --hard FETCH_HEAD geht auch git reset --hard origin/master (vorher wieder 
-git fetch ausführen).
- 
-Pull und fetch
--> git pull //Speichert das Repository vom Server in das localae Workspace und die Verseion in .git
--> git fetch origin //
 
-Auf vorherige Version zurückspringen:
-$ git reset –hard HEAD  der –hard flag ladet die komplette Version des letzten commits in den Workspace, HEAD zeigt auf den aktuellen branch.
+
+
+
 
 Anzeigen lassen, was sich in einer Datei geändert hat:
 $ git diff test.txt
@@ -64,9 +65,7 @@ $ git status
 Anzeigen lassen, auf welchem branch man sich befindet:
 $ git branch
 
-Andere Versionen laden:
-$ git log  alle commits bzw. Versionen werden mit ihren Hash codes angezeigt.
-$ git checkout Hashcode  Version wird in den Workspace geladen.
+
 
 Branches:
 % git checkout -b „GUI“ ein neuer Zweig mit dem Namen GUI wird erstellt, auf dem sich genau EINE Versionen für ein bestimmtes Teilgebiet des Projektes befinden, z.B. GUI. Die branches können wieder zusammen gemerged werden.
