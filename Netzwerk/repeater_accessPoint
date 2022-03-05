@@ -1,0 +1,21 @@
+- Repeater
+-> Ein Repeater nimmt ein Signal aus einem Funkkanal (bestimmte Frequenz) auf
+    und gibt es verstärtk auf einem anederen Funkkanal aus.
+    -> Da der Repeater Signale von clients auf einer anderen Frequenz (Kanal)
+        ausgibt, benötigt er den wlan-key damit der AP die Signale
+        empfangen kann.
+        -> Die clients benötigen den selben wlan-key, damit der Repeater
+            Daten von den clients empfangen kann.
+-> Arbeitet auf Schicht 1
+    -> Empfängt Daten und leitet sie weiter, nicht mehr.
+        -> Empfang und Weiterleitung nur durch wlan-key.        
+
+- Accesspoint
+-> Ermöglicht Verbindungen zu einem Kabelgebundenen Netzwerk (Ethernet).
+    -> Dabei verbindet sich ein client mit dem AP der wiederum mittels Kabel
+        mit einem switch verbunden ist.
+-> Damit sich ein client mit einem AP verbinden kann, muss der client den 
+    w-lan-schlüssel des AP kennen.
+-> Arbeitet auf Schicht 2
+    -> Kann (durch MAC-Adresse) Frames an andere, mit dem AP verbundene 
+        Geräte senden.
