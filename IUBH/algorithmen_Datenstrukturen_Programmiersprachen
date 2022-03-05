@@ -1,0 +1,216 @@
+----------------------------------------------Einführung------------------------------------------------------------
+- Algorithmen
+	-> Eingesetzt um abstrahierte Problemstellung zu Berechnen oder Befehlsabfolge nach Kontrollstruktur initiieren.
+	-> Theoretisches Konstrukt, das eine bestimmte Befehlsabfolge beschreibt.
+	-> Kern der Informatik.
+	-> Wird meist auf einer Rechenmaschine ausgeführt.
+	-> Implementiert durch Verwendung von Datenstrukturen und Programmiersprachen.
+		-> Datenstrukturen: Verschiedene Möglichkeiten der Speicherung von Variablen.
+
+- Geschichte der Algorithmik
+	-> Der erste, nicht triviale, Algorithmus wurde von dem Mathematiker Euklid zwischen 400 und 300 v. chr. Konzipiert.
+		-> Dieser berechnet den ggt zweiert Zahlen.
+	-> Der Begriffs „Algorithmus“ geht auf den persischen Mathematiker Mohammed al-Khowarizmi zurück.
+		-> Lebte im 9. Jahrhundert.
+		-> Beschäftigte sich mit Verfahren zur Addition, Subtraktion, Multiplikation und Division von Dezimalzahlen.
+			-> Verfahren wurde Algorismus genannt woraus später das Wort Algorithmus wurde.
+	-> Erste durch einen Algorithmus gesteuerte Maschine war ein Webstuhl der 1801 von dem Franzosen Joseph-Marie Jacquard 
+		entwickelt wurde.
+			-> Webmuster auf Basis vorgefertigter Lochkarten.
+				-> Systematisches Abtasten der Lochkarte und vom Webstuhl in mechanische Bewegungen übersetzen.
+	-> Erste Lochkartenbasierte Rechenmaschine (1833) von Charles Babbage.
+		-> Entwickelte sie selbst zur Analytischen Maschine weiter.
+			-> Benutzer konnten durch Lochkarten Programme einlesen und ausführen.
+			-> Rein mechanisch.
+			-> Babbages Programmiererin war Ada Byron, Gräfin von Lovelace.
+				-> Ihr werden die Grundsteine der Programmierung zugesprochen.
+	-> Mehrzweckcomputer, die unsere Computer etwas ähnlicher sind, wurden in den 1940er-Jahren entwickelt.
+		-> um den gesteigerten Rechenanforderungen der Ingenieurswissenschaften, Physik und Astronomie gerecht zu werden.
+	-> Transistor wurde 1949 der öffentlichkeit vorgestellt.
+		-> Ein auf halbleitenden Metallen basierender elektronischr Baustein, welcher als Schalter verstanden werden kann.
+			-> Durch Anlegen einer Steuerspannung, wird der Transistor stromleitend, durch Abwesenheit dieser, nicht stromleitend.
+				-> Durch verschiedene Anordnungen mehrerer Transistoren, lassen sich alle Berechnungen, in einem Computer, abbilden.
+
+- Detaillierung und Abstraktion
+	-> Angabe eindeutiger Handlungsabfolge.
+		-> Dinge wie "etwas" oder "ein wenig" kann sich keine genau Handlungsabfolge ableiten.
+		-> Hardware die Handlungsabfolgen/Anweisungen zusammen fasst, muss nicht detailliert jede Anweisung einzeln mitgeteilt werde, 
+			es reicht, wenn die zusammen gefassten Anweisungen mitgeteilt wird (wenn die HW eine Zusammenfassung besitzt).
+			-> Je kleiner die Menge an Anweisungen/Elementare-Operationen einer HW ist, desto größer muss der Detailgrad
+				eines Algorithmus sein.
+			-> Je größer die Zusammenfassung von Elementaren-Operation eine HW ist, desto abstrahierter kann die Anweisungen sein.
+				-> Die Zusammenfassung von 8 bits zu einem byte, der dann die Repressentation eines Buchstabens darstellt,
+					ist eine Abstrahierung/Vereinfachung, denn es reicht nur das byte anzugeben, die tatsächliche Repressentation
+					des Buchstabens durch 8 bits ist verborgen.
+	-> Je größer die Abstraktion, desto kleiner ist die Menge an Elementaren Operationen, die benötigt werden um eine Algorithmus zu schreiben.
+	-> Der Erfolg eines Algorithmus hängt von den elementaren Anweisungen, die von der HW verstanden werden können, ab. 
+		-> Und ob die verfügbaren Anweisungen zur Lösung des Problems im stande sind.
+	-> Zusammenfassung
+		-> Bei der Detaillierung geht es darum, wie viele elementare Operationen definiert werden müssen (im Algorithmus) um eine Anweisung zu beschreiben.
+		-> Bei der Abstraktion werden mehrere elementare Operationen zu einer Anweisung zusammen gefasst. 
+
+- Kontrollstrukturen
+	-> Gibt einem Programm eine Anweisungsfolge.
+	-> Schleifen.
+	-> Bedingungen.
+		-> unterschiedliches Reagieren auf unterschiedliche Ereignisse. 
+
+- Datentypen
+	-> Algorithmen überführen Eingangsdaten in Ausgangsdaten.
+	-> Chars.
+		-> Einzelne Zeichen, Sonderzeichen, Buchstaben und Zahlen.
+			-> Beispiel: "1", "!", "d".
+	-> Strings.
+		-> Kombinationen von mind. einem Char.
+	-> Ganzzahlen.
+		-> Integer sind meistens 16 bit (2 byte) groß.
+			-> Zahlenraum ist dann von -32768 bis +32767.
+				-> Speicherung der zahl 64000 wäre nicht möglich.
+					-> Long-Integer wird benötigt.
+		-> Signed-, unsigned-Integer.
+			-> Wird auf ein Vorzeichen verzichtet, können Interger die Werte [0; 65.535] annehmen.
+	-> Gleitkommazahlen (Desimalzahlen). 
+		-> Bezeichnung in der Informatik: Float.
+		-> Bei einer Umwandlung von Float zu Integer werden die Nachkommastellen einfach abgeschnitten.
+	-> Umwandlung wird als cast bezeichnet.
+
+- Grundlegende Datenstrukturen
+	-> Listen
+		-> Serielle Speichermöglichkeit von mehreren Variablen gleichen Typs.
+		-> Jeder Eintrag enthät einen Index.
+			-> Auslesen und Speicherung an bestimmter stille mittels Index.
+		-> Kann dynamisch erweiterbar sein. 
+	-> Array (Feld)
+		-> Nicht dynamisch erweiterbar.
+		-> Performanter als Listen.
+	-> Ketten
+		-> Ein Array Enthält Daten und zusätzlich einen zeiger (pointer), der auf ein nächstes Array Zeigt.
+			-> Falls ein Array voll ist, wird das nächste Array verwendet.
+			-> Initialarray wird als Head oder Rooot bezeichnet.
+ 			-> Das letzte Array wird als Tail bezeichnet.
+			-> Der letzte Zeiger der Kette zeigt auf den Wert null.
+	-> Bäume
+		-> Eignen sich, wenn die Daten eine Hierarchiestruktur untereinander aufweisen.
+		-> Binärbaum.
+			-> Unterart.
+			-> Jeder Knoten kann max. zwei Nachkommen haben
+			-> Zur Darstellung werden Zeiger verwendet.
+		-> Traversierung.
+			-> Durchlaufen eines Baumes von Wurzel bis Blatt ohne einen Knoten zweimal zu besuchen.
+
+------------------------------------------Datenstrukturen----------------------------------------------
+- Warteschlangen (queues)
+	-> FIFO
+		-> First In First Out
+	-> Daten werden in einer Reihenfolge solange vorgehalten, bis sie weiterverarbeitet werden.
+	-> Grundsätzliche Befehle
+		-> Enqueue
+			-> Element in die queue einfügen.
+		-> Dequeue
+			-> Element der queue entnehmen.
+	-> Anwerndungsbeispiele
+		-> Zwei unterschiedlich schnelle Geräte oder Protokolle miteinander verbunden werden.
+			-> Z.B.: Drucker oder ausgelöste events.
+		-> Interprozesskommunikation (IPC) durch pipes.
+
+- Heap
+	-> Speicherung der Daten in Baumstruktur.
+	-> Zum Ablegen von Mengen.
+	-> Daten werden mit Schlüssel gespeichert, wobei Schlüssel gemäß der Prioritäten der Daten entspricht.
+	-> HIFO
+		-> Prioritätenbasiertes Auslesen des Speichers.
+		-> Highest In First Out.
+	-> Es werden zwei Heap-Varianten hinsichtlich ihrer Priorität unterschieden
+		-> Max-Heaps
+			-> Wurzelknoten hat immer die höchste Priorität.
+				-> Dadurch haben die Kinder immer eine kleinere Priorität als die Eltern.
+		-> Min-Heaps
+			-> Wurzelknoten hat immer die kleinste Priorität.
+				-> Dadurch haben Kinder immer eine höhere Priorität als die Eltern.
+			-> Beispiel für ein min-heap mit Bezeichnung B und dem Knoten i
+				-> Schlüssel(B, i)>=Schlüssel(B, parent(i))
+	-> Wichtigsten Funktionen
+		-> Insert(): Hinzufügen von Elementen.
+		-> Remove()
+		-> ExtractMin(): Gibt das Element mit der geringsten Priorität zurück.
+	-> Binärer Heap
+		-> Jeder Knoten kann immer nur zwei Kindknoten besitzen.
+	-> Die Begriffe Heap und partieller Baum werden meist synonym benutzt.
+		-> Dabei ist ein binärer knotenmarkierter Baum T gemeint für den jeder Teilbaum T' mit
+			Wurzel x gilt, dass: ∀y ∈ T': µ(x) <= µ(y)
+				-> µ(x) und µ(y) bezeichnen die Priorität der Knoten x und y.
+				-> Die Wurzel stellt also immer das Minimum dar.
+	-> Heaps können, durch die Prioritäten, als Vorrangwarteschlangen genutzt werden.
+
+- Stack
+	-> Daten werden aufeinander gestapelt.
+	-> Anwerndungsbeispiel
+		-> Microprozessor
+			-> Legt die Abarbeitungsreihenfolge von Befehlen fest, die dem Prozessor zugeführt werde.
+	-> LIFO-Prinzi.
+		-> Last In First Out.
+	-> Wird auch als Kellerspeicher bezeichnet.
+	-> Hardware nahes Verhalten.
+	-> Grundsätzliche Operationen:
+		-> Push: Element wird auf den Stack gelegt.
+		-> Pop: Das oberste Element wird entnommen.
+		-> Peek (oft auch als Top bezeichnet): Das oberste Element wird ausgegeben, ohne es aus dem Stack 
+			zu entfernen.
+
+- Graphen
+	 -> Realation durch Verbindungen aus einer Menge mit Knoten/Elementen E mit einer Menge aus Kanten K.
+	 	-> e ∈ E und k ∈ K
+	-> Ungerichteter Graph.
+		-> Keine Richtung
+	-> Definition eines Graphen
+		-> Gegeben seien zwei nichtleere Mengen E und K, wobei E ∩ K = ∅ gilt, sowie P(E) = {X|X ⊆ E mit 1 ≤ |X| ≤ 2}. Mit |X| 
+			werde dabei die Mächtigkeit der Menge X bezeichnet. Ferner sei g:K → P(E) eine Abbildung, 
+			so wird das Tripel (E,K,g) als Graph (ungerichtet) bezeichnet. Der Fall E = K = ∅ wird als leerer Graph bezeichnet, 
+			der Fall K = ∅ und E ≠ ∅ als Nullgraph. Für die Notation eines Graphen gilt: G = (E, K, g) = (E(G), K(G)) = (E, K).
+	-> G(K)
+		-> Knotenmenge des Graphen G.
+	-> g(k) = {x, y}
+		-> Die Kante k besitzt die Endpunkte x, y.
+			-> Wenn zusätzlich git: x = y, handelt es sich um eine Schlinge (Loop).
+	-> Adjazenz/benachbart
+		-> Knoten die durch eine Kante miteinander verbunden sind
+	-> Adjazenz/benachbart
+		-> Knoten die durch eine Kante miteinander verbunden sind.
+	-> Multigraph
+		-> Graphen die mehrere Kanten zwischen zwei Knoten erlauben.
+	-> Isomorphismus
+		-> Ein Graph ist isomorph, wenn er in anderer Form dargestellt werden kann, ohne die Anzahl der Kanten, knoten und
+			die Art der Verbindungen zu verändern.
+	-> Endliche Graphen 
+		-> Endliche Anzahl an Knoten und Kanten.
+	-> Knotengrad
+		-> Anzahl der Kanten die mit einem Knoten verbunden sind.
+		-> Definition
+			Sei G(E, K) ein Graph sowie x ∈ E ein Knoten, so bezeichnet d(x, G) = d(x) die Anzahl der Kanten, 
+			die mit dem Knoten x inzidieren, also mit diesem verbunden sind. d(x) bezeichnet dabei den Knotengrad bzw. 
+			Grad oder Valenz des Knoten x
+	-> Gerichteter Graph (Digraph)
+		-> Kanten geben eine Richtung an (Sie werden in der Form eines Pfeils dargestellt).
+	-> Gewichtete Graphen
+		-> Kanten bekommen ein Gewicht, z.B. die Entfernung.
+	-> Dijkstra
+		-> Algorithmus um kürzesten Weg in einem Gewichteten Graphen zu finden.
+	-> Adjazenzmatrix
+		-> Representation eines Graphen als Matrix.
+
+-Blockchain
+	-> Denzentrale Speicherung.
+		-> Dadurch gesichert durch Datenverlust und Manipulation.
+	-> Daten werden in einer langen verknüpften Kette gespeichert, die von jedem eingesehen werden kann.
+		-> Gespeichert auf Servern und Computer der Benutzer.
+	-> Daten können an Blockchain angehängt und ausgelesen werden.
+	-> Konsenzverfahren
+		-> Datensatz anhängen
+		-> Durch vertrauenswürdigen Drittanbieter
+			-> Z.B. durch Proof-of-Work.
+				-> Benutzer muss ein Rätrsel lösen.
+					-> Von einer gegebenen Zeichenkette muss ein nonce(used only once) gefunden werden.
+						-> Bei dem Hash-Wert der Zeichenkette und der nonce müssen die ersten m bits Null ergeben.
+						-> Der Nonce darf nur einmal verwendet werden.
+						-> Der Hash-Wert wird aus Teilen der Blockchain gebildet.
+
