@@ -63,7 +63,7 @@ name.save((err)=>{
 										
 -----Replica Sets-----
 - Mehrere MongoDB-/Datenbanksystem-/mongod-Instanzen
-	-> Jede Instanz läuft auf einem eigenen Rechner.
+	-> Jede Instanz läuft auf einem eigenen Rechner oder virtuelle Maschinen.
 	-> Jede Instanz speichert und pflegt die selben Daten											
 	-> Fällt ein Server in dem Replica Set aus, gibt es noch andere, auf denen ein mongod 
 		Prozess läuft.
