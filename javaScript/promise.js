@@ -15,26 +15,31 @@
 // Beispiel 1:
 function getUserID(id){
 	return new Promise((resolve, reject)=>{
-		//asynchrone Operation
-		
-		resolve('Ergebnis der asynchronen Operation')
-	})
+		//asynchrone Operation beginnt hier und danach das Ergebnis in ergebnis gespeichert.
+        ergebnis = true;
+                		
+        if(ergebnis){
+		    resolve('Ergebnis der asynchronen Operation')
+        }
+        else{
+            reject({msg: "asynchrone operation fehlgeschlagen, ", fehlercode: 24}) 
+        }	
+    })
 }
 
-// Wird getUserID ausgefürht, gibt die Funktion ein Promise-Objekt zurück, das in ergebnis gespeichert wird.
-// Das Promise-Objekt (ergebnis) befindet sich im Zustand Pending, wärend die asynchrone Operation ausgeführt wird.
-// Wurde resolve aufgerufen, ist der Zustand Fulfilled und then wird das Ergebnis übergeben.
-// Wurde reject aufgerufen, ist der Zustand Rejected und then wird der Fehler übergeben.
+//  ->Die im Promise-Objekt stehende asynchrone Anweisung wird ausgeführt, sobald das Promise-Objekt instnziiert wurde (return new Promise)
+//      -> Wurde die asynchrone Operation durchgeführt, wird entweder der callback-function then das Ergebnis über resolve mitgegeben,
+//          und in die callback-queue gesendet, oder die callback-function catch wird in die callback-queue gesendet, der über reject 
+//          Parameter übergeben werden. 
 let ergebnis = getUserID(25)
 
 ergebnis.then((result)=>{
 	
+}).catch((err)=>{
+
 })
 
 // Kurzschreibweise
-// Das zurückgegebene Promise-Objekt wird nicht zwischengespeichert.
-// then ist eine Funktion, die jedes Promis-Objekt verfügt und erst aufgerufen wird,
-// wenn resolv oder reject aufgerufen wurde.
 getUserID(35).then(()=>{
 
 })
@@ -48,19 +53,11 @@ getUserID(35).then(()=>{
 let p = new Promise((resolve, reject)=>{
 	//asynchrone Operation stehen hier
 	
-	//das Ergebnis wird im Promise-Objekt gespeichert
 	resolve('Ergebnis der asynchronen Operation')
 	
-	//der Fehler wird im Promise-Objekt gespeichert
 	reject('Fehlerbeschreibung der asynchronen Operation')
 })
 
-
-// then wartet bis das Promise-Objekt (p) einen Wert bekommen hat (entweder Ergebnis oder Fehler).
-// Dem Promise-Objekt wird der Wert durch das Aufrufen der Funktion resolve oder reject hinzugefügt.
-// Dann übergibt then das Ergebnis an einer Callback-Funktion.
-// then ist eine Funktion die in jedem Promise-Objekt vorhanden ist und nur aufgerufen wird,
-// wenn resolve oder reject, des Promise-Objekts, aufgerufen wurde. 
 p.then((Ergebnis)=>{
 	console.log(Ergebnis)
 }).catch((Fehler)=>{

@@ -73,9 +73,15 @@ name.save((err)=>{
 - Datenbank in der Clout (Databas as a Service, DaaS)
 - DBMS ist MongoDB
 - Clusters
-	-> Gruppe von Server zum speichern der Daten
-		-> Replica Set
-			-> Atlas Konfiguriert automatisch Replica Sets auf jeden einzelnen Server des Clusters
+	-> Gruppe von Server 
+		-> Die Gruppe von Server kann als Replica Set konfiguriert werden.
+            -> auf jedem Server läuft dann eine mongodb-instanz die die gleichen Daten pflegt.
+			    -> Atlas Konfiguriert automatisch den Cluster als Replica set.
+- Cluster name
+    -> z.B.: cluster0
+- User
+    -> Benötigt um auf mongod in der cloud zuzugreifen.
+
 -----Commands-----									
 - Es gibt 2 Befehle um Daten in JSON zu im- und exportieren.
 	-> mongoimport
