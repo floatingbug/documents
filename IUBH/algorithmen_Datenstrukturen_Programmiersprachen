@@ -198,19 +198,53 @@
 	-> Adjazenzmatrix
 		-> Representation eines Graphen als Matrix.
 
--Blockchain
+- Bitcoin
+	-> Durch Blockchain wird die Transaktion nicht mehr über einen zentralen Server abgewickelt,
+		sondern dezentral über viele Netzwerkteilnehmer.
+	-> Wallets
+		-> Digitale Geldbeutel
+			-> Können auf Smart-Phones, Notebooks, PS's usw. Installiert werden.
+		-> Bei einer Transaktion wird von einem wallet zu einem anderen Geld überwiesen.
+			-> Dabei ist nur die Walletnummer bekannt, von wem das Gelt stammt ist unbekannt.
+	-> Miner
+		-> Bündeln, im Netz aufgelaufene Transaktionen und erstellen, mithilfe einer mathematischen
+			Funktion, einen Block aus Transaktionen.
+			-> Um einen Block zu generieren, muss ein Rätzel gelöst werden.
+				-> Viel Rechenleistung und Strom wird benötigt.
+			-> Wer den neuen Block als erster berechnet, bekommt als belonung bitcoin.
+			-> Der Block wird dann im Kassenbuch abgelegt und kann nicht mehr verändert werden.
+				-> So entsteht eine Kette aus Blöcken.
+		-> Validierung der Transaktionen
+		-> Entstehung der Bitcoins
+		-> Mitglieder des Dezentralen Netzwerks
+		-> Zusätzlicher Verienst, indem Miner Transaktionsgebühren übertragen werden, 
+			damit Transaktionen als erstes ausgeführt werden.
+	-> Ledger (Zahlungsbuch)
+		-> Alle Transaktionen die jemals im bitcoin-Netzwerk getätigt wurden, sind im Ledger gespeichert.
+		-> Alle Transaktionen mit Walletnummer und Höhe der Transaktion sind hier Aufgeführt.
+
+- Blockchain
+	-> Wie ein Kassenbuch, von dem jedes Mitglied eines Netzwerks eine Kopie hat.
+		-> Bei einer Transaktion, erscheint der Vorgang in allen Kassenbüchern.
+		-> Für eine Transaktion muss ein kryptographisches Schlüsselpaar generiert werden.
+			-> Besteht aus öffentlichen und privaten Schlüssel.
+				-> Der public-key ist wie eine Kontonummer, über die man Werte empfangen kann.
+				-> Mit dem private-key kann man auf die empfangenen Werte zugreifen.
+		-> Transaktion ist erst gültig wenn sie,für alle Teilnehmer sichtbar, in einem Block
+			abgelegt wird. 
+	-> Transaktion nicht 
 	-> Denzentrale Speicherung.
 		-> Dadurch gesichert durch Datenverlust und Manipulation.
 	-> Daten werden in einer langen verknüpften Kette gespeichert, die von jedem eingesehen werden kann.
 		-> Gespeichert auf Servern und Computer der Benutzer.
 	-> Daten können an Blockchain angehängt und ausgelesen werden.
-	-> Konsenzverfahren
-		-> Datensatz anhängen
-		-> Durch vertrauenswürdigen Drittanbieter
-			-> Z.B. durch Proof-of-Work.
-				-> Benutzer muss ein Rätrsel lösen.
-					-> Von einer gegebenen Zeichenkette muss ein nonce(used only once) gefunden werden.
-						-> Bei dem Hash-Wert der Zeichenkette und der nonce müssen die ersten m bits Null ergeben.
-						-> Der Nonce darf nur einmal verwendet werden.
-						-> Der Hash-Wert wird aus Teilen der Blockchain gebildet.
+		-> Konsenzverfahren
+			-> Datensatz anhängen bzw. Daten zu einem Block zusammenfassen und diesen anhängen.
+				-> Durch vertrauenswürdigen Drittanbieter
+					-> Z.B. durch Proof-of-Work.
+						-> Benutzer muss ein Rätrsel lösen.
+							-> Von einer gegebenen Zeichenkette muss ein nonce(used only once) gefunden werden.
+								-> Bei dem Hash-Wert der Zeichenkette und der nonce müssen die ersten m bits Null ergeben.
+								-> Der Nonce darf nur einmal verwendet werden.
+								-> Der Hash-Wert wird aus Teilen der Blockchain gebildet.
 
