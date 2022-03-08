@@ -50,6 +50,7 @@ name.save((err)=>{
 
 -----mongoDB-----
 -> mongoDB speichert die Daten nich in JSON auf ein Speichermedium sondern in BSON (Binary JSON)
+-> BSON kann auch binäre Daten speichern.
 - Importieren und Exportieren von Datenbank zu Datenbank
 	- JSON
 		-> mongoimport
