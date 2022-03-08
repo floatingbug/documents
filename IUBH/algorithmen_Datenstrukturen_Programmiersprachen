@@ -263,5 +263,30 @@
 	-> Ein Objekt wird auch als Instanz bezeichnet.
 	-> Die abstrakte Beschreibung der Objekte/Instanzen wird Klasse genannt.
 
--Klasse
-	->  
+- Klasse
+	-> Eine Klasse definiert, durch welche Attribute und Funktionen, ein Objekt beschrieben werden kann.
+	-> Unterschiedliche Klassen können Beziehungen zueinander haben.
+		-> Eine Unterklasse kann die Funktionen und Attribute der Oberklasse erben.
+	-> Abstrakte Klasse
+		-> Hat keine eigenen Instanzen.
+		-> Können nur Unterklassen haben.
+
+- Polimorphie
+	-> Ein Objekt kann verschiedene Datentypen annehmen und weiterverarbeiten.
+		-> Je nach tatsächlichen übergebenen Datentyp wird eine unterschiedliche Implementierung angewand.
+			-> Z.B. eine andere implementierte Funktion.
+		-> Lisen und Stacks können ebenfalls unterschiedliche Datentypen haben, z.B. eine Liste aus Integern,
+			oder eine Warteschlange aus Strings.
+		->Polimorphismus ist zusammengefasst:
+			Mithilfe eines Polymorphismus ist es möglich, dass ein vorhandener Code bei der Ausführung 
+			unterschiedliche Anweisungen ausführt, in Abhängigkeit der übergebenen Datenstruktur.
+			Dies hat bei der Programmierung den Vorteil, dass ein einmal geschriebener Code nicht vollständig 
+			dupliziert werden muss, sondern lediglich die Teile abgewandelt werden müssen, 
+		welche sich konkret mit dem jeweils übergebenen Datentyp beschäftigen.
+	-> AdHoc-Polimorphismus
+		-> Deklaration der Funktion in abstrakter Klasse.
+			-> Funktion wird dann in jeder Unterklasse, entsprechend der jeweiligen Unterklasse, implementiert.
+			-> Unterklassen können jetzt in der selben Objekt-Variable der abstrakten Klasse gespeichert werden,
+				obwohl eine bestimmte Funktion in allen Unterklassen unterschiedlich implementiert ist.
+	-> Inklusion-Polymorphismus oder auch Subtypisierung
+		-> Unterklassen die sich von einer Oberklasse unterscheiden.
