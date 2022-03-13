@@ -17,3 +17,14 @@
     -> Der Empfänger Entschlüsselt den session-key mit dem private-key.
     -> Der Empfänger Entschlüsselt die Nachricht mit dem session-key.
     -> Die Nachrichten werden jetzt mit dem session-key ver- und entschlüsselt.
+
+- MAC (Message Authentication Code)
+    -> Sender und Empfänger haben den selben geheimen Schlüssel.
+    -> Verfahren:
+        1. Sender generiert aus Nachricht+Key einen Hash.
+        2. Empfänger erhält hash und Nachricht.
+        3. Empfänger generiert aus Nachricht+Key den Hash.
+        4. Empfänger vergleicht die Hash-Werte.
+            -> Sind sie nicht identisch, wurde die Nachricht manipuliert.
+    -> Mit einem privaten und öffentlichen Schlüssel, könnte der Sender zusätzlich die Nachricht
+        verschlüsseln.
