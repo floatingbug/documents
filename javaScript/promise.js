@@ -13,9 +13,14 @@
 */
 
 // Beispiel 1:
+// Das Promise-Objekt sorgt dafür, dass die callback-function "(resolve, reject)=>" nicht im stack des 
+// Interpreters ausgefürhrt wird, sondern auserhalb des JavaScript-Interpreters.
+// Für resolve und reject "(resolve, reject)=>" wurde durch "then((result)=>)" und "catch((err)=>)"
+// eine callback-function übergeben die, wenn sie aufgerufen wird, in die microtask-queue gesendet wird und
+// auf den stack des JavaScript Interpreters gesendet wird.  
 function getUserID(id){
 	return new Promise((resolve, reject)=>{
-		//asynchrone Operation beginnt hier und danach das Ergebnis in ergebnis gespeichert.
+		//asynchrone Operation beginnt hier, ist sie beendet, wird das Ergebnis in ergebnis gespeichert.
         ergebnis = true;
                 		
         if(ergebnis){
@@ -27,10 +32,10 @@ function getUserID(id){
     })
 }
 
+//  ->Das Promise-Objekt wird in ergebnis gespeichert.
 //  ->Die im Promise-Objekt stehende asynchrone Anweisung wird ausgeführt, sobald das Promise-Objekt instnziiert wurde (return new Promise)
-//      -> Wurde die asynchrone Operation durchgeführt, wird entweder der callback-function then das Ergebnis über resolve mitgegeben,
-//          und in die callback-queue gesendet, oder die callback-function catch wird in die callback-queue gesendet, der über reject 
-//          Parameter übergeben werden. 
+//      -> Wurde die asynchrone Operation durchgeführt, wird entweder der callback-function (then) das Ergebnis über resolve mitgegeben,
+//          und in die callback-queue gesendet, oder die callback-function catch wird in die callback-queue gesendet.
 let ergebnis = getUserID(25)
 
 ergebnis.then((result)=>{

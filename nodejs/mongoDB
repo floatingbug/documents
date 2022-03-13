@@ -83,40 +83,21 @@ name.save((err)=>{
 - User
     -> Benötigt um auf mongod in der cloud zuzugreifen.
 
------Commands-----									
-- Es gibt 2 Befehle um Daten in JSON zu im- und exportieren.
-	-> mongoimport
-	-> mongoexport
-		-> $ mongoexport --uri "<Atlas Cluster URI>"
-			-> Weitere Optionen:
-				-> --collection=<collection name>
-				-> --out=<filename>.json
-- Es gibt 2 befehle um Daten in BSON zu im- und exportieren.
-	-> mongorestore
-	-> mongodump (exportieren)
-		-> $ mongodump --uri "<Atlas Cluster URI>"
-// Schreibt alle collections in die angegebenen Datenbank in den Ordner backup-dir.
+-----Commands-----
+- Daten von DB lokal in BSON speichern (exportieren)
+$ sudo mongodump --forceTableScan --uri "mongodb+srv://"Username":"Password"@"cluster"."uri".mongodb.net/"datenbanknamen"" --out=backup-dir		
+    -> srv ermöglicht eine sichere Verbindung.
+    -> Damit man die Daten Anfordern kann, müssen die Daten erst gelesen werden (alle documents in den collections).
+    -> Mit --forceTableScan stellt man sicher, dass auch alle Daten gelesen werden bzw. gescant werden.
+			
+- Daten von DB lokal in JSON speichern (exportieren)
+$ sudo mongoexport --forceTableScan --uri "mongodb+srv://"Username":"Password"@"cluster"."uri".mongodb.net/"datenbanknamen"" --out=backup-dir	--collection="some collection"					
 
-// Die Daten werden im BSON Format gespeichert.
-// srv ermöglicht eine sichere Verbindung.
-// Damit man die Daten Anfordern kann, müssen die Daten erst gelesen werden (alle documents in den collections).
-// Mit --forceTableScan stellt man sicher, dass auch alle Daten gelesen werden bzw. gescant werden.
-$ sudo mongodump --forceTableScan --uri "mongodb+srv://"Username":"Password"@"cluster uri".mongodb.net/"datenbanknamen"" --out=backup-dir											
-											
-// Schreiben der angegebenen collection in die angegebene Datei 
-// Die Daten werden im JSON Format gespeichert.
-											
-$ sudo mongoexport --forceTableScan --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq.mongodb.net/sample_supplies" --collection=sales --out=sales.json
-											
-// Neue collection Anlegen.
-// Format ist BSON
-// Am Ende des Strings muss der Ordner mit den Datei im BSON Format angegeben werden (Dateien enthalten die collections).
-// Mit drop werden die collections in der Datenbank sample_supplies vorher gelöscht.
+- Lokale Daten in BSON Format in DB speichern (importieren)
+$ sudo mongorestore --uri "mongodb+srv://"Username":"Password"@"cluster"."uri".mongodb.net/"datenbanknamen"" "Ordnername mit den BSON Dateien"
 
-$ sudo mongorestore --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq.mongodb.net/sample_supplies" --drop "OrdnerMitDerBSONdatei"									
-
-// Wie mongorestore nur mit dem JSON Format
-$ sudo mongoimport --uri "mongodb+srv://m001-student:1Meta-Mesa1@cluster0.sdmaq.mongodb.net/sample_supplies" --drop backup-dir/
+- Lokale Daten in JSON Format in DB speichern (importieren)
+$ sudo mongoimport --uri "mongodb+srv://"Username":"Password"@"cluster"."uri".mongodb.net/"datenbanknamen"" "JSON Datei"
 
 -----Queries-----
 // Nach bestimmten documents in der collection suchen

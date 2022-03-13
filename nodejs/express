@@ -1,7 +1,7 @@
 -----Middleware-----
 
 -> Middleware hinzufügen mit app.use
--> Wird nach einem request und vor einem response ausgeführt.
+    -> Wird nach einem request und vor einem response ausgeführt.
 
 -> Beispiel 1: app.use(bodyParser.urlencoded({extended: true}));
 	-> Wird bei jedem Request ausgeführt.

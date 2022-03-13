@@ -290,3 +290,97 @@
 				obwohl eine bestimmte Funktion in allen Unterklassen unterschiedlich implementiert ist.
 	-> Inklusion-Polymorphismus oder auch Subtypisierung
 		-> Unterklassen die sich von einer Oberklasse unterscheiden.
+
+-------------------------------------------------------------Algorithementwurf---------------------------------------------------------------------------------
+- Einführung
+	-> Ein reales Problem muss soweit abstrahiert werden, bis das Problem durch ein Algorithmus gelöst werden kann.
+	-> Verschiedene Paradikmen von Algorithmen beschreiben wie diese funktionieren bspw. iterativ: der Algorithmus wird wiederholt angewant
+		um das Problem zu lösen, Rekursiv: Der Algorithmus kann sich selbst aufrufen.
+
+- Induktion
+	-> Logischer Schluss von einem Spezialfall auf das Allgemeine.
+	-> Wird benutzt um zu beweisen, dass ein Algorithmus tatsächlich die gewünschte Handlung ausführt. 
+
+- Iteration
+	-> Wiederholter ablauf eines Prozesses.
+
+- Rekursion
+	-> Berechnung durch wiederholten Selbstaufruf einer Funktion.
+
+- Methoden des Algorithmen-Entwurfs
+	-> Greedy Algorithmen
+		-> suchen immer den kürzesten Weg bzw. versucht immer den besten nächsten Schritt zu wählen.
+			-> Da ein lokaler Startpunkt gewählt wierd, wird auch nur eine lokale Optimierung erreicht.
+		-> Beispiele:
+			-> Dijkstra-Algorithmus: Suche nach einem minimalen Weg in einem Graphen,
+			-> Kruskal-Algorithmus: Suche nach einem minimalen Spannbaum,
+			-> Prim-Algorithmus: Suche nach einem minimalen Spannbaum.
+	-> Divide and Conquer (teile und behersche)
+		-> Reales Problem in Teilprobleme aufteilen.
+			-> Teillösungen dann wieder kombinieren.
+		-> Beispiel wäre die dynamische Programmierung in der, global gesehen, vom kleinsten Teilproblem
+			bis zum größten Teilproblem, alle Teilprobleme einzeln gelöst werden.
+			-> Die gelößten Teilprobleme werden dann zusammengeführt und für das lösen der nächsten 
+				Teilprobleme verwendet.
+
+- Korrektheit und Verifikation von Algorithmen
+	-> Mögliche Fehelerquellen von Algorithmen
+		-> Syntaxfehler
+			-> Falsche Verwendung der Syntax bspw. einer Programmiersprache.
+		-> Logische/Semantische Fehler
+		-> Endlosschleifen
+	-> Zustand der Daten muss vor dem Ausführen des Algorithmus (Vorbedingung) und danach (Nachbedingung)
+		spezifiziert sein.
+	-> Korrektheit von Algorithmen
+		-> Partiell korrekt, wenn alle Notwendigen eingaben den Algorithmus terminieren.
+		-> Total korrekt, wenn alle Eingaben zu einer Terminierung führen.
+	-> Verifikation
+		-> Algorithmus wird Eingangsdaten zugeführt, bei denen das Ergebnis bereits bekannt ist.
+			-> Durch den Vergleich lässt die der Algorithmus verifizieren (wenn jedes Ergebnis korrekt ist).
+			-> Wird als Backtesting bezeichnet.
+			-> Unvollständige Verifikation.
+
+- Effizienz und Komplexität von Algorithmen
+	-> Ein Algorithmus soll möglichst schnell terminieren.
+		-> Zeit vom Start bis zur Terminierung ist die Laufzeit.
+	-> Laufzeitbestimmung
+		-> Laufzeit des Algorithmus soll sich eine Grenze annehern
+			-> wärend dieser Annäherung sollen alle notwendigen Rechenschritte berücksichtigen werden.
+	-> O-Notation
+		-> Beispiel: f(n)=3n²+5n+17
+			-> Dann ist f eine Funktion die O(n²) wächst (nur der am schnellsten wachsende Term ist relevant).
+				-> O(n²) ist die Menge aller Funktionen die n² wachsen, daher ist auch f in dieser Menge.
+					-> f ∈ O(n²)
+					-> n ist immer die Anzahl der Eingabedaten.
+					-> Es gibt eine Funktion g, die höchstens soschnell wie f wächst.
+						-> Es kann sein, dass g bis zu einen bestimmten Wert n schneller wächst,
+							ab diesen Punkt n wächst dann aber f schneller. 
+							-> Wird n sehr groß bzw. geht gegen ∞ also n-->∞, dann nähert sich 
+								g asymptotisch f an.
+								-> g ist dann eine Funktion, die auf dauer nicht Zeitkomplexer ist als f.
+									-> Definition:
+										Seien f,g: N-->N Funktionen. g heißt in der Ordnung von f oder g 
+										wächst asymptotisch nicht schneller als f, wenn es Konstanten c, d ∈ N gibt mit:
+										g(n) <= c*f(n) für alle n >= d
+		-> Ist g in der Ordnung von f schreibt man: g(n) = O(f(n)) oder g = O(f(n)) obwohl es eig. g ∈ O(f(n)) heißen müsste.
+		-> Angabe der Laufzeit eines Algorithmus durch angabe einer Funktion, die die Laufzeit des Algorithmus nach oben hin beschränkt.
+
+	-> Beispiel 1: Es gibt 3 Operationen also: 3*O(1) = O(1)
+		a:=1;
+		b:=2;
+		c:=3;
+
+	-> Beispiel 2: Das Produkt der Laufzeiten aus der Schleife: O(n) und der Variablenzuweisungen: O(1) ist: O(n)*O(1)=O(n) 
+		for(i=1; i<n; i++){
+			a:=1;
+			b:=2;
+			c:=3;
+		}
+
+	-> Beispiel 3: Laufzeit zweier verschachtelter Schleifen: O(n)*O(n) = O(n²)
+
+- P und NP lösbare Algorithmen
+	-> Laufzeit lässt sich in P- und NP-Probleme einteilen.
+	-> P-Problemen beschreiben Probleme, die in polynomineller Laufzeit lösbar sind.
+	-> NP-Probleme bschreiben nichtdeterministische in polynomineller Laufzeit lösbare Probleme.
+	-> Es wird vermutet, dass P ⊆ NP git. 
