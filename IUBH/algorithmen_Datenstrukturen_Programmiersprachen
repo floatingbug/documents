@@ -158,7 +158,7 @@
 			zu entfernen.
 
 - Graphen
-	 -> Realation durch Verbindungen aus einer Menge mit Knoten/Elementen E mit einer Menge aus Kanten K.
+	 -> Relation durch Verbindungen aus einer Menge mit Knoten/Elementen E mit einer Menge aus Kanten K.
 	 	-> e ∈ E und k ∈ K
 	-> Ungerichteter Graph.
 		-> Keine Richtung
@@ -282,7 +282,7 @@
 			unterschiedliche Anweisungen ausführt, in Abhängigkeit der übergebenen Datenstruktur.
 			Dies hat bei der Programmierung den Vorteil, dass ein einmal geschriebener Code nicht vollständig 
 			dupliziert werden muss, sondern lediglich die Teile abgewandelt werden müssen, 
-		welche sich konkret mit dem jeweils übergebenen Datentyp beschäftigen.
+			welche sich konkret mit dem jeweils übergebenen Datentyp beschäftigen.
 	-> AdHoc-Polimorphismus
 		-> Deklaration der Funktion in abstrakter Klasse.
 			-> Funktion wird dann in jeder Unterklasse, entsprechend der jeweiligen Unterklasse, implementiert.
