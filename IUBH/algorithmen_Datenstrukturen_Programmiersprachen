@@ -61,7 +61,7 @@
 		-> Einzelne Zeichen, Sonderzeichen, Buchstaben und Zahlen.
 			-> Beispiel: "1", "!", "d".
 	-> Strings.
-		-> Kombinationen von mind. einem Char.
+		-> Kombinationen aus mind. zwei Chars.
 	-> Ganzzahlen.
 		-> Integer sind meistens 16 bit (2 byte) groß.
 			-> Zahlenraum ist dann von -32768 bis +32767.
@@ -78,7 +78,7 @@
 	-> Listen
 		-> Serielle Speichermöglichkeit von mehreren Variablen gleichen Typs.
 		-> Jeder Eintrag enthät einen Index.
-			-> Auslesen und Speicherung an bestimmter stille mittels Index.
+			-> Auslesen und Speicherung an bestimmter stelle mittels Index.
 		-> Kann dynamisch erweiterbar sein. 
 	-> Array (Feld)
 		-> Nicht dynamisch erweiterbar.
@@ -96,7 +96,7 @@
 			-> Jeder Knoten kann max. zwei Nachkommen haben
 			-> Zur Darstellung werden Zeiger verwendet.
 		-> Traversierung.
-			-> Durchlaufen eines Baumes von Wurzel bis Blatt ohne einen Knoten zweimal zu besuchen.
+			-> Durchlaufen eines Baumes von Wurzel bis Blatt.
 
 ------------------------------------------Datenstrukturen----------------------------------------------
 - Warteschlangen (queues)
@@ -150,12 +150,15 @@
 	-> LIFO-Prinzi.
 		-> Last In First Out.
 	-> Wird auch als Kellerspeicher bezeichnet.
+		-> Bei einem echten Kellerspeicher kann immer nur das oberste Element gelesen werden,
+			bei einem Stack jeden, verändert werden kann aber nur das oberste.
 	-> Hardware nahes Verhalten.
 	-> Grundsätzliche Operationen:
 		-> Push: Element wird auf den Stack gelegt.
 		-> Pop: Das oberste Element wird entnommen.
 		-> Peek (oft auch als Top bezeichnet): Das oberste Element wird ausgegeben, ohne es aus dem Stack 
 			zu entfernen.
+
 
 - Graphen
 	 -> Relation durch Verbindungen aus einer Menge mit Knoten/Elementen E mit einer Menge aus Kanten K.
@@ -203,7 +206,7 @@
 		sondern dezentral über viele Netzwerkteilnehmer.
 	-> Wallets
 		-> Digitale Geldbeutel
-			-> Können auf Smart-Phones, Notebooks, PS's usw. Installiert werden.
+			-> Können auf Smart-Phones, Notebooks, PC's usw. Installiert werden.
 		-> Bei einer Transaktion wird von einem wallet zu einem anderen Geld überwiesen.
 			-> Dabei ist nur die Walletnummer bekannt, von wem das Geld stammt ist unbekannt.
 	-> Miner
@@ -274,7 +277,7 @@
 - Polimorphie
 	-> Ein Objekt kann verschiedene Datentypen annehmen und weiterverarbeiten.
 		-> Je nach tatsächlichen übergebenen Datentyp wird eine unterschiedliche Implementierung angewand.
-			-> Z.B. eine andere implementierte Funktion.
+			-> Z.B. eine anders implementierte Funktion.
 		-> Lisen und Stacks können ebenfalls unterschiedliche Datentypen haben, z.B. eine Liste aus Integern,
 			oder eine Warteschlange aus Strings.
 		->Polimorphismus ist zusammengefasst:
@@ -380,7 +383,12 @@
 	-> Beispiel 3: Laufzeit zweier verschachtelter Schleifen: O(n)*O(n) = O(n²)
 
 - P und NP lösbare Algorithmen
+	-> Ein Polynom ist eine Summe aus Termen, wobei jeder Term eine beliebige Potenz von x enthält z.B.: f(x)=2x³+x²+x+3.
+	-> Ein Algorithmus zeigt eine polynominelle Zeitkomplexität, wenn für die Laufzeit des Algorithmus
+		O(n^k)gilt.
+	-> Die Menge aller Entscheidungsprobleme mit einer polynominellen Laufzeit wird mit P bezeichnet.
 	-> Laufzeit lässt sich in P- und NP-Probleme einteilen.
 	-> P-Problemen beschreiben Probleme, die in polynomineller Laufzeit lösbar sind.
 	-> NP-Probleme bschreiben nichtdeterministische in polynomineller Laufzeit lösbare Probleme.
-	-> Es wird vermutet, dass P ⊆ NP git. 
+	-> Es wird vermutet, dass P ⊆ NP gilt.
+ 
