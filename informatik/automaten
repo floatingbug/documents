@@ -1,0 +1,50 @@
+--------------------------------Vorkenntnisse---------------------------------
+- Rückkopplung
+	-> ein Teil der Ausgangsgröße (das was rausgehen soll) direkt oder 
+		in modifizierter Form auf den Eingang des Systems zurückgeführt wird.
+		-> Durch die Rückkopplung von min. einer der Ausgänge auf min. einer
+			der Eingänge, erhält eine Schaltung einen speichernden
+			Charakter (ein Gedächtnis).
+
+- Transistor
+-> Nur wenn eine Spannung an S anliegt, kann ein Strom von a nach b fließen.
+
+	 a o---------
+				|
+				|----------o S
+				|
+	 b o---------
+
+- Gatter
+	-> Ein Gatter besteht aus Schalter. Als Schalter werden Transistoren benutzt.
+	-> Ein Gatter besitzt mehrere Eingänge aber nur einen Ausgang.
+		-> Ein- und Ausgägne können nur den Wert 1 und 0 annehmen (Strom fließt oder nicht).
+	-> Durch die Anordnung der Schalter/Transistoren können Funktione abgebildet werden.
+	-> Beispiel eines UND Gatters:
+		-> Nur wenn an beiden Eingängen eine Spannung anliegt, liegt auch am Ausgang
+			eine Spannung an.
+
+- Digitale Schaltung
+	-> Zusammenschluss von Gatter um Funktione abzubilden.
+	-> Nur ein Ausgang.
+
+- Schaltfunktionen
+-> Werden zur erstellung digitaler Schaltungen und deren Analyse eingesetzt.
+-> Die boolische Algebra wird bei Schaltfunktionen als Schaltalgebra bezeichnet.
+-> Argumente einer Schaltfunktion f(x1, x2, x3,...,xn) können nur die Werte 1 und 0 annehmen.
+-> Beispiel: f(x1, x2)= x1 UND x2
+	-> Nur wenn x1 und x2 den Wert 1 besitzen, ist die Ausgabe 1, anderenfalls 0.
+
+- Schaltnetze
+-> Zusammenschluss von mehreren logischen Gatter.
+-> Das Schaltnetz kann man sich als schwarzen Kasten vorstellen
+	-> Engänge werden mit e1, e2,...,en und Ausgänge mit a1, a2,...,an bezeichnet.
+-> Dadurch das Schaltnetze aus Kombinationen von Gatter aufgebaut sind,
+	hängen die Ausganszustände (0 oder 1) von den Eingangszuständen ab.
+	-> Daher können zur Darstellung Schaltfunktionen verwendet werden.
+	-> Durch Wahrheitstabellen werden die Ausgänge in Abhängigkeit der 
+		Engänge dargestellt.
+-> Keine Rückkopplung.
+
+- Schaltwerk
+-> wie Schaltnetz aber mit Rückkopplung.
