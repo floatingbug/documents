@@ -32,3 +32,13 @@
 		in den Call-Stack geladen.
 		-> Wird eine Funktion im Code des GEC aufgerufen, wird der execution context
 			der Funktion in den Call-Stack geladen. 
+
+- Callback-Funktionen und asynchrone Funktionen
+	-> Beispiel:
+		function asyncFunction(cb){
+			//hier steht code, der vor der asynchronen Operation ausgeführt wird.
+			//ist die asynchrone Operation ausgeführt, wird das Ergebnis cb übergeben.
+			cb()
+			//hier steht code, der erst nach der Ausführung von cb ausgeführt wird.
+			//also erst nach der asynchronen Operation.
+		}

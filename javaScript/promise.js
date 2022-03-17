@@ -13,16 +13,15 @@
 */
 
 // Beispiel 1:
-// Das Promise-Objekt sorgt dafür, dass die callback-function "(resolve, reject)=>" nicht im stack des 
-// Interpreters ausgefürhrt wird, sondern auserhalb des JavaScript-Interpreters.
-// Für resolve und reject "(resolve, reject)=>" wurde durch "then((result)=>)" und "catch((err)=>)"
-// eine callback-function übergeben die, wenn sie aufgerufen wird, in die microtask-queue gesendet wird und
-// auf den stack des JavaScript Interpreters gesendet wird.  
+// Die cb-Funktionen für die Parameter resolve und reject, werden über die Promise-Funktionen .then und
+// .catch übergeben.
+// Wurde die asynchrone Operation ausgeführt, wird das Ergebnis entweder an resolve oder reject übergeben und
+// diese dann in die Microtaskqueue gesendet.
 function getUserID(id){
 	return new Promise((resolve, reject)=>{
 		//asynchrone Operation beginnt hier, ist sie beendet, wird das Ergebnis in ergebnis gespeichert.
         ergebnis = true;
-                		
+        
         if(ergebnis){
 		    resolve('Ergebnis der asynchronen Operation')
         }
