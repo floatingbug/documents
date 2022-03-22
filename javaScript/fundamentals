@@ -33,12 +33,48 @@
 		-> Wird eine Funktion im Code des GEC aufgerufen, wird der execution context
 			der Funktion in den Call-Stack geladen. 
 
-- Callback-Funktionen und asynchrone Funktionen
-	-> Beispiel:
-		function asyncFunction(cb){
-			//hier steht code, der vor der asynchronen Operation ausgeführt wird.
-			//ist die asynchrone Operation ausgeführt, wird das Ergebnis cb übergeben.
-			cb()
-			//hier steht code, der erst nach der Ausführung von cb ausgeführt wird.
-			//also erst nach der asynchronen Operation.
-		}
+- Asynchrone Funktionen
+    -> Asynchrone Funktionen geben einen Wert nicht durch return zurück, sondern
+        übergeben den Wert an eine cb.
+    -> Callback-Funktionen und asynchrone Funktionen
+	    -> Eine asynchrone Funktion wird eine cb übergeben.
+            -> Wurde die asynchrone Operation durchgeführt, gibt die Funktion nicht 
+                über return das ergebnis zurück, sondern übergibt das Ergebnis an 
+                Parameter der cb.
+                -> Die cb wird dann ich die cb-queue gesendet.
+    -> callback-hell:
+        fn(cb){
+            cb()
+        }
+
+        fn(()=>{
+            console.log("first callback")
+            fn(()=>{
+                console.log("second callback")
+                fn(()=>{
+                    console.log("third callback")                 
+                }            
+            }        
+        })
+
+- let vs var
+    -> Ist eine Variable mit let definiert, hat sie nur in dem Block{} (also scope) gültigkeit, 
+        in der sie definiert wurde.
+        -> var definierte Variablen, haben auch Auserhalb des scopes gültigkeit.
+
+- Schleifen
+    -> for(let a in b)
+        -> In a werden die indizes von b gespeichert.
+    -> for(let a of b)
+        -> In a werden die Werte von b gespeichert.
+
+- Iteratoren
+    -> Abstrahieren das Iterieren über Datenstrukturen.
+    -> Ein Iterator ist ein Objekt, das einen Zeiger enthält, der auf ein Element in einer 
+        Datenstruktur zeigt.
+        -> Durch next() erhält der Zeiger die Adresse zum nächsten Element.
+            -> Gleichzeitig gibt der Zeiger das Element zurück.
+            -> next() gibt ein Objekt mit dem Wert des Elements und der Eigenschaft done zurück.
+                -> {value: "wert des elements", done: false}
+                    -> Ist der Wert von done: true, ist das Ende des Objekts erreicht und
+                        es wurde über alle Werte iteriert.

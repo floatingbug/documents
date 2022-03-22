@@ -1,0 +1,19 @@
+- Funktionen an bestimmter Stelle anhalten und an einem späteren Zeitpunkt, an dieser stelle vortsätzen.
+    -> Durch Generatoren.
+- Generatorfunktion.
+    -> Erstellen von Generatoren.
+    -> Definiert werden sie durch function*
+    -> In der Generatorfunktion steht code dessen Ausführung durch den Generator gesteuert wird.
+    -> Liefert einen Generator zurück
+
+- Generator
+    -> Unterbrechen des Generators durch yield.
+    -> yield liefert wie return einen Wert zurück und sorgt dafür, dass aus dem Generatur
+        heraus gesprungen wird.
+        -> Bei Aufruf der next() Methode, wird der code, nach dem letzten yield-Aufruf, fortgesetzt und
+            zwar bis zum nächsten yield. dann wird wieder ein Wert zurückgegeben und der Generator verlassen.
+        -> Zurückgegeben wird immer ein Objekt {value: "wertDenYieldZurückgegebenHat", done: false}
+            -> Wurde der letzte yield aufgerufen, enthält die Eigenschaft done den Wert true.
+
+
+
