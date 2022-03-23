@@ -1,30 +1,22 @@
-function makeRequest(location){
-    return new Promise(resolve, reject){
-        //make request and store result in res
+//Wenn eine async Funktion aufgerufen wird, und der Interpreter auf ein
+//await trift, wird die Funktion zwischengespeichert und erst wieder 
+//aufgerufen, wenn FULFILLED===true, dann gibt das Promise ein ergebnis zurück.
+//
+//Beispiel:
 
-        if(res === "google"){
-            resolve("hi from google")
-        }
-        else{
-            reject("can only talk to google")        
-        }
-    }
+somePromise = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+		resolve("promise is resolved!")
+	}, 3000)
+})
+
+async function afn(){
+	let result = await somePromise;
+	console.log(result)
 }
 
-//makeRequest gibt ein Promise-Objekt zurück.
-//durch await wird der nachfolgende code in der async function erst ausgeführt,
-//wenn resolve oder reject des Promise-Objekts ausgeführt wurde.
-async function doWork(){    
-    try{
-        //wenn statt resolve reject zurückgegeben wird, wird catch(err) aufgerufen.
-        const response = await makeRequest('google')
-    }
-    catch(err){
-        console.log(err)    
-    }
-}
+console.log("1st call")
 
-//Zusammengefasst: durch await wird der code auserhalb der async function weiter ausgeführt. Wurde die 
-//asynchrone Operation im Promise ausgeführt, gibt das Promise resolve oder reject zurück.
-//Wird reject zurück gegeben, wird der catch-block ausgeführt.
-//der try-block ist sozusagen die then-Funktion.
+
+
+afn()
