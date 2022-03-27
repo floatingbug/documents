@@ -10,6 +10,10 @@
 			-> Asynchrone Operation ist abgeschlossen und das Promise-Objekt hat das Resultat erhalten.
 		- Rejected
 			-> Die Asynchrone Operation ist fehlgeschlagen und das Promise-Objekt erhält als Resultat einen Fehler.
+
+    - Sowohl die Methode Promise.prototype.then als auch Promise.prototype.catch geben ein Promise-Objekt zurück.
+    - Wurde im Objekt resolve aufgerufen, befindet sich das Objekt im Status fulfilled und der handler wird durch then aufgerufen.
+    - Wurde im Objekt reject aufgerufen, befindet sich das Objekt im Status rejected und  der handler wird durch catch aufgerufen.
 */
 
 // Beispiel 1:
