@@ -1,6 +1,7 @@
 ----------------------------------------------Einführung------------------------------------------------------------
 - Algorithmen
-	-> Eingesetzt um abstrahierte Problemstellung zu Berechnen oder Befehlsabfolge nach Kontrollstruktur initiieren.
+    -> Algorithmen überführen Eingangsdaten in Ausgangsdaten.	
+    -> Eingesetzt um abstrahierte Problemstellung zu Berechnen oder Befehlsabfolge nach Kontrollstruktur initiieren.
 	-> Theoretisches Konstrukt, das eine bestimmte Befehlsabfolge beschreibt.
 	-> Kern der Informatik.
 	-> Wird meist auf einer Rechenmaschine ausgeführt.
@@ -35,14 +36,14 @@
 	-> Angabe eindeutiger Handlungsabfolge.
 		-> Dinge wie "etwas" oder "ein wenig" kann sich keine genau Handlungsabfolge ableiten.
 		-> Hardware die Handlungsabfolgen/Anweisungen zusammen fasst, muss nicht detailliert jede Anweisung einzeln mitgeteilt werde, 
-			es reicht, wenn die zusammen gefassten Anweisungen mitgeteilt wird (wenn die HW eine Zusammenfassung besitzt).
-			-> Je kleiner die Menge an Anweisungen/Elementare-Operationen einer HW ist, desto größer muss der Detailgrad
+			es reicht, wenn die zusammengefasste Anweisung mitgeteilt wird (wenn die HW eine Zusammenfassung besitzt).
+			-> Je kleiner die Menge an zusammengefassten elementaren-Operationen einer HW ist, desto größer muss der Detailgrad
 				eines Algorithmus sein.
-			-> Je größer die Zusammenfassung von Elementaren-Operation eine HW ist, desto abstrahierter kann die Anweisungen sein.
+			-> Je größer die Zusammenfassung von elementaren-Operation einer HW ist, desto abstrahierter können die Anweisungen sein.
 				-> Die Zusammenfassung von 8 bits zu einem byte, der dann die Repressentation eines Buchstabens darstellt,
 					ist eine Abstrahierung/Vereinfachung, denn es reicht nur das byte anzugeben, die tatsächliche Repressentation
 					des Buchstabens durch 8 bits ist verborgen.
-	-> Je größer die Abstraktion, desto kleiner ist die Menge an Elementaren Operationen, die benötigt werden um eine Algorithmus zu schreiben.
+	-> Je größer die Abstraktion, desto kleiner ist die Menge an elementaren Operationen, die benötigt werden um ein Algorithmus zu schreiben.
 	-> Der Erfolg eines Algorithmus hängt von den elementaren Anweisungen, die von der HW verstanden werden können, ab. 
 		-> Und ob die verfügbaren Anweisungen zur Lösung des Problems im stande sind.
 	-> Zusammenfassung
@@ -51,12 +52,11 @@
 
 - Kontrollstrukturen
 	-> Gibt einem Programm eine Anweisungsfolge.
-	-> Schleifen.
-	-> Bedingungen.
-		-> unterschiedliches Reagieren auf unterschiedliche Ereignisse. 
+	    -> Schleifen.
+	    -> Bedingungen.
+		    -> unterschiedliches Reagieren auf unterschiedliche Ereignisse. 
 
 - Datentypen
-	-> Algorithmen überführen Eingangsdaten in Ausgangsdaten.
 	-> Chars.
 		-> Einzelne Zeichen, Sonderzeichen, Buchstaben und Zahlen.
 			-> Beispiel: "1", "!", "d".

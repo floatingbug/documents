@@ -45,22 +45,32 @@ Versionen aus .git in den workspace laden:
         -> $ git checkout master
             -> Dadurch befindet sich wieder der letzte gemachte commit im workspace.
 
+
 commits löschen:
 -> git reset --hard "hash-wert auf den der Branch-Pointer zeigen soll"
     -> dadurch wandert der Branch-Pointer zu einen früheren commit, wodurch alle vorherigen commits abgehängt
         und somit gelöscht werden.
 
 
-
-
-
+Zustände in denen sich Dateien befinden können:
+-> untracked (unversioniert)
+	-> Datei wird nicht von der Versionskontrolle berücksichtigt.
+		-> commit, add usw. haben keine auswirkung auf die Datei.
+-> modified (bearbeitet)
+	-> Datei im workspace wurde seit dem letzten commit geändert.
+-> unmodified (unbearbeitet)
+	-> Datei im workspace wurde nicht geändert.
+-> staged
+	-> Eine geänderte Datei ist für den nächsten commit vorgesehen.
 
 
 Anzeigen lassen, was sich in einer Datei geändert hat:
 $ git diff test.txt
 
+
 Anzeigen lassen, was sich im workspace geändert hat:
 $ git status
+
 
 Anzeigen lassen, auf welchem branch man sich befindet:
 $ git branch
@@ -81,3 +91,17 @@ $ git commit -m „datei test.txt gelöscht“
 
 Mergen:
 $ git merge nameDesZweiges
+
+Ein lokalen (LAN) repository erstellen:
+-> Der lokale repository beinhaltet kein workspace (in ihm wird nicht gearbeitet)
+$ git init --bare
+
+-> Rechner im lan auf das Repository in anderem Rechner zugreifen:
+$ git init
+$ git remote add origin user@ip:/adresseZumRepository
+    -> Alternative: $ git clone user@ip:/adresseZumRepository
+
+-> Rechner auf dem sich das repo befindet
+$ git init 
+$ git remote add origin file:///home/user/ordnerMitRepo .
+    -> Alternative: git clone file:///home/user/ordnerMitRepo .
