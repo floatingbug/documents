@@ -1,0 +1,10 @@
+- undefined
+    -> Wurde einer Variable noch kein Wert zugewießen (nicht initialisiert), 
+        ist der Wert der Variable undefined.
+    -> Der Wert undefined ist nicht dafür gedacht, ihn einer variable zu zuordnen.
+        -> Er wird automatisch bei einer nicht initialisierung einer Variable zugeordnet.
+
+- null
+    -> Um auszudrücken, dass eine Objektvariable auf kein Objekt zeigt, 
+        wird der Wert der Objektvariable mit null belegt.
+    -> Der Wert null ist dafür gedacht, ihn einer Objektvariable zu zuordnen.
