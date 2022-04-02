@@ -151,7 +151,7 @@
 		-> Last In First Out.
 	-> Wird auch als Kellerspeicher bezeichnet.
 		-> Bei einem echten Kellerspeicher kann immer nur das oberste Element gelesen werden,
-			bei einem Stack jeden, verändert werden kann aber nur das oberste.
+			bei einem Stack jedes, verändert werden kann aber nur das oberste.
 	-> Hardware nahes Verhalten.
 	-> Grundsätzliche Operationen:
 		-> Push: Element wird auf den Stack gelegt.
@@ -244,7 +244,7 @@
      -> Jeder Block besitzt den Hash-Wert seines Vorgängers und seinen eigenen. 
         -> Wird der Vorgänger Manipuliert, ändert sich sein Hash-Wert aber da der Nachfolger den gültigen Hash-Wert 
             des Vorgängers besitzt, wird diese Manipulation erkannt.         
-    -> Jeder neu generierte Block muss von Miner/Validierer im Netzes validiert werden.
+    -> Jeder neu generierte Block muss von Miner/Validator im Netzes validiert werden.
         -> Es wird beispielsweise vorgegeben, dass der Hash-Wert des zu validierenden Blocks mit 4 Nullen beginnt.
             -> Eigentlich ergibt der Hash-Wert, aus dem vorigen Block + Daten, einen Hash-Wert indem die ersten stellen keine
                 4 Nullen sind.
@@ -313,7 +313,7 @@
 - Methoden des Algorithmen-Entwurfs
 	-> Greedy Algorithmen
 		-> suchen immer den kürzesten Weg bzw. versucht immer den besten nächsten Schritt zu wählen.
-			-> Da ein lokaler Startpunkt gewählt wierd, wird auch nur eine lokale Optimierung erreicht.
+			-> Da ein lokaler Startpunkt gewählt wird, wird auch nur eine lokale Optimierung erreicht.
 		-> Beispiele:
 			-> Dijkstra-Algorithmus: Suche nach einem minimalen Weg in einem Graphen,
 			-> Kruskal-Algorithmus: Suche nach einem minimalen Spannbaum,
@@ -348,7 +348,7 @@
 		-> Zeit vom Start bis zur Terminierung ist die Laufzeit.
 	-> Laufzeitbestimmung
 		-> Laufzeit des Algorithmus soll sich eine Grenze annehern
-			-> wärend dieser Annäherung sollen alle notwendigen Rechenschritte berücksichtigen werden.
+			-> wärend dieser Annäherung sollen alle notwendigen Rechenschritte berücksichtigt werden.
 	-> O-Notation
 		-> Beispiel: f(n)=3n²+5n+17
 			-> Dann ist f eine Funktion die O(n²) wächst (nur der am schnellsten wachsende Term ist relevant).
