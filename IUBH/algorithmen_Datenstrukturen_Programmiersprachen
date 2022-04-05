@@ -392,3 +392,46 @@
 	-> NP-Probleme bschreiben nichtdeterministische in polynomineller Laufzeit lösbare Probleme.
 	-> Es wird vermutet, dass P ⊆ NP gilt.
  
+---------------------------------------------Grundlegende Algorithmen--------------------------------------------------------
+
+- Traversierung
+    -> In-Order
+        -> LMR
+    -> Pre-Order
+        ->MLR
+    -> Post-Order
+        ->LRM
+    -> Level-Order
+        -> Begin Wurzel.
+            -> Besucht in der nächsten Ebene/Niveau des Baumes alle Knoten von links nach rechts.
+                -> Wird bis zur letzten Ebenen durchgeführt. 
+
+- Suche nach dem kürzesten weg (Dijkstra)
+    -> Berechnet die günstigsten Wege von einem Startknoten zu allen anderen Knoten.
+    -> Nur positive Kanzenkosten/Kantengewichte.
+    -> Beschreibung:
+        -> 0. Startknoten kommt als erster Knoten in eine Warteschlange.
+        -> 1. Knoten mit den geringsten Kosten zum Startknoten wird entnommen. 
+		-> 2. Nachbarknoten die noch nicht besucht wurden kommen in eine Warteschlange: 
+				Aufsteigend von klein nach groß.
+        -> 3. Prüfen ob Weg von Startknoten zum aktuell betrachteten Knoten zum Nachtbarn kleiner ist.
+			-> Wenn ja: Nachtbarknoten erhält den Vorängerknoten des aktuell betrachteten Knotens
+				inkl. der Distanz zum Startknoten.
+			-> Wenn nein: Nachtbarknoten behält den alten Vorgängerknoten und Distanz.
+		-> Befinden sich nocht Knoten in der Warteschlange, weiter mit 1., andernfalls terminieren. 
+
+-> Selection Sort
+	-> Es wird nur ein Array benötigt.
+	-> Beim Start wird das erste Element x[0] mit dem nächsten Element verglichen. Ist das nächste e
+		kleiner wird dieses mit dem nächsten verglichgen. Ist man am ende angekommen, wird das kleinste 
+		e mit x[0] vertauscht und der Vorgang wiederholt sich bei x[1].
+		-> der vorgang wird n-1 mal wiederholt, wobei n die Anzahl der ist.
+
+-> Insertion Sort
+	-> Es wird nur ein Array Benötigt.
+	-> Erstes e befindet sich links im sortierten Bereich, alle anderen e rechts im unsortierten bereich.
+		-> Das erste e aus dem unsortierten Bereich wird mit dem letzten e aus dem sortierten verglichen.
+			Das e aus dem unsortierten Bereich wird vor dem e aus dem sortierten Bereich eingefügt, dass
+			größer oder gleichgroß ist. Die nachfolgenden e wandern dann jeweils um ein index nach rechts.
+-> Quick Sort
+	-> 
