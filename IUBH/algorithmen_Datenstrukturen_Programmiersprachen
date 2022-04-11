@@ -408,7 +408,7 @@
 
 - Suche nach dem kürzesten weg (Dijkstra)
     -> Berechnet die günstigsten Wege von einem Startknoten zu allen anderen Knoten.
-    -> Nur positive Kanzenkosten/Kantengewichte.
+    -> Nur positive Kantenkosten/Kantengewichte.
     -> Beschreibung:
         -> 0. Startknoten kommt als erster Knoten in eine Warteschlange.
         -> 1. Knoten mit den geringsten Kosten zum Startknoten wird entnommen. 
@@ -425,7 +425,7 @@
 	-> Beim Start wird das erste Element x[0] mit dem nächsten Element verglichen. Ist das nächste e
 		kleiner wird dieses mit dem nächsten verglichgen. Ist man am ende angekommen, wird das kleinste 
 		e mit x[0] vertauscht und der Vorgang wiederholt sich bei x[1].
-		-> der vorgang wird n-1 mal wiederholt, wobei n die Anzahl der ist.
+		-> der vorgang wird n-1 mal wiederholt, wobei n die Anzahl der e ist.
 
 -> Insertion Sort
 	-> Es wird nur ein Array Benötigt.
