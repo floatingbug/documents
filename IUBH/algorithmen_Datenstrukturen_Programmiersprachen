@@ -463,5 +463,24 @@
 		-> Das erste e aus dem unsortierten Bereich wird mit dem letzten e aus dem sortierten verglichen.
 			Das e aus dem unsortierten Bereich wird vor dem e aus dem sortierten Bereich eingefügt, dass
 			größer oder gleichgroß ist. Die nachfolgenden e wandern dann jeweils um ein index nach rechts.
+
 -> Quick Sort
-	-> 
+	-> Basiert auf divide and conquer.
+	-> Es wird nur ein Array benötigt.
+	-> Prinzip:
+		-> Es wird per Zufall oder hardcoded ein Element als Pivot ausgewählt.
+			-> Kleinere Elemente kommen auf die linke Seite, größere auf die rechte Seite des Pivot.
+				-> wurden alle Elemente mit Pivot verglichen, befindet sich das Pivot an der
+					richtigen stelle.
+					-> Der Algorithmus wird dann auf der linken Seite (kleinere Elemente) und auf der
+						rechten Seite (größere Elemente) erneut angewant.
+
+-> Sequenzielle Suche
+	-> Daten werden von vorne nach hinten durchlaufen und die Werte mit dem aufzufindenen Wert verglichen.
+
+-> Binäre Suche
+	-> Basiert auf divide and conquer.
+	-> Nur sortierte Listen können durchsucht werden.
+	-> Wird in der Liste ein Element ausgewählt, dass größer als das zu suchende ist, können
+		alle Elemente die größer sind verworfen werden, denn dort kann sich das Element nicht befinden.
+
