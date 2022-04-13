@@ -342,6 +342,7 @@
 			-> Durch den Vergleich lässt die der Algorithmus verifizieren (wenn jedes Ergebnis korrekt ist).
 			-> Wird als Backtesting bezeichnet.
 			-> Unvollständige Verifikation.
+		-> Algorithmus wird mathematisch verifiziert, z.B. durch vollständige Induktion.
 
 - Effizienz und Komplexität von Algorithmen
 	-> Ein Algorithmus soll möglichst schnell terminieren.
@@ -367,6 +368,11 @@
 										g(n) <= c*f(n) für alle n >= d
 		-> Ist g in der Ordnung von f schreibt man: g(n) = O(f(n)) oder g = O(f(n)) obwohl es eig. g ∈ O(f(n)) heißen müsste.
 		-> Angabe der Laufzeit eines Algorithmus durch angabe einer Funktion, die die Laufzeit des Algorithmus nach oben hin beschränkt.
+		-> Zusammengefasstes Beispiel:
+			-> Es soll gezeigt werden, dass 6n²+3n+2 in O(n²) ist.
+				-> cn² ist auch in O(n²).
+				-> Wenn c = 7 (oder größer), dann wächst cn² schneller als 6n²+3n+2.
+					-> Somit muss 6n²+3n+2 auch in O(n²) enthalten sein.
 
 	-> Beispiel 1: Es gibt 3 Operationen also: 3*O(1) = O(1)
 		a:=1;
@@ -381,6 +387,30 @@
 		}
 
 	-> Beispiel 3: Laufzeit zweier verschachtelter Schleifen: O(n)*O(n) = O(n²)
+
+	-> Beispiel 4:
+		
+		def findNumber(n){
+			
+			b:=false;
+			for(c in array:a){
+				if(c == n){
+					return true;
+				}
+			}
+			return b;
+		}
+
+			-> Erste Zuweisung b:=false ergibt eine Laufzeit von 1.
+			-> Die Schleife wird n mal aufgerufen und hat somit eine Laufzeit von n.
+			-> if hat eine Laufzeit von n.
+			-> return true hat eine Laufzeit von 1.
+				-> oder die Laufzeit 1 von return auserhalb der if Verzweigung.
+			-> Gesamtlaufzeit: 2n+2
+			-> Best-Case-Laufzeit: 3.
+			-> Worst-Case-Laufzeit: 2n+2.
+			-> Average-Case-Laufzeit: 2(n/2)+2 = n+2.
+
 
 - P und NP lösbare Algorithmen
 	-> Ein Polynom ist eine Summe aus Termen, wobei jeder Term eine beliebige Potenz von x enthält z.B.: f(x)=2x³+x²+x+3.
