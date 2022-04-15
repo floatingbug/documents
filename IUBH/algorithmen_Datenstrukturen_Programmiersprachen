@@ -472,8 +472,8 @@
 			-> Kleinere Elemente kommen auf die linke Seite, größere auf die rechte Seite des Pivot.
 				-> wurden alle Elemente mit Pivot verglichen, befindet sich das Pivot an der
 					richtigen stelle.
-					-> Der Algorithmus wird dann auf der linken Seite (kleinere Elemente) und auf der
-						rechten Seite (größere Elemente) erneut angewant.
+					-> Das Povot teilt dann die Liste in zwei Teillisten, in denen der Algorithmus
+						jeweils erneut abläuft.
 
 -> Sequenzielle Suche
 	-> Daten werden von vorne nach hinten durchlaufen und die Werte mit dem aufzufindenen Wert verglichen.
@@ -481,6 +481,14 @@
 -> Binäre Suche
 	-> Basiert auf divide and conquer.
 	-> Nur sortierte Listen können durchsucht werden.
-	-> Wird in der Liste ein Element ausgewählt, dass größer als das zu suchende ist, können
-		alle Elemente die größer sind verworfen werden, denn dort kann sich das Element nicht befinden.
-
+	-> Beispiel:
+		-> in einer sortierten liste l wird die Mitte m ermittelt und geprüft, ob das gesuchte 
+			Element x mit der Mitte identisch ist.
+			-> Wenn nicht wird überprüft, ob x kleiner oder größer als m ist.
+				-> Ist x kleiner als m, wird die Mitte links neben m ermittelt und der Algorithmus
+					beginnt von neuem.
+				-> Ist x größer als m, wird die Mitte rechts neben m ermittelt und der Algorithmus
+					beginnt von neuem.
+					-> Die Abbruchbedingung, wenn x nicht gefunden wird, könnte sein: 
+						Wenn Startpunkt größer als Endpunkt ist. Dann wäre kein Element mehr 
+						übrig, dass geprüft werden könnte.
