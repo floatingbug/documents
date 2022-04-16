@@ -492,3 +492,26 @@
 					-> Die Abbruchbedingung, wenn x nicht gefunden wird, könnte sein: 
 						Wenn Startpunkt größer als Endpunkt ist. Dann wäre kein Element mehr 
 						übrig, dass geprüft werden könnte.
+
+-> Fibonacci Suche
+	-> Beispiel: F:="zur Zeit betrachtete Fibonacci-Zahl", F1:="der Vorgänger", F2:="Vorgänger des Vorgängers",
+		e:="der gesuchte Wert".
+		-> Die erste Fibonacci-Zahl F ist die, die größer oder gleichgroß der Länge N des zu Durchsuchenden
+			Arrays a ist.
+			-> Ist Das Array N = 11 groß, ist F = 13.
+		-> Der Index für das gesuchte Element ist: min = (offset+F2, N-1) also min = ((-1)+5, 11-1) = (4, 10) = 4.
+			Bei der ersten Iteration ist der offset = -1.
+			-> Ist a[4] < e
+				-> wird F zu F1 also: F = 8 und offset = 8
+			-> ist a[4] > e
+				-> wird F zu F2 also: F = 5 und offset = 5
+			-> ist a[4] == e
+				-> Element gefunden.
+
+-> String Matching (naives Verfahren)
+	-> Ein String M wird im Text A durchsucht.
+		-> Das erste Zeichen von M wird als erstes mit dem ersten Zeichen von A verglichen.
+			-> Stimmen sie überein wird das nächste Zeichen von M mit dem nächsten Zeichen von A verglichen.
+				-> Stimmen alles zeichen überein, wurde der String gefunden anernfalls, wandert M um eins weiter.
+
+-> 
