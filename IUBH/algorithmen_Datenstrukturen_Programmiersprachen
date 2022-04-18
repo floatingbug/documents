@@ -514,4 +514,51 @@
 			-> Stimmen sie überein wird das nächste Zeichen von M mit dem nächsten Zeichen von A verglichen.
 				-> Stimmen alles zeichen überein, wurde der String gefunden anernfalls, wandert M um eins weiter.
 
--> 
+-> String Matching (Verfahren von Knoth-Morris-Pratt)
+
+-> String Matching (Verfahren von Boyer-Moor)
+
+-> Hash-Algorithmen
+	-> Eine Hash-Funktion ordnet jedem Schlüssel k einen Index h(k) zu.
+		-> h: K -> {0,..., m-1}, m gibt die Größe der jeweiligen Tabelle an.
+			-> Der Schlüssel (mit dem man den Wert sucht) wird durch die
+				Hash-Funktion, in eine Speicherzellen-Adresse gespeichert (HW-Ebene).
+				-> Dadurch Schnelles Auffinden von Werten.
+		-> Mit dem Index/Key/Speicherzellen-Adresse kann dann auf den jeweiligen Wert zugegriffen Werden.
+		-> Beispiel: h(k) = k mod m.
+			-> h(k) liefert dann den Index zu k z.B.: h(8)=4 wenn m=5.
+	
+	-> suche nach dem Wert v durch Schküssel k
+		-> Wenn nach einem Wert v gesucht wird, muss immer erst die Speicheradresse in der 
+			Hashtabelle durch den Schlüssel k gesucht werden, damit man mit dem Hashwert
+			auf den Wert v zugreifen kann.
+		-> n = H(k), n ist der Hashgenerierte Speicherplatz, k ist der Schlüssel zum Wert v.
+			-> Ist in der Hash-Tabelle k n zugeordnet ist n sie Speicheradresse zu v.
+				-> Ist k nicht n zugeordnet, muss geprüft werden, ob k mit der nächste 
+					Speicheradresse bspw. n+1 zugeordnet ist.				
+
+	-> Kollision
+		-> Wenn eine Hash-Funktion zu zwei unterschiedlichen Werten die Selbe Adresse liefert.
+			-> Wenn eine Adresse bereits belegt ist, nach freien plätzen in der Hashtabelle suchen.
+				-> Wird als Sondierung bezeichnet.
+			->Beispiel:
+				-> Berechne Hashwert n = H(k)
+				-> Ist n Frei, Hashwert dort ablegen.
+					-> Bei Kollision den um m plätze verschobenen Speicherplatz prüfen: n + m (mod N)
+				
+
+	-> Werden auch in der Kryptografie eingesetzt.
+		-> Da vom Hash-Wert auf ursprünglichen Wert nicht geschlossen werden kann.
+	
+	-> Verfahren um Hash-Werte zu erstellen
+		-> Division-Rest-Methode
+			-> h(k) = k mod m
+		
+		-> Multiplikative Methode
+			-> h(k) = [k*(irrationale Zahle) - k*(irrationale Zahl)]
+				-> Das Ergebnis ist eine Dezimalzahl die auf den nächst kleineren Zahlenwert abgerundet wird.
+
+		-> Offene Hash-Verfahren
+			-> Prüfen ob 
+				-> 
+				
