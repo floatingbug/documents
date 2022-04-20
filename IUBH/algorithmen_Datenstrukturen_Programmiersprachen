@@ -440,15 +440,16 @@
     -> Berechnet die günstigsten Wege von einem Startknoten zu allen anderen Knoten.
     -> Nur positive Kantenkosten/Kantengewichte.
     -> Beschreibung:
-        -> 0. Startknoten kommt als erster Knoten in eine Warteschlange.
-        -> 1. Knoten mit den geringsten Kosten zum Startknoten wird entnommen. 
-		-> 2. Nachbarknoten die noch nicht besucht wurden kommen in eine Warteschlange: 
-				Aufsteigend von klein nach groß.
+        -> 0. Startknoten wird als erstes überprüft.
+        -> 1. Nachbarknoten mit den geringsten Kosten zum Startknoten wird der nächste betrachtete Knoten. 
+		-> 2. alle anderen Nachbarknoten die noch nicht besucht wurden kommen in eine Warteschlang. 
         -> 3. Prüfen ob Weg von Startknoten zum aktuell betrachteten Knoten zum Nachtbarn kleiner ist.
 			-> Wenn ja: Nachtbarknoten erhält den Vorängerknoten des aktuell betrachteten Knotens
 				inkl. der Distanz zum Startknoten.
 			-> Wenn nein: Nachtbarknoten behält den alten Vorgängerknoten und Distanz.
 		-> Befinden sich nocht Knoten in der Warteschlange, weiter mit 1., andernfalls terminieren. 
+	-> Wichtig: Gilt ein Knoten bereits als besucht, muss dieser nicht mehr überprüft werden, da von diesem
+		keine weiteren Knoten besucht werden können.
 
 -> Selection Sort
 	-> Es wird nur ein Array benötigt.
@@ -522,8 +523,11 @@
 	-> Eine Hash-Funktion ordnet jedem Schlüssel k einen Index h(k) zu.
 		-> h: K -> {0,..., m-1}, m gibt die Größe der jeweiligen Tabelle an.
 			-> Der Schlüssel (mit dem man den Wert sucht) wird durch die
-				Hash-Funktion, in eine Speicherzellen-Adresse gespeichert (HW-Ebene).
-				-> Dadurch Schnelles Auffinden von Werten.
+				Hash-Funktion, in eine Speicheradresse gespeichert.
+				-> Bei der suche wird durch einen einzigen Aufruf von i = h(k) die Adresse zum
+					Wert in i gespeichert und kann somit aufgerufen werden.
+					-> kam es bei der Speicherung zu einer Kollision, muss überprüft werden, ob
+						i = h(k) + 1 den gewünschten wert enthält, ist dies nicht der fall + 2 usw.
 		-> Mit dem Index/Key/Speicherzellen-Adresse kann dann auf den jeweiligen Wert zugegriffen Werden.
 		-> Beispiel: h(k) = k mod m.
 			-> h(k) liefert dann den Index zu k z.B.: h(8)=4 wenn m=5.
@@ -559,6 +563,50 @@
 				-> Das Ergebnis ist eine Dezimalzahl die auf den nächst kleineren Zahlenwert abgerundet wird.
 
 		-> Offene Hash-Verfahren
-			-> Prüfen ob 
-				-> 
-				
+			-> Überläufer (Werte mit gleichem Hashwert) werden nicht in zusätzliche Listen gespeichert, 
+				sondern in der gleichen Hashtabelle.
+			-> Eine Folge die Betrachtet werden muss, um ein Key in ihr speichern zu können, nennt man 
+				Sondierungsfolge.
+			-> h(k) sei eine Funktion die jeden key einer verfügbare Hashadresse/Index zuordnen kann
+				-> h: K -> {0,..,m-1}
+			-> Sondierungsfunktion
+				-> Prüft ob eine Adresse frei ist, wenn nein, wird i um eins erhöht.
+					-> (h(k) + i) mod m
+						-> m ist die größe der Hashtabelle
+				-> Oder Sondierungsfunktion: s(k, j)
+					-> 
+		
+		-> Lineares Sondieren
+			-> Einfügen
+				1. i = h(k)
+				2. Ist unter i bereits ein k gespeichert, dann i um eine Speicheradresse erhöhen i = i + h(k) 
+					-> Wenn alle speicheradressen belegt, return -1.
+			-> Suchen
+				1. i = h(k)
+				2. Ist k in i gespeichert, wurde die Adresse/Index gefunden.
+					-> Wenn k nicht unter i gespeichert, dann i = i + h(k) prüfen
+					-> Wenn unter i = i + h(k) nichts gespeichert ist, befindet sich k nicht in der Hashtabelle.
+			-> Löschen
+				-> k nicht aus Hashtabelle löschen, sondern nur als unbelegt markieren.
+					-> Da bei einer Suche, bei einer leeren Speicheradresse/Index die suche abgebrochen werden würde.
+			-> Nachteil
+				-> Da viele Keys durch mod den selben Hashwert ergeben (Clustering), müssen immer wieder neue Adressen/Inzides
+					gefunden werden.			
+
+		-> Quatratisches Sondieren
+			-> Sondierungsfunktion
+				-> Prüft ob eine Adresse frei ist, wenn nein, wird i um eins erhöht.
+					-> (h(k) + i²) mod m
+						-> m ist die größe der Hashtabelle
+						-> Durch i² wird nich bei jeder prüfung die nächst größere Adresse geprüft,
+							sondern wenn bspw. h(k) = 2 dann: 2+i⁰, 2+i¹, 2+i²... 2, 4, 9 usw..
+							-> i wird nach jeder Iteration um 1 inkrementiert.
+				-> Oder Sondierungsfunktion: s(k, j)
+					->
+
+		-> Dynamische Hash-Verfahren
+			-> Die Hashfunktion h0 verwaltet einen Teil des Speichers; Ist dieser nicht mehr ausreichend, 
+				wird der Speicherbereich erweitert (neue Seite wird angelegt), die dann von h1 verwaltet wird usw..
+		
+		-> Virtuelle Hashing
+			-> 
