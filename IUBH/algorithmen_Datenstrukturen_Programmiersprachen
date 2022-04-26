@@ -439,15 +439,16 @@
     -> Berechnet die günstigsten Wege von einem Startknoten zu allen anderen Knoten.
     -> Nur positive Kantenkosten/Kantengewichte.
     -> Beschreibung:
-        -> 0. Startknoten kommt als erster Knoten in eine Warteschlange.
-        -> 1. Knoten mit den geringsten Kosten zum Startknoten wird entnommen. 
-		-> 2. Nachbarknoten die noch nicht besucht wurden kommen in eine Warteschlange: 
-				Aufsteigend von klein nach groß.
+        -> 0. Startknoten wird als erstes überprüft.
+        -> 1. Nachbarknoten mit den geringsten Kosten zum Startknoten wird der nächste betrachtete Knoten. 
+		-> 2. alle anderen Nachbarknoten die noch nicht besucht wurden kommen in eine Warteschlang. 
         -> 3. Prüfen ob Weg von Startknoten zum aktuell betrachteten Knoten zum Nachtbarn kleiner ist.
 			-> Wenn ja: Nachtbarknoten erhält den Vorängerknoten des aktuell betrachteten Knotens
 				inkl. der Distanz zum Startknoten.
 			-> Wenn nein: Nachtbarknoten behält den alten Vorgängerknoten und Distanz.
 		-> Befinden sich nocht Knoten in der Warteschlange, weiter mit 1., andernfalls terminieren. 
+	-> Wichtig: Gilt ein Knoten bereits als besucht, muss dieser nicht mehr überprüft werden, da von diesem
+		keine weiteren Knoten besucht werden können.
 
 -> Selection Sort
 	-> Es wird nur ein Array benötigt.
@@ -471,8 +472,8 @@
 			-> Kleinere Elemente kommen auf die linke Seite, größere auf die rechte Seite des Pivot.
 				-> wurden alle Elemente mit Pivot verglichen, befindet sich das Pivot an der
 					richtigen stelle.
-					-> Der Algorithmus wird dann auf der linken Seite (kleinere Elemente) und auf der
-						rechten Seite (größere Elemente) erneut angewant.
+					-> Das Povot teilt dann die Liste in zwei Teillisten, in denen der Algorithmus
+						jeweils erneut abläuft.
 
 -> Sequenzielle Suche
 	-> Daten werden von vorne nach hinten durchlaufen und die Werte mit dem aufzufindenen Wert verglichen.
@@ -480,6 +481,184 @@
 -> Binäre Suche
 	-> Basiert auf divide and conquer.
 	-> Nur sortierte Listen können durchsucht werden.
-	-> Wird in der Liste ein Element ausgewählt, dass größer als das zu suchende ist, können
-		alle Elemente die größer sind verworfen werden, denn dort kann sich das Element nicht befinden.
+	-> Beispiel:
+		-> in einer sortierten liste l wird die Mitte m ermittelt und geprüft, ob das gesuchte 
+			Element x mit der Mitte identisch ist.
+			-> Wenn nicht wird überprüft, ob x kleiner oder größer als m ist.
+				-> Ist x kleiner als m, wird die Mitte links neben m ermittelt und der Algorithmus
+					beginnt von neuem.
+				-> Ist x größer als m, wird die Mitte rechts neben m ermittelt und der Algorithmus
+					beginnt von neuem.
+					-> Die Abbruchbedingung, wenn x nicht gefunden wird, könnte sein: 
+						Wenn Startpunkt größer als Endpunkt ist. Dann wäre kein Element mehr 
+						übrig, dass geprüft werden könnte.
 
+-> Fibonacci Suche
+	-> Beispiel: F:="zur Zeit betrachtete Fibonacci-Zahl", F1:="der Vorgänger", F2:="Vorgänger des Vorgängers",
+		e:="der gesuchte Wert".
+		-> Die erste Fibonacci-Zahl F ist die, die größer oder gleichgroß der Länge N des zu Durchsuchenden
+			Arrays a ist.
+			-> Ist Das Array N = 11 groß, ist F = 13.
+		-> Der Index für das gesuchte Element ist: i = min(offset+F2, N-1) also i = min((-1)+5, 11-1) = (4, 10) = 4.
+			Bei der ersten Iteration ist der offset = -1.
+			-> Ist a[4] < e
+				-> wird F zu F1 also: F = 8 und offset = 8
+			-> ist a[4] > e
+				-> wird F zu F2 also: F = 5 und offset = 5
+			-> ist a[4] == e
+				-> Element gefunden.
+				-> 4 ist nur ein Beispiel, der index ist i.
+
+-> String Matching (naives Verfahren)
+	-> Ein String M wird im Text A durchsucht.
+		-> Das erste Zeichen von M wird als erstes mit dem ersten Zeichen von A verglichen.
+			-> Stimmen sie überein wird das nächste Zeichen von M mit dem nächsten Zeichen von A verglichen.
+				-> Stimmen alles zeichen überein, wurde der String gefunden anernfalls, wandert M um eins weiter.
+
+
+-> String Matching (Verfahren von Boyer-Moor)
+	-> Der Vergleich des Musters M mit der länge m beginnt mit dem letzten Zeichen cm und dem Zeichen cs des Textes
+		S und endet mit dem Vergleich des ersten Zeichens von M.
+	-> Vorgehen:
+		-> 1. Ist der erste Vergleich cm != cs und cs kommt in M nicht vor, dann kann M um m Plätze nach rechts verschoben werden.
+		-> 2. 
+			-> a) Kommt cs ein oder mehrmals in M vor, dann M soweit verschieben, bis das am weitesten rechts stehende cm, welches
+					ein oder mehrmals in S vorkommt, unter cs steht. 
+			-> b) Ist die nach a) berechnete Verschiebedistanz negativ, dann M nur um einen Platz nach rechts verschieben.
+		-> 3. Ist cs == cm wird der Index von M um eins heruntergezählt, weiter mit Regel 1.
+
+-> String Matching (Verfahren von Knoth-Morris-Pratt)
+	-> Ist cm != cs dann wird in M der Sting links neben dem Zeichen, das ungleich war, überprüft, um wie viel Plätze 
+		M nach rechts verschoben werden kann.
+	-> Vorhegen:
+		-> 1. Prefix und Sufix im String im M bestimmen, die gleich sind Beispiel:
+			abdab, dann ist ab sowohl Sufix als auch Prefix.
+		-> 2. M soweit nach rechts verschieben, dass das Prefex in M und dem Sufix in S steht.
+		-> 3. Der nächste Vergleich beginnt mit dem Zeichen cm welches rechts neben dem Prefix in M Steht und
+				dem Zeichen cs das ungleich cm war.
+			-> Alle Zeichen des Prefex in M stehen dann unter den selben Zeichen in S Beispiel:
+				abgggabdef = M, abgggabijk = S
+				-> Nächster Vergleich:
+					abgggabijk
+						 abgggabcdef
+					-> ab sind die Zeichen die Schon verglichen wurden, daher wird g und i als nächstes verglichen.
+
+-> Hash-Algorithmen
+	-> Eine Hash-Funktion ordnet jedem Schlüssel k einen Index h(k) zu.
+		-> h: K -> {0,..., m-1}, m gibt die Größe der jeweiligen Tabelle an.
+			-> {0,..., m-1} ist ein Feld/Array mit Indizes, das als Hashtabelle bezeichnet wird.
+			-> Der Schlüssel wird durch die
+				Hash-Funktion, in eine Speicheradresse gespeichert.
+				-> Bei der suche wird durch einen einzigen Aufruf von i = h(k) die Adresse zum
+					Wert in i gespeichert und kann somit aufgerufen werden.
+					-> kam es bei der Speicherung zu einer Kollision, muss überprüft werden, ob
+						i = h(k) + 1 den gewünschten wert enthält, ist dies nicht der fall + 2 usw.
+		-> Mit dem Index/Hash-Adresse kann dann auf den jeweiligen Wert zugegriffen Werden/Key.
+		-> Beispiel: h(k) = k mod m.
+			-> h(k) liefert dann den Index zu k z.B.: h(8)=4 wenn m=5.
+	
+	-> Hashfunktionen haben die Eigenschaft, dass sie verschiedene Keys auf die gleiche Zieladresse abbilden.
+		-> Daher werden sie auch in der Kryptografie eingesetzt, das es keinen eindeutigen Rückschluss
+			auf den Key gibt.
+
+	-> Hash-Funktionen finden also verwendung in der: Kryptografie als Prüfsumme und zur erstellung von Datenbankinizes.
+	
+	-> suche nach dem Wert v durch Schküssel k
+		-> Wenn nach einem Wert v gesucht wird, muss immer erst die Speicheradresse in der 
+			Hashtabelle durch den Schlüssel k gesucht werden, damit man mit dem Hashwert
+			auf den Wert v zugreifen kann.
+		-> n = H(k), n ist der Hashgenerierte Speicherplatz, k ist der Schlüssel zum Wert v.
+			-> Ist in der Hash-Tabelle k n zugeordnet ist n sie Speicheradresse zu v.
+				-> Ist k nicht n zugeordnet, muss geprüft werden, ob k mit der nächste 
+					Speicheradresse bspw. H(k)+1 zugeordnet ist.				
+
+	-> Kollision
+		-> Wenn eine Hash-Funktion zu zwei unterschiedlichen Werten die Selbe Adresse liefert.
+			-> Wenn eine Adresse bereits belegt ist, nach freien plätzen in der Hashtabelle suchen.
+				-> Wird als Sondierung bezeichnet.
+			->Beispiel:
+				-> Berechne Hashwert n = H(k)
+				-> Ist n Frei, Hashwert dort ablegen.
+					-> Bei Kollision den um m plätze verschobenen Speicherplatz prüfen: n + m (mod N)
+				
+	-> Verfahren um Hash-Werte zu erstellen
+		-> Division-Rest-Methode
+			-> h(k) = k mod m
+		
+		-> Multiplikative Methode
+			-> h(k) = [k*(irrationale Zahle) - k*(irrationale Zahl)]
+				-> Das Ergebnis ist eine Dezimalzahl die auf den nächst kleineren Zahlenwert abgerundet wird.
+
+		-> Offene Hash-Verfahren
+			-> Überläufer (Werte mit gleichem Hashwert) werden nicht in zusätzliche Listen gespeichert, 
+				sondern in der gleichen Hashtabelle.
+			-> Eine Folge die Betrachtet werden muss, um ein Key in ihr speichern zu können, nennt man 
+				Sondierungsfolge.
+			-> h(k) sei eine Funktion die jeden key einer verfügbare Hashadresse/Index zuordnen kann
+				-> h: K -> {0,..,m-1}
+			-> Sondierungsfunktion
+				-> Prüft ob eine Adresse frei ist, wenn nein, wird i um eins erhöht.
+					-> (h(k) + i) mod m, oder auch (h(k) - i) mod m
+						-> m ist die größe der Hashtabelle
+						-> h(k) berechnet jeweils die Hashadresse ist diese voll, muss die nächste Adresse
+							geprüft werden: h(k) + 1, damit man nicht über m Speicherplätze hinaus geht,
+							wird noch mod m berechnet.
+					-> Sondierungsfunktion noch allgemeiner
+						-> (h(k) - s(i, k)) mod m
+							-> s(i, k) ist das gleiche wie h(i + k), sodass (h(k) - s(i, k)) mod m die nächst kleinere 
+								Hashadresse berechnet.
+			-> Zu Offene Hash Verfahren gehören:
+				-> Lineares Sondieren 
+				-> Quadratisches Sondieren
+		
+	-> Lineares Sondieren (offenes Hashverfahren)
+		-> Einfügen
+			1. i = h(k)
+			2. Ist unter i bereits ein k gespeichert, dann i um eine Speicheradresse erhöhen i = i + h(k) 
+				-> Wenn alle speicheradressen belegt, return -1.
+		-> Suchen
+			1. i = h(k)
+			2. Ist k in Hashtabelle gespeichert, wurde die Adresse/Index gefunden.
+				-> Wenn k nicht unter i gespeichert, dann i = i + h(k) prüfen
+				-> Wenn unter i = i + h(k) nichts gespeichert ist, befindet sich k nicht in der Hashtabelle.
+		-> Löschen
+			-> k nicht aus Hashtabelle löschen, sondern nur als unbelegt markieren.
+				-> Da bei einer Suche, bei einer leeren Speicheradresse/Index die suche abgebrochen werden würde.
+		-> Nachteil
+			-> Da viele Keys durch mod den selben Hashwert ergeben (Clustering), müssen immer wieder neue Adressen/Inzides
+				gefunden werden.			
+
+	-> Quatratisches Sondieren (offenes Hashverfahren)
+		-> Sondierungsfunktion
+			-> Prüft ob eine Adresse frei ist, wenn nein, wird i um eins erhöht.
+				-> (h(k) + i²) mod m
+					-> m ist die Anzahl aller Werte, denen eine Adresse zugewießen werden muss.
+					-> Durch i² wird nich bei jeder prüfung die nächst größere Adresse geprüft,
+						sondern wenn bspw. h(k) = 2 dann: 2+i⁰, 2+i¹, 2+i²... 2, 4, 9 usw..
+						-> i wird nach jeder Iteration um 1 inkrementiert.
+			-> Oder Sondierungsfunktion: s(k, i) = (⌈i/2⌉)^2 * (-1)^i also: (h(k) - s(k, i))
+				-> Wenn in ⌈⌉ eine Desimalzahl das Ergebnis ist, wird auf die nächste ganze Zahl aufgerundet.
+				-> (h(k) - s(k, i)) mod 5 liefert dann für die Keys: (6, 11, 16), under der Verwendung
+					von h(k) = k mod 5, folgende Hashadressen: (1, 2, 0)
+
+	-> Dynamische Hash-Verfahren
+		-> Hashtabelle wird bei Bedarf vergrößert.
+		->
+
+	-> Lineares Hashing 	
+		->
+
+	-> Virtuelle Hashing
+		-> 
+
+	-> SHA
+		-> Secure Hash Algorithm (SHA)
+		-> Familie von kryptografischen Hash Algorithmen.
+		-> Berechnet für eine Nachricht oder Datei einen Hashwert.
+			-> Der empfänger erstellt ebenfalls einen Hashwert aus der Nachricht.
+				-> Unterscheiden sich die Hashwerte, wurde die Nachricht manipuliert.
+		-> Es gibt unterschiedliche SHA Algorithmen.
+			-> Unterscheidung durch unterschiedliche Bitlänger der Hashwerte.
+				-> Je länger die Bitfolge desto sicherer ist der Algorithmus.
+		-> SHA-0
+			->
