@@ -315,7 +315,6 @@
 		-> suchen immer den kürzesten Weg bzw. versucht immer den besten nächsten Schritt zu wählen.
 			-> Da ein lokaler Startpunkt gewählt wird, wird auch nur eine lokale Optimierung erreicht.
 		-> Beispiele:
-			-> Dijkstra-Algorithmus: Suche nach einem minimalen Weg in einem Graphen,
 			-> Kruskal-Algorithmus: Suche nach einem minimalen Spannbaum,
 			-> Prim-Algorithmus: Suche nach einem minimalen Spannbaum.
 	-> Divide and Conquer (teile und behersche)
