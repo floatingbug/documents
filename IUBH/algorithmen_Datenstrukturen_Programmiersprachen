@@ -561,7 +561,7 @@
 		-> Daher werden sie auch in der Kryptografie eingesetzt, das es keinen eindeutigen Rückschluss
 			auf den Key gibt.
 
-	-> Hash-Funktionen finden also verwendung in der: Kryptografie als Prüfsumme und zur erstellung von Datenbankinizes.
+	-> Hash-Funktionen finden also verwendung in der: Kryptografie als Prüfsumme und Adressberechnung.
 	
 	-> suche nach dem Wert v durch Schküssel k
 		-> Wenn nach einem Wert v gesucht wird, muss immer erst die Speicheradresse in der 
@@ -673,7 +673,40 @@
 				nicht manipuliert.
 
 -> Mustererkennung
+	-> Verwendung: Erkennung von Anomalien, Einordnen von unstrukturierten Datensätze in Klassen. 
 	-> Ein Algorithmus erstellt ein Modell mit Hilfe von Trainingsdaten.
 		-> Mit Hilfe des Modells kann der Algorithmus dann Muster in Daten 
 			erkennen und bspw. die Daten Kategorisieren.
 	-> Mustererkennung durch Regression
+		-> Binäre Klassifikation
+			-> Zuordnung eines Subjekts, in einer von zwei Klassen, geschieht durch evaluation 
+				von bspw. zwei Merkmalen des Subjekts.
+			-> Beide Klassen können bspw. durch das Merkmalstupel (Xi, Yi) beschrieben werden.
+			-> Getrennt werden die beiden Klassen durch eine Regressionsgerade hier theoretisch:
+				-> Yi = β0 + Xi*β + ε 
+			-> Regressionsgerade:
+				-> δn(x) = β0 + X*β wobei delta und beta-Werte Schätzwerte sind.
+			-> Signumsfunktion
+				-> Wird benutzt um eine Klassenzugehörigkeit der Subjekte zu erreichen
+					-> Als Input wird δn verwendet also: sign(δn(x))
+						-> ist y >= 0 dann Ist der Output 1. Wenn y < 0 dann 0
+	-> Mustererkennung durch Cluster-Analyse
+		-> Daten sind in mehreren Klassen unterscheidbar, z.B. durch zwei Merkmalsausprägung.
+		-> der k-Means-Algorithmus wird häufig verwendet.
+			-> Bildet aus Unstrukturierter Menge k Untermengen wobei die Anzahl von k bekannt ist.
+			-> Ziel: Die k-Partitionen (Klassen) so aufteilen, dass die Summe der quadrierten 
+				Abweichung von den Clusterschwerpunkten minimal wird (Optimierungsproblem).	 
+	-> Mustererkennung durch neuronale Netze
+		-> Funktionsweise basiert auf der biologischen Nervenzelle.
+		-> Versucht zusammenhang zwischen Eingangs- und Ausgangsdaten, mittels
+			Learning-Algorithmen und Trainingsdaten, herzustellen.
+			-> Nach dem Training kann durch weitere Eingaben eine wahrscheinliche Vorhersage
+				über die Ausgangsdaten gemacht werden.
+		-> Neuronen sind vereinfacht Funktionen die zu jeder Eingabe ein Gewicht W Multiplizieren,
+			die Ergebnisse aufsummiert und anschließend einer Aktivierungsfunktion übergeben wird.
+
+--------------------------------------------XML---------------------------------------------------
+
+-> eXtensible Markup Language
+-> XML bietet die möglichkeit, System- und Platformunabhängig, Daten maschinenlesbar zu speichern. 
+-> 
