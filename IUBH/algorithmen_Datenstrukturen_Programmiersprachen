@@ -708,5 +708,27 @@
 --------------------------------------------XML---------------------------------------------------
 
 -> eXtensible Markup Language
+-> 1998 eingeführt.
 -> XML bietet die möglichkeit, System- und Platformunabhängig, Daten maschinenlesbar zu speichern. 
--> 
+-> Auszeichnungssprache
+	-> Ist eine Syntax die Datenmengen anhang ihrer Eigenschaften, Zugehörigkeit ,Hierarchie etc. 
+		beschreibt.
+-> HTML wird zur Darstellung von Daten genutzt (Bilder, Texte, Tabellen usw.), XML wird zu Beschreibung
+	der Struktur der Daten genutzt.
+-> XML lässt sich als Baum verstehen.
+-> Ein XML-Dokument ist wohlgeformt (gültig) wenn es folgene Eigenschaften erfüllt:
+	-> Zu jedem Start-Tag muss es ein korrespondierendes Ende-Tag geben.
+	-> Verschiedene Elemente müssen korrekt geschachtelt sein, d. h., bevor ein Element geschlossen werden kann,
+		 müssen alle Unterelemente geschlossen sein.
+	-> Bei Tag-Namen müssen Groß- und Kleinschreibung beachtet werden, d. h., <tag> ist ein anderer Tag als <Tag>.
+	-> Innerhalb eines Elements darf es keine zwei Attribute mit gleichem Namen geben.
+	-> Die Werte von Attributen eines Elements müssen in Anführungszeichen gesetzt sein.
+	-> Innerhalb eines XML-Dokuments muss es genau ein Wurzelelement geben, 
+		das nicht im Inhalt eines anderen Elements enthalten ist. 
+-> XML-Prozessor
+	-> Liest einzelne Zeichen ein und interpretiert Textstücke/Element auch Entitäten genannt.
+		-> Ein ganzes Dokument wird als Dokumentenentität bezeichnet.
+		-> Eine Dokumentenentität wird von einem XML-Parser als container für Entitäten betrachtet.
+-> Parsed und Unparsed
+	-> Parsed 
+		-> Daten in Form von Zeichen
