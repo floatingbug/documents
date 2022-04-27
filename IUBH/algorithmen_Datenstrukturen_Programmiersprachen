@@ -661,4 +661,19 @@
 			-> Unterscheidung durch unterschiedliche Bitlänger der Hashwerte.
 				-> Je länger die Bitfolge desto sicherer ist der Algorithmus.
 		-> SHA-0
-			->
+			-> Einfachster Algorithmus aus der SHA-Familie.
+
+	-> MD5
+		-> Message-Digest Algorithm
+		-> MD ist auch eine Familie von Hash Algorithmen.
+		-> MD5 ist die häufigste Variante.
+			-> Häufigste Verwendung: User läd Datei herunter, generiert den 
+				Hashwert aus der Datei und vergleicht ihn mit dem Hashwert
+				der mit gesendet wurde. Sind sie identisch, wurde die Datei
+				nicht manipuliert.
+
+-> Mustererkennung
+	-> Ein Algorithmus erstellt ein Modell mit Hilfe von Trainingsdaten.
+		-> Mit Hilfe des Modells kann der Algorithmus dann Muster in Daten 
+			erkennen und bspw. die Daten Kategorisieren.
+	-> Mustererkennung durch Regression
