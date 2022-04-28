@@ -706,15 +706,21 @@
 			die Ergebnisse aufsummiert und anschließend einer Aktivierungsfunktion übergeben wird.
 
 --------------------------------------------XML---------------------------------------------------
-
--> eXtensible Markup Language
+-> Beispiel:
+	<?xml version="1.0" encoding="utf-8" standalone="yes">
+	<root>
+		<child>child1</child>
+	</root>
+-> eXtensible Markup Language: Daher das die <tags> zum Auszeichnen (Markup) für Elemente nicht vorgegeben sind und
+	beliebige eigene tags erstellt werden können, wird die Auszeichnungssprache als extensible bezeichnet.
+	-> Erweiterbare Auszeichnungs Sprache.
 -> 1998 eingeführt.
 -> XML bietet die möglichkeit, System- und Platformunabhängig, Daten maschinenlesbar zu speichern. 
 -> Auszeichnungssprache
 	-> Ist eine Syntax die Datenmengen anhang ihrer Eigenschaften, Zugehörigkeit ,Hierarchie etc. 
 		beschreibt.
 -> HTML wird zur Darstellung von Daten genutzt (Bilder, Texte, Tabellen usw.), XML wird zu Beschreibung
-	der Struktur der Daten genutzt.
+	der Struktur von Daten genutzt.
 -> XML lässt sich als Baum verstehen.
 -> Ein XML-Dokument ist wohlgeformt (gültig) wenn es folgene Eigenschaften erfüllt:
 	-> Zu jedem Start-Tag muss es ein korrespondierendes Ende-Tag geben.
@@ -725,10 +731,86 @@
 	-> Die Werte von Attributen eines Elements müssen in Anführungszeichen gesetzt sein.
 	-> Innerhalb eines XML-Dokuments muss es genau ein Wurzelelement geben, 
 		das nicht im Inhalt eines anderen Elements enthalten ist. 
+-> DTD (Document Type Definition)
+	-> Wie ein head-tag in html beschreibt DTD wie bspw. ein xml-Dokument strukturiert ist.
+		-> Durch die Definition kann die Struktur des Dokuments ermittelt werden.
+	-> Beinhaltet eine Liste von erlaubten Elementen.
+	-> Führt validierung aus z.B. ob die Syntax korrekt ist.
+		-> Beispiel: Das Root-Element: Person, muss die Kind-Elemente: Number, Address und Company enthalten.
+		-> DTD kann in- oder auserhalb des XML-Dokuments stehen. 
+-> Name Space
+	-> Verhindern dass Elemente mit gleichem Namen auftreten (Namenskonflikt).
+	-> Name Space wird als Atribut angegeben: xmlns:x="link", x kann durch beliebige Zeichen ersetzt werden.
+	-> Beispiel:
+		-> <x:table xmlns:x="link"> <x:name>name</x:name><x:email>email@abc.com</x:email> </x:table>
+-> XML-Anwendungen:
+	-> Mit vordefinierten tags
+	-> Beispiele:
+		-> XHTML
+		-> SVG (Scalable Vector Graphics)
+		-> MathML (Mathematical Markup Language)
+		-> SOAP (Simple Object Access Protocoll)
+			-> Austausch von Nachrichten zwischen verschiedenen Anwendungen.
+-> Programmierschnittstelle um aus Programmen oder Webseiten heraus auf in XML hinterlegte
+		Daten zugreifen oder in XML-Format ablegen zu können.
+	-> Programmierschnittstellen:
+		-> DOM
+		-> SAX (Simple API for XML)
+			-> Ermöglicht Datenaustausch zwischen Webanwendungen.
 -> XML-Prozessor
 	-> Liest einzelne Zeichen ein und interpretiert Textstücke/Element auch Entitäten genannt.
+		-> Jede Entität beinhaltet einen Inhalt und ist über einen Namen Adressierbar
+			Beispiel:
+				<name>inhalt</name>
 		-> Ein ganzes Dokument wird als Dokumentenentität bezeichnet.
 		-> Eine Dokumentenentität wird von einem XML-Parser als container für Entitäten betrachtet.
--> Parsed und Unparsed
-	-> Parsed 
-		-> Daten in Form von Zeichen
+-> Parsed- und Unparsed-Data
+	-> Parsed-Data 
+		-> Alle Ausdrücke in Form von tags <tag>abc</tag> können geparsed werden, bspw. als dom.
+	-> Unparsed-Data
+		-> Daten die der Parser nicht parsen soll, bspw. Bilder.
+-> XML-Parser
+	-> Ist eine Softwarebibliothek oder Paket, welche Schnittstellen für Programme wie c, c++ anbieten,
+		um mit xml-Dokumenten zu arbeiten.
+	-> Der Parser überprüft als erstes, ob das xml-Dokument wohlgeformt ist.
+	-> Ein xml-Dokument kann bspw. als DOM geparst werden, sodass die Elemente als Objekte in einer 
+		Baumstruktur im Speicher vorliegen, auf die dann mit Methoden zugegriffen werden kann.
+	-> Eine andere möglichkeit ist ein xml-Dokument als SAX zu parsen.
+		-> Simple API for XML
+		-> Event basierte API
+		-> Es wird keine Struktur im Speicher erstellt
+-> Zugriff auf XML-Dokumente mit DOM und SAX
+	-> DOM
+		-> Das XML-Dokument wird durch einen XML-Prozessor als DOM in den Speicher geparsed.
+			-> Aus Markup- und Programmiersprachen können auf die Objecte/Elemente zugegriffen werden.
+			-> Eine Klasse (hier zusammenstellung verschiedener Funktionen um das XML-Dokument zu 
+				manipulieren), stellt unter anderem die Funktionen setAddribute() und getAttribute() bereit,
+				mit denen die Werte eines Elements ausgelesen und manipuliert werden können.
+		-> Node-Schnittstelle
+			-> Durchläuft systematisch die Knoten des Baums.
+	-> SAX
+		-> Dokument wird nicht durch ein Dokumentenbaum durchlaufen. Es wird sequenziell Zeile für Zeile
+			Das Dokument durchgegangen, bis das Element gefunden ist.
+			-> Parser durchläuft das Dokument sequenziell.
+				-> Wurde ein Element gefunden, wird dies als event angesehen und die entsprechende Methode aufgerufen.
+					-> Z.B.: Der Parser durchläuft das Dokument, trift auf den Starttag und ruft über die
+						Schnittstelle: contentHandler die selbst implementierte Methode startElement auf.
+				-> Der Parser durchläuft also das Dokument und ruft, bei eintreten eines events, einen event-handler auf.
+-> Transformation von xml in bspw. html durch xsl
+	-> XSLT
+		-> XML Stylesheet Language Transformation
+		-> Transformiert XML zu XML und XML zu HTML
+		-> Benutzt templates
+			-> welcher tag soll wie in html dargestellt werden.
+			-> befindet sich in der entsprechenden XSLT Datei.
+		-> XSLT + XML -> XSLT-Prozessor = HTML-Dokument
+	-> XSL
+		-> XML Stylesheet Language
+		-> Transformation von XML zu HTML
+-> JSON
+	-> JavaScript Object Notation
+	-> Alternative zu XML
+	-> Vorteile:
+		-> Kompakter, daher sind die JSON-Dateien kleiner.
+		-> Weniger stark vordefinierter Struktur als bei XML.
+		-> Handhabung verschiedenster Datentypen wie: Arrays, Objekte oder Strings.
