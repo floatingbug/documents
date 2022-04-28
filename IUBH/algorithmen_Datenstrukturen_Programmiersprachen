@@ -814,3 +814,61 @@
 		-> Kompakter, daher sind die JSON-Dateien kleiner.
 		-> Weniger stark vordefinierter Struktur als bei XML.
 		-> Handhabung verschiedenster Datentypen wie: Arrays, Objekte oder Strings.
+
+------------------------------------------------------------Programmiersprachen-----------------------------------------------
+
+-> Programmierparadigmen
+	-> Kategorisierung unterschiedlicher Programmiersprachen.
+	-> Durch verschiedene Arten der Vorstellung von Computer ist es möglich:
+		-> verschiedene Arten zu betrachten, mit denen Programmiersprachen entwickelt wurden
+		-> verschiedene Abstraktionsebenen zu betrachten, mithilfe derer die jeweilige Programmiersprache entwickelt wurde.
+
+-> 5 Generationen von Programmiersprachen
+	-> 1. Maschinensprachen 
+	-> 2. Assemblersprachen (höhere Abstraktionsebene bzg. der HW)
+	-> 3. Imperative Sprachen
+	-> 4. Nichtprozedurale Sprachen (technische Einzelschritte müssen nicht mehr programmiert werden; Abstraktionsebene wird verwendet)
+	-> 5. Sprachen in denen Sachverhalte und Probleme beschrieben werden die bspw. anwendung in der KI finden.
+
+-> Imperative Programmierung
+	-> Kommt der Anschauung eines Computers als reine Maschine am nächsten, ähnlich der von-Neumann-Architektur.
+		-> Daher sehr maschinennahe.
+			-> Man teilt der Maschine klar mit, wie etwas geschehen soll, ohne größere Abstraktionen.
+		-> Daher ersten bedeutenden Programmiersprechen:
+			-> Fortran, Cobol, Algol (Vorfahre von Pascal und C)
+
+	-> Prozedurale Programmierung
+		-> Untergeordnetes Paradigma der Imperative Programmierung
+		-> Sequenzielle Abfolge wobei teile die mehrmals ausgeführt werden, in Funktionen bzw. Prozeduren untergebracht werden.
+			-> Prozeduren werden auch Unterprogramme/Unterroutinen oder Routinen genannt.
+
+	-> Strukturierte Programmierung
+		-> Soll klar verständlichen code generieren.
+		-> Drei Kontrollstrukturen
+			-> Sequenzen (sequenzielle ausführung des codes)
+			-> Verzweigung
+			-> Schleifen
+		-> Vermeidung von Sprunganweisungen.
+
+	-> Modulare Programmierung
+		-> Unterteilen der Computerprogramme in logische Teilblöcke bzw. Module.
+		-> Ziel: Erhöhung der Lesbarkeit.
+		-> Module können beliebig aufgerufen werden.
+			-> Dabei werden nicht nur Funktion sondern auch die dazugehörigen Daten inkludiert.
+		-> Sprachen sind z.B.: Ada, VHDL, Oberon...
+
+	-> Objektorientierte Programmierung
+		-> Strittig ob sie zur Imperativen Programmierung gehört.
+			-> Imperative sicht: Hauptbestandteile eines Programms sind aktiv (Funktionen) und
+				passiven Datenstrukturen.
+			-> Objekt orientierte Sicht: Computerspeicher ist Ansammlung von Objekten in den Funktionen vorkommen.
+				-> Objekte werden als aktive Aktanden betrachtet und nicht mehr Funktionen.
+		-> Objekte können Nachrichten an andere Objekte senden, die dann eine Antwort liefern.
+		-> Programme werden um Datenstrukturen aufgebaut, die als Klassen bezeichnet werden.
+
+	-> Klassen zur Abstraktion von Objekten
+		-> Datenstruktur welche Variablen und Funktionen Beinhaltet.
+			-> Funktion verschafft der klasse Funktionalität; Variablen einen Zustand.
+
+-> Deklarative Programmierung
+	-> 

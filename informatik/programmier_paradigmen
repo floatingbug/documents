@@ -26,6 +26,9 @@
         -> Es wird nicht programmiert wie man zum Ergebnis gelang, sondern WAS für ein ergebnis man möchte.
     -> Es gibt keine Seitenefekte (Seitenefekt: beim Aufruf einer Funktion wird etwas verändert z.B.: Variable
         oder Datenbank).
+        -> Soll bspw. ein Array sortiert werden, wird einer Funktion das Array übergeben und die 
+            Funktion gibt das sortierte Array zurück, ohne es verändert zu haben. Das zurückgegebene 
+            Array kann dann bspw. abgespeichert oder ausgegeben werden.
         -> Jede Eingabe bei einer Funktion hat auch immer genau eine Ausgabe.
             -> z.B. wird f(x)=x² immer 25 ausgeben wenn man 5 eingibt.
                 -> Jede Funktion in der funktionale Programmierung hat für jede Eingabe genau eine Ausgab.
