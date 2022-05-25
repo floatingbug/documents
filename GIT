@@ -21,8 +21,8 @@ Pointer/References:
         -> Zeigen auf das letzte commit.
         -> Der Branch-Pointer des Hauptbranches heißt meistens master.    
     -> HEAD-Pointer
-        -> Zeigt auf den commit, der aktuell in den Workspace geladen wurde.
-            -> Eig. zeigt er auf den Branch-Pointer der wiederum auf den commit zeigt, der aktuell in den Workspace geladen wurde.        
+        -> Zeigt auf den commit, der aktuell in den Workspace geladen ist.
+            -> Eig. zeigt er auf den Branch-Pointer der wiederum auf den letzten commit zeigt.        
         -> Kann auf einen Branch-Pointer oder commit zeigen. 
     -> Der HEAD-Pointer zeigt im normalfall auf den Branch-Pointer.
         -> [HEAD-Pointer]->[Branch-Pointer]->[der letzt commit]

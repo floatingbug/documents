@@ -1,5 +1,7 @@
 -----Grundlegender Aufbau von Computersystemen-----
-- CPU holt Befehle, wie eine Maschine, in Form von Maschinencode, aus dem Speicher und führt diese aus. Diesen Zyklus wiederholt die CPU bis der Computer ausgeschalten wird.
+- CPU holt Befehle, wie eine Maschine, in Form von Maschinencode, 
+    aus dem Speicher und führt diese aus (CPU kann auch bspw. Daten von hdd anfordern oder in hdd schreiben). 
+    Diesen Zyklus wiederholt die CPU bis der Computer ausgeschalten wird.
 	-> Einen Zyklus nennt man Von-Neumann-Zyklus.
 	-> Den Aufbau eines Computers/Rechners nennt man Von-Neumann-Architektur.
 	-> Alle modernen Rechner, vom Smartphone bis zum Hochleistungsserver, arbeiten nach diesem Prinzip.
@@ -105,7 +107,6 @@
 				an richtiger Stelle aufgenommen werden kann.
 			-> Bei solch einer Unterbrechung Schaltet der Prozessor automatisch in den Kernel-Mode, sodass
 				das Betriebssystem auch privilegierte Maschinenbefehle senden kann.
-- Prozesse und Threads
 	-> Ein Prozess kann gleichzeitig von mehreren Kernen abgearbeitet werden, wenn bei der Programmierung 
 		Threads benutzt wurden.
 - Der Wechsel zwischen verschiedenen Prozessen (auch kooperatives-Multitasking genannt)
@@ -121,6 +122,7 @@
 		selbstständig die Daten von der Festplatte ließt und zwischenspeichert (Buffer). Befinden sich alle
 		Daten im Buffer, sendet der Festplattenkontroller ein Interruptsignal, mit hilfe des Interrupt-Kontrollers,
 		an den Prozessor. Das OS erhält wieder Kontrolle über die CPU und stellt dem Prozess die Daten zur 
+- Prozesse und Threads
 		Verfügung und setzt seinen Status auf bereit. Irgendwann wird dem Prozess die CPU zur Verfügung gestellt und
 		zwar dann, wenn ein anderer Prozess ein Systemcall macht und der Prozess bspw. an der Reihe Ist.	
 		-> Durch Speicherung des Programmzählers, kann der Prozess an der richtigen stelle weiter 
