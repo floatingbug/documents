@@ -537,7 +537,8 @@
 		-> 3. Der nächste Vergleich beginnt mit dem Zeichen cm welches rechts neben dem Prefix in M Steht und
 				dem Zeichen cs das ungleich cm war.
 			-> Alle Zeichen des Prefex in M stehen dann unter den selben Zeichen in S Beispiel:
-				abgggabdef = M, abgggabijk = S
+				abgggabdef = M 
+				abgggabijk = S
 				-> Nächster Vergleich:
 					abgggabijk
 						 abgggabcdef
@@ -555,10 +556,10 @@
 						i = h(k) + 1 den gewünschten wert enthält, ist dies nicht der fall + 2 usw.
 		-> Mit dem Index/Hash-Adresse kann dann auf den jeweiligen Wert zugegriffen Werden/Key.
 		-> Beispiel: h(k) = k mod m.
-			-> h(k) liefert dann den Index zu k z.B.: h(8)=4 wenn m=5.
+			-> h(k) liefert dann den Index zu k z.B.: h(8)=3 wenn m=5.
 	
 	-> Hashfunktionen haben die Eigenschaft, dass sie verschiedene Keys auf die gleiche Zieladresse abbilden.
-		-> Daher werden sie auch in der Kryptografie eingesetzt, das es keinen eindeutigen Rückschluss
+		-> Daher werden sie auch in der Kryptografie eingesetzt, da es keinen eindeutigen Rückschluss
 			auf den Key gibt.
 
 	-> Hash-Funktionen finden also verwendung in der: Kryptografie als Prüfsumme und Adressberechnung.
@@ -643,10 +644,11 @@
 
 	-> Dynamische Hash-Verfahren
 		-> Hashtabelle wird bei Bedarf vergrößert.
-		->
+		-> Ist ein Speicherblock m voll und wurden die Adressen mit h0 erzeugt, wird ein
+			neuer Speicherblock/Seite erstellt und dessen Adressen mit h1 erzeugt.
 
 	-> Lineares Hashing 	
-		->
+		-> Speicherblöcke, in denen die Adressen gespeichert sind, werden in einer Primärseite gespeichert.
 
 	-> Virtuelle Hashing
 		-> 
@@ -871,4 +873,56 @@
 			-> Funktion verschafft der klasse Funktionalität; Variablen einen Zustand.
 
 -> Deklarative Programmierung
-	-> 
+    -> Bei der deklarativen Programmierung gibt man dem Rechner vor WAS zu tun ist.
+        -> Es wird nicht programmiert wie man zum Ergebnis gelang, sondern WAS für ein ergebnis man möchte.
+    -> Es gibt keine Seitenefekte (Seitenefekt: beim Aufruf einer Funktion wird etwas verändert z.B.: Variable
+        oder Datenbank).
+        -> Soll bspw. ein Array sortiert werden, wird einer Funktion das Array übergeben und die 
+            Funktion gibt ein sortiertes Array zurück, ohne das alte verändert zu haben. Das zurückgegebene 
+            Array kann dann bspw. abgespeichert oder ausgegeben werden.
+        -> Jede Eingabe bei einer Funktion hat auch immer genau eine Ausgabe.
+            -> z.B. wird f(x)=x² immer 25 ausgeben wenn man 5 eingibt.
+                -> Jede Funktion in der funktionale Programmierung hat für jede Eingabe genau eine Ausgab.
+                    Die Ausgabe hängt niemals davon ab, in welchem Zustand sich das Programm befindet.
+                -> Eine Funktion ist nie von einem Zustand abhängig.
+                    -> Bei der Ausführung von funktionalen code findet keine überprüfung von Zuständen statt.
+                        Würde eine überprüfung stattfinden, würde die Ausgabe einer Funktion vom Zustand abhängen.
+            -> Beispiel:
+                array = [3,1,4,2]
+                print(sorted(array))
+                >>> [1, 2, 3, 4]
+
+                -> Einer Funktion (sorted) wird ein array übergeben. Die Funktion sortiert das arra und
+                    gibt es zurück. Auserdem gab es keine Seitenefekte, da das übergebene array
+                    nicht verändert wurde.
+
+- Ausführung von Programmen
+
+-> Compiler
+	-> Übersetzt Hochsprachen in Maschinensprache.
+		-> Vorgang: Kompilieren.
+	-> Präprozessor
+		-> Ist ein Programm
+		-> Wird vor dem Compiler ausgeführt
+		-> Durchsucht den code nach Platzhalter z.B. # in C
+			-> Dadurch ist es z.B. möglich, Dateien in ein Programm einzubinden.
+	-> Frontend Bereich des Compilers
+		-> Analyse des codes nach semantischer und syntaktischer Korrektheit.
+	-> Backend Bereich des Compilers
+		-> Synthesephase
+		-> Erzeugung eines Zwischencodes oder Maschinencode
+	-> Nach dem Compiler folgt der Linker (meistens).
+
+-> Interpreter
+	-> Führt den code stück für stück in Echtzeit aus.
+	-> Ruft für jeden erkannten Befehl die entsprechende Routine aus der Bibliothek des 
+		Interpreters auf (liegt meist bereits in Maschinensprache for)
+	-> Just In Time Compiler
+		-> Übersetzen den code direkt in Maschinensprache.
+
+-> Linking
+	-> Einbinden von code aus Bibliotheken in das Hauptprogramm.
+		-> Aus dynamischen Bibliotheken
+			-> Einbindung zur Laufzeit
+		-> Aus statischen Bibliotheken
+			-> Einmalige fest in das Hauptprogramm Enbinden.
