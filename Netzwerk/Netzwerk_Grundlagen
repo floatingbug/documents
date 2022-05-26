@@ -10,7 +10,7 @@
 	den Switcht, an den Router/Computer (wird auch Gateway genannt). Dieser
 	leitet das Paket, über seine zweite Netzwerkkarte, an den ISP weiter bzw. an
 	den nächsten Router.  
-	Außerdem muss ein Computer innerhalb eines Netzes ein ARP-Request machen (Schicht 3).
+	Außerdem muss ein Computer innerhalb eines Netzes ein ARP-Request machen (Schicht 3 im OSI-Model).
 		-> Dabei sendet ein Computer ein Frame an alle LAN-Teilnehmer.
 			Entpackt der Computer, für den das Paket bestimmt war den 
 			IP-Header (destination-ip korrekt), Speichert er 

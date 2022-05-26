@@ -18,5 +18,6 @@ app.use(session({
   saveUninitialized: false     
 }));
 
-->saveUninitialized: false -> es werden keine Variablen gespeichert die leer sind.
+->saveUninitialized: false -> wenn req.session nichts hinzugefügt wird, wird auch kein cookie gesendet. 
+    Bei true wird ein cookie gesendet und die session gespeichert, auch wenn der benutzer sich nicht eingelogt hat.
 ->resave: false -> wenn session-Variablen nicht geändert wurden, dann nicht neu speichern, sondern im Speicher belassen wie es ist.
