@@ -15,6 +15,10 @@ m = np.array([[1,4], [3,2], [7,8], [9,6]])
 
 -----------------slicing-------------------------
 a = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+#-> indizes die direkt neben dem Doppelpunkt stehen, sind immer
+    # indizes für element.
+    #-> indizes die links oder rechts neben einem komma stehen,
+        # sind indizes für arrays.
 # mit 0 wird das 1. array ausgewählt. 
 # mit 2 wird das 3. Element ausgewählt (inklusive dem 3. Element).
 # mit 4 wird bis zum 5. Element ausgewählt (exklusive dem 5. Element).
