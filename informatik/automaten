@@ -1,0 +1,98 @@
+--------------------------------Vorkenntnisse---------------------------------
+- Rückkopplung
+	-> ein Teil der Ausgangsgröße (das was rausgehen soll) wird direkt oder 
+		in modifizierter Form auf den Eingang des Systems zurückgeführt.
+		-> Durch die Rückkopplung von min. einer der Ausgänge auf min. einer
+			der Eingänge, erhält eine Schaltung einen speichernden
+			Charakter (ein Gedächtnis).
+
+- Transistor
+-> Nur wenn eine Spannung an S anliegt, kann ein Strom von a nach b fließen.
+
+	 a o---------
+				|
+				|----------o S
+				|
+	 b o---------
+
+- Gatter
+	-> Ein Gatter besteht aus Schalter. Als Schalter werden Transistoren benutzt.
+	-> Ein Gatter besitzt mehrere Eingänge aber nur einen Ausgang.
+		-> Ein- und Ausgägne können nur den Wert 1 und 0 annehmen (Strom fließt oder nicht).
+	-> Durch die Anordnung der Schalter/Transistoren können Funktione abgebildet werden.
+	-> Beispiel eines UND Gatters:
+		-> Nur wenn an beiden Eingängen eine Spannung anliegt, liegt auch am Ausgang
+			eine Spannung an.
+
+- Digitale Schaltung
+	-> Zusammenschluss von Gatter um Schaltfunktione abzubilden.
+	-> Nur ein Ausgang.
+
+- Schaltfunktionen
+-> Werden zur erstellung digitaler Schaltungen und deren Analyse eingesetzt.
+-> Die boolische Algebra wird bei Schaltfunktionen als Schaltalgebra bezeichnet.
+-> Argumente einer Schaltfunktion f(x1, x2, x3,...,xn) können nur die Werte 1 und 0 annehmen.
+-> Beispiel: f(x1, x2)= x1 UND x2
+	-> Nur wenn x1 und x2 den Wert 1 besitzen, ist die Ausgabe 1, anderenfalls 0.
+
+- Schaltnetze
+-> Zusammenschluss von mehreren logischen Gatter.
+-> Das Schaltnetz kann man sich als schwarzen Kasten vorstellen
+	-> Engänge werden mit e1, e2,...,en und Ausgänge mit a1, a2,...,an bezeichnet.
+-> Dadurch das Schaltnetze aus Kombinationen von Gatter aufgebaut sind,
+	hängen die Ausganszustände (0 oder 1) von den Eingangszuständen ab.
+	-> Daher können zur Darstellung Schaltfunktionen verwendet werden.
+	-> Durch Wahrheitstabellen werden die Ausgänge in Abhängigkeit der 
+		Engänge dargestellt.
+-> Keine Rückkopplung.
+
+- Schaltwerk
+-> wie Schaltnetz aber mit Rückkopplung.
+
+---------------------------------Automatentheorie und formale Sprachen-------------------------
+-> Ein Automat ist eine Maschine die ihr Verhalten bis zu einem gewissen Grad selbst steuert.
+	-> Beispiel: Eine Kaffeevollautomaten Malt, Kocht und gibt das getränk selbstständig,
+		bei nur einem Knopfdruck, aus.
+	-> Die Automatentheorie entwickelte sich, um das verhalten von Schaltnetzen und Schaltwerken abstrakt zu beschreiben.
+	-> Man kann sich ein Automat abstrahiert vorstellen:
+		-> Eingangsvariablen sind verschiedene Zeichen, Ausgansvariablen sind verschiedene Zeichen, Funktione des 
+			Schaltnetzes (ggf. mit Rückkopplung) sind innere Zustände.
+	-> Anzahl von Zuständen (Funktionen des Schaltnetzes) und Speicherkapazität sind vorab definiert.
+-> Automaten werden zur formalisierung und realisierung von integrierter Schaltkreise verwendet.
+-> Automaten sind gut zur Analyse und formalisierten Darstellungen, komplexer Zusammenhänge und Abläufe geeignet.
+-> Definition eines deterministischen Automaten A(Q, Σ, δ)
+	-> Q ist eine Abzählbare Menge von Zuständen
+		-> Q={q1, q2, q3,...}
+	-> Σ Ist eine abzählbare geordnete Menge an Eingabezeichen
+		-> Σ={σ1, σ2, σ3,...}
+	-> δ Ist eine Übergangsfunktion, die jedem paar (qi, σj), bestehend aus Zustand qi und Eingabezeichen σj, einen neuen 
+		Folgezustand qk zuordnet. 
+		-> δ: Q X Σ --> Q
+		-> Man schreibt: δ(qi, σj) = qk oder (qi, σj) --> qk.
+			-> Der Automat geht also vom aktuellen Zustand qi durch empfand des Zeichens σj in den neuen Zustand qk über.
+	-> Der Automat ist deterministist, da durch ein und der selber Eingabe σj und der aktuelle Zustand qi
+		immer der gleiche Zustand qk erzeugt wird.
+-> Kellerautomaten
+	-> Definition eines Kellerautomaten K(Q, Σ, Γ, δ, qs, #)
+		-> Entliche Menge von Zuständen: Q={q1, q2, q3,...}
+		-> Eingabealphabet: Σ={σ1, σ2, σ3,...}
+		-> Kelleralphabet: Γ={γ1, γ2, γ3,...}
+		-> Übergangsfunktion: δ: Q X (Σ ∪ {ε}) X Γ --> P(Q X Γ*)
+		-> Startzustand: qs ∈ Q
+		-> Unterstes Kellersymbol # ∈ Γ mit der der Kellerautomat beim Start initialisiert ist.
+	-> Zustandsübergänge durch Übergangsfunktion δ durch Eingabezeichen und Zeichen aus dem obersten Kellerspeicher.
+	-> Beim Zustandsübergang können mehrere Zeichen an der obersten Kellerposition gespeichert werden.
+-> Turingmaschine
+	-> Universales Modell eines Computers.
+	-> Eine Turingmaschine besteht aus:
+		-> einem Band auf dem geschrieben und gelesen werden kann
+		-> einem Schreib-und-Lesekopf der jeweils um einen Schritt nach links L oder rechts R bewergt werden kann oder
+			der Kopf bleibt stehen N.
+		-> Eingabezeichen Σ
+		-> Bandzeichen Γ
+		-> Zuständen Q
+		-> Zustandsübergangsfunktion δ: Q X Γ --> Q X Γ X {L,R}
+	-> Aus dem aktuellen Zustand und dem zuletzt eingelesenem Zeichen ergibt sich, in welche Richtung der Schreib/Lesekopf
+		bewegt werden soll und welche Anweisung als nächstes auszuführen ist.
+	-> Mindestens zwei Zustände sind ausgezeichnet und zwar der Anfangszustand (durch ein senkrechten Pfeil) 
+		und Endzustand (durch den String HALT).

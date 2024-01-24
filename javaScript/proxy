@@ -1,0 +1,30 @@
+- Proxy ist ein Objekt, mit dem man stellvertretend Methoden und Eigenschaften eines anderen Objektes aufrufen kann.
+    -> Ein Proxy ist also ein Stellvertreterobjekt.
+   
+- Definition
+    -> let proxy = Proxy(targetObject, handler)
+        -> Über das proxy-Objekt spricht man mittels des handlers die Methoden und Eigenschaften der targeObjects an.
+
+- Beispiel:
+    let targeta= {
+        firstname: null,
+        lastname: null
+    }
+
+    let proxy = Proxy(targeta handler);
+    proxy.firstname = "tom";
+    proxy.lastname = "tomson";
+    console.log(proxy.firstname) //Ausgabe: tom
+    console.log(proxy.lastname)  //Ausgabe: tomson
+
+    //handler
+    handler{
+        set: function(targeta, property, value){
+            target[property] = value;
+        }
+        get: function(targeta, property){
+            return targeta[property]        
+        }
+    }
+
+    

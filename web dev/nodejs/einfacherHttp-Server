@@ -1,0 +1,68 @@
+--- Node.js Beispielbrogramm mit dem Framework Express.js
+
+const express = require('express');
+const app = express();
+const httpServer = require('http').createServer(app);
+
+app.get('/', (req, res)=>{
+    res.send('index.html');
+});
+
+//Durch den Aufruf von listen() erstellt das OS einen server-socket, wodurch
+//eine TCP-Verbindung aufgebaut werden kann (1).
+//Über die TCP-Verbindung holt sich der httpServer die Daten (2).
+httpServer.listen(8000);
+
+--- (1)
+- TCP-Verbindungsaufbau
+-> Client sendet Anfrage (SYN).
+-> OS erkennt anhand des Port im TCP-Header, dass ein server-socket mit dem Port 
+    vorhanden ist und sendet eine Bestätigung (SYN/ACK). Die Client Informationen
+    wie IP-Adresse und Port werden im server-socket zwischengespeichert.
+-> Der Client sendet, nachdem er den SYN/ACK erfangen hat, ein ACK an den Server,
+    der dann einen socket für die Verbindung erstellt. 
+    -> Daten können in den socket geschrieben werden, diese werden dann, gemäß des 
+        TCP-Protokols, versendet.
+    -> Daten können vom socket gelesen werden, diese wurden empfangen.
+
+--- (2)
+- Der httpServer holt die Daten aus dem socket.
+-> Daten sind: http-header und Daten. Daten befinden sich im body manchmal auch als
+    payload bezeichnet.
+-> In der ersten Zeile des http-headers steht die http-methode und die Ressource, die angefragt wird.
+    -> Beispielsweise: GET /home.
+-> Ein einfaches Node.js-Programm, das eine index.html-Datei ausliefert, 
+    wenn die Ressource / mit der GET-Methode angefragt wird, könnte wie folgt aussehen:
+
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+const httpServer = http.createServer((req, res) => {
+  if (req.method === 'GET' && req.url === '/') {
+    const filePath = path.join(__dirname, 'index.html');
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        console.error(err);
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      } else {
+        res.setHeader('Content-Type', 'text/html');
+        res.statusCode = 200;
+        res.end(data);
+      }
+    });
+  } else {
+    res.statusCode = 404;
+    res.end('Not Found');
+  }
+});
+
+httpServer.listen(3000, () => {
+  console.log('Server is listening on port 3000');
+});
+
+    -> Der httpServer schreibt alle header-Informationen und Daten in das Objekt req.
+    -> Wird res.end() aufgerufen, sendet der httpServer alle http-header und Daten, die
+        im Objekt res gemacht wurden, an den Client (meist Browser).
+    -> Express.js setzt alle http-header automatisch und übernimmt das Laden der Daten.

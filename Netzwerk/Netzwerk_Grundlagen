@@ -1,0 +1,72 @@
+---ISP (Internet Service Provider)
+→ Das Ethernet/LAN (meist Sterntopologie) ist über einen Router mit dem ISP-Netz verbunden.
+	Dieses Netz ist mit anderen Netzen verbunden.
+
+---IP (Internet Protokol)
+-> Das Internet Protokol (in Router/Computer implementiert) leitet Pakete von Netz
+	zu Netz weiter. Dabei hat der Router/Computer min. zwei Netzwerkkarten: Eine 
+	mit der IP-Adresse für das lokale Netz und eine für ein anderes Netz. Ein 
+	Computer, der aus dem lokalen Netz Pakete sendet, schickt diese, mittels MAC über
+	den Switcht, an den Router/Computer (wird auch Gateway genannt). Dieser
+	leitet das Paket, über seine zweite Netzwerkkarte, an den ISP weiter bzw. an
+	den nächsten Router.  
+	Außerdem muss ein Computer innerhalb eines Netzes ein ARP-Request machen (Schicht 3 im OSI-Model).
+		-> Dabei sendet ein Computer ein Frame an alle LAN-Teilnehmer.
+			Entpackt der Computer, für den das Paket bestimmt war den 
+			IP-Header (destination-ip korrekt), Speichert er 
+			in seiner ARP-Tabelle die IP und zugehörige MAC des Senders.
+			Dann sendet er ein Response mittels der MAC an den Sender
+			(in Switch-Tabelle steht MAC mit zugehörigem Port bzw. Stecker-Buxe), der 
+			ebenfalls ip und MAC in seiner ARP-Tabelle speichert.
+			Jetzt können die Computer Daten, über die MAC-Adresse, austauschen.
+-> IP ist ein Protokoll, wird aber als synonym für die IP-Adresse verwendet, welche IP
+	benutzt.
+
+---Socket
+-> Baut ein Computer zu einem anderen Computer eine Verbindung auf, sendet er ein Paket mit einer TCP-Anfrage. Dieses enthält: ethernet-, ip- und tcp-header.
+	-> Hat der Computer die Anfrage Akzeptiert, erstellt er ein Socket.
+		-> Der Sender kann jetzt IP-Pakete an den empfänger senden.
+		-> Die Daten im Payload (befinden sich hinter dem Ethernet-header, ip-header,
+			tcp-header) werden an den Socket geleitet, von dem dann
+			die Daten vom Programm bzw. Prozess abgeholt werden.
+			-> Ein Socket ist also wie eine Datei, in die ein Programm (Client
+				oder Server) Schreiben und von ihr Lesen kann.
+			-> Sendet ein Programm eine größere Datei, Schreibt das Programm
+				in den Socket und TCP verpackt simultan die einkommenden
+				Daten im Socket in kleinere Pakete.
+			-> Empfängt ein Programm Daten in Form von Paketen, entpakt TCP die ankommenden Pakete und
+                legt die Daten nach und nach im Socket ab, wo das Programm nach und nach die Daten abholt.
+			
+---Socket Programmierung
+-> Ein Server-Socket muss vom OS erstellt werden, der für das Server-Programm eine
+	TCP-Verbindung abwickelt und das OS anschließend ein Socket für die Verbindung
+	erstellt.
+	-> ss = Socket()
+		-> Rüchgabewert ist ein Socket-Objekt.
+-> Der Server-Socket muss mit einer IP-Adresse und Port-Nummer versehen werden.
+	-> ss.bind(80)
+-> Bis hierhin wurde das erstellen des Server-Socket nur vorbereitet, dem OS wird
+	jetzt mitgeteilt, dass es den Server-Socket erstellen soll.
+	-> ss.listen()
+		-> Dem ss-object wird noch die server-socket-id vom os mitgeteilt.
+-> Das Server-Programm wartet in einer Schleife, bis der server-socket eine Verbindung
+    akzeptiert und einen socket für den Datenaustausch erstellt. Wurde dieser socket erstellt,
+    teilt das os dem Server-Programm die socket-id mit.
+	-> s = ss.accept()
+		-> accept() erzeugt die Schleife. hat der server-socket ein socket erstellt, 
+			gibt accept ein socket-object incl. die ID des OS-Socket zur Indentifikation zurück. 
+		-> Damit accept den Server-Socket vom OS abhören kann, brauch es 
+			die Socket-ID vom server-socket.
+			
+	->Da sich das Server-Programm in einer Schleife befindet, ist es Blockiert und kann
+	wärend dessen keine anderen Aufgaben ausführen.
+
+---Anwendungsschicht (Application-Layer)
+-> In einer Anwendung/Programm muss ein Protokoll implementiert werden, damit es mit
+	einem anderen Programm komunizieren kann.
+-> HTTP Beispiel: Client-Programm vordert eine Datei an mit der Nachricht: GET /datei.txt,
+	Server-Programm findet die Datei und sendet die Nachricht: OK 200.
+	Die Nachrichten GET /datei.txt und OK 200 befinden sich im HTTP-Header und Daten 
+	im Payload, beides zusammen ist ein Datenpaket. 
+	Reicht ein Paket für die Datei nicht aus, müssen mehrere Geschickt werden, wobei
+	jedes einzelne Paket in für das Programm zugewiesene Socket Geschrieben wird.

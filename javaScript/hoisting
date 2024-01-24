@@ -1,0 +1,5 @@
+-> Auf eine Variable kann zugegriffen werden, auch wenn diese erst
+	nach dem Zugriff im code deklariert ist.
+	-> Das funktioniert weil in Phase 1 (Datei fundamentals) Variablen und
+		Funktionen in den Speicher geladen werden und der code dann erst
+		ausgeführt wird (Phase 2).

@@ -1,0 +1,92 @@
+-----Middleware-----
+
+-> Middleware hinzufügen mit app.use
+    -> Wird nach einem request und vor einem response ausgeführt.
+
+-> Beispiel 1: app.use(bodyParser.urlencoded({extended: true}));
+	-> Wird bei jedem Request ausgeführt.
+
+-> Beispiel 2: app.post('/api/sayHello', upload.array(), (req, res)=>{...});
+	-> upload.array() ist hier die middleware.
+	-> Wird nur beim Aufruf der angegebenen Ressource (/api/sayHello) aufgerufen.
+
+-> Ausführung der Beiden Funktionen bei einem Request:
+	[query]->[expressInit]->[Url Encoded]->[Upload Array]->[Anonym Function]
+	-> Von query bis Anonym Function werden die Daten, wie in einer Pipeline, weitergeleitet.
+
+-----Eigene Middleware schreiben-----
+
+function consoleWriter(req, res, next){
+	console.log("Request Path: " + req.path);
+	
+	next()
+}
+
+app.use(consoleWriter);
+
+-> next() "sagt" dass der request und response fertig verarbeitet wurde und der Stream der Daten,
+	in der Pipeline, weitergeleitet werden kann.
+
+-----Variablen-----
+-> Jedes Modul in node ist isoliert von anderen Modulen.
+	-> Zugriff auf einer Variable eines Modules von einem anderem Module aus mit: app.set("var1", "module1.var2");
+		-> var1 ist dann eine Variable, die von jedem Modul mit app.get("var1") erreichbar ist. Ihr wird der Wert der 
+			Variable aus dem anderen Module (module1) zugewiesen.
+-> In dem Objekt env befinden sich Systemvariablen bsp.: process.env.PORT 
+	-> app.set("port", process.env.PORT || 8000);
+		app.listen(app.get('port'), ()=>{
+			console.log("server listen on port: " app.get('port');
+		});
+		-> Ist process.env.PORT nicht undefined, wird port der Wert von PORT zugewiesen, anderenfalls 
+			wird 8000 port zugewiesen.
+		-> Damit PORT nicht undefined sein soll, muss dem Objekt env die Variable PORT hinzugefügt werden.
+			
+-----Coockies-----
+-> Paket cookie-parser wird benötigt.
+	-> Als globale Middleware: app.use(cookieParser());
+-> Schreiben von cookies mit der cookie-function (cookie hinzufügen): res.cookie("cookiename", wert der variable) 
+-> Zum auslesen dient: req.coockies-collection
+-> Löschen von cookies mit: res.clearCoockie('name des coockies'); 
+-> Überprüfen ob der User ein cookie mitgesendet hat mit: req.cookies.cokiename ist undefined oder nicht		
+
+-----Session-----
+-> In einer Session können zustände eines Benutzers gespeichert werden.
+	-> z.B.: Spielstände, Login usw. .
+-> Damit die session des jeweiligen Users in req.session geladen wird, sendet der user eine session-id,
+	in Form eines cookies, bei jedem request mit.
+	-> Die middleware (session) läd die session anhand der session-id und fügt sie dem req-object hinzu (req.session).
+-> Der User erhält die session-id durch einen response, wenn vorher der session etwas neues hinzugefügt wurde
+	z.B.: req.session.name = name; res.send();
+-> Session Speicherort ist RAM, man sollte aber nicht die Session integrierte Speicherfunktion nutzern,
+	sondern bspw. connect-redis.
+-> Redis ist eine open-source, key-value, in-memory Datenbank.
+	-> Beispiel:
+		
+		let redisStore = require('connect-redis')(expressSession);
+		
+		app.use(expressSession({
+			secret: "sldfkjasdfei",
+			store: new redisStore();
+		}));
+	
+	-> Server starten in der Konsole
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

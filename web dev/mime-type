@@ -1,0 +1,82 @@
+-> Gibt das Format der Daten an, die sich im Payload befinden bspw. JSON oder XML.
+    -> Der Browser und Webserver können anhand des mime-types im http-header entscheiden, 
+        welche Anwendung für die Daten in Frage kommt.
+
+-> Fehlt einem Browser ein mime-type, schlägt dieser dem Benutzer vor, den mime-type 
+    abzspeichern und schlägt dem Benutzer dann verschiedene Programme vor, die mit dem 
+    Dateiformat umgehen können.
+
+-> Webserver verarbeiten nur Dateien, von denen sie den mime-type kennen.
+
+-> Ein mime-type besteht aus dem Medientyp und dem Subtyp.
+    -> Der Medientyp gibt die Gruppe der Datei an z.B. image.
+        -> Der Subtyp wäre z.B. jpeg.
+            -> Der mime-type im http-header ist dann: Content-Type:image/jpeg.
+
+-> Beispiele:
+    text – Textdatei
+    image – Grafik/Bild
+    video – Videodatei
+    audio – Musik/Sound-Datei
+    application – Dateien, die an ein bestimmtes Programm gebunden sind
+    message – Nachricht
+    multipart – mehrteilige Datei
+    model – Daten, die mehrdimensionale Strukturen repräsentieren
+ 
+->  Im Fall, dass der MIME-Typ die Art des Dokuments falsch beschreibt, 
+    wird die Datei mit anderen Anwendungen bearbeitet und ausgegeben. 
+    Gibt man im einem HTML-Dokument an, dass es sich um ein Bild handelt (image/jpeg => JPEG-Datei), 
+    wird die HTML-Datei als Bild und nicht wie ein HTML-Dokument ausgegeben. 
+    Der MIME-Typ dient als erste Kommunikation zwischen Webserver und Client (Browser). 
+    Ein falscher MIME-Typ, der die Klasse der Datei nicht richtig wiedergibt, 
+    kann zu einer Fehlermeldung und einem Abbruch der Übertragung führen.
+
+-> Mime-types zum senden von Formular-Daten an den Server.
+    -> Daten die über das Internet versendet werden, dürfen nur Zeichen aus dem ASCII-Format
+        enthalten.
+        -> Sonderzeichen müssen codiert werden.
+            -> Der Browser codiert die Daten entsprechend der Codierung welches im form-tag
+                angegeben wird, z.B.: application/x-www-form-urlencoded oder multipart/form-data.
+    -> Es gibt zwei mime-types für diesen Zweick: application/x-www-form-urlencoded und
+        multipart/form-data.
+        -> Beide mime-types sorgen dafür, dass der server weiß, dass es sich um eine 
+            Liste von Name und Wert Paaren handelt.
+            -> Der Server kann dann bspw. die Daten als Objekt parsen und in ein request-
+                object speichern, z.B. req.body (im object body stehen dann die Daten).
+    -> application/x-www-form-urlencoded 
+        -> Es wird nur ein Payload gesendet in dem sich alle Daten befinden.        
+        -> Sendet der Browser diesen mime-type, weiß der Server, dass die Daten in 
+            folgender Form vorliegen: MyVariableOne=ValueOne&MyVariableTwo=ValueTwo.
+            -> Zeichen die nicht im Alphabet vorkommen (non-alphanumeric characters) z.B. =, %, ? usw., 
+                müssen codiert werden, sodass für diese Zeichen statt 1 Byte jeweils 3 Bytes 
+                benötigt werden.
+                -> Aus einem Leerzeichen wird dann z.B. ein +, dass beim Server landet.
+                    -> Der String landet beim Server also codiert eng. encodet bzw. urlencoded.
+    -> multipart/form-data
+        -> Es werden mehrere Payloads gesendet in denen sich unterschiedliche Daten befinden können.
+            -> Dabei wird für jeden Payload der entsprechende mime-type im header mit gesendet.
+                -> Statt einen langen String von Key-Value-Pairs in einem Payload zu senden,
+                    wird für jedes Key-Value-Pair ein Payload gesendet.
+                    -> Zeichen wie Trennzeichen in application/x-ww.form-urlencoded müssen nicht
+                        zusätzlich codiert und mitgeschickt werden.        
+        -> Sendet der Browser diesen mime-type, nimmt der Server jeden payload entgegen und speichert
+            diese in einer Datei, mit den Key-Value-Pairs, ab.
+            -> Beispiel:
+                --{boundary string}
+                Content-Disposition: form-data; name="username",
+
+                techbos
+                -> name=techbos
+
+                --{boundary string}
+                Content-Disposition: form-data; name="password",
+
+                Pa$$w0rd
+                -> password=Pa$$w0rd
+                
+                --{boundary string}
+                Content-Disposition: form-data; name="file"; filename="image.jpg"
+                Content-Type: image/jpeg,
+                
+                --{boundary string}--
+                -> Ende des Payloads

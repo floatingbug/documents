@@ -1,0 +1,177 @@
+	---Layout---
+
+--- Flow
+- Es gibt zwei Kontexte, die angeben wie sich Html-Element im Flow verhalten:
+    -> display: block;
+        -> Flow: von oben nach unten (vertikal).
+        -> Begint soweit wie möglich oben links in der Zeile.
+        -> das Html-Element blockiert die gesammte Zeile und werden so breit wie es geht.
+        -> Das nächste Element erscheint auf der nächsten Zeile.
+
+    -> display: inline;
+        -> Flow: von links nach rechts (horizontal).
+        -> Begint soweit wie möglich oben links in der Zeile.
+        -> Werden so breit wie ihr inhalt.
+        -> Das nächste Html-Element erscheint rechts neben dem inline-Element.
+        -> Bei platzmangel geht es in der nächsten Zeile weiter.
+
+--- Position
+- position: static;
+	-> Ist der voreingestellte standart Wert.
+    -> Html-Box (synonym für Html-Element) nimmt normale position im Flow ein (bspw. display: block;).
+    -> Die Html-Box richtet sich zur nächsten umgebenden Box hin aus, bei der der Wert von position nicht static ist.
+        -> Hat die Box keine umgebende Box, bei der der Wert static ist, richtet sich die Box nach der body-Box hin aus.
+
+- position: relative;
+    -> Im Flow (wie der Wert für display gesetzt wurde).
+    -> Das Element richtet sich nach seiner ursprünglichen Position im Flow aus.
+
+- position: absolute;
+    -> Nicht im Flow.
+    -> Richtet sich zum nächsten übergeordneten Element hin aus, dessen possition nicht static ist.
+		-> Wird das Element von keinem positionierten Element umgeben, richtet sich dieses an dem Stammelement html hin aus.
+
+- position: fixed;
+    -> Nicht im Flow.
+
+- position: sticky;
+    -> Nicht im Flow. 
+
+--- Responsive (deutsch: Anpassungsumgebung) 
+- Inhalt passt sich dem zur verfügung stehenden Platz an.
+    -> wird Durchgeführt mit:
+        -> Flexible layouts (Flexbox, Grid).
+        -> Flexible Bilder (max-width).
+        -> Media Queries (@media).
+
+--- Mediaqueries
+- Im Mediaquery bspw. @media print { css-Anweisungen }, kann ausgewählt werden, für welches Medium die
+    css-Anweisungen gelten sollen. Im Beispiel gelten die css-Anweisungen also nur, wenn gedruckt wird.
+    -> Es gibt drei Medien: all, print, screen.
+        -> standart ist all.
+
+--- Flexbox
+- Vier Kategorien von Eigenschaften zur Positionierung.
+	-> Fließrichtung, Flexibilität, Ausrichtung, Reihenfolge.w
+
+- Fließrichtung: Items können in verschiedene Richtungen fließen.
+    -> flex-direction: 
+        -> Werte        
+            -> column 
+                -> Hautpachse ist vertikal. 
+            row 
+                -> Hauptachse ist horizontal.
+
+    -> flex-wrap: 
+        -> Werte
+            -> nowrap 
+                -> wird der platz zu klein, bleiben die items trotzdem auf selber ebene.
+            -> wrap 
+                -> wird der Platz zu klein, werden die items auf der nächsten Zeile dargestellt.
+
+    -> flex-flow: 
+        -> Werte 
+            row nowrap 
+                -> kurzschreibweise für: flex-direction: row, flex-wrap: nowrap.
+
+- Flexibilität: Items können ihre Ausdehnung automatisch dem vorhandenen Platz anpassen.
+    -> Alle Eigenschaften werden einzelnen Items zugeordnet und nicht im container.    
+    -> flex: 1;
+        -> Ausrichtung einzelner Items.
+        -> Erhält jedes Item: flex: 1; sind alle Items gleich groß.
+        -> 1 ist eine verhältnisangabe.
+            -> Wird einem Item: flex: 2; zugewießsen, ist dieses doppelt so groß als die anderen.
+
+    -> flex-grow: 0;
+        -> Items dürfen nicht größer werden.
+    
+    -> flex-shrink: 1;
+        -> Items dürfen kleiner werden.
+
+    -> flex-basis: auto;
+        -> Ausdehnung wird durch width, height... usw. bestimmt.
+
+- Ausrichtung: Items können auf verschiedene Weiße ausgerichtet werden.
+    -> justify-content:
+        -> Ausrichtung entlang der Hauptachse.
+        -> Leeraum muss vorhanden sein.        
+        -> Werte
+            -> flex-start
+            -> flex-end
+            -> center
+            -> space-between
+            -> space-arroud
+            -> space-evenly 
+    
+    -> align-items: 
+        -> Ausrichtung entlang der Querachse.
+        -> Werte
+            -> stretch
+                -> Alle items spannen sich vom obersten Punkt bis zum untersten punkt auf.
+            -> flex-start
+                -> Ausrichtung an Textlinie.
+                -> Items richten sich zum obersten Punkt hin aus.
+            -> flex-end
+                -> Ausrichtung an Textlinie.
+                -> Items richten sich zum untersten Punkt hin aus.
+            -> center
+                -> Ausrichtung an Textlinie.
+                -> Items richten sich zur Mitte hin aus.
+            -> baseline
+                -> Ausrichtung an Textlinie.
+
+    -> align-self: 
+        -> Ausrichtung einzelner Items.
+        -> Entlang der Querachse.
+        -> Gleiche Werte wir bei align-items.
+
+    -> gap: 1rem;
+        -> Zwischen den Items wird Platz erzeugt.
+
+    -> margin: auto;
+        -> Funktioniert innerhalb eines flex-containers.
+
+- Reihenfolge: Items können in verschiedener Reihenfolge am Bildschirm erscheinen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

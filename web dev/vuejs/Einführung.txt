@@ -1,0 +1,41 @@
+--- DOM
+- Der Browser parst den HTML-Code und erstellt für jedes HTML-Element ein entsprechendes Objekt im Speicher. 
+	Diese Objekte im DOM repräsentieren die verschiedenen Elemente wie Überschriften, Absätze, Bilder, Formulare usw. 
+	Jedes Objekt im DOM verfügt über Eigenschaften, Methoden und Ereignisse, die es ermöglichen, 
+	auf das entsprechende HTML-Element zuzugreifen und es zu manipulieren.
+
+- Der Browser stehllt den DOM visuell im Browser-Fenster da.
+	-> Wird eine Eigenschaft eines Objekts geändert, stellt der Browser diese Änderung visuell im Browser da.
+
+- Alle Objekte im DOM sind JavaScript Objekte.
+	-> Mit CSS können die eigenschaften der Objekte geändert werden, die für das Aussehen bzw. Representation verantwortlich sind.
+
+--- Vue Funktionsweise
+- Vue erstellt aus dem Template das DOM. Der Browser parst also nicht HTML code als DOM in den Arbeitsspeichert, sondern 
+	die Elemente werden direkt im Template erstellt.
+	-> Wenn eine Vue-Komponente gerendert wird, analysiert Vue.js das Template und erstellt entsprechende DOM-Elemente im Arbeitsspeicher. 
+		Diese DOM-Elemente werden dann im Browserfenster angezeigt und können über JavaScript-Code manipuliert werden.
+
+--- Reaktivität
+- Durch Proxy-Objekte kann vue auf Änderung der Eigenschaften in den Objekten Reagieren.
+	-> Dadurch kann vue bei änderungen Reagieren (Reaktivität).
+	-> Wird eine Variable geändert, wird automatisch das DOM aktuallisiert, damit der Broweser die Änderung anzeigen kann.
+
+
+- Es gibt zwei Proxies die in vue verwendet werden: ref, reactive.
+	-> ref: wird verwendet, um einzelne Werte zu reaktiven Variablen zu machen.
+	-> reactive: wird verwendet, um Objekte zu reaktiven Variablen zu machen.
+	
+- Erstellung:
+imput {ref, reactive} from 'vue';
+const states = reactive({state1: "state1"});
+const isActive = ref(false);
+
+- Einsatz:
+<template>
+	<button v-on:click="changeValue"></button>
+	<p> {{states.state1}} </p>
+<template>
+
+-> Immer wenn der button geklickt wird, gehen wir davon aus, dass die Funktion "changeValue" den Wert von states.state1 ändert.
+	Wenn sich der Wert ändert, wird dieser Wert im DOM ebenfalls geändert, so dass der Browser diese Änderung Anzeigt.

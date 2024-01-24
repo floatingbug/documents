@@ -1,0 +1,157 @@
+{
+  "main": {
+    "id": "9caa4d86dc4ca6e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "e5816805ee143584",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d3f578c2076fc3ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mongodb/MongoDB Driver für Node.js.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c7960c3e6f7b39ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "a3280af18ad30f77",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bfe6e56df8f84720",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1c736b3a3949551d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6e81bcf200e6db58",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bffd1c7b027f224b",
+    "type": "split",
+    "children": [
+      {
+        "id": "68d90c5c750002e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e6c1855fb4b79421",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Mongodb/MongoDB Driver für Node.js.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d7c302aca29bb018",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Mongodb/MongoDB Driver für Node.js.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5d6b0c8f9425405a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6bb66cacfd15e04a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Mongodb/MongoDB Driver für Node.js.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "d3f578c2076fc3ea",
+  "lastOpenFiles": [
+    "Mongodb/index.md",
+    "Mongodb/MongoDB Driver für Node.js.md",
+    "Mongodb",
+    "create a link.md",
+    "Welcome.md"
+  ]
+}

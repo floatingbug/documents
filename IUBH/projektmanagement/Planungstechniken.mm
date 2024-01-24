@@ -1,0 +1,174 @@
+<map version="freeplane 1.7.0">
+<!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
+<node TEXT="Planungstechniken" FOLDED="false" ID="ID_290675493" CREATED="1669803082317" MODIFIED="1669804167970" STYLE="oval">
+<font SIZE="18"/>
+<hook NAME="MapStyle">
+    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
+
+<map_styles>
+<stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
+<font SIZE="24"/>
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="default" ICON_SIZE="12.0 pt" COLOR="#000000" STYLE="fork">
+<font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.details"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.attributes">
+<font SIZE="9"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.note" COLOR="#000000" BACKGROUND_COLOR="#ffffff" TEXT_ALIGN="LEFT"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.floating">
+<edge STYLE="hide_edge"/>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.topic" COLOR="#18898b" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subtopic" COLOR="#cc3300" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subsubtopic" COLOR="#669900">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.important">
+<icon BUILTIN="yes"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" COLOR="#000000" STYLE="oval" SHAPE_HORIZONTAL_MARGIN="10.0 pt" SHAPE_VERTICAL_MARGIN="10.0 pt">
+<font SIZE="18"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,1" COLOR="#0033ff">
+<font SIZE="16"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,2" COLOR="#00b439">
+<font SIZE="14"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,3" COLOR="#990000">
+<font SIZE="12"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,4" COLOR="#111111">
+<font SIZE="10"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,5"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,6"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,7"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,8"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,9"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,10"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,11"/>
+</stylenode>
+</stylenode>
+</map_styles>
+</hook>
+<hook NAME="AutomaticEdgeColor" COUNTER="11" RULE="ON_BRANCH_CREATION"/>
+<node TEXT="Planung im Gro&#xdf;en" POSITION="right" ID="ID_188073243" CREATED="1669803104594" MODIFIED="1669804167967" HGAP_QUANTITY="-38.499998435378124 pt" VSHIFT_QUANTITY="-177.74999470263737 pt">
+<edge COLOR="#ff0000"/>
+<node TEXT="Projektbeginn" ID="ID_979578513" CREATED="1669803395308" MODIFIED="1669803584662" HGAP_QUANTITY="31.99999946355821 pt" VSHIFT_QUANTITY="-41.999998748302495 pt">
+<node TEXT="Grobplanung" ID="ID_873845990" CREATED="1669803443379" MODIFIED="1669803481195">
+<node TEXT="festlegen" ID="ID_988963301" CREATED="1669803481200" MODIFIED="1669803546662">
+<node TEXT="Meilensteine" ID="ID_548321199" CREATED="1669803546667" MODIFIED="1669803551347"/>
+<node TEXT="Teilaufgaben" ID="ID_1156299309" CREATED="1669803551732" MODIFIED="1669803562367"/>
+<node TEXT="Arbeitspakete" ID="ID_1076242934" CREATED="1669803563056" MODIFIED="1669803580934"/>
+</node>
+<node TEXT="Hauptaktivit&#xe4;ten der Planung" ID="ID_890059019" CREATED="1669803674313" MODIFIED="1669803688484">
+<node TEXT="Identifikation und Beschreibung von" ID="ID_1000541666" CREATED="1669803694841" MODIFIED="1669803742210">
+<node TEXT="Meilensteinen" ID="ID_1740048287" CREATED="1669803744992" MODIFIED="1669803748566"/>
+<node TEXT="" ID="ID_1604777041" CREATED="1669819734868" MODIFIED="1669819734868">
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="Teilaufgaben" ID="ID_1279731962" CREATED="1669803748892" MODIFIED="1669803755917"/>
+<node TEXT="Arbeitspakete" ID="ID_882937708" CREATED="1669803756496" MODIFIED="1669803762726"/>
+<node TEXT="" ID="ID_1958483494" CREATED="1669819734856" MODIFIED="1669819807194">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="Eigenschaften m&#xfc;ssen mit angegeben werden" ID="ID_848947217" CREATED="1669819734869" MODIFIED="1669819807190" HGAP_QUANTITY="22.999999731779106 pt" VSHIFT_QUANTITY="8.249999754130847 pt">
+<node TEXT="Ergebnis" ID="ID_1119726601" CREATED="1669819756175" MODIFIED="1669819764258"/>
+<node TEXT="Verantwortlichkeit" ID="ID_469305736" CREATED="1669819764710" MODIFIED="1669819770521"/>
+<node TEXT="Abh&#xe4;ngigkeiten" ID="ID_913369172" CREATED="1669819770946" MODIFIED="1669819778907"/>
+<node TEXT="Dauer der Bearbeitung" ID="ID_729523979" CREATED="1669819779118" MODIFIED="1669819785201"/>
+<node TEXT="Start- und Enddatum" ID="ID_489398094" CREATED="1669819785678" MODIFIED="1669819799443"/>
+</node>
+</node>
+</node>
+<node TEXT="Bestimmung der" ID="ID_1686057929" CREATED="1669803787699" MODIFIED="1669803827067">
+<node TEXT="Abh&#xe4;ngigkeiten" ID="ID_1212547596" CREATED="1669803827070" MODIFIED="1669803844245"/>
+<node TEXT="Abarbeitungsreihenfolgen" ID="ID_1923823856" CREATED="1669803845054" MODIFIED="1669803860531"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="nach Grobplanung" ID="ID_1718505081" CREATED="1669803910992" MODIFIED="1669804157344" HGAP_QUANTITY="37.249999307096026 pt" VSHIFT_QUANTITY="-83.24999751895673 pt">
+<node TEXT="iterative Detaillierung des Projektplans" ID="ID_1627597833" CREATED="1669803936140" MODIFIED="1669804028244"/>
+</node>
+<node TEXT="Projektstrukturplan" ID="ID_840887640" CREATED="1669804559718" MODIFIED="1669804570999">
+<node TEXT="beinhaltet" ID="ID_1867805446" CREATED="1669804571003" MODIFIED="1669804603006">
+<node TEXT="Teilaufgaben" ID="ID_1452000202" CREATED="1669804603009" MODIFIED="1669804609692"/>
+<node TEXT="Arbeitspakete" ID="ID_1712227454" CREATED="1669804610841" MODIFIED="1669804625422"/>
+</node>
+</node>
+<node TEXT="Veranschaulichung von Abh&#xe4;ngigkeiten zwischen" ID="ID_1217478413" CREATED="1669804636520" MODIFIED="1669805429750">
+<node TEXT="" ID="ID_822060411" CREATED="1669805297188" MODIFIED="1669805297189">
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="Meilensteine" ID="ID_831217916" CREATED="1669804668788" MODIFIED="1669804675985"/>
+<node TEXT="Teilaufgaben" ID="ID_619389022" CREATED="1669804676327" MODIFIED="1669804680377"/>
+<node TEXT="Arbeitspakete" ID="ID_1406610693" CREATED="1669804680911" MODIFIED="1669804699941"/>
+<node TEXT="" ID="ID_500282800" CREATED="1669805297185" MODIFIED="1669806797845">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="mit Gantt-Diagramm" ID="ID_613033541" CREATED="1669805297190" MODIFIED="1669806797843" HGAP_QUANTITY="25.24999966472388 pt" VSHIFT_QUANTITY="-2.2499999329447773 pt"/>
+</node>
+</node>
+</node>
+<node TEXT="Planung im Kleinen" POSITION="right" ID="ID_327656094" CREATED="1669806116120" MODIFIED="1669806141347">
+<edge COLOR="#007c00"/>
+<node TEXT="Planung von kleinen Projekten" ID="ID_1203841827" CREATED="1669806141351" MODIFIED="1669806818716">
+<node TEXT="Gannt-Diagramm lohnt sich nicht" ID="ID_1512944162" CREATED="1669806167998" MODIFIED="1669806812946" HGAP_QUANTITY="12.500000044703482 pt" VSHIFT_QUANTITY="-20.999999374151248 pt"/>
+<node TEXT="" ID="ID_187481059" CREATED="1669806751774" MODIFIED="1669806751775">
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="Detailplanung eines Arbeitspakets" ID="ID_1942669587" CREATED="1669806290158" MODIFIED="1669806364637">
+<node TEXT="Bearbeitung des Arbeitspakets dauert l&#xe4;nger&#xa;und wird von einem Team bearbeitet" ID="ID_1379532149" CREATED="1669806364640" MODIFIED="1669806483819"/>
+</node>
+<node TEXT="Planung der eigenen Arbeit (des Angestellten)." ID="ID_495023801" CREATED="1669806488592" MODIFIED="1669806818715" HGAP_QUANTITY="17.749999888241295 pt" VSHIFT_QUANTITY="17.99999946355821 pt"/>
+<node TEXT="" ID="ID_189008663" CREATED="1669806751772" MODIFIED="1669806794520">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="mit Hilfe des Kanban-Board" ID="ID_658218591" CREATED="1669806668727" MODIFIED="1669806794519" HGAP_QUANTITY="25.249999664723884 pt" VSHIFT_QUANTITY="-3.7499998882412946 pt"/>
+</node>
+</node>
+<node TEXT="Kanban-Board" ID="ID_1049583035" CREATED="1669806844378" MODIFIED="1669806855778">
+<node TEXT="Vorteile" ID="ID_68442182" CREATED="1669806855781" MODIFIED="1669806876822">
+<node TEXT="intuitive virtualisierung" ID="ID_766580957" CREATED="1669806876825" MODIFIED="1669806898438"/>
+<node TEXT="Unterst&#xfc;tzung von selbstorganisierten Teams" ID="ID_875971954" CREATED="1669806898828" MODIFIED="1669806914602"/>
+</node>
+</node>
+</node>
+<node TEXT="Kanban-Board" POSITION="left" ID="ID_1934786179" CREATED="1669807295864" MODIFIED="1669813163174">
+<edge COLOR="#007c7c"/>
+<node TEXT="Einsatz" ID="ID_1755460783" CREATED="1669807307681" MODIFIED="1669813156587">
+<node TEXT="Planung" ID="ID_332516516" CREATED="1669807368473" MODIFIED="1669813156586" HGAP_QUANTITY="16.249999932944775 pt" VSHIFT_QUANTITY="-17.99999946355821 pt">
+<node TEXT="Abarbeitung von einzelnen Arbeitspaketen" ID="ID_962586486" CREATED="1669807321485" MODIFIED="1669813148184" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="-10.499999687075624 pt"/>
+<node TEXT="Organisation innerhalb von Arbeitspaketen" ID="ID_1515455220" CREATED="1669807409693" MODIFIED="1669813151201" HGAP_QUANTITY="11.750000067055224 pt" VSHIFT_QUANTITY="7.499999776482589 pt"/>
+</node>
+</node>
+<node TEXT="Vorteile" ID="ID_827272190" CREATED="1669813003910" MODIFIED="1669813163173" HGAP_QUANTITY="12.500000044703482 pt" VSHIFT_QUANTITY="15.749999530613437 pt">
+<node TEXT="Transparenz" ID="ID_1334110559" CREATED="1669813031262" MODIFIED="1669813143221">
+<node TEXT="&#xdc;berblick &#xfc;ber Projektsituation" ID="ID_251960482" CREATED="1669813043553" MODIFIED="1669813143220" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="12.7499996200204 pt"/>
+</node>
+<node TEXT="Limitierung der Arbeit" ID="ID_1227913062" CREATED="1669813074245" MODIFIED="1669813138491">
+<node TEXT="auf bestehende Kapazit&#xe4;t" ID="ID_1323628669" CREATED="1669813088680" MODIFIED="1669813138491" HGAP_QUANTITY="16.999999910593036 pt" VSHIFT_QUANTITY="14.249999575316918 pt">
+<node TEXT="Fokussierung der Arbeit" ID="ID_1396639078" CREATED="1669813096436" MODIFIED="1669813136541" VSHIFT_QUANTITY="20.24999939650299 pt"/>
+</node>
+</node>
+<node TEXT="Aufgaben nicht Zuteilen" ID="ID_564707710" CREATED="1669813184386" MODIFIED="1669813219591">
+<node TEXT="eigenverantwortlich &#xfc;bernehmen" ID="ID_892120091" CREATED="1669813198390" MODIFIED="1669813219590" VSHIFT_QUANTITY="17.249999485909953 pt"/>
+</node>
+<node TEXT="Vokus auf Durchsatz" ID="ID_1401712757" CREATED="1669813245221" MODIFIED="1669813263011"/>
+</node>
+</node>
+</node>
+</map>

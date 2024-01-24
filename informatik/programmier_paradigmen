@@ -1,0 +1,60 @@
+- Es gibt zwei übergeordnete Paradigmen-Gruppen:
+    -> Ipmerative Programmierung.
+    -> Deklarative Programmierung.
+
+- Imperative Programmierung
+    -> Bei der imperativen Programmierung gibt man im Programmcode vor WIE etwas zu tun ist.
+        -> Jeder einzelne Anweisung wird nacheinander programmiert, sodass man erkennen kann
+            WIE man zum Ergebnis gelangt.
+            -> Beispiel:
+                array = [1,2,3,4]
+                for(i = 1; i < array.length; i++){
+                    print(array[i];
+                }
+
+    -> Untergeordnete Programmierparadigmen sind:
+        -> Objektorientierte Programmierung.
+        -> Strukturierte Programmierung.
+        -> Prozedurale Programmierung.
+        	-> Code Organisation: Funktionen und Prozeduren.
+            	-> Teile die öfter als einmal verwendet werden, werden in Funktionen und Prozeduren ausgelagert.
+  		-> Sequenzielle Abfolge von Befehlen an den Prozessor.
+                -> Statements
+        	-> Eine Prozedure gibt keinen Wert zurück, eine Funktion gibt einen Wert zurück.
+        -> Modulare Programmierung.
+        	-> Code Organisation: Funktionen und Variablen werden in einzelnen, unabhängigen Modulen aufgeteilt.
+        		-> ein Modul ist eine Datei.
+        		-> Die Module, die zusammengehören, können in einem gemeinsamen Ordner oder Verzeichnis gespeichert werden.
+
+- Deklarative Programmierung
+    -> Bei der deklarativen Programmierung gibt man im Programmcode vor WAS zu tun ist.
+        -> Es wird nicht programmiert wie man zum Ergebnis gelang, sondern WAS für ein ergebnis man möchte.
+    -> Es gibt keine Seitenefekte (Seitenefekt: beim Aufruf einer Funktion wird etwas verändert z.B.: Variable
+        oder Datenbank).
+        -> Soll bspw. ein Array sortiert werden, wird einer Funktion das Array übergeben und die 
+            Funktion gibt das sortierte Array zurück, ohne es verändert zu haben (Kopie wird zurückgegeben). Das zurückgegebene 
+            Array kann dann bspw. abgespeichert oder ausgegeben werden.
+        -> Jede Eingabe bei einer Funktion hat auch immer genau eine Ausgabe.
+            -> z.B. wird f(x)=x² immer 25 ausgeben wenn man 5 eingibt.
+                -> Jede Funktion in der funktionalen Programmierung hat für jede Eingabe genau eine Ausgab.
+                    Die Ausgabe hängt niemals davon ab, in welchem Zustand sich das Programm befindet.
+                -> Eine Funktion ist nie von einem Zustand abhängig.
+                    -> Bei der Ausführung von funktionalen code findet keine überprüfung von Zuständen statt.
+                        Würde eine überprüfung stattfinden, würde die Ausgabe einer Funktion vom Zustand abhängen.
+                        -> Funktionen sind rein mathematisch, daher gibt es keine Bedingungen, wie if/else, innerhalb der Funktion.
+                            -> Nur expressions keine statements.
+            -> Beispiel:
+                array = [3,1,4,2]
+                print(sorted(array))
+                >>> [1, 2, 3, 4]
+
+                -> Einer Funktion (sorted) wird ein array übergeben. Die Funktion sortiert das array und
+                    gibt es zurück. Auserdem gab es keine Seitenefekte, da das übergebene array
+                    nicht verändert wurde.
+    -> Untergeordnete Programmierparadigmen sind:
+        -> Funktionale Programmierung.
+            -> z.B. Haskell oder Erlang.
+        -> Abfragesprachen.
+            -> SQL.
+        -> Logische Sprachen.
+            -> Prolog.

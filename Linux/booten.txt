@@ -1,0 +1,103 @@
+--- Festplatte HDD ---
+- Tracks/Spuren.
+-> Sind in Sectors/Sektoren unterteilt.
+	-> Ein Sektor ist 512 Byte groß.
+
+- Mechanik.
+-> Schreib und Leseköpfe werden gemeinsam, nach innen und außen bewegt.
+	-> Sind immer genau übereinander.
+	-> Gleichzeitiges Lesen und Schreiben auf allen Magnetplatten.
+
+- Zylinder.
+-> Die Menge der Spuren der Magnetplatten einer Fesplatte, die genau übereinander liegen,
+	bezeichnet man als ein Zylinder.
+	-> Die Menge der Zylinder und Magnetplatten gibt daher die Speicherkapazität an.
+
+- Berechnung der Kapazität einer Festplatte.
+-> Anzahl der Sektoren pro Spur s multipliziert mit 512 Byte, multipliziert mit Anzahl der
+	Zylinder z pro Magnetplatte, Multipliziert mit der Anzahl der Magnetplatten m,
+	Multipliziert mit 2 (da oberhalb und unterhalb einer Magnetplatte gelesen und geschieben wird).
+	-> s * 512 * z * 2m
+	
+- Lese- und Schreibköpfe können logisch konfiguriert werden.
+-> eine Festplatte mit zwei physischen Lese- und Schreibköpfe kann bspw. 255 logische Köpfe 
+	haben. Diese werden vom Plattencontroller in reale HW-Köpfe umgesetzt.
+
+- SSD 
+-> Nutzen keine Zylinder und Köpfe.
+-> Sektoren sind Vorhanden (jeder Sektor ist 512 MB groß).
+
+--- MBR ---
+- Jede Festplatte hat einen Bereich der sich Master Boot Record nennt.
+-> Ist immer der Erste Sektor der Festplatte oder der SSD.
+-> Beinhaltet Code zum starten des Betriebssystems.
+-> Beinhaltet: Bootcode, Partitionstabelle.
+	-> Partitionstabelle: Definiert Größe und Lage der Partitionen.
+		-> Jeder Eintrag enthält die Information über Startposition und größe der Partition.
+		
+--- Boot-Partition ---
+- In der Partitionstabelle ist die Information enthalten, welche Partition die Boot-Partition ist.
+
+- Beinhaltet
+-> Boot-Loader (z.B. GRUB): Lädt und startet das Betriebssystem.
+	-> Kann mehrere mehrere Bitriebssystem Anzeigen.
+		-> wenn ein Betriebssystem ausgewählt wird, wird der entsprechende Bootsektor der ausgewählten Partition geladen. 
+			Der Bootsektor enthält den Code, der das Betriebssystem lädt und startet. 
+			Der Bootloader lädt zunächst den Bootsektor in den Speicher und gibt die Kontrolle dann an den Code im Bootsektor weiter, 
+			der das Betriebssystem lädt.
+
+
+--- Legacy ROM und EFI Compatible ROM ---
+- Option-ROM's
+-> Auf jedem Gerät, bspw. Grafikkarte oder Netzwerkkarte, befinden sich ROM-Speicher.
+	-> Beinhalten jeweils mehrere Treiber.
+-> Werden verwendet, um bei Systemstart die Controller der Geräte zu Initialisieren.
+	-> Also einfach die Treiber der Geräte aus deren OP-ROMS in den Arbeitsspeicher laden.
+	-> Dadurch müssen sie nicht vom OS in den Arbeitsspeicher geladen werden.
+		-> Das OS verwendet diese Treiber, die bereits im RAM geladen wurden.
+
+- Legacy-Option-ROM's und EFI-compatible-Option-ROM's unterscheiden sich auf Hardwareebene.
+-> BIOS nutzt Legacy-Option-ROM'S.
+-> UEFI nutzt EFI-compatible-Option-ROM's.
+-> Die PCI ROM Priority-Einstellung im UEFI-Menü gibt an, welche Option-ROMs geladen werden sollen: Legacy-ROMs, EFI-kompatible ROMs oder beides.
+
+- Legacy-Option-ROM's
+-> Legacy-Option-ROMs werden vom BIOS beim Systemstart direkt in den Speicher geladen, bevor das Betriebssystem geladen wird. 
+
+- EFI-Compatible-ROM's
+-> UEFI kann Option-ROMs während des POST-Prozesses initialisieren.
+	-> Dabei bezieht UEFI die Treiber direkt aus den ROM's der Geräte und lädt sie, noch bevor das Betriebssystem geladen ist, in den Arbeitsspeicher.
+		-> Das Betriebssystem muss die Treiber dann nicht selbst in den Arbeitsspeicher laden.
+		-> Initialisierten bedeutet in diesem Zusammenhang, dass Treiber aus den OP-ROMS in den Arbeitsspeicher geladen werden.
+		-> Das laden der OP-ROMS geschiet durch den uefi-boot-manager
+UEFI kann Option-ROMs in den Arbeitsspeicher laden, um schneller auf sie zugreifen zu können.
+UEFI kann eine Option-ROM-Liste führen, um zu entscheiden, welche Option-ROMs geladen werden sollen.
+UEFI kann Option-ROMs verwenden, um eine Bootreihenfolge zu erstellen.
+UEFI kann Option-ROMs verwenden, um Firmware-Updates durchzuführen.
+UEFI kann Option-ROMs deaktivieren, um Sicherheitsrisiken zu minimieren.
+
+--- UEFI ---
+- Hat eine eigene Systempartiton (EFI-Systempartition), auf das die UEFI-Firmware zugreift.
+	-> Befindet sich in Linux unter /boot/efi
+	-> Beinhaltet die Partitionstabelle GPT.
+	-> Beinhaltet die EFI-Bootloader: GRUB-Bootloader und Windows-Bootloader.
+		-> Also alle Bootloader der Installierten Betriebssysteme.
+
+- GPT-Partitionstabelle.
+-> In GPT muss zu jeder Partition der Anfang und das Ende gespeichert werden, damit UEFI-BOOT-Manager die Bootloader laden kann.
+	-> Die Bootloader befinden sich immer am Anfang einer Partition.
+-> Zusätzlich ist die Information enthalten, welcher Bootloader für welches Betriebssystem geladen werden soll.
+
+- UEFI-BOOT-Manager 
+-> Der UEFI-BOOT-Manager kann selbst keine Betriebssysteme starten, er kann nur bootloader von Betriebssysteme in den Arbeitsspeicher laden, die dann das Betriebssystem starten.
+-> Sind mehrere Betriebssysteme installiert, wird der UEFI-BOOT-Manager alle Bootloader der Betriebssysteme auflisten.
+-> Lädt den Windows- oder Grub-Bootloader aus der EFI-Systempartition.
+	-> Diese Bootloader (bspw. Grub), laden dann das Betriebssystem.
+	-> Sowohl der Windows-Bootloader als auch der Grub-Bootloader werden als EFI-Bootloader bezeichnet.
+
+- Bei der Installation wird der Bootloader des Betriebssystems in die EFI-Systempartition kopiert und konfiguriert. 
+
+- GRUB als Boot-Manager
+-> Grub kann auch als Boot-Manager verwendet werden.
+-> Grub muss die Startposition einer Partition kennen, um den Bootloader aus dieser Partition zu laden und auszuführen. Diese Information bezieht Grub aus GPT.
+-> Es gibt also zwei Optionen Betriebssystem zur Auswahl bei Systemstart anzeigen zu lassen: Grub als Boot-Manager oder UEFI-Boot-Manager.

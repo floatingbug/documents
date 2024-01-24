@@ -1,0 +1,1 @@
+In JavaScript steht jeder Funktion das Array arguments zur verfügung. Dieses beinhaltet alle Argumente die der Funktion übergeben wurden.

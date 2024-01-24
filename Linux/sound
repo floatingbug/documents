@@ -1,0 +1,21 @@
+-ALSA
+-> Stellt eine Sammlung von sound-device-driver zur Verfügung.
+-> ALSA-Schnittstellen 
+    ->Damit Anwendungen die sound-daten and alsa schicken kann, 
+        damit alsa dann den sound über einen Treiber ausgeben kann.
+
+-Soundserver
+-> Damit mehrere Anwendungen "gleichzeitig" eine Soundkarte verwenden können.
+->Soundserver
+    -> von der Soundquelle gelangen die sound-daten an den Soundserver.
+        Dieser Speichert die sound-daten und sendet sie dann nacheinander an 
+        die alsa-schnittstelle.
+-> ALSA 
+    -> Die gesammelten sound-daten gelangen zu der alsa-schnittstelle.
+        -> ALSA gibt den sound durch den Treiber aus.
+-> Beispiel: Program (Soundquelle) -> PulseAudio -> ALSA (driver) -> Soundkarte 
+
+-Verfügbare Soundserver
+-> PulseAudio
+-> JACK oder auch JACK audio connection kit
+-> PipeWire

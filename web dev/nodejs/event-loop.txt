@@ -1,0 +1,25 @@
+- Der Event-Loop wird innerhalb des Main-Threads ausgeführt.
+	-> Dadurch werden alle anderen Threads vom Main-Thread/Event-Loop gesteuret.
+	
+- CB werden in die Event-Queue gepusht und von dem Event-Loop in den Main-Thread gepusht, wenn der Main-Thread Frei ist.
+
+--- HTTP-Module
+- Eine HTTP-Anfrage kann erst vom HTTP-Module aus dem Socket gelesen werden, wenn der Main-Thread frei ist, da das HTTP-Module im Main-Thread ausgeführt wird.
+	-> Das HTTP-Module kann auch in einem separaten Thread ausgeführt werden, dass ist aber sehr unüblich.
+	-> Befindet sich die Anfrage zu lange im Socket, wird diese verworfen.
+
+- HT- Wurden alle Informationen an die Parameter der CB weitergegeben, wird die CB durch die Event-Loop in der Event-Queue gespeichert.
+	-> Ist der Main-Thread frei, speichert die Event-Loop eine CB aus der Event-Queue in den Main-Thread.
+		-> Wird in der CB response.send("hallo") ausgeführt, sendet das response-Objekt alle Informationen an das http-module, das dann die Antwort in den Socket schreibt.
+			-> InformationeTP-Module extrahiert die HTTP-Methode, den Pfad und die Header.
+	-> Die Informationen werden an die Anwendungslogit, also der Parameter der CB, weitergegeben.
+	-> Das Extrahieren findet im Main-Thread statt.
+
+- Wurden alle Informationen an die Parameter der CB weitergegeben, wird die CB durch die Event-Loop in der Event-Queue gespeichert.
+	-> Ist der Main-Thread frei, speichert die Event-Loop eine CB aus der Event-Queue in den Main-Thread.
+		-> Wird in der CB response.send("hallo") ausgeführt, sendet das response-Objekt alle Informationen an das http-module, das dann die Antwort in den Socket schreibt.
+			-> Informationen sind: HTTP-Header, Status-Code, Body/Payload (also die Nutzdaten).
+			
+--- Asynchrone Operationen
+- Finden in den Workerthreads statt und nicht im Main-Thread.
+	-> Ist die Operation beendet, wird einer CB das Ergebnis übergeben und die Event-Loop speichert die CB in der Event-Queue.

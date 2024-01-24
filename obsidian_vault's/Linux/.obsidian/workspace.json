@@ -1,0 +1,183 @@
+{
+  "main": {
+    "id": "2dee27033e007532",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e377ddf42c6c92c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "63563e33c3fd7de7",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "6dd834e34f2d7351",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Add a user.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "df66eb509354fd3a",
+    "type": "split",
+    "children": [
+      {
+        "id": "4353a59c1e3a3b10",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a3a3ca8a5d8a5f23",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bc0b55adaa1efa8a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "75733c4190b5e715",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4902bbed9c15d043",
+    "type": "split",
+    "children": [
+      {
+        "id": "80bd11593d8561f6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "126a4c12c110e483",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Add a user.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cf7f36986071a62b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Add a user.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c54794b35ac47a70",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "b25fcce81dbfc640",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Add a user.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "tldraw:Create new tldrawing": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "6dd834e34f2d7351",
+  "lastOpenFiles": [
+    "index Administration.md",
+    "Add a user.md",
+    "Shell/Excalidraw/Drawing 2023-12-19 11.43.47.excalidraw.md",
+    "Shell/Shell Skripting.md",
+    "Shell/was ist die Shell.md",
+    "Shell Kommandos.md",
+    "Shell/index Shell.md",
+    "Shell/Pasted image 20231219134355.png",
+    "Shell",
+    "Shell/Excalidraw",
+    "Pasted image 20231219114314.png",
+    "Excalidraw/Drawing 2023-12-19 11.30.59.excalidraw.md",
+    "tldraw/Tldraw 2023-12-19 11.26AM.md",
+    "Excalidraw/Drawing 2023-12-19 11.26.10.excalidraw.md",
+    "tldraw/Tldraw 2023-12-19 11.21AM.md",
+    "tldraw",
+    "2023-12-19.md",
+    "Untitled.canvas",
+    "Recording 20231219111856.webm"
+  ]
+}

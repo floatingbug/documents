@@ -1,0 +1,32 @@
+-----Windows Betriebssystem-----
+- win32-API
+	-> Erster Kernel war NT (New Technology).
+	-> Die älteren Windows Versionen basierten noch auf DOS (Einbenutzersystem, anfangs ohne Multitasking).
+	-> Seit Windows2000 sind Die Betriebssysteme NT basiert.
+	-> Programmierschnittstelle zur Systembibliothek
+	-> Beispiel: Applikation nutzt die Funktione CreateFile(), diese macht die entsprechenden Systemaufrufe in
+		der Systembibliothek, dann Schaltet der Kernel die CPU in den Kernel-Mode und sendet dann die Maschinenbefehle
+		an die CPU.
+	-> Es gab auch eine Implementierung für nicht NT basierte Systeme.
+		-> Ältere Software die auf einen nicht NT basierten System mit dieser Implementierung geschrieben wurden,
+			laufen auch heute noch, auf NT basierten Systemen.
+- Dateisysteme
+	-> NTFS (New Technology File System).
+		-> Bis heute das native Windows Dateisystem.
+		-> Vorgänger war FAT.
+			-> wegen der portabilität auch heut noch eingesetzt.
+			-> Zuordnung aller Dateien zu ihren Blöcken in einer einzigen Tabelle.
+			-> FAT und FAT32 nur max. 4GB große Dateien.
+-----Linux-----
+- POSIX (Portable Oparatin System Interface).
+	-> Für Unixoide standardisierte API.
+	-> Schnittstelle für Anwendungssoftware und Betriebssystem.
+	-> Beispiel: App ruft Funktion in POSIX auf. POSIX macht Systemaufruf, indem Funktionen der Systembibliothek
+		aufgerufen werden. Kernel schaltet CPU auf Kernel-Mode. Der Kernel sendet nun die Maschinenbefehle, 
+		die von den Funktionen in der Systembibliothek gefordert wurden. Die Befehle befinden sich fest im Kernel.
+- Dateisysteme
+	-> Alle HW-Ressourcen werden dem Nutzer in Form von Dateien präsentiert.
+	-> Gerätedateien unter /dev sind Dateien die Angeschlossene Geräte, wie Festplatten oder Drucker, 
+		repräsentieren.
+		-> Beispiel: Das Schreiben in /dev/lp würde direkt den Drucker Ansprechen.
+	-> Prinzip der Ressourcenabstraktion nennt man everything is a file.

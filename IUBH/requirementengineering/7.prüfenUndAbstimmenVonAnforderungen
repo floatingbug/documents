@@ -1,0 +1,131 @@
+-----Aktivitäten zur Prüfung und Abstimmung-----
+- Qualitätssicherung der Anforderungen.
+	-> Fehler können sich von der technischen Spezifikation über die Architektur bis hin zum Programmcode fortpflanzen.
+- Kernaktivitäten von Prüfen und Abstimmen
+	-> Prüfkriterien festlegen (Inhalt, Dokumentation, Abgestimmtheit), also was soll geprüft werden.
+	-> Prüfprinzipien und Prüftechniken auswählen, also wie soll geprüft werden.
+	-> Prüfung durchführen und Ergebnisse dokumentieren.
+	-> Abstimmung der Anforderungen/Konfliktmanagement.
+	
+• Prüfkriterien festlegen: Im Vorfeld der Prüfung ist festzulegen nach welchen Kriterien genau geprüft werden soll. Im Vorfeld der Prüfung werden die relevanten Prüfkriterien in Abhängigkeit von der Projektsituation bestimmt.
+• Prüfprinzipien und Prüftechniken auswählen: Erst nachdem entschieden wurde, welche Prüfkriterien tatsächlich relevant sind, und wenn feststeht, wie viele Ressourcen für die Prüfungen zur Verfügung stehen, werden die zu berücksichtigenden Prüfprinzipien und Prüftechniken ausgewählt.
+• Prüfung durchführen und Ergebnisse dokumentieren: Nach Abschluss der fachlichen Vorbereitung muss die Prüfung organisatorisch geplant werden. Dazu zählen die Organisation der benötigten Infrastruktur, die zeitliche Planung aller Beteiligten und gegebenenfalls die Koordination von externen Gutachtern. Wichtig bei der Durchführung ist dabei die Konzentration auf die Dokumentation der Prüfungsergebnisse.
+• Abstimmen der Anforderungen / Konfliktmanagement: Wurden bei der Prüfung in der Menge der dokumentierten Anforderungen widersprüchliche Aussagen identifiziert oder gibt es Widersprüche zwischen Stakeholdern und dokumentierten Anforderungen, dann müssen diese Widersprüche abgestimmt und gegebenenfalls Konflikte aufgelöst werden.	
+
+- Prüfkriterien zum Inhalt
+	-> Sind alle relevanten Anforderungen im erforderlichen Detailgrad so erfasst, dass sie verstanden werden können?
+		-> Vollständigkeit aller Anforderungen.
+		-> Vollständigkeit einzelner Anforderungen.
+		-> Verfolgbarkeit
+		-> Adäquatheit bezüglich der Wünsche der Stakeholder (auch: Korrektheit)
+		-> Widerspruchsfreiheit (auch: Konsistenz):
+		-> Keine vorzeitigen Entwurfsentscheidungen
+		-> Dokumentation des fachlichen Problems
+		-> Überprüfbarkeit
+- Prüfkriterien zur Dokumentation
+	-> Wurden die Anforderungen verständlich und unter Einhaltung der Vorschriften zur Dokumentation dokumentiert?
+		-> Konformität zur Dokumentenstruktur
+		-> Verständlichkeit
+		-> Eindeutigkeit
+		-> Konformität zu Dokumentationsregeln
+		-> Konformität zu Dokumentationsformat
+- Prüfkriterien zur Abgestimmtheit
+	-> Stimmen alle relevanten Stakeholder den dokumentierten Anforderungen zu und sind die bekannten Konflikte gelöst?
+		-> Abgestimmtheit jeder Anforderung
+		-> Abgestimmtheit nach Änderung von Anforderungen
+		-> Konflikte aufgelöst
+		-> Freigabe erteilt
+		
+- Prüfprinzipien
+	-> Helfen bei der Auswahl der Prüftechniken.
+	-> Eine Prüftechnik kann ein oder mehrere Prüfprinzipien unterstützen.
+	- Prinzip 1: Beteiligung der richtigen Stakeholder
+		-> Richtigen Prüfer auswählen.
+			-> Prüfer und Ersteller am besten verschiedene Personen
+				-> Prüfung manchmal von unabhängigen Personen, da kein Interessenkonflik.
+				-> Oder Prüfer intern.
+	- Prinzip 2: Trennung von Fehlersuche und Fehlerkorrektur
+		-> Konzentration ausschließlich auf Mängel während der Prüfung der Dokumentation.
+				-> Erst im Anschluss die Fehler Korregieren.
+		-> Damit wird sichergestellt, dass die Zeit ausschließlich zum Prüfen und nicht zum Korregieren genutzt wird.
+	- Prinzip 3: Prüfung aus unterschiedlichen Sichten
+		-> Dokummentation soll aus möglicht verschiedenen Gesichtspunkten betrachtet und analysiert werden.
+	- Prizip 4: Geeigneter Wechsel der Dokumentationsform
+		-> Übertragung der dokumentierten Anforderung in eine andere Dokumentationsform.
+			-> Bspw. von Textform in UML-Aktivitätsdiagramm.
+			-> Während der Übertragung werden mögliche Fehler oder Lücken identifiziert.
+	- Prinzip 5: Konstruktion von Entwicklungsartefakten
+		-> Durch Konstruktion von Entwicklungsartefakten wird direkt die Verwendbarkeit der Dokumentierten Anforderungen geprüft.
+	- Prinzip 6: Wiederholte Prüfung
+		-> Durch die erkenntnissgetriebene Entwicklung im RE kommen immer wieder neue Anforderungen hinzu oder sie verändern sich.
+			-> Daher muss die Prüfung iterativ durchgeführt werden.
+
+- Prüftechniken
+	- Stellungnahme
+		-> Unbeteiligte Person ließt Dokumentation durch und bewertet sie hinsichtlich der gewählten Prüfkriterien.
+			-> Mängel werden markiert und kurz begründet.
+			-> Stellungnahme durch Kollegen oder externen Dienstleister.
+	- Walkthrough
+		-> Dokument wird von mehreren Personen gelesen, mögliche Mängel werden in einer Gruppe Diskutiert. 
+		-> Benötigte Rollen: Autor, Protokolland, Reviewer
+			-> Durchführung:
+				1. Die dokumentierten Anforderungen werden an die Reviewer verteilt und die relevanten Prüfkriterien benannt.
+
+				2. Die Reviewer erhalten ausreichend Zeit, um das Dokument hinsichtlich der genannten Kriterien individuell zu prüfen und gegebenenfalls Mängel zu notieren.
+
+				3. Der Autor, alle Reviewer und ein Protokollant treffen sich zur Walkthrough-Sitzung. Dort stellt der Autor schrittweise die zu überprüfenden Anforderungen vor und erläutert diese. Je nach Größe der Gruppe und Disziplin der Teilnehmer kann auch ein Moderator eingebunden werden, der die Sitzung leitet.
+
+				4. Sobald der Autor an den betreffenden Anforderungen angekommen ist, stellen die Reviewer die gefundenen Mängel vor und erläutern und diskutieren diese untereinander. Neben den im Vorfeld identifizierten Mängeln können auch noch während der Sitzung Qualitätsmängel identifiziert werden.
+
+				5. Der Protokollant ist verantwortlich für das Notieren der Mängel, sodass die Autoren im Anschluss an die Sitzung das Dokument bei Bedarf überarbeiten können.
+				
+	- Perspektivenbasiertes Lesen
+		-> Einsatz in Kombination mit Stellungnahme und Walkthrough.
+		-> Reviewer (Personen die das Dokument Lesen und Fehler Notieren) werden Perspektiven zugeteilt.
+			-> Beispiele: Sicht der Kunden, Sicht des Testers Sicht des Softwarearchitekten
+		-> Oder Orientierung der Perspektive anhand der relevanten Prüfkriterien.
+			-> Beispiel: Es gibt neun relevante Kriterien und drei Reviewer so dass die Kritärien auf die Reviewer aufgeteilt werden kann.
+	- Einsatz von Checklisten.
+		-> Dienen dem Reviewer beim Durchlesen als Leitfaden um den Fokus nicht zu verlieren.	
+	- Prüfung durch Prototypen
+		-> Durch Konstruierte Systemartefake können Stakeholder dann Bewerten, ob die Anforderungen der Stakeholder vom RE auch verstanden wurden.
+
+- Abstimmen von Anforderungen
+	- Ziele
+		-> Relevante Stakeholder haben ausreichendes Verständnis der Anforderungen.
+		-> Festlegung welche Anforderungen tatsächlich benörigt werden.
+		-> Auflösung von Anforderungskonflikten mit Konfliktmanagement und Aufrechterhaltung der Kooperationsbereitschaft der Stakeholder. 
+	- Konfliktsituation
+		-> Widersprechende Anforderungen die nicht einfach behoben werden können.
+	- Konfliktmanagement/Abstimmen von Anforderungen.
+		-> Konfliktidentifikation
+		-> Bestimmung des Konflikttyps
+		-> Konfliktauflösung
+		-> Dokumentation der Konfliktauflösung
+	
+		-Konfliktidentifikation
+			-> Die technischen Zusammenhänge und Abhängigkeiten kennt unter Umständen nur der Softwarearchitekt. Daher ist es empfehlenswert bei der Analyse von Anforderungen auf Widersprüche auch den Softwarearchitekten miteinzubeziehen.
+		- Bestimmung des Konflikttyps
+			-> Zuordnung hilft bei der Auswahl der Lösungsstrategie.
+			-> Konflikt kann Merkmale mehrerer Konflikte tragen.
+				-> Typen nicht immer schaft voneinander abgrenzbar.
+			-> Sachkonflikt: Unterschiedliche Interpretation der Stakeholder.
+			-> Interessenkonflikt: Stakeholder haben unterschiedliche Interessen oder Ziele gegenüber des zu erstellenden Systems.
+			-> Wertekonflikt: Individuelle Ideale, kulturelle Unterschiede.
+			-> Beziehungskonflikt: Persönliche Konflikte der Stakeholder untereinander.
+				-> Schlechte Kommunikation, Missachtung, Beleidigung, starke Emotionen.
+			-> Strukturkonflikt: Konfliktparteien haben unterschiedliche Macht bzw. Entscheidungsbefugnisse.
+		- Konfliktauflösung
+			-> Einigung: Konfliktparteien einigen sich auf eine Lösung und beschreiben diese.
+			-> Abstimmung: Alle relevanten Stakeholder Stimmen ab. Die abgestimmte Lösung wird umgesetzt.
+			-> Ober-sticht-Unter: Konfliktpartei mit höherer Autorität entscheidet.
+			-> Pro-Contra-Liste: Zu den widersprüchlichen Anforderungen werden Vor- und Nachteile gegenübegestellt.
+			-> Werteorientierte Analyse: Wert der unterschiedlichen widersprüchlichen Positionen wird ermittelt. Position mit größtem Wert wird umgesetzt. 
+			-> Zurückstellen der Lösung: Verschiebung der Lösung auf anderen Zeitpunkt.
+				-> Möglicher zukünftiger Erkenntnisgeweinn der einfache Lösung des Konfliktes bringen kann.
+				-> Vermeidung unnötig langes aufhalten an unwichtigen Anforderungen.
+		- Dokumentation der Könfliktauflösung
+			-> Verhinderung, dass gleiche Konflikt erneut auftaucht.
+			-> Entsteht der Konflikt dennoch erneut, kann er mit der Dokumentation schnell gelöst werden.
+			-> Ist die Lösung nicht geeignet, können Fehler der Dokumentation entnommen werden und bei einer neuen 
+				Lösungsfindung, diese berücksichtigt werden.

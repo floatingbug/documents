@@ -1,0 +1,164 @@
+-----Database Zugriff-----
+- Datenbanksystem unter informatik/datenbanksysteme
+- Der standart Driver ist mongoDB
+	-> der Driver kommuniziert mit dem mongoDB/mongod (mongod ist der mongoDB Prozess also der Datenbankserver/DBMS)
+	-> mongoose setzt auf den Driver mongoDB auf 
+- mongo
+	-> Ist die shell mit der man sich mit dem DBMS/mongoDB/mongod verbinden kann.
+		-> Standartmäßig verbindet sich die shell automatisch mit dem localhost und dem port von mongod
+-----MongoDB Konsole-----
+-> Datenbanken anzeigen: show dbs
+-> Anzeigen in welcher Datenbank man sich befindet: db
+-> In andere Datenbank wechseln: use <name der Datenbank>
+-> Collections in Datenbank anzeigen: show collections
+-> records in Collection anzeigen: db.“name der collection“.find();
+-> Collection löschen: db.collection.drop()
+
+-----Mongoose-----
+-> Mit der Datenbank verbinden: mongoose.connect('mongodb://localhost/dantenbankName', {useNewUrlParser: true, 
+																						useUnifiedTopology: true});
+-> Zeigen ob Verbindung zur Datenbank steht oder ein Feheler aufgetreten ist: 
+	
+	let db = mongoose.connection;
+	db.on('error', ()=>{
+		console.log("Verbindung zu db fehlgeschlagen");	
+	});											
+	db.once('open', ()=>{
+		console.log("verbindung zu db hergestellt");
+	});												
+								
+-----Schema und Model-----
+//neues schema erstellen
+let schemaName = new mongoose.Schema({
+	name: String	
+});
+
+//model mit dem schema erstellen
+//mit models kann man records/documents für die collection erstellen.
+let modelName = mongoose.model('collectionName', schemaName);
+
+//records/documents in collection speichern
+let name = new modelName({
+	name: "bla",
+	surname: "blabla"
+});
+
+name.save((err)=>{
+	if(err){}
+	else{}
+});
+
+-----mongoDB-----
+-> mongoDB speichert die Daten nich in JSON auf ein Speichermedium sondern in BSON (Binary JSON)
+-> BSON kann auch binäre Daten speichern.
+- Importieren und Exportieren von Datenbank zu Datenbank
+	- JSON
+		-> mongoimport
+		-> mongoexport
+	- BSON
+		-> mongorestore
+			-> $ mongo
+		-> mongodump
+			-> $ mongodump --uri "<Atlas Cluster URI>"
+				-> Holt Daten in BSON-Format
+										
+-----Replica Sets-----
+- Mehrere MongoDB-/Datenbanksystem-/mongod-Instanzen
+	-> Jede Instanz läuft auf einem eigenen Rechner oder virtuelle Maschinen.
+	-> Jede Instanz speichert und pflegt die selben Daten											
+	-> Fällt ein Server in dem Replica Set aus, gibt es noch andere, auf denen ein mongod 
+		Prozess läuft.
+	-> Nach jeder Änderung an einem document oder einer collection werden diese änderung 
+		an allen Server/Rechner gleichermaßen vorgenommen.										
+-----Atlas-----
+- Datenbank in der Clout (Databas as a Service, DaaS)
+- DBMS ist MongoDB
+- Clusters
+	-> Gruppe von Server 
+		-> Die Gruppe von Server kann als Replica Set konfiguriert werden.
+            -> auf jedem Server läuft dann eine mongodb-instanz die die gleichen Daten pflegt.
+			    -> Atlas Konfiguriert automatisch den Cluster als Replica set.
+- Cluster name
+    -> z.B.: cluster0
+- User
+    -> Benötigt um auf mongod in der cloud zuzugreifen.
+
+-----Commands-----
+- Daten von DB lokal in BSON speichern (exportieren)
+$ sudo mongodump --forceTableScan --uri "mongodb+srv://"Username":"Password"@"cluster"."uri".mongodb.net/"datenbanknamen"" --out=backup-dir		
+    -> srv ermöglicht eine sichere Verbindung.
+    -> Damit man die Daten Anfordern kann, müssen die Daten erst gelesen werden (alle documents in den collections).
+    -> Mit --forceTableScan stellt man sicher, dass auch alle Daten gelesen werden bzw. gescant werden.
+			
+- Daten von DB lokal in JSON speichern (exportieren)
+$ sudo mongoexport --forceTableScan --uri "mongodb+srv://"Username":"Password"@"cluster"."uri".mongodb.net/"datenbanknamen"" --out=backup-dir	--collection="some collection"					
+
+- Lokale Daten in BSON Format in DB speichern (importieren)
+$ sudo mongorestore --uri "mongodb+srv://"Username":"Password"@"cluster"."uri".mongodb.net/"datenbanknamen"" "Ordnername mit den BSON Dateien"
+
+- Lokale Daten in JSON Format in DB speichern (importieren)
+$ sudo mongoimport --uri "mongodb+srv://"Username":"Password"@"cluster"."uri".mongodb.net/"datenbanknamen"" "JSON Datei"
+
+-----Queries-----
+// Nach bestimmten documents in der collection suchen
+db.collectionname.find({"name": "name"})
+	// find gibt ein courser-pointer zurück, der auf ein object zeigt, das alle documents speichert.
+	// Der courser zeigt immer auf 10 documents des objects, um die nächsten anzuzeigen muss man it in dem Terminal eingeben (mit it iteriert man durch das object).
+
+// Cursor
+- Die Methode find() gibt einen cursor zurück.
+
+- Ist ein Pointer, der auf alle gefundenen documents zeigt.
+	-> find() gibt immer die ersten 20 gefundenen documents als cursor zurück.
+		-> Wenn mehr als 20 documents existieren, muss erneut eine Anfrage gesendet werden, die die nächsten documents zurück gibt, auf die der cursor dann zeigt:
+			$ it
+				-> Funktioniert nur in der shell. Bei verwendung eines drivers in einer Programmiersprache wird die Methode toArray() verwendet.
+
+- Der cursor hat Methoden wie toArray oder pretty(), mit denen über die documents iteriert wird.
+
+- Alle gefundenen documents als array speichern:
+$ const docs = db.coll.find().toArray()
+	-> find() holt die ersten 20 documents, wenn dann weitere existieren, macht find bzw. toArray() automatisch eine weitere Anfrage.
+
+- forEach-loop um mittels des cursor über die documente zu iterieren:
+$ db.coll.find().forEach((doc)=>{})
+	-> Da der von find zurückgegebene cursor auf documents zeigt, kann über die documents iteriert werden.
+	-> Wie bei toArray() wird hier eine weitere Anfrage an die db gesendet, wenn es mehr als 20 documents gibt.
+
+// Anzahl von documents anzeigen
+db.collectionname.find(query).count()		
+
+// Arrays
+- Objekte die in einem Aray gespeichert sind, nennt man nested documents.
+
+// Projection
+- Bestimmt, welches Feld (Variable im Dokomunet), zurückgegeben werden soll.
+
+- Ist ein Parameter einer query also Anfrage: db.coll.find({query}, {projection})
+
+- Beispiel: const result = db.coll.find(query).project({Feld1: 0, Feld2: 1}).toArray();
+
+	-> Feld2 der gefundenen Dokumente werden zurückgegeben, Feld1 wird nicht zurückgegeben.
+	
+
+-----Update Operationen-----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

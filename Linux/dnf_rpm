@@ -1,0 +1,21 @@
+- dnf ist ein Paketmanager für RPM-Pakete (Read Head Pakage Manager).
+
+- $ dnf update.
+-> Ersetzt alle älteren Dateien durch neuere (aktualisieren).
+
+- $ dnf upgrade.
+-> aktualisiert wie update, zusätzlick können neue Dateien und Packete installiert werden.
+	-> upgrade kann also noch etwas hinzufügen, update aber nicht.
+	
+- $ dnf makecache.
+-> aktualisiert den lokalen Paket-Cache.
+	-> Alle Metadaten von verfügbaren Packeten, bspw. Dateinamen, werden lokal gespeichert.
+		-> Dadurch ist die Suche schneller.
+	-> Der lokale Paket-Cache ist unter /var/cache/dnf gespeichert.
+	
+- $ dnf list installed | grep -i chrome
+-> Mit list installed lassen sich alle installierten Pakete anzeigen.
+	
+- $ rpm -i <paket>
+
+

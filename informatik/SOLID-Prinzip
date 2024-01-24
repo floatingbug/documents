@@ -1,0 +1,16 @@
+- SOLID Bedeutung
+-> Code sauberer und dadurch einfacher lesbar halten.
+
+- Definition
+-> (S)ingle Responsibility Prinziples
+    -> Funktionen sind immer nur für einen fachlichen Aspekt verantwortlich.
+        -> Es gibt bspw. eine Funktion, die für eine Ausgabe in einem bestimmten Formart sorgt.
+            Die Funktion könnte aber auch so verändert werden, dass sie eine Ausgabe in einem Anderen Format liefert.
+            -> Lösung: Für alle unterschiedlichen Formate eine eigene Klasse für die entsprechende Funktion erstellen.
+                Dabei ein Interface nutzen, damit sich alle Klassen gleich verhalten und somit auf gleiche Weiße 
+                ansprechen lassen.
+
+-> (O)pen Closed Prinziple
+    -> Code bspw. Klassen sollen erweiterbar sein.
+        -> Hinzufügen von neuen Attributen und/oder Methoden.
+    -> Das Verhalten darf sich nicht verändern auch bei Erweiterungen nicht.

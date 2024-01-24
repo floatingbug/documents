@@ -1,0 +1,218 @@
+<map version="freeplane 1.6.0">
+<!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
+<node TEXT="Lektion 1" FOLDED="false" ID="ID_31503731" CREATED="1579613361029" MODIFIED="1579614555173" STYLE="oval">
+<font SIZE="18"/>
+<hook NAME="MapStyle" zoom="1.5">
+    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
+
+<map_styles>
+<stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
+<font SIZE="24"/>
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="default" ICON_SIZE="12.0 pt" COLOR="#000000" STYLE="fork">
+<font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.details"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.attributes">
+<font SIZE="9"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.note" COLOR="#000000" BACKGROUND_COLOR="#ffffff" TEXT_ALIGN="LEFT"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.floating">
+<edge STYLE="hide_edge"/>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.topic" COLOR="#18898b" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subtopic" COLOR="#cc3300" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subsubtopic" COLOR="#669900">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.important">
+<icon BUILTIN="yes"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" COLOR="#000000" STYLE="oval" SHAPE_HORIZONTAL_MARGIN="10.0 pt" SHAPE_VERTICAL_MARGIN="10.0 pt">
+<font SIZE="18"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,1" COLOR="#0033ff">
+<font SIZE="16"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,2" COLOR="#00b439">
+<font SIZE="14"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,3" COLOR="#990000">
+<font SIZE="12"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,4" COLOR="#111111">
+<font SIZE="10"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,5"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,6"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,7"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,8"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,9"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,10"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,11"/>
+</stylenode>
+</stylenode>
+</map_styles>
+</hook>
+<hook NAME="AutomaticEdgeColor" COUNTER="10" RULE="ON_BRANCH_CREATION"/>
+<node TEXT="betriebliche Prozesse und Wertsch&#xf6;pfung" POSITION="right" ID="ID_457406655" CREATED="1579613436929" MODIFIED="1579617323737" HGAP_QUANTITY="56.74999872595075 pt" VSHIFT_QUANTITY="-135.74999595433485 pt">
+<edge COLOR="#ff0000"/>
+<node TEXT="Aktivit&#xe4;ten innerhalb&#xa;eines Unternehmens" ID="ID_673739582" CREATED="1579613483601" MODIFIED="1579617315226" HGAP_QUANTITY="16.999999910593036 pt" VSHIFT_QUANTITY="-16.499999508261695 pt">
+<node TEXT="Kernprozesse" ID="ID_419309195" CREATED="1579613521833" MODIFIED="1579613535014">
+<node TEXT="Beschaffung" ID="ID_389306884" CREATED="1579613558624" MODIFIED="1579613561269"/>
+<node TEXT="Produktion" ID="ID_1993169543" CREATED="1579613561496" MODIFIED="1579613565926"/>
+<node TEXT="Absatz" ID="ID_1822160359" CREATED="1579613566279" MODIFIED="1579613570983"/>
+</node>
+<node TEXT="Unterst&#xfc;tzungsprozesse" ID="ID_73091478" CREATED="1579613535432" MODIFIED="1579617315226" HGAP_QUANTITY="48.499998971819906 pt" VSHIFT_QUANTITY="-26.99999919533732 pt">
+<node TEXT="notwendig damit Kernprozess aufrecht erhalten werden kann" ID="ID_59657407" CREATED="1579613621394" MODIFIED="1579613646176"/>
+<node TEXT="Personalmanagement" ID="ID_1273507002" CREATED="1579613651257" MODIFIED="1579613671559"/>
+<node TEXT="Finanzwesen usw." ID="ID_505666465" CREATED="1579613672322" MODIFIED="1579613681312"/>
+</node>
+<node TEXT="F&#xfc;hrungsprozesse" ID="ID_28702153" CREATED="1579613543089" MODIFIED="1579613550666">
+<node TEXT="geben Aktivit&#xe4;ten im Unternehmen einen Rahmen und Richtlinien" ID="ID_1089999960" CREATED="1579613689271" MODIFIED="1579613725488"/>
+</node>
+</node>
+<node TEXT="Betriebliche Prozesse" ID="ID_859674805" CREATED="1579613741866" MODIFIED="1579617303574">
+<node TEXT="Beschaffung von Produktionsfaktoren" ID="ID_1223063430" CREATED="1579613772667" MODIFIED="1579617303572" HGAP_QUANTITY="15.499999955296518 pt" VSHIFT_QUANTITY="-9.749999709427366 pt">
+<node TEXT="Materialien" ID="ID_1939151772" CREATED="1579613851235" MODIFIED="1579613859584"/>
+<node TEXT="Ressourcen" ID="ID_26384152" CREATED="1579613859904" MODIFIED="1579613872397"/>
+</node>
+<node TEXT="Planung der Aktivit&#xe4;ten anhand der Planung der Absatzmenge" ID="ID_1298084138" CREATED="1579613880154" MODIFIED="1579613905184"/>
+<node TEXT="Anhand der geplanten Absatzmenge wird Produktionsprogrammplanung durchgef&#xfc;hrt" ID="ID_955508" CREATED="1579613917003" MODIFIED="1579617298957" HGAP_QUANTITY="20.74999979883433 pt" VSHIFT_QUANTITY="-11.249999664723884 pt">
+<node TEXT="Produktionsprogrammplanung" ID="ID_15761273" CREATED="1579613965092" MODIFIED="1579617400045" HGAP_QUANTITY="26.7499996200204 pt" VSHIFT_QUANTITY="-0.7499999776482589 pt">
+<node TEXT="was, wann und in welcher Menge soll produziert werden" ID="ID_392853774" CREATED="1579613979092" MODIFIED="1579617400044" HGAP_QUANTITY="18.499999865889553 pt" VSHIFT_QUANTITY="-6.74999979883433 pt"/>
+<node TEXT="Grundlage f&#xfc;r Bestellmengenplanung" ID="ID_948940664" CREATED="1579614073428" MODIFIED="1579617394284">
+<node TEXT="Ben&#xf6;tigte mengen auf Bestellungen aufteilen" ID="ID_1667121723" CREATED="1579614146909" MODIFIED="1579617396322" HGAP_QUANTITY="22.249999754130847 pt" VSHIFT_QUANTITY="17.99999946355821 pt">
+<node TEXT="Grund" ID="ID_1406495004" CREATED="1579614256862" MODIFIED="1579617396321" HGAP_QUANTITY="22.249999754130847 pt" VSHIFT_QUANTITY="14.249999575316918 pt">
+<node TEXT="Lagerkosten" ID="ID_1321736392" CREATED="1579614269174" MODIFIED="1579614273227"/>
+<node TEXT="Zerfallsdatum" ID="ID_380521813" CREATED="1579614274510" MODIFIED="1579614278449"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="Fertigungslosgr&#xf6;&#xdf;enplanung" ID="ID_415262805" CREATED="1579614309745" MODIFIED="1579614344188">
+<node TEXT="Planung der Menge die in einem bestimmten Zeitraum hergestellt werden m&#xfc;ssen (charge)" ID="ID_993307742" CREATED="1579614372086" MODIFIED="1579614406915"/>
+</node>
+<node TEXT="Ablaufplanung" ID="ID_154313626" CREATED="1579614424345" MODIFIED="1579617289877" HGAP_QUANTITY="15.499999955296518 pt" VSHIFT_QUANTITY="5.249999843537812 pt">
+<node TEXT="Reihenfolge der Auftr&#xe4;ge" ID="ID_1091250785" CREATED="1579614431176" MODIFIED="1579617289877" HGAP_QUANTITY="21.49999977648259 pt" VSHIFT_QUANTITY="9.749999709427366 pt"/>
+</node>
+</node>
+<node TEXT="Unterst&#xfc;tzungsprozesse" ID="ID_487463398" CREATED="1579614474271" MODIFIED="1579617323737" HGAP_QUANTITY="34.999999374151244 pt" VSHIFT_QUANTITY="35.99999892711643 pt">
+<node TEXT="unterst&#xfc;tzen Kernprozesse" ID="ID_1114470721" CREATED="1579614483686" MODIFIED="1579614494023"/>
+<node TEXT="Beispiel" ID="ID_863817553" CREATED="1579614494461" MODIFIED="1579617282035" HGAP_QUANTITY="19.24999984353781 pt" VSHIFT_QUANTITY="17.249999485909953 pt">
+<node TEXT="F&#xfc;r Kernprozess ben&#xf6;tigte Arbeitskr&#xe4;fte werden durch den Unterst&#xfc;tzungsprozess Personalmanagement geregelt." ID="ID_572670387" CREATED="1579614521297" MODIFIED="1579614523144"/>
+</node>
+</node>
+<node TEXT="Wertsch&#xf6;pfung" ID="ID_1049620433" CREATED="1579614598111" MODIFIED="1579617271588" HGAP_QUANTITY="15.499999955296518 pt" VSHIFT_QUANTITY="74.24999778717763 pt">
+<node TEXT="Die f&#xfc;r ein Unternehmen zur Verf&#xfc;gung stehenden Ressourcen, m&#xf6;glichst geschickt&#xa;Kombinieren, ist Basis der Wertsch&#xf6;pfung." ID="ID_572508672" CREATED="1579614605824" MODIFIED="1579617271584" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="-23.249999307096026 pt"/>
+<node TEXT="Definition" ID="ID_786849108" CREATED="1579616617111" MODIFIED="1579616622324">
+<node TEXT="Umsatzerl&#xf6;se (Gesamtleistung) - Vorleistung" ID="ID_57594138" CREATED="1579616624647" MODIFIED="1582048450317"/>
+</node>
+<node TEXT="Beispiel B&#xe4;ckerei" ID="ID_810155100" CREATED="1579616738201" MODIFIED="1579617256311">
+<node TEXT="Vorleistungen" ID="ID_1328776630" CREATED="1579616869411" MODIFIED="1579617249068">
+<node TEXT="eingekaufte Zutaten und Abschreibungen der Maschinen (Verschlei&#xdf;)" ID="ID_700277813" CREATED="1579616747867" MODIFIED="1579617249066" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="-20.24999939650299 pt"/>
+</node>
+<node TEXT="Wert der erbrachten Gesamtleistung" ID="ID_255868309" CREATED="1579616826158" MODIFIED="1579617251984">
+<node TEXT="Umsatzerl&#xf6;se" ID="ID_1505570799" CREATED="1579616890431" MODIFIED="1579617251983" HGAP_QUANTITY="20.74999979883433 pt" VSHIFT_QUANTITY="-11.999999642372142 pt"/>
+</node>
+<node TEXT="Wertsch&#xf6;pfung = Umsatzerl&#xf6;se - Vorleistungen (eingekaufte Zutaten + Abschreibungen)" ID="ID_1979511860" CREATED="1579617011897" MODIFIED="1582048334176" HGAP_QUANTITY="22.249999754130847 pt" VSHIFT_QUANTITY="14.249999575316918 pt"/>
+<node TEXT="Gewinn = Wertsch&#xf6;pfung - Personalaufwand" ID="ID_359615983" CREATED="1579617192302" MODIFIED="1579617256309" HGAP_QUANTITY="21.49999977648259 pt" VSHIFT_QUANTITY="16.499999508261695 pt"/>
+</node>
+</node>
+</node>
+<node TEXT="Wertsch&#xf6;pfungskette" POSITION="left" ID="ID_315180326" CREATED="1579617233184" MODIFIED="1579618348830">
+<edge COLOR="#00ff00"/>
+<node TEXT="f&#xfc;r hohe Wertsch&#xf6;pfung" ID="ID_1915959624" CREATED="1579617696334" MODIFIED="1579618348830" HGAP_QUANTITY="12.500000044703482 pt" VSHIFT_QUANTITY="-42.74999872595075 pt">
+<node TEXT="kosteng&#xfc;nstige Gestalltung von" ID="ID_1549971082" CREATED="1579617756761" MODIFIED="1579617780374">
+<node TEXT="Beschaffung" ID="ID_1971059538" CREATED="1579617784145" MODIFIED="1579617787109"/>
+<node TEXT="Produktion" ID="ID_447155028" CREATED="1579617787359" MODIFIED="1579617794148"/>
+<node TEXT="Absatz" ID="ID_591315556" CREATED="1579617794367" MODIFIED="1579617798301"/>
+</node>
+</node>
+<node TEXT="Wertsch&#xf6;pfungskette" ID="ID_1687729569" CREATED="1579617823864" MODIFIED="1579618286363">
+<node TEXT="Zulieferer &lt;--&gt; Unternehmen &lt;--&gt; Kunde" ID="ID_499059620" CREATED="1579618292202" MODIFIED="1579618342392"/>
+<node TEXT="Informationsfluss" ID="ID_1474748130" CREATED="1579617835928" MODIFIED="1579618228318">
+<node TEXT="Kunde gibt Auftrag an Unternehmen" ID="ID_578805113" CREATED="1579617931727" MODIFIED="1579618230184" HGAP_QUANTITY="13.250000022351742 pt" VSHIFT_QUANTITY="-14.999999552965178 pt">
+<node TEXT="Unternehmen &#xfc;berpr&#xfc;ft anhand der Information was ben&#xf6;tigt wird" ID="ID_495349506" CREATED="1579617961303" MODIFIED="1579618232680" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="-17.249999485909953 pt">
+<node TEXT="Information flie&#xdf;t an Zulieferer der die Materialien bereitstellt (Bestellung)" ID="ID_1254578768" CREATED="1579617999757" MODIFIED="1579618232679" HGAP_QUANTITY="16.999999910593036 pt" VSHIFT_QUANTITY="-9.749999709427366 pt"/>
+</node>
+</node>
+</node>
+<node TEXT="Materialfluss" ID="ID_1845933276" CREATED="1579617849336" MODIFIED="1579618219558">
+<node TEXT="Material geht an Unternehmen" ID="ID_768467823" CREATED="1579618092533" MODIFIED="1579618225706" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="-7.499999776482589 pt">
+<node TEXT="Produkt entsteht in Unternehmen" ID="ID_1101718338" CREATED="1579618121301" MODIFIED="1579618225706" HGAP_QUANTITY="16.999999910593033 pt" VSHIFT_QUANTITY="-11.999999642372142 pt">
+<node TEXT="Material geht an Kunde (Verkauf)" ID="ID_824749119" CREATED="1579618131356" MODIFIED="1579618269875" HGAP_QUANTITY="15.499999955296518 pt" VSHIFT_QUANTITY="-11.999999642372142 pt"/>
+</node>
+</node>
+</node>
+<node TEXT="Finanzfluss" ID="ID_1080036658" CREATED="1579617853391" MODIFIED="1579618286362" HGAP_QUANTITY="13.250000022351742 pt" VSHIFT_QUANTITY="17.99999946355821 pt">
+<node TEXT="Kunde Zahlt" ID="ID_343923846" CREATED="1579618173581" MODIFIED="1579618216761" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="12.7499996200204 pt">
+<node TEXT="Geld flie&#xdf;t von Kunde &#xfc;ber Unternehmen an Zulieferer" ID="ID_1946403858" CREATED="1579618183596" MODIFIED="1579618216760" HGAP_QUANTITY="20.74999979883433 pt" VSHIFT_QUANTITY="12.7499996200204 pt"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="Bull-Whip-Effekt" POSITION="left" ID="ID_97146554" CREATED="1579620867077" MODIFIED="1579621874731">
+<edge COLOR="#7c0000"/>
+<node TEXT="Wertsch&#xf6;pfungskette hat mehrere Stufen" ID="ID_1314684052" CREATED="1579620884445" MODIFIED="1579621869807" HGAP_QUANTITY="22.249999754130847 pt" VSHIFT_QUANTITY="116.99999651312838 pt">
+<node TEXT="Stufen im Unternehmen" ID="ID_81056621" CREATED="1579620904126" MODIFIED="1579621019537"/>
+<node TEXT="Stufen beim Zulieferer" ID="ID_333017135" CREATED="1579620979045" MODIFIED="1579621007555"/>
+</node>
+<node TEXT="Ursagen" ID="ID_1632090341" CREATED="1579621098746" MODIFIED="1579621874729" HGAP_QUANTITY="31.99999946355821 pt" VSHIFT_QUANTITY="48.749998547136826 pt">
+<node TEXT="" ID="ID_1888176428" CREATED="1579621182326" MODIFIED="1579621182327">
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="isolierte Planung" ID="ID_79111374" CREATED="1579621119804" MODIFIED="1579621162265"/>
+<node TEXT="kein Informationsaustausch" ID="ID_87379517" CREATED="1579621163746" MODIFIED="1579621170917"/>
+<node TEXT="" ID="ID_1897958998" CREATED="1579621182323" MODIFIED="1579621211574">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="Kunde Bestellt mehr als sonst" ID="ID_1329215299" CREATED="1579621182327" MODIFIED="1579621211574" HGAP_QUANTITY="32.74999944120647 pt" VSHIFT_QUANTITY="14.249999575316918 pt">
+<node TEXT="erste Stufe bestellt,&#xa;aus Angst von Engp&#xe4;ssen,&#xa;mehr bei seiner Vorstufe" ID="ID_701008180" CREATED="1579621214547" MODIFIED="1579621862150">
+<node TEXT="zweite Stufe macht das selbe&#xa;und bestellt ebenfalls mehr" ID="ID_1521858662" CREATED="1579621300505" MODIFIED="1579621864277" HGAP_QUANTITY="22.999999731779106 pt" VSHIFT_QUANTITY="26.249999217689062 pt">
+<node TEXT="dadurch bestellt zweite Stufe&#xa;mehr als erste Stufe usw." ID="ID_101997416" CREATED="1579621346321" MODIFIED="1579621864275" HGAP_QUANTITY="21.49999977648259 pt" VSHIFT_QUANTITY="22.499999329447768 pt"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="Folgen" ID="ID_560637269" CREATED="1579621409135" MODIFIED="1579621858596" HGAP_QUANTITY="22.999999731779106 pt" VSHIFT_QUANTITY="23.999999284744284 pt">
+<node TEXT="Jede Stufe bleibt auf&#xa;Material sitzen, da Kunde&#xa;nicht mehr ben&#xf6;tigt" ID="ID_1543108494" CREATED="1579621453632" MODIFIED="1579621853207" HGAP_QUANTITY="85.99999785423284 pt" VSHIFT_QUANTITY="29.999999105930357 pt">
+<node TEXT="Lagerkosten" ID="ID_1862260223" CREATED="1579621520838" MODIFIED="1579621853207" HGAP_QUANTITY="23.749999709427364 pt" VSHIFT_QUANTITY="32.24999903887513 pt"/>
+<node TEXT="Zerfallsdatum" ID="ID_556117555" CREATED="1579621524619" MODIFIED="1579621532733"/>
+</node>
+</node>
+<node TEXT="Gegenma&#xdf;name" ID="ID_94336479" CREATED="1579621599461" MODIFIED="1579621848385" HGAP_QUANTITY="-2.499999508261695 pt" VSHIFT_QUANTITY="18.749999441206473 pt">
+<node TEXT="Supply Chain Management (SCM)" ID="ID_708394430" CREATED="1579621609854" MODIFIED="1579621838426" HGAP_QUANTITY="77.749998100102 pt" VSHIFT_QUANTITY="110.99999669194231 pt">
+<node TEXT="Abstimmung aller Stufen in der Wertsch&#xf6;pfungskette" ID="ID_720191575" CREATED="1579621630940" MODIFIED="1579621678572">
+<node TEXT="Zulieferer &lt;--&gt; Unternehmen &lt;--&gt; Kunde" ID="ID_427492052" CREATED="1579621705660" MODIFIED="1579621707572"/>
+</node>
+</node>
+<node TEXT="Ziel" ID="ID_1299089449" CREATED="1579621823173" MODIFIED="1579621835219" HGAP_QUANTITY="55.24999877065424 pt" VSHIFT_QUANTITY="50.9999984800816 pt">
+<node TEXT="&#x2192; Best&#xe4;nde innerhalb der Wertsch&#xf6;pfungskette abbauen, dadurch&#xa;Reduktion der Lagerhaltungskosten. Gleichzeitig soll die&#xa;Versorgungssicherheit hoch bleiben.&#xa;&#x2192; Schneller und flexiblere Erf&#xfc;llung von Kundenw&#xfc;nschen, durch&#xa;hohe Versorgungssicherheit bei Abbau der Best&#xe4;nde, mittels&#xa;besserer Abstimmung der Stufen (SCM).&#xa;&#x2192; Durch die Ziele wird ein Wettbewerbsvorteil erreicht." ID="ID_762418889" CREATED="1579621826865" MODIFIED="1579621828356"/>
+</node>
+</node>
+</node>
+<node TEXT="Digitalisierung" POSITION="right" ID="ID_905214057" CREATED="1579621881802" MODIFIED="1579622059127">
+<edge COLOR="#7c007c"/>
+<node TEXT="Industrie 4.0" ID="ID_1418794792" CREATED="1579621912392" MODIFIED="1579622063377" HGAP_QUANTITY="22.999999731779106 pt" VSHIFT_QUANTITY="-14.999999552965178 pt">
+<node TEXT="Vernetzung von Maschinen und Abl&#xe4;ufen durch Informations- und Kommunikationstechnologien." ID="ID_1011594675" CREATED="1579622002247" MODIFIED="1579622063373" HGAP_QUANTITY="29.749999530613437 pt" VSHIFT_QUANTITY="36.74999890476469 pt"/>
+<node TEXT="Technologischen Grundlagen hei&#xdf;en Industriel Internet of Things (IioT)." ID="ID_1624214274" CREATED="1579622015248" MODIFIED="1579622055279" HGAP_QUANTITY="16.249999932944775 pt" VSHIFT_QUANTITY="14.249999575316918 pt"/>
+<node TEXT="Predictive Maintenance (vorrausschauende Instandhaltung)" ID="ID_1035737480" CREATED="1579621952953" MODIFIED="1579622053558" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="35.99999892711642 pt">
+<node TEXT="Mit digitalen Daten, Wartungs- und Servicearbeiten, auf Basis automatisch&#xa;erhobener Messdaten, vorhersehen." ID="ID_1476559145" CREATED="1579622043392" MODIFIED="1579622050471" HGAP_QUANTITY="29.749999530613437 pt" VSHIFT_QUANTITY="30.749999083578615 pt"/>
+</node>
+</node>
+<node TEXT="3D-Druck" ID="ID_190726305" CREATED="1579622174708" MODIFIED="1579622183008"/>
+</node>
+</node>
+</map>

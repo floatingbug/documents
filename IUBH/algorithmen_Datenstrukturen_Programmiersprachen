@@ -1,0 +1,928 @@
+----------------------------------------------Einführung------------------------------------------------------------
+- Algorithmen
+    -> Algorithmen überführen Eingangsdaten in Ausgangsdaten.	
+    -> Eingesetzt um abstrahierte Problemstellung zu Berechnen oder Befehlsabfolge nach Kontrollstruktur initiieren.
+	-> Theoretisches Konstrukt, das eine bestimmte Befehlsabfolge beschreibt.
+	-> Kern der Informatik.
+	-> Wird meist auf einer Rechenmaschine ausgeführt.
+	-> Implementiert durch Verwendung von Datenstrukturen und Programmiersprachen.
+		-> Datenstrukturen: Verschiedene Möglichkeiten der Speicherung von Variablen.
+
+- Geschichte der Algorithmik
+	-> Der erste, nicht triviale, Algorithmus wurde von dem Mathematiker Euklid zwischen 400 und 300 v. chr. Konzipiert.
+		-> Dieser berechnet den ggt zweiert Zahlen.
+	-> Der Begriffs „Algorithmus“ geht auf den persischen Mathematiker Mohammed al-Khowarizmi zurück.
+		-> Lebte im 9. Jahrhundert.
+		-> Beschäftigte sich mit Verfahren zur Addition, Subtraktion, Multiplikation und Division von Dezimalzahlen.
+			-> Verfahren wurde Algorismus genannt woraus später das Wort Algorithmus wurde.
+	-> Erste durch einen Algorithmus gesteuerte Maschine war ein Webstuhl der 1801 von dem Franzosen Joseph-Marie Jacquard 
+		entwickelt wurde.
+			-> Webmuster auf Basis vorgefertigter Lochkarten.
+				-> Systematisches Abtasten der Lochkarte und vom Webstuhl in mechanische Bewegungen übersetzen.
+	-> Erste Lochkartenbasierte Rechenmaschine (1833) von Charles Babbage.
+		-> Entwickelte sie selbst zur Analytischen Maschine weiter.
+			-> Benutzer konnten durch Lochkarten Programme einlesen und ausführen.
+			-> Rein mechanisch.
+			-> Babbages Programmiererin war Ada Byron, Gräfin von Lovelace.
+				-> Ihr werden die Grundsteine der Programmierung zugesprochen.
+	-> Mehrzweckcomputer, die unsere Computer etwas ähnlicher sind, wurden in den 1940er-Jahren entwickelt.
+		-> um den gesteigerten Rechenanforderungen der Ingenieurswissenschaften, Physik und Astronomie gerecht zu werden.
+	-> Transistor wurde 1949 der öffentlichkeit vorgestellt.
+		-> Ein auf halbleitenden Metallen basierender elektronischr Baustein, welcher als Schalter verstanden werden kann.
+			-> Durch Anlegen einer Steuerspannung, wird der Transistor stromleitend, durch Abwesenheit dieser, nicht stromleitend.
+				-> Durch verschiedene Anordnungen mehrerer Transistoren, lassen sich alle Berechnungen, in einem Computer, abbilden.
+
+- Detaillierung und Abstraktion
+	-> Angabe eindeutiger Handlungsabfolge.
+		-> Dinge wie "etwas" oder "ein wenig" kann sich keine genau Handlungsabfolge ableiten.
+		-> Hardware die Handlungsabfolgen/Anweisungen zusammen fasst, muss nicht detailliert jede Anweisung einzeln mitgeteilt werde, 
+			es reicht, wenn die zusammengefasste Anweisung mitgeteilt wird (wenn die HW eine Zusammenfassung besitzt).
+			-> Je kleiner die Menge an zusammengefassten elementaren-Operationen einer HW ist, desto größer muss der Detailgrad
+				eines Algorithmus sein.
+			-> Je größer die Zusammenfassung von elementaren-Operation einer HW ist, desto abstrahierter können die Anweisungen sein.
+				-> Die Zusammenfassung von 8 bits zu einem byte, der dann die Repressentation eines Buchstabens darstellt,
+					ist eine Abstrahierung/Vereinfachung, denn es reicht nur das byte anzugeben, die tatsächliche Repressentation
+					des Buchstabens durch 8 bits ist verborgen.
+	-> Je größer die Abstraktion, desto kleiner ist die Menge an elementaren Operationen, die benötigt werden um ein Algorithmus zu schreiben.
+	-> Der Erfolg eines Algorithmus hängt von den elementaren Anweisungen, die von der HW verstanden werden können, ab. 
+		-> Und ob die verfügbaren Anweisungen zur Lösung des Problems im stande sind.
+	-> Zusammenfassung
+		-> Bei der Detaillierung geht es darum, wie viele elementare Operationen definiert werden müssen (im Algorithmus) um eine Anweisung zu beschreiben.
+		-> Bei der Abstraktion werden mehrere elementare Operationen zu einer Anweisung zusammen gefasst. 
+
+- Kontrollstrukturen
+	-> Gibt einem Programm eine Anweisungsfolge.
+	    -> Schleifen.
+	    -> Bedingungen.
+		    -> unterschiedliches Reagieren auf unterschiedliche Ereignisse. 
+
+- Datentypen
+	-> Chars.
+		-> Einzelne Zeichen, Sonderzeichen, Buchstaben und Zahlen.
+			-> Beispiel: "1", "!", "d".
+	-> Strings.
+		-> Kombinationen aus mind. zwei Chars.
+	-> Ganzzahlen.
+		-> Integer sind meistens 16 bit (2 byte) groß.
+			-> Zahlenraum ist dann von -32768 bis +32767.
+				-> Speicherung der zahl 64000 wäre nicht möglich.
+					-> Long-Integer wird benötigt.
+		-> Signed-, unsigned-Integer.
+			-> Wird auf ein Vorzeichen verzichtet, können Interger die Werte [0; 65.535] annehmen.
+	-> Gleitkommazahlen (Desimalzahlen). 
+		-> Bezeichnung in der Informatik: Float.
+		-> Bei einer Umwandlung von Float zu Integer werden die Nachkommastellen einfach abgeschnitten.
+	-> Umwandlung wird als cast bezeichnet.
+
+- Grundlegende Datenstrukturen
+	-> Listen
+		-> Serielle Speichermöglichkeit von mehreren Variablen gleichen Typs.
+		-> Jeder Eintrag enthät einen Index.
+			-> Auslesen und Speicherung an bestimmter stelle mittels Index.
+		-> Kann dynamisch erweiterbar sein. 
+	-> Array (Feld)
+		-> Nicht dynamisch erweiterbar.
+		-> Performanter als Listen.
+	-> Ketten
+		-> Ein Array Enthält Daten und zusätzlich einen zeiger (pointer), der auf ein nächstes Array Zeigt.
+			-> Falls ein Array voll ist, wird das nächste Array verwendet.
+			-> Initialarray wird als Head oder Rooot bezeichnet.
+ 			-> Das letzte Array wird als Tail bezeichnet.
+			-> Der letzte Zeiger der Kette zeigt auf den Wert null.
+	-> Bäume
+		-> Eignen sich, wenn die Daten eine Hierarchiestruktur untereinander aufweisen.
+		-> Binärbaum.
+			-> Unterart.
+			-> Jeder Knoten kann max. zwei Nachkommen haben
+			-> Zur Darstellung werden Zeiger verwendet.
+		-> Traversierung.
+			-> Durchlaufen eines Baumes von Wurzel bis Blatt.
+
+------------------------------------------Datenstrukturen----------------------------------------------
+- Warteschlangen (queues)
+	-> FIFO
+		-> First In First Out
+	-> Daten werden in einer Reihenfolge solange vorgehalten, bis sie weiterverarbeitet werden.
+	-> Grundsätzliche Befehle
+		-> Enqueue
+			-> Element in die queue einfügen.
+		-> Dequeue
+			-> Element der queue entnehmen.
+	-> Anwerndungsbeispiele
+		-> Zwei unterschiedlich schnelle Geräte oder Protokolle miteinander verbunden werden.
+			-> Z.B.: Drucker oder ausgelöste events.
+		-> Interprozesskommunikation (IPC) durch pipes.
+
+- Heap
+	-> Speicherung der Daten in Baumstruktur.
+	-> Zum Ablegen von Mengen.
+	-> Daten werden mit Schlüssel gespeichert, wobei Schlüssel gemäß der Prioritäten der Daten entspricht.
+	-> HIFO
+		-> Prioritätenbasiertes Auslesen des Speichers.
+		-> Highest In First Out.
+	-> Es werden zwei Heap-Varianten hinsichtlich ihrer Priorität unterschieden
+		-> Max-Heaps
+			-> Wurzelknoten hat immer die höchste Priorität.
+				-> Dadurch haben die Kinder immer eine kleinere Priorität als die Eltern.
+		-> Min-Heaps
+			-> Wurzelknoten hat immer die kleinste Priorität.
+				-> Dadurch haben Kinder immer eine höhere Priorität als die Eltern.
+			-> Beispiel für ein min-heap mit Bezeichnung B und dem Knoten i
+				-> Schlüssel(B, i)>=Schlüssel(B, parent(i))
+	-> Wichtigsten Funktionen
+		-> Insert(): Hinzufügen von Elementen.
+		-> Remove()
+		-> ExtractMin(): Gibt das Element mit der geringsten Priorität zurück.
+	-> Binärer Heap
+		-> Jeder Knoten kann immer nur zwei Kindknoten besitzen.
+	-> Die Begriffe Heap und partieller Baum werden meist synonym benutzt.
+		-> Dabei ist ein binärer knotenmarkierter Baum T gemeint für den jeder Teilbaum T' mit
+			Wurzel x gilt, dass: ∀y ∈ T': µ(x) <= µ(y)
+				-> µ(x) und µ(y) bezeichnen die Priorität der Knoten x und y.
+				-> Die Wurzel stellt also immer das Minimum dar.
+	-> Heaps können, durch die Prioritäten, als Vorrangwarteschlangen genutzt werden.
+
+- Stack
+	-> Daten werden aufeinander gestapelt.
+	-> Anwerndungsbeispiel
+		-> Microprozessor
+			-> Legt die Abarbeitungsreihenfolge von Befehlen fest, die dem Prozessor zugeführt werde.
+	-> LIFO-Prinzi.
+		-> Last In First Out.
+	-> Wird auch als Kellerspeicher bezeichnet.
+		-> Bei einem echten Kellerspeicher kann immer nur das oberste Element gelesen werden,
+			bei einem Stack jedes, verändert werden kann aber nur das oberste.
+	-> Hardware nahes Verhalten.
+	-> Grundsätzliche Operationen:
+		-> Push: Element wird auf den Stack gelegt.
+		-> Pop: Das oberste Element wird entnommen.
+		-> Peek (oft auch als Top bezeichnet): Das oberste Element wird ausgegeben, ohne es aus dem Stack 
+			zu entfernen.
+
+
+- Graphen
+	 -> Relation durch Verbindungen aus einer Menge mit Knoten/Elementen E mit einer Menge aus Kanten K.
+	 	-> e ∈ E und k ∈ K
+	-> Ungerichteter Graph.
+		-> Keine Richtung
+	-> Definition eines Graphen
+		-> Gegeben seien zwei nichtleere Mengen E und K, wobei E ∩ K = ∅ gilt, sowie P(E) = {X|X ⊆ E mit 1 ≤ |X| ≤ 2}. Mit |X| 
+			werde dabei die Mächtigkeit der Menge X bezeichnet. Ferner sei g:K → P(E) eine Abbildung, 
+			so wird das Tripel (E,K,g) als Graph (ungerichtet) bezeichnet. Der Fall E = K = ∅ wird als leerer Graph bezeichnet, 
+			der Fall K = ∅ und E ≠ ∅ als Nullgraph. Für die Notation eines Graphen gilt: G = (E, K, g) = (E(G), K(G)) = (E, K).
+	-> G(K)
+		-> Knotenmenge des Graphen G.
+	-> g(k) = {x, y}
+		-> Die Kante k besitzt die Endpunkte x, y.
+			-> Wenn zusätzlich git: x = y, handelt es sich um eine Schlinge (Loop).
+	-> Adjazenz/benachbart
+		-> Knoten die durch eine Kante miteinander verbunden sind
+	-> Adjazenz/benachbart
+		-> Knoten die durch eine Kante miteinander verbunden sind.
+	-> Multigraph
+		-> Graphen die mehrere Kanten zwischen zwei Knoten erlauben.
+	-> Isomorphismus
+		-> Ein Graph ist isomorph, wenn er in anderer Form dargestellt werden kann, ohne die Anzahl der Kanten, knoten und
+			die Art der Verbindungen zu verändern.
+	-> Endliche Graphen 
+		-> Endliche Anzahl an Knoten und Kanten.
+	-> Knotengrad
+		-> Anzahl der Kanten die mit einem Knoten verbunden sind.
+		-> Definition
+			Sei G(E, K) ein Graph sowie x ∈ E ein Knoten, so bezeichnet d(x, G) = d(x) die Anzahl der Kanten, 
+			die mit dem Knoten x inzidieren, also mit diesem verbunden sind. d(x) bezeichnet dabei den Knotengrad bzw. 
+			Grad oder Valenz des Knoten x
+	-> Gerichteter Graph (Digraph)
+		-> Kanten geben eine Richtung an (Sie werden in der Form eines Pfeils dargestellt).
+	-> Gewichtete Graphen
+		-> Kanten bekommen ein Gewicht, z.B. die Entfernung.
+	-> Dijkstra
+		-> Algorithmus um kürzesten Weg in einem Gewichteten Graphen zu finden.
+	-> Adjazenzmatrix
+		-> Representation eines Graphen als Matrix.
+
+- Bitcoin
+	-> Durch Blockchain wird die Transaktion nicht mehr über einen zentralen Server abgewickelt,
+		sondern dezentral über viele Netzwerkteilnehmer.
+	-> Wallets
+		-> Digitale Geldbeutel
+			-> Können auf Smart-Phones, Notebooks, PC's usw. Installiert werden.
+		-> Bei einer Transaktion wird von einem wallet zu einem anderen Geld überwiesen.
+			-> Dabei ist nur die Walletnummer bekannt, von wem das Geld stammt ist unbekannt.
+	-> Miner
+		-> Bündeln, im Netz aufgelaufene Transaktionen und erstellen, mithilfe einer mathematischen
+			Funktion, einen Block aus Transaktionen.
+			-> Um einen Block zu generieren, muss ein Rätzel gelöst werden.
+				-> Viel Rechenleistung und Strom wird benötigt.
+			-> Wer den neuen Block als erster berechnet, bekommt als belonung bitcoin.
+			-> Der Block wird dann im Kassenbuch abgelegt und kann nicht mehr verändert werden.
+				-> So entsteht eine Kette aus Blöcken.
+		-> Validierung der Transaktionen
+		    -> Transaktion ist erst gültig wenn sie,für alle Teilnehmer sichtbar, in einem Block
+			    abgelegt wird. 
+		-> Mitglieder des Dezentralen Netzwerks
+		-> Zusätzlicher Verdienst, indem Miner Transaktionsgebühren übertragen werden, 
+			damit Transaktionen als erstes ausgeführt werden.
+	-> Ledger (Zahlungsbuch)
+		-> Alle Transaktionen die jemals im bitcoin-Netzwerk getätigt wurden, sind im Ledger gespeichert.
+		-> Alle Transaktionen mit Walletnummer und Höhe der Transaktion sind hier Aufgeführt.
+
+- Blockchain
+    -> Zentrale Speicherung von Daten (keine Blockchain).
+        -> Kein ausreichender Schutz vor Datenverlust und Manipulation.
+	-> Denzentrale Speicherung (Blockchain).
+		-> Dadurch gesichert durch Datenverlust und Manipulation.
+	-> Daten werden in einer langen verknüpften Kette aus Blöcken, in denen sich die Daten wie bspw. Transaktionen befinden,
+         gespeichert, die von jedem eingesehen werden kann.
+		-> Gespeichert wird die Kette auf allen Servern und Computer der Benutzer des Blockchain-Netzes.
+	-> Datenblöcke können an Blockchain angehängt werden.
+		-> Wird als Konsenzverfahren bezeichnet.
+			-> Das Anhängen wird nicht durch einen Drittanbieter gemacht sonder durch ein 
+                 Verfahren z.B. durch Proof-of-Work.
+				-> Benutzer, z.B. Miner, muss ein hash-Wert berechnen, um einen Block an die Kette Anhängen zu können.
+                    -> Das Ändern der Datensätze in der Blockchain ist nicht mehr möglich.
+     -> Jeder Block besitzt den Hash-Wert seines Vorgängers und seinen eigenen. 
+        -> Wird der Vorgänger Manipuliert, ändert sich sein Hash-Wert aber da der Nachfolger den gültigen Hash-Wert 
+            des Vorgängers besitzt, wird diese Manipulation erkannt.         
+    -> Jeder neu generierte Block muss von Miner/Validator im Netzes validiert werden.
+        -> Es wird beispielsweise vorgegeben, dass der Hash-Wert des zu validierenden Blocks mit 4 Nullen beginnt.
+            -> Eigentlich ergibt der Hash-Wert, aus dem vorigen Block + Daten, einen Hash-Wert indem die ersten stellen keine
+                4 Nullen sind.
+                -> Daher muss der Hash-Wert aus dem Hash-Wert des vorherigen Block + Daten + Nonce generiert werden, wobei
+                    Nonce solange angepasst werden muss, bis der Hash-Wert gefunden wurde, welcher mit 4 Nullen beginnt.
+                    -> Der Block kann jetzt an die Blockchain gehängt werden.
+
+- Abstrakte Datentypen
+	-> Ein ADT beschreibt eine Datenstruktur wie bspw. Stack, Liste oder Heap.
+		-> Dabei wird beschrieben, was Operationen tun (Semantik), aber nicht wie sie implementiert werden.
+	-> Der ADT wird durch eine Spezifikation angegeben.
+		-> Syntaktische Struktur, die die Operatoren des ADT spezifiziert.
+		-> Semantische Spezifikation, die beschreibt, was die Operatoren tun.
+		-> Restriktionen, also Bedingungen, die erfüllt werden müssen.
+
+- Objekte
+	-> Weiterentwicklung ADT.
+	-> Zusammenschluss von Informationen wie Variablen und Funktionen nennt man Entitäten oder auch Objekte.
+	-> Ein Objekt wird auch als Instanz bezeichnet.
+	-> Die abstrakte Beschreibung der Objekte/Instanzen wird Klasse genannt.
+
+- Klasse
+	-> Eine Klasse definiert, durch welche Attribute und Funktionen, ein Objekt beschrieben werden kann.
+	-> Unterschiedliche Klassen können Beziehungen zueinander haben.
+		-> Eine Unterklasse kann die Funktionen und Attribute der Oberklasse erben.
+	-> Abstrakte Klasse
+		-> Hat keine eigenen Instanzen.
+		-> Können nur Unterklassen haben.
+
+- Polimorphie
+	-> Ein Objekt kann verschiedene Datentypen annehmen und weiterverarbeiten.
+		-> Je nach tatsächlichen übergebenen Datentyp wird eine unterschiedliche Implementierung angewand.
+			-> Z.B. eine anders implementierte Funktion.
+		-> Lisen und Stacks können ebenfalls unterschiedliche Datentypen haben, z.B. eine Liste aus Integern,
+			oder eine Warteschlange aus Strings.
+		->Polimorphismus ist zusammengefasst:
+			Mithilfe eines Polymorphismus ist es möglich, dass ein vorhandener Code bei der Ausführung 
+			unterschiedliche Anweisungen ausführt, in Abhängigkeit der übergebenen Datenstruktur.
+			Dies hat bei der Programmierung den Vorteil, dass ein einmal geschriebener Code nicht vollständig 
+			dupliziert werden muss, sondern lediglich die Teile abgewandelt werden müssen, 
+			welche sich konkret mit dem jeweils übergebenen Datentyp beschäftigen.
+	-> AdHoc-Polimorphismus
+		-> Deklaration der Funktion in abstrakter Klasse.
+			-> Funktion wird dann in jeder Unterklasse, entsprechend der jeweiligen Unterklasse, implementiert.
+			-> Unterklassen können jetzt in der selben Objekt-Variable der abstrakten Klasse gespeichert werden,
+				obwohl eine bestimmte Funktion in allen Unterklassen unterschiedlich implementiert ist.
+	-> Inklusion-Polymorphismus oder auch Subtypisierung
+		-> Unterklassen die sich von einer Oberklasse unterscheiden.
+
+-------------------------------------------------------------Algorithementwurf---------------------------------------------------------------------------------
+- Einführung
+	-> Ein reales Problem muss soweit abstrahiert werden, bis das Problem durch ein Algorithmus gelöst werden kann.
+	-> Verschiedene Paradikmen von Algorithmen beschreiben wie diese funktionieren bspw. iterativ: der Algorithmus wird wiederholt angewant
+		um das Problem zu lösen, Rekursiv: Der Algorithmus kann sich selbst aufrufen.
+
+- Induktion
+	-> Logischer Schluss von einem Spezialfall auf das Allgemeine.
+	-> Wird benutzt um zu beweisen, dass ein Algorithmus tatsächlich die gewünschte Handlung ausführt. 
+
+- Iteration
+	-> Wiederholter ablauf eines Prozesses.
+
+- Rekursion
+	-> Berechnung durch wiederholten Selbstaufruf einer Funktion.
+
+- Methoden des Algorithmen-Entwurfs
+	-> Greedy Algorithmen
+		-> suchen immer den kürzesten Weg bzw. versucht immer den besten nächsten Schritt zu wählen.
+			-> Da ein lokaler Startpunkt gewählt wird, wird auch nur eine lokale Optimierung erreicht.
+		-> Beispiele:
+			-> Kruskal-Algorithmus: Suche nach einem minimalen Spannbaum,
+			-> Prim-Algorithmus: Suche nach einem minimalen Spannbaum.
+	-> Divide and Conquer (teile und behersche)
+		-> Reales Problem in Teilprobleme aufteilen.
+			-> Teillösungen dann wieder kombinieren.
+		-> Beispiel wäre die dynamische Programmierung in der, global gesehen, vom kleinsten Teilproblem
+			bis zum größten Teilproblem, alle Teilprobleme einzeln gelöst werden.
+			-> Die gelößten Teilprobleme werden dann zusammengeführt und für das lösen der nächsten 
+				Teilprobleme verwendet.
+
+- Korrektheit und Verifikation von Algorithmen
+	-> Mögliche Fehelerquellen von Algorithmen
+		-> Syntaxfehler
+			-> Falsche Verwendung der Syntax bspw. einer Programmiersprache.
+		-> Logische/Semantische Fehler
+		-> Endlosschleifen
+	-> Zustand der Daten muss vor dem Ausführen des Algorithmus (Vorbedingung) und danach (Nachbedingung)
+		spezifiziert sein.
+	-> Korrektheit von Algorithmen
+		-> Partiell korrekt, wenn alle Notwendigen eingaben den Algorithmus terminieren.
+		-> Total korrekt, wenn alle Eingaben zu einer Terminierung führen.
+	-> Verifikation
+		-> Algorithmus wird Eingangsdaten zugeführt, bei denen das Ergebnis bereits bekannt ist.
+			-> Durch den Vergleich lässt die der Algorithmus verifizieren (wenn jedes Ergebnis korrekt ist).
+			-> Wird als Backtesting bezeichnet.
+			-> Unvollständige Verifikation.
+		-> Algorithmus wird mathematisch verifiziert, z.B. durch vollständige Induktion.
+
+- Effizienz und Komplexität von Algorithmen
+	-> Ein Algorithmus soll möglichst schnell terminieren.
+		-> Zeit vom Start bis zur Terminierung ist die Laufzeit.
+	-> Laufzeitbestimmung
+		-> Laufzeit des Algorithmus soll sich eine Grenze annehern
+			-> wärend dieser Annäherung sollen alle notwendigen Rechenschritte berücksichtigt werden.
+	-> O-Notation
+		-> Beispiel: f(n)=3n²+5n+17
+			-> Dann ist f eine Funktion die O(n²) wächst (nur der am schnellsten wachsende Term ist relevant).
+				-> O(n²) ist die Menge aller Funktionen die n² wachsen, daher ist auch f in dieser Menge.
+					-> f ∈ O(n²)
+					-> n ist immer die Anzahl der Eingabedaten.
+					-> Es gibt eine Funktion g, die höchstens soschnell wie f wächst.
+						-> Es kann sein, dass g bis zu einen bestimmten Wert n schneller wächst,
+							ab diesen Punkt n wächst dann aber f schneller. 
+							-> Wird n sehr groß bzw. geht gegen ∞ also n-->∞, dann nähert sich 
+								g asymptotisch f an.
+								-> g ist dann eine Funktion, die auf dauer nicht Zeitkomplexer ist als f.
+									-> Definition:
+										Seien f,g: N-->N Funktionen. g heißt in der Ordnung von f oder g 
+										wächst asymptotisch nicht schneller als f, wenn es Konstanten c, d ∈ N gibt mit:
+										g(n) <= c*f(n) für alle n >= d
+		-> Ist g in der Ordnung von f schreibt man: g(n) = O(f(n)) oder g = O(f(n)) obwohl es eig. g ∈ O(f(n)) heißen müsste.
+		-> Angabe der Laufzeit eines Algorithmus durch angabe einer Funktion, die die Laufzeit des Algorithmus nach oben hin beschränkt.
+		-> Zusammengefasstes Beispiel:
+			-> Es soll gezeigt werden, dass 6n²+3n+2 in O(n²) ist.
+				-> cn² ist auch in O(n²).
+				-> Wenn c = 7 (oder größer), dann wächst cn² schneller als 6n²+3n+2.
+					-> Somit muss 6n²+3n+2 auch in O(n²) enthalten sein.
+
+	-> Beispiel 1: Es gibt 3 Operationen also: 3*O(1) = O(1)
+		a:=1;
+		b:=2;
+		c:=3;
+
+	-> Beispiel 2: Das Produkt der Laufzeiten aus der Schleife: O(n) und der Variablenzuweisungen: O(1) ist: O(n)*O(1)=O(n) 
+		for(i=1; i<n; i++){
+			a:=1;
+			b:=2;
+			c:=3;
+		}
+
+	-> Beispiel 3: Laufzeit zweier verschachtelter Schleifen: O(n)*O(n) = O(n²)
+
+	-> Beispiel 4:
+		
+		def findNumber(n){
+			
+			b:=false;
+			for(c in array:a){
+				if(c == n){
+					return true;
+				}
+			}
+			return b;
+		}
+
+			-> Erste Zuweisung b:=false ergibt eine Laufzeit von 1.
+			-> Die Schleife wird n mal aufgerufen und hat somit eine Laufzeit von n.
+			-> if hat eine Laufzeit von n.
+			-> return true hat eine Laufzeit von 1.
+				-> oder die Laufzeit 1 von return auserhalb der if Verzweigung.
+			-> Gesamtlaufzeit: 2n+2
+			-> Best-Case-Laufzeit: 3.
+			-> Worst-Case-Laufzeit: 2n+2.
+			-> Average-Case-Laufzeit: 2(n/2)+2 = n+2.
+
+
+- P und NP lösbare Algorithmen
+	-> Ein Polynom ist eine Summe aus Termen, wobei jeder Term eine beliebige Potenz von x enthält z.B.: f(x)=2x³+x²+x+3.
+	-> Ein Algorithmus zeigt eine polynominelle Zeitkomplexität, wenn für die Laufzeit des Algorithmus
+		O(n^k)gilt.
+	-> Die Menge aller Entscheidungsprobleme mit einer polynominellen Laufzeit wird mit P bezeichnet.
+	-> Laufzeit lässt sich in P- und NP-Probleme einteilen.
+	-> P-Problemen beschreiben Probleme, die in polynomineller Laufzeit lösbar sind.
+	-> NP-Probleme bschreiben nichtdeterministische in polynomineller Laufzeit lösbare Probleme.
+	-> Es wird vermutet, dass P ⊆ NP gilt.
+ 
+---------------------------------------------Grundlegende Algorithmen--------------------------------------------------------
+
+- Traversierung
+    -> In-Order
+        -> LMR
+    -> Pre-Order
+        ->MLR
+    -> Post-Order
+        ->LRM
+    -> Level-Order
+        -> Begin Wurzel.
+            -> Besucht in der nächsten Ebene/Niveau des Baumes alle Knoten von links nach rechts.
+                -> Wird bis zur letzten Ebenen durchgeführt. 
+
+- Suche nach dem kürzesten weg (Dijkstra)
+    -> Berechnet die günstigsten Wege von einem Startknoten zu allen anderen Knoten.
+    -> Nur positive Kantenkosten/Kantengewichte.
+    -> Beschreibung:
+        -> 0. Startknoten wird als erstes überprüft.
+        -> 1. Nachbarknoten mit den geringsten Kosten zum Startknoten wird der nächste betrachtete Knoten. 
+		-> 2. alle anderen Nachbarknoten die noch nicht besucht wurden kommen in eine Warteschlang. 
+        -> 3. Prüfen ob Weg von Startknoten zum aktuell betrachteten Knoten zum Nachtbarn kleiner ist.
+			-> Wenn ja: Nachtbarknoten erhält den Vorängerknoten des aktuell betrachteten Knotens
+				inkl. der Distanz zum Startknoten.
+			-> Wenn nein: Nachtbarknoten behält den alten Vorgängerknoten und Distanz.
+		-> Befinden sich nocht Knoten in der Warteschlange, weiter mit 1., andernfalls terminieren. 
+	-> Wichtig: Gilt ein Knoten bereits als besucht, muss dieser nicht mehr überprüft werden, da von diesem
+		keine weiteren Knoten besucht werden können.
+
+-> Selection Sort
+	-> Es wird nur ein Array benötigt.
+	-> Beim Start wird das erste Element x[0] mit dem nächsten Element verglichen. Ist das nächste e
+		kleiner wird dieses mit dem nächsten verglichgen. Ist man am ende angekommen, wird das kleinste 
+		e mit x[0] vertauscht und der Vorgang wiederholt sich bei x[1].
+		-> der vorgang wird n-1 mal wiederholt, wobei n die Anzahl der e ist.
+
+-> Insertion Sort
+	-> Es wird nur ein Array Benötigt.
+	-> Erstes e befindet sich links im sortierten Bereich, alle anderen e rechts im unsortierten bereich.
+		-> Das erste e aus dem unsortierten Bereich wird mit dem letzten e aus dem sortierten verglichen.
+			Das e aus dem unsortierten Bereich wird vor dem e aus dem sortierten Bereich eingefügt, dass
+			größer oder gleichgroß ist. Die nachfolgenden e wandern dann jeweils um ein index nach rechts.
+
+-> Quick Sort
+	-> Basiert auf divide and conquer.
+	-> Es wird nur ein Array benötigt.
+	-> Prinzip:
+		-> Es wird per Zufall oder hardcoded ein Element als Pivot ausgewählt.
+			-> Kleinere Elemente kommen auf die linke Seite, größere auf die rechte Seite des Pivot.
+				-> wurden alle Elemente mit Pivot verglichen, befindet sich das Pivot an der
+					richtigen stelle.
+					-> Das Povot teilt dann die Liste in zwei Teillisten, in denen der Algorithmus
+						jeweils erneut abläuft.
+
+-> Sequenzielle Suche
+	-> Daten werden von vorne nach hinten durchlaufen und die Werte mit dem aufzufindenen Wert verglichen.
+
+-> Binäre Suche
+	-> Basiert auf divide and conquer.
+	-> Nur sortierte Listen können durchsucht werden.
+	-> Beispiel:
+		-> in einer sortierten liste l wird die Mitte m ermittelt und geprüft, ob das gesuchte 
+			Element x mit der Mitte identisch ist.
+			-> Wenn nicht wird überprüft, ob x kleiner oder größer als m ist.
+				-> Ist x kleiner als m, wird die Mitte links neben m ermittelt und der Algorithmus
+					beginnt von neuem.
+				-> Ist x größer als m, wird die Mitte rechts neben m ermittelt und der Algorithmus
+					beginnt von neuem.
+					-> Die Abbruchbedingung, wenn x nicht gefunden wird, könnte sein: 
+						Wenn Startpunkt größer als Endpunkt ist. Dann wäre kein Element mehr 
+						übrig, dass geprüft werden könnte.
+
+-> Fibonacci Suche
+	-> Beispiel: F:="zur Zeit betrachtete Fibonacci-Zahl", F1:="der Vorgänger", F2:="Vorgänger des Vorgängers",
+		e:="der gesuchte Wert".
+		-> Die erste Fibonacci-Zahl F ist die, die größer oder gleichgroß der Länge N des zu Durchsuchenden
+			Arrays a ist.
+			-> Ist Das Array N = 11 groß, ist F = 13.
+		-> Der Index für das gesuchte Element ist: i = min(offset+F2, N-1) also i = min((-1)+5, 11-1) = (4, 10) = 4.
+			Bei der ersten Iteration ist der offset = -1.
+			-> Ist a[4] < e
+				-> wird F zu F1 also: F = 8 und offset = 8
+			-> ist a[4] > e
+				-> wird F zu F2 also: F = 5 und offset = 5
+			-> ist a[4] == e
+				-> Element gefunden.
+				-> 4 ist nur ein Beispiel, der index ist i.
+
+-> String Matching (naives Verfahren)
+	-> Ein String M wird im Text A durchsucht.
+		-> Das erste Zeichen von M wird als erstes mit dem ersten Zeichen von A verglichen.
+			-> Stimmen sie überein wird das nächste Zeichen von M mit dem nächsten Zeichen von A verglichen.
+				-> Stimmen alles zeichen überein, wurde der String gefunden anernfalls, wandert M um eins weiter.
+
+
+-> String Matching (Verfahren von Boyer-Moor)
+	-> Der Vergleich des Musters M mit der länge m beginnt mit dem letzten Zeichen cm und dem Zeichen cs des Textes
+		S und endet mit dem Vergleich des ersten Zeichens von M.
+	-> Vorgehen:
+		-> 1. Ist der erste Vergleich cm != cs und cs kommt in M nicht vor, dann kann M um m Plätze nach rechts verschoben werden.
+		-> 2. 
+			-> a) Kommt cs ein oder mehrmals in M vor, dann M soweit verschieben, bis das am weitesten rechts stehende cm, welches
+					ein oder mehrmals in S vorkommt, unter cs steht. 
+			-> b) Ist die nach a) berechnete Verschiebedistanz negativ, dann M nur um einen Platz nach rechts verschieben.
+		-> 3. Ist cs == cm wird der Index von M um eins heruntergezählt, weiter mit Regel 1.
+
+-> String Matching (Verfahren von Knoth-Morris-Pratt)
+	-> Ist cm != cs dann wird in M der Sting links neben dem Zeichen, das ungleich war, überprüft, um wie viel Plätze 
+		M nach rechts verschoben werden kann.
+	-> Vorhegen:
+		-> 1. Prefix und Sufix im String im M bestimmen, die gleich sind Beispiel:
+			abdab, dann ist ab sowohl Sufix als auch Prefix.
+		-> 2. M soweit nach rechts verschieben, dass das Prefex in M und dem Sufix in S steht.
+		-> 3. Der nächste Vergleich beginnt mit dem Zeichen cm welches rechts neben dem Prefix in M Steht und
+				dem Zeichen cs das ungleich cm war.
+			-> Alle Zeichen des Prefex in M stehen dann unter den selben Zeichen in S Beispiel:
+				abgggabdef = M 
+				abgggabijk = S
+				-> Nächster Vergleich:
+					abgggabijk
+						 abgggabcdef
+					-> ab sind die Zeichen die Schon verglichen wurden, daher wird g und i als nächstes verglichen.
+
+-> Hash-Algorithmen
+	-> Eine Hash-Funktion ordnet jedem Schlüssel k einen Index h(k) zu.
+		-> h: K -> {0,..., m-1}, m gibt die Größe der jeweiligen Tabelle an.
+			-> {0,..., m-1} ist ein Feld/Array mit Indizes, das als Hashtabelle bezeichnet wird.
+			-> Der Schlüssel wird durch die
+				Hash-Funktion, in eine Speicheradresse gespeichert.
+				-> Bei der suche wird durch einen einzigen Aufruf von i = h(k) die Adresse zum
+					Wert in i gespeichert und kann somit aufgerufen werden.
+					-> kam es bei der Speicherung zu einer Kollision, muss überprüft werden, ob
+						i = h(k) + 1 den gewünschten wert enthält, ist dies nicht der fall + 2 usw.
+		-> Mit dem Index/Hash-Adresse kann dann auf den jeweiligen Wert zugegriffen Werden/Key.
+		-> Beispiel: h(k) = k mod m.
+			-> h(k) liefert dann den Index zu k z.B.: h(8)=3 wenn m=5.
+	
+	-> Hashfunktionen haben die Eigenschaft, dass sie verschiedene Keys auf die gleiche Zieladresse abbilden.
+		-> Daher werden sie auch in der Kryptografie eingesetzt, da es keinen eindeutigen Rückschluss
+			auf den Key gibt.
+
+	-> Hash-Funktionen finden also verwendung in der: Kryptografie als Prüfsumme und Adressberechnung.
+	
+	-> suche nach dem Wert v durch Schküssel k
+		-> Wenn nach einem Wert v gesucht wird, muss immer erst die Speicheradresse in der 
+			Hashtabelle durch den Schlüssel k gesucht werden, damit man mit dem Hashwert
+			auf den Wert v zugreifen kann.
+		-> n = H(k), n ist der Hashgenerierte Speicherplatz, k ist der Schlüssel zum Wert v.
+			-> Ist in der Hash-Tabelle k n zugeordnet ist n sie Speicheradresse zu v.
+				-> Ist k nicht n zugeordnet, muss geprüft werden, ob k mit der nächste 
+					Speicheradresse bspw. H(k)+1 zugeordnet ist.				
+
+	-> Kollision
+		-> Wenn eine Hash-Funktion zu zwei unterschiedlichen Werten die Selbe Adresse liefert.
+			-> Wenn eine Adresse bereits belegt ist, nach freien plätzen in der Hashtabelle suchen.
+				-> Wird als Sondierung bezeichnet.
+			->Beispiel:
+				-> Berechne Hashwert n = H(k)
+				-> Ist n Frei, Hashwert dort ablegen.
+					-> Bei Kollision den um m plätze verschobenen Speicherplatz prüfen: n + m (mod N)
+				
+	-> Verfahren um Hash-Werte zu erstellen
+		-> Division-Rest-Methode
+			-> h(k) = k mod m
+		
+		-> Multiplikative Methode
+			-> h(k) = [k*(irrationale Zahle) - k*(irrationale Zahl)]
+				-> Das Ergebnis ist eine Dezimalzahl die auf den nächst kleineren Zahlenwert abgerundet wird.
+
+		-> Offene Hash-Verfahren
+			-> Überläufer (Werte mit gleichem Hashwert) werden nicht in zusätzliche Listen gespeichert, 
+				sondern in der gleichen Hashtabelle.
+			-> Eine Folge die Betrachtet werden muss, um ein Key in ihr speichern zu können, nennt man 
+				Sondierungsfolge.
+			-> h(k) sei eine Funktion die jeden key einer verfügbare Hashadresse/Index zuordnen kann
+				-> h: K -> {0,..,m-1}
+			-> Sondierungsfunktion
+				-> Prüft ob eine Adresse frei ist, wenn nein, wird i um eins erhöht.
+					-> (h(k) + i) mod m, oder auch (h(k) - i) mod m
+						-> m ist die größe der Hashtabelle
+						-> h(k) berechnet jeweils die Hashadresse ist diese voll, muss die nächste Adresse
+							geprüft werden: h(k) + 1, damit man nicht über m Speicherplätze hinaus geht,
+							wird noch mod m berechnet.
+					-> Sondierungsfunktion noch allgemeiner
+						-> (h(k) - s(i, k)) mod m
+							-> s(i, k) ist das gleiche wie h(i + k), sodass (h(k) - s(i, k)) mod m die nächst kleinere 
+								Hashadresse berechnet.
+			-> Zu Offene Hash Verfahren gehören:
+				-> Lineares Sondieren 
+				-> Quadratisches Sondieren
+		
+	-> Lineares Sondieren (offenes Hashverfahren)
+		-> Einfügen
+			1. i = h(k)
+			2. Ist unter i bereits ein k gespeichert, dann i um eine Speicheradresse erhöhen i = i + h(k) 
+				-> Wenn alle speicheradressen belegt, return -1.
+		-> Suchen
+			1. i = h(k)
+			2. Ist k in Hashtabelle gespeichert, wurde die Adresse/Index gefunden.
+				-> Wenn k nicht unter i gespeichert, dann i = i + h(k) prüfen
+				-> Wenn unter i = i + h(k) nichts gespeichert ist, befindet sich k nicht in der Hashtabelle.
+		-> Löschen
+			-> k nicht aus Hashtabelle löschen, sondern nur als unbelegt markieren.
+				-> Da bei einer Suche, bei einer leeren Speicheradresse/Index die suche abgebrochen werden würde.
+		-> Nachteil
+			-> Da viele Keys durch mod den selben Hashwert ergeben (Clustering), müssen immer wieder neue Adressen/Inzides
+				gefunden werden.			
+
+	-> Quatratisches Sondieren (offenes Hashverfahren)
+		-> Sondierungsfunktion
+			-> Prüft ob eine Adresse frei ist, wenn nein, wird i um eins erhöht.
+				-> (h(k) + i²) mod m
+					-> m ist die Anzahl aller Werte, denen eine Adresse zugewießen werden muss.
+					-> Durch i² wird nich bei jeder prüfung die nächst größere Adresse geprüft,
+						sondern wenn bspw. h(k) = 2 dann: 2+i⁰, 2+i¹, 2+i²... 2, 4, 9 usw..
+						-> i wird nach jeder Iteration um 1 inkrementiert.
+			-> Oder Sondierungsfunktion: s(k, i) = (⌈i/2⌉)^2 * (-1)^i also: (h(k) - s(k, i))
+				-> Wenn in ⌈⌉ eine Desimalzahl das Ergebnis ist, wird auf die nächste ganze Zahl aufgerundet.
+				-> (h(k) - s(k, i)) mod 5 liefert dann für die Keys: (6, 11, 16), under der Verwendung
+					von h(k) = k mod 5, folgende Hashadressen: (1, 2, 0)
+
+	-> Dynamische Hash-Verfahren
+		-> Hashtabelle wird bei Bedarf vergrößert.
+		-> Ist ein Speicherblock m voll und wurden die Adressen mit h0 erzeugt, wird ein
+			neuer Speicherblock/Seite erstellt und dessen Adressen mit h1 erzeugt.
+
+	-> Lineares Hashing 	
+		-> Speicherblöcke, in denen die Adressen gespeichert sind, werden in einer Primärseite gespeichert.
+
+	-> Virtuelle Hashing
+		-> 
+
+	-> SHA
+		-> Secure Hash Algorithm (SHA)
+		-> Familie von kryptografischen Hash Algorithmen.
+		-> Berechnet für eine Nachricht oder Datei einen Hashwert.
+			-> Der empfänger erstellt ebenfalls einen Hashwert aus der Nachricht.
+				-> Unterscheiden sich die Hashwerte, wurde die Nachricht manipuliert.
+		-> Es gibt unterschiedliche SHA Algorithmen.
+			-> Unterscheidung durch unterschiedliche Bitlänger der Hashwerte.
+				-> Je länger die Bitfolge desto sicherer ist der Algorithmus.
+		-> SHA-0
+			-> Einfachster Algorithmus aus der SHA-Familie.
+
+	-> MD5
+		-> Message-Digest Algorithm
+		-> MD ist auch eine Familie von Hash Algorithmen.
+		-> MD5 ist die häufigste Variante.
+			-> Häufigste Verwendung: User läd Datei herunter, generiert den 
+				Hashwert aus der Datei und vergleicht ihn mit dem Hashwert
+				der mit gesendet wurde. Sind sie identisch, wurde die Datei
+				nicht manipuliert.
+
+-> Mustererkennung
+	-> Verwendung: Erkennung von Anomalien, Einordnen von unstrukturierten Datensätze in Klassen. 
+	-> Ein Algorithmus erstellt ein Modell mit Hilfe von Trainingsdaten.
+		-> Mit Hilfe des Modells kann der Algorithmus dann Muster in Daten 
+			erkennen und bspw. die Daten Kategorisieren.
+	-> Mustererkennung durch Regression
+		-> Binäre Klassifikation
+			-> Zuordnung eines Subjekts, in einer von zwei Klassen, geschieht durch evaluation 
+				von bspw. zwei Merkmalen des Subjekts.
+			-> Beide Klassen können bspw. durch das Merkmalstupel (Xi, Yi) beschrieben werden.
+			-> Getrennt werden die beiden Klassen durch eine Regressionsgerade hier theoretisch:
+				-> Yi = β0 + Xi*β + ε 
+			-> Regressionsgerade:
+				-> δn(x) = β0 + X*β wobei delta und beta-Werte Schätzwerte sind.
+			-> Signumsfunktion
+				-> Wird benutzt um eine Klassenzugehörigkeit der Subjekte zu erreichen
+					-> Als Input wird δn verwendet also: sign(δn(x))
+						-> ist y >= 0 dann Ist der Output 1. Wenn y < 0 dann 0
+	-> Mustererkennung durch Cluster-Analyse
+		-> Daten sind in mehreren Klassen unterscheidbar, z.B. durch zwei Merkmalsausprägung.
+		-> der k-Means-Algorithmus wird häufig verwendet.
+			-> Bildet aus Unstrukturierter Menge k Untermengen wobei die Anzahl von k bekannt ist.
+			-> Ziel: Die k-Partitionen (Klassen) so aufteilen, dass die Summe der quadrierten 
+				Abweichung von den Clusterschwerpunkten minimal wird (Optimierungsproblem).	 
+	-> Mustererkennung durch neuronale Netze
+		-> Funktionsweise basiert auf der biologischen Nervenzelle.
+		-> Versucht zusammenhang zwischen Eingangs- und Ausgangsdaten, mittels
+			Learning-Algorithmen und Trainingsdaten, herzustellen.
+			-> Nach dem Training kann durch weitere Eingaben eine wahrscheinliche Vorhersage
+				über die Ausgangsdaten gemacht werden.
+		-> Neuronen sind vereinfacht Funktionen die zu jeder Eingabe ein Gewicht W Multiplizieren,
+			die Ergebnisse aufsummiert und anschließend einer Aktivierungsfunktion übergeben wird.
+
+--------------------------------------------XML---------------------------------------------------
+-> Beispiel:
+	<?xml version="1.0" encoding="utf-8" standalone="yes">
+	<root>
+		<child>child1</child>
+	</root>
+-> eXtensible Markup Language: Daher das die <tags> zum Auszeichnen (Markup) für Elemente nicht vorgegeben sind und
+	beliebige eigene tags erstellt werden können, wird die Auszeichnungssprache als extensible bezeichnet.
+	-> Erweiterbare Auszeichnungs Sprache.
+-> 1998 eingeführt.
+-> XML bietet die möglichkeit, System- und Platformunabhängig, Daten maschinenlesbar zu speichern. 
+-> Auszeichnungssprache
+	-> Ist eine Syntax die Datenmengen anhang ihrer Eigenschaften, Zugehörigkeit ,Hierarchie etc. 
+		beschreibt.
+-> HTML wird zur Darstellung von Daten genutzt (Bilder, Texte, Tabellen usw.), XML wird zu Beschreibung
+	der Struktur von Daten genutzt.
+-> XML lässt sich als Baum verstehen.
+-> Ein XML-Dokument ist wohlgeformt (gültig) wenn es folgene Eigenschaften erfüllt:
+	-> Zu jedem Start-Tag muss es ein korrespondierendes Ende-Tag geben.
+	-> Verschiedene Elemente müssen korrekt geschachtelt sein, d. h., bevor ein Element geschlossen werden kann,
+		 müssen alle Unterelemente geschlossen sein.
+	-> Bei Tag-Namen müssen Groß- und Kleinschreibung beachtet werden, d. h., <tag> ist ein anderer Tag als <Tag>.
+	-> Innerhalb eines Elements darf es keine zwei Attribute mit gleichem Namen geben.
+	-> Die Werte von Attributen eines Elements müssen in Anführungszeichen gesetzt sein.
+	-> Innerhalb eines XML-Dokuments muss es genau ein Wurzelelement geben, 
+		das nicht im Inhalt eines anderen Elements enthalten ist. 
+-> DTD (Document Type Definition)
+	-> Wie ein head-tag in html beschreibt DTD wie bspw. ein xml-Dokument strukturiert ist.
+		-> Durch die Definition kann die Struktur des Dokuments ermittelt werden.
+	-> Beinhaltet eine Liste von erlaubten Elementen.
+	-> Führt validierung aus z.B. ob die Syntax korrekt ist.
+		-> Beispiel: Das Root-Element: Person, muss die Kind-Elemente: Number, Address und Company enthalten.
+		-> DTD kann in- oder auserhalb des XML-Dokuments stehen. 
+-> Name Space
+	-> Verhindern dass Elemente mit gleichem Namen auftreten (Namenskonflikt).
+	-> Name Space wird als Atribut angegeben: xmlns:x="link", x kann durch beliebige Zeichen ersetzt werden.
+	-> Beispiel:
+		-> <x:table xmlns:x="link"> <x:name>name</x:name><x:email>email@abc.com</x:email> </x:table>
+-> XML-Anwendungen:
+	-> Mit vordefinierten tags
+	-> Beispiele:
+		-> XHTML
+		-> SVG (Scalable Vector Graphics)
+		-> MathML (Mathematical Markup Language)
+		-> SOAP (Simple Object Access Protocoll)
+			-> Austausch von Nachrichten zwischen verschiedenen Anwendungen.
+-> Programmierschnittstelle um aus Programmen oder Webseiten heraus auf in XML hinterlegte
+		Daten zugreifen oder in XML-Format ablegen zu können.
+	-> Programmierschnittstellen:
+		-> DOM
+		-> SAX (Simple API for XML)
+			-> Ermöglicht Datenaustausch zwischen Webanwendungen.
+-> XML-Prozessor
+	-> Liest einzelne Zeichen ein und interpretiert Textstücke/Element auch Entitäten genannt.
+		-> Jede Entität beinhaltet einen Inhalt und ist über einen Namen Adressierbar
+			Beispiel:
+				<name>inhalt</name>
+		-> Ein ganzes Dokument wird als Dokumentenentität bezeichnet.
+		-> Eine Dokumentenentität wird von einem XML-Parser als container für Entitäten betrachtet.
+-> Parsed- und Unparsed-Data
+	-> Parsed-Data 
+		-> Alle Ausdrücke in Form von tags <tag>abc</tag> können geparsed werden, bspw. als dom.
+	-> Unparsed-Data
+		-> Daten die der Parser nicht parsen soll, bspw. Bilder.
+-> XML-Parser
+	-> Ist eine Softwarebibliothek oder Paket, welche Schnittstellen für Programme wie c, c++ anbieten,
+		um mit xml-Dokumenten zu arbeiten.
+	-> Der Parser überprüft als erstes, ob das xml-Dokument wohlgeformt ist.
+	-> Ein xml-Dokument kann bspw. als DOM geparst werden, sodass die Elemente als Objekte in einer 
+		Baumstruktur im Speicher vorliegen, auf die dann mit Methoden zugegriffen werden kann.
+	-> Eine andere möglichkeit ist ein xml-Dokument als SAX zu parsen.
+		-> Simple API for XML
+		-> Event basierte API
+		-> Es wird keine Struktur im Speicher erstellt
+-> Zugriff auf XML-Dokumente mit DOM und SAX
+	-> DOM
+		-> Das XML-Dokument wird durch einen XML-Prozessor als DOM in den Speicher geparsed.
+			-> Aus Markup- und Programmiersprachen können auf die Objecte/Elemente zugegriffen werden.
+			-> Eine Klasse (hier zusammenstellung verschiedener Funktionen um das XML-Dokument zu 
+				manipulieren), stellt unter anderem die Funktionen setAddribute() und getAttribute() bereit,
+				mit denen die Werte eines Elements ausgelesen und manipuliert werden können.
+		-> Node-Schnittstelle
+			-> Durchläuft systematisch die Knoten des Baums.
+	-> SAX
+		-> Dokument wird nicht durch ein Dokumentenbaum durchlaufen. Es wird sequenziell Zeile für Zeile
+			Das Dokument durchgegangen, bis das Element gefunden ist.
+			-> Parser durchläuft das Dokument sequenziell.
+				-> Wurde ein Element gefunden, wird dies als event angesehen und die entsprechende Methode aufgerufen.
+					-> Z.B.: Der Parser durchläuft das Dokument, trift auf den Starttag und ruft über die
+						Schnittstelle: contentHandler die selbst implementierte Methode startElement auf.
+				-> Der Parser durchläuft also das Dokument und ruft, bei eintreten eines events, einen event-handler auf.
+-> Transformation von xml in bspw. html durch xsl
+	-> XSLT
+		-> XML Stylesheet Language Transformation
+		-> Transformiert XML zu XML und XML zu HTML
+		-> Benutzt templates
+			-> welcher tag soll wie in html dargestellt werden.
+			-> befindet sich in der entsprechenden XSLT Datei.
+		-> XSLT + XML -> XSLT-Prozessor = HTML-Dokument
+	-> XSL
+		-> XML Stylesheet Language
+		-> Transformation von XML zu HTML
+-> JSON
+	-> JavaScript Object Notation
+	-> Alternative zu XML
+	-> Vorteile:
+		-> Kompakter, daher sind die JSON-Dateien kleiner.
+		-> Weniger stark vordefinierter Struktur als bei XML.
+		-> Handhabung verschiedenster Datentypen wie: Arrays, Objekte oder Strings.
+
+------------------------------------------------------------Programmiersprachen-----------------------------------------------
+
+-> Programmierparadigmen
+	-> Kategorisierung unterschiedlicher Programmiersprachen.
+	-> Durch verschiedene Arten der Vorstellung von Computer ist es möglich:
+		-> verschiedene Arten zu betrachten, mit denen Programmiersprachen entwickelt wurden
+		-> verschiedene Abstraktionsebenen zu betrachten, mithilfe derer die jeweilige Programmiersprache entwickelt wurde.
+
+-> 5 Generationen von Programmiersprachen
+	-> 1. Maschinensprachen 
+	-> 2. Assemblersprachen (höhere Abstraktionsebene bzg. der HW)
+	-> 3. Imperative Sprachen
+	-> 4. Nichtprozedurale Sprachen (technische Einzelschritte müssen nicht mehr programmiert werden; Abstraktionsebene wird verwendet)
+	-> 5. Sprachen in denen Sachverhalte und Probleme beschrieben werden die bspw. anwendung in der KI finden.
+
+-> Imperative Programmierung
+	-> Kommt der Anschauung eines Computers als reine Maschine am nächsten, ähnlich der von-Neumann-Architektur.
+		-> Daher sehr maschinennahe.
+			-> Man teilt der Maschine klar mit, wie etwas geschehen soll, ohne größere Abstraktionen.
+		-> Daher ersten bedeutenden Programmiersprechen:
+			-> Fortran, Cobol, Algol (Vorfahre von Pascal und C)
+
+	-> Prozedurale Programmierung
+		-> Untergeordnetes Paradigma der Imperative Programmierung
+		-> Sequenzielle Abfolge wobei teile die mehrmals ausgeführt werden, in Funktionen bzw. Prozeduren untergebracht werden.
+			-> Prozeduren werden auch Unterprogramme/Unterroutinen oder Routinen genannt.
+
+	-> Strukturierte Programmierung
+		-> Soll klar verständlichen code generieren.
+		-> Drei Kontrollstrukturen
+			-> Sequenzen (sequenzielle ausführung des codes)
+			-> Verzweigung
+			-> Schleifen
+		-> Vermeidung von Sprunganweisungen.
+
+	-> Modulare Programmierung
+		-> Unterteilen der Computerprogramme in logische Teilblöcke bzw. Module.
+		-> Ziel: Erhöhung der Lesbarkeit.
+		-> Module können beliebig aufgerufen werden.
+			-> Dabei werden nicht nur Funktion sondern auch die dazugehörigen Daten inkludiert.
+		-> Sprachen sind z.B.: Ada, VHDL, Oberon...
+
+	-> Objektorientierte Programmierung
+		-> Strittig ob sie zur Imperativen Programmierung gehört.
+			-> Imperative sicht: Hauptbestandteile eines Programms sind aktiv (Funktionen) und
+				passiven Datenstrukturen.
+			-> Objekt orientierte Sicht: Computerspeicher ist Ansammlung von Objekten in den Funktionen vorkommen.
+				-> Objekte werden als aktive Aktanden betrachtet und nicht mehr Funktionen.
+		-> Objekte können Nachrichten an andere Objekte senden, die dann eine Antwort liefern.
+		-> Programme werden um Datenstrukturen aufgebaut, die als Klassen bezeichnet werden.
+
+	-> Klassen zur Abstraktion von Objekten
+		-> Datenstruktur welche Variablen und Funktionen Beinhaltet.
+			-> Funktion verschafft der klasse Funktionalität; Variablen einen Zustand.
+
+-> Deklarative Programmierung
+    -> Bei der deklarativen Programmierung gibt man dem Rechner vor WAS zu tun ist.
+        -> Es wird nicht programmiert wie man zum Ergebnis gelang, sondern WAS für ein ergebnis man möchte.
+    -> Es gibt keine Seitenefekte (Seitenefekt: beim Aufruf einer Funktion wird etwas verändert z.B.: Variable
+        oder Datenbank).
+        -> Soll bspw. ein Array sortiert werden, wird einer Funktion das Array übergeben und die 
+            Funktion gibt ein sortiertes Array zurück, ohne das alte verändert zu haben. Das zurückgegebene 
+            Array kann dann bspw. abgespeichert oder ausgegeben werden.
+        -> Jede Eingabe bei einer Funktion hat auch immer genau eine Ausgabe.
+            -> z.B. wird f(x)=x² immer 25 ausgeben wenn man 5 eingibt.
+                -> Jede Funktion in der funktionale Programmierung hat für jede Eingabe genau eine Ausgab.
+                    Die Ausgabe hängt niemals davon ab, in welchem Zustand sich das Programm befindet.
+                -> Eine Funktion ist nie von einem Zustand abhängig.
+                    -> Bei der Ausführung von funktionalen code findet keine überprüfung von Zuständen statt.
+                        Würde eine überprüfung stattfinden, würde die Ausgabe einer Funktion vom Zustand abhängen.
+            -> Beispiel:
+                array = [3,1,4,2]
+                print(sorted(array))
+                >>> [1, 2, 3, 4]
+
+                -> Einer Funktion (sorted) wird ein array übergeben. Die Funktion sortiert das arra und
+                    gibt es zurück. Auserdem gab es keine Seitenefekte, da das übergebene array
+                    nicht verändert wurde.
+
+- Ausführung von Programmen
+
+-> Compiler
+	-> Übersetzt Hochsprachen in Maschinensprache.
+		-> Vorgang: Kompilieren.
+	-> Präprozessor
+		-> Ist ein Programm
+		-> Wird vor dem Compiler ausgeführt
+		-> Durchsucht den code nach Platzhalter z.B. # in C
+			-> Dadurch ist es z.B. möglich, Dateien in ein Programm einzubinden.
+	-> Frontend Bereich des Compilers
+		-> Analyse des codes nach semantischer und syntaktischer Korrektheit.
+	-> Backend Bereich des Compilers
+		-> Synthesephase
+		-> Erzeugung eines Zwischencodes oder Maschinencode
+	-> Nach dem Compiler folgt der Linker (meistens).
+
+-> Interpreter
+	-> Führt den code stück für stück in Echtzeit aus.
+	-> Ruft für jeden erkannten Befehl die entsprechende Routine aus der Bibliothek des 
+		Interpreters auf (liegt meist bereits in Maschinensprache for)
+	-> Just In Time Compiler
+		-> Übersetzen den code direkt in Maschinensprache.
+
+-> Linking
+	-> Einbinden von code aus Bibliotheken in das Hauptprogramm.
+		-> Aus dynamischen Bibliotheken
+			-> Einbindung zur Laufzeit
+		-> Aus statischen Bibliotheken
+			-> Einmalige fest in das Hauptprogramm Enbinden.

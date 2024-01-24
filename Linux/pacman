@@ -1,0 +1,56 @@
+- Bei jedem Download eines package hängt der sender (Repository) eine verschlüsselte Signatur
+    an das package.
+    -> pacman entschlüsselt die Signatur und prüft ob diese korrekt ist (vergliche Informatik/PNG).
+
+- Informationen alle Installierbaren Pakete, die in den repositories im Netz verfügbar sind,  sind in .db Dateien unter /var/lib/pcman/ gespeichert.
+    -> Es sind Datenbank-Dateien die von Pacman verwaltet werden.
+    -> Aktualisierung dieser lokalen Datenbank:
+
+        $ sudo pacman -Sy
+
+    -> .sig Dateien sind nur für inoffizielle Repos erforderlich.
+        -> .sig Dateien sind Textdateien.
+
+- Zusätzliche unofficial repositories hinzufügen durch anhängen in der Datei unter /etc/pacman.conf
+        -> GPG:
+            -> private-key: Zum entschlüsseln und signieren von Daten.
+                -> Signierung durch fingerprint der Daten und anhängen des fingerprints an die Daten.
+            -> public-key: verschlüsseln von Daten und überprüfung von signierten Daten.
+                -> Mit diesem key können Daten weder entschlüsselt noch signiert werden.
+                    -> Daher besteht bei Weitergabe kein Risiko.
+            -> Man benötigt beide keys um Daten entschlüsseln zu können und wieder zu verschlüsseln.
+            -> GPG überprüft, ob die Daten mit einem bestimmten Schlüssel verschlüsselt und signiert wurden.
+            -> Entwickler und Trusted User besitzen individuelle GPG-Schlüssel mit denen sie ihre eigenen
+                Pakete Signieren.
+
+    -> Beispiel:
+
+        ->  Zuerst muss das unofficial repository am ende er Datei /etc/pacman.conf eingetragen werden.
+
+                Server = https://arch.alerque.com/$arch
+
+        -> Damit der public-key, zum verifizieren der Signatur Pacman zur Verfügung steht,
+            muss er erst hinzugefügt werden.
+
+            -> Hinzufügen des public keys:
+
+                wenn der Key auf einem Keyserver liegt:
+
+                # pacman-key --recv-keys keyid
+
+                oder der key als Datei vorliegt:
+
+                # pacman-key --add /path/to/downloaded/keyfile
+
+        -> Den key fingerprinten und mit der Signatur/fingerprint vom Sender/repository vergleichen:
+
+                $ pacman-key --finger keyid
+
+        -> Den key des Entwicklers (des repositories) mit dem eigenen key signieren.:
+
+                # pacman-key --lsign-key keyid
+
+- Lokale Paketdatenbank mit Repository synchronisieren (ist das Paket noch nicht in der Paketdatenbank aufgeführt,
+    wird es heruntergeladen und installiert.
+
+    $ sudo pacman -S <packagename>

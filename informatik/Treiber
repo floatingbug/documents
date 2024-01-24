@@ -1,0 +1,2 @@
+-> Damit ein System mit einem anderen System kommunizieren kann, dass andere Datentypen verwendet,
+	benötigt man ein Adapter-Programm (Treiber), dass die Daten für das jeweilige System konvertiert.

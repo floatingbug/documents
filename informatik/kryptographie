@@ -1,0 +1,112 @@
+- Es gibt private und öffentliche Schlüssel um Nachrichten zu verschlüsseln.
+    -> Um ein public- und den dazugeörigen private-key zu erzeugen, 
+        wird z.B. der RSA-Algorithmus verwendet.
+
+- Drei Verschlüsselungen:
+    -> Symmetrische: Verwendet einen Schlüssel.
+    -> Asymmetrische: Verwendet zwei Schlüssel.
+    -> Hybrid: Kombiniert beide Verfahren.
+
+- Symmetrische Verschlüsselung
+    -> Sender und Empfänger besitzen den selben Schlüssel zum Ver- und Entschlüsseln.
+
+- Asymmetrische Verschlüsselung
+    -> Sender verschlüsselt mit einem public-key (öffentlicher Schlüssel) die Nachricht (kann nur noch mit dem private-key entschlüsselt werden).
+    -> Der Empfänger kann mit seinem private-key (privater Schlüssel) die Nachricht Entschlüsseln.
+
+- Hybrid
+    -> Sender Verschlüsselt die Nachricht mit einem session-key.
+    -> session-key wird mit dem public-key verschlüsselt.
+    -> Der verschlüsselte session-key wird an die Nachricht angehängt <nachricht (versch. mit session-key)> + <session-key (versch. mit public-key)>.
+    -> Der Empfänger Entschlüsselt den session-key mit dem private-key.
+    -> Der Empfänger Entschlüsselt die Nachricht mit dem session-key.
+    -> Die Nachrichten werden jetzt mit dem session-key ver- und entschlüsselt.
+
+- Mit welcher Verschlüsselung kann was gemacht werden?
+    -> RSA
+        -> encryption
+        -> signatures
+        -> key-exchange
+    -> DH
+        -> key-exchange
+    -> DSA
+        -> signatures
+            -> erstellen und verifizieren der Signatur.
+
+
+- Authentifizierung
+    -> Digitale Unterschrift (Signatur).
+    -> Die digitale Signatur besteht aus einem Hashwert, der durch eine bestimmte mathematische Funktion aus der Nachricht berechnet wird. 
+    -> Der Hashwert wird anschließend mit dem privaten Schlüssel des Signierers verschlüsselt, was die digitale Signatur ergibt. Diese Signatur wird an 
+		die zu versendende Nachricht angehängt und kann von Empfängern mit dem öffentlichen Schlüssel des Signierers entschlüsselt und überprüft werden. 
+    -> Diese Überprüfung beinhaltet in der Regel das Berechnen eines neuen Hashwerts aus der Nachricht und Vergleich mit dem entschlüsselten Hashwert aus der Signatur. 
+    -> Wenn die beiden Hashwerte übereinstimmen, ist die Integrität der Nachricht und die Authentizität des Signierers bestätigt. In HTTPS wird dieser Prozess verwendet 
+    	um sicherzustellen, dass ein Zertifikat tatsächlich von einer Zertifizierungsstelle (CA) stammt.
+    
+- Browser
+    -> Der Server übergibt das SSL-Zertifikat an den Browser, wenn eine Verbindung zu ihm aufgebaut wird. Das SSL-Zertifikat enthält Informationen über den Server, 
+        wie seinen öffentlichen Schlüssel, die Domain-Informationen und Informationen über die Zertifizierungsstelle, die das Zertifikat ausgestellt hat. 
+        Der Browser verwendet dann den öffentlichen Schlüssel im SSL-Zertifikat, um eine sichere Verbindung mit dem Server herzustellen und Daten zu verschlüsseln.
+
+- Signaturen mit symmetrischen Schlüsseln
+        -> es gibt eine Instanz die alles weiß und der alle Vertrauen.
+            -> nennen wir sie Big Brother BB.
+        -> Nur BB und Alice kennen den private key K_A.
+        -> Alice möchte eine unterschriebene Nachricht P an Bob senden.
+            -> BB soll später die Nachricht incl. Unterschrift an Bob senden.
+        -> Alice verschlüsselt die Nachricht K_A(B, R_A, t, P) und sendet sie an BB.
+            -> B: Identität von Bob, R_A: von Alice generierte Zufallszahl, t: Zeitstempel, P: Nachricht an Bob.
+        -> BB verschlüsselt die Unterschrieft/Signatur K_BB(A, t, P) und sendet sie incl. der unverschlüsselten Nachricht
+            an Bob K_B(A, R_A, t, P, K_BB(A, t, P))
+            -> Dadurch das BB die Signatur entschlüsseln kann und A (identität von Alice) in ihr enthalten ist, 
+                kann Bob beweißen, dass die Nachricht von Alice stammt.
+            -> Ausßerdem kann nur Alice mit dem Schlüssel K_A an Bob senden, da nur Alice und BB den Schlüssel
+                zum ent- und ver-schlüsseln. 
+
+    - Signatur mit öffentlichen Schlüsseln
+        -> Kein Instanz der alle vertrauen müssen.
+        -> Beispiel: Alice sendet eine Nachricht an Bob
+
+            1. Alice verschlüsselt die Nachricht mit key D_A (private key von Alice)
+            2. Alice verschlüsselt die verschlüsselte nachricht mit E_B (public key von Bob)
+            3. Bob entschlüsselt die verschlüsselte Nachricht mit D_B (private key von Bob)
+            4. Bob entschlüsselt die Nachricht mit E_A (public key von Alice)
+
+            -> Da nur Alice D_A besitzt, können alle Nachrichten die mit E_A entschlüsselt werden können,
+                nur von Alice stammen.
+
+
+    - Signatur mit Schlüssel und Hash-Wert (digest)
+        -> Beispie:
+
+            1. Bob erstellt den Hash-Wert/digest aus der Nachrich und verschlüsselt ihn mit seinem private key.
+                -> Der Verschlüsselte Hash-Wert ist die Digitale Signatur.
+            2. Bob sendet die Nachricht + digest an Alice.
+            3. Alice erstellt den digest der Nachrich.
+            4. Alice entschlüsselt mit dem public key die Signatur und erhält den digest den Bob erstellt hat
+            5. Alice vergleicht beide digest. Sind sie identisch, stammt die Nachricht von Bob und wurde nicht manipuliert.
+
+
+    - MAC (Message Authentication Code)
+        -> Sender und Empfänger haben den selben geheimen Schlüssel.
+        -> Verfahren:
+            0. Nur Sender und Empfänger besitzen den Key und der Key wird nicht mit gesendet.
+            1. Sender generiert aus Nachricht+Key einen Hash.
+            2. Empfänger erhält hash und Nachricht.
+            3. Empfänger generiert aus Nachricht+Key den Hash.
+            4. Empfänger vergleicht die Hash-Werte.
+                -> Sind sie nicht identisch, wurde die Nachricht manipuliert.
+        -> Mit einem privaten und öffentlichen Schlüssel, könnte der Sender zusätzlich die Nachricht
+            verschlüsseln bzw. den Hash.
+
+
+    - DSA
+        -> Signatur Erzeugung
+            -> Input: message, private key, random #, DSA parameters
+            -> Outpu: Signatur
+        -> Signatur Verification
+            -> Input: message, public key, signature, DSA parameters
+            -> Output: 1/ture (signature is correct), 0/false (signature is incorrect)
+        -> random # muss bei jeder Signatur eine andere sein, andernfalls kann der private key extrahiert werden.
+
+

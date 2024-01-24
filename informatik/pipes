@@ -1,0 +1,44 @@
+- Named Pipes
+-> Ist eine Datei, in der ein Prozess Daten Schreiben kann und ein anderer Prozess kann aus diese Datei Lesen.
+
+-> Der Unterschied zu Buffer ist, dass der Schreibende Prozess solange wartet, bis ein anderer Prozess die Daten 
+    gelesen hat und die Daten sich danach nicht mehr in der Datei/Pipe befinden.
+
+-> Beispiel: Linux BASH
+
+tom@DarkTower:~$ mkfifo myNamedPipe
+
+tom@DarkTower:~$ ls
+backup  Bilder  Dokumente  Downloads  Games  jd2  Musik  myNamedPipe  Öffentlich  Postman  projects  Schreibtisch  token  Videos  Vorlagen
+
+tom@DarkTower:~$ ps aux > myNamedPipe &
+[1] 17293
+
+tom@DarkTower:~$ grep Chrome < myNamedPipe 
+
+Ausgabe:
+tom         1936  0.0  0.0 16799808 3052 ?       Sl   06:51   0:00 /opt/google/chrome/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/tom/.config/google-chrome/Crash Reports --metrics-dir=/home/tom/.config/google-chrome --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Linux Mint 20.3 --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=101.0.4951.64 --initial-client-fd=5 --shared-client-connection
+tom         1938  0.0  0.0 16790572 2948 ?       Sl   06:51   0:00 /opt/google/chrome/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/tom/.config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Linux Mint 20.3 --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=101.0.4951.64 --initial-client-fd=4 --shared-client-connection
+tom         7813  4.8  1.4 1988472 243968 ?      Sl   07:30   7:57 C:\Program Files (x86)\Battle.net\Battle.net.exe --type=gpu-process --field-trial-handle=1088,5574940220394866732,18118528192248294501,131072 --enable-features=CastMediaRouteProvider --disable-features=HardwareMediaKeyHandling,OutOfBlinkCors --no-sandbox --log-file=C:\users\tom\AppData\Local\Battle.net\Logs\libcef-20220522T053036.809289.log --log-severity=error --product-version=Battle.net/2.13.0.13500 (retail) Chrome/83.0.4103.106 --lang=en-US --watch-browser-pid=240 --gpu-preferences=MAAAAAAAAADgAAAwAAAAAAAAAAAAAAAAAABgAAAAAAAQAAAAAAAAAAAAAAAAAAAAKAAAAAQAAAAgAAAAAAAAACgAAAAAAAAAMAAAAAAAAAA4AAAAAAAAABAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAAAAAAAGAAAAEAAAAAAAAAABAAAABQAAABAAAAAAAAAAAQAAAAYAAAA= --log-file=C:\users\tom\AppData\Local\Battle.net\Logs\libcef-20220522T053036.809289.log --mojo-platform-channel-handle=1108 /prefetch:2 --battle-net-helper=Battle.net.13500
+tom         7861  0.0  0.9 1821244 158380 ?      Sl   07:30   0:01 C:\Program Files (x86)\Battle.net\Battle.net.exe --type=utility --field-trial-handle=1088,5574940220394866732,18118528192248294501,131072 --enable-features=CastMediaRouteProvider --disable-features=HardwareMediaKeyHandling,OutOfBlinkCors --lang=en-US --service-sandbox-type=network --no-sandbox --log-file=C:\users\tom\AppData\Local\Battle.net\Logs\libcef-20220522T053036.809289.log --log-severity=error --product-version=Battle.net/2.13.0.13500 (retail) Chrome/83.0.4103.106 --lang=en-US --watch-browser-pid=240 --log-file=C:\users\tom\AppData\Local\Battle.net\Logs\libcef-20220522T053036.809289.log --mojo-platform-channel-handle=1588 /prefetch:8 --battle-net-helper=Battle.net.13500
+tom         7879  4.7  3.3 1823740 553944 ?      Sl   07:30   7:50 C:\Program Files (x86)\Battle.net\Battle.net.exe --type=renderer --no-sandbox --log-file=C:\users\tom\AppData\Local\Battle.net\Logs\libcef-20220522T053036.809289.log --field-trial-handle=1088,5574940220394866732,18118528192248294501,131072 --enable-features=CastMediaRouteProvider --disable-features=HardwareMediaKeyHandling,OutOfBlinkCors --lang=en-US --log-file=C:\users\tom\AppData\Local\Battle.net\Logs\libcef-20220522T053036.809289.log --log-severity=error --product-version=Battle.net/2.13.0.13500 (retail) Chrome/83.0.4103.106 --disable-spell-checking --uncaught-exception-stack-size=10 --watch-browser-pid=240 --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --mojo-platform-channel-handle=1772 /prefetch:1 --battle-net-helper=Battle.net.13500
+tom        17303  0.0  0.0   9412   724 pts/0    S+   10:15   0:00 grep --color=auto Chrome
+
+[1]+  Fertig                  ps aux > myNamedPipe
+tom@DarkTower:~$ 
+
+- HTTP-Streaming
+-> TCP-Connection bleibt offen.
+-> Server setzt den Header: Transfe-Encoding: chunked.
+    -> Client "weiß", dass die Daten nach und nach in chunks eintreffen.
+-> Daten werden im HTTP-Format versendet (Header + Payload)
+-> Beispiel in nodejs: res.end(daten);
+
+- Web-Sockets
+-> TCP-Connection bleibt offen.
+-> Daten werden im Web-Socket-Format versendet()
+-> Handshake (Verbindungsaufbau auf Anwendungsebene in der ws-protokoll implementiert ist)
+    -> Browser sendet GET 1.1 UPGRADE an den Server
+    -> Server sendet 101-Switching an den Browser
+        -> Jetzt ist der Aufbau beendet und Daten können vom Browser und Server in beider
+            Richtungen, im ws-Format, gesendet und empfangen werden.

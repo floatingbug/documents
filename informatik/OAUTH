@@ -1,0 +1,94 @@
+- Um Zugriff auf Daten zu erlangen.
+-> Bestitzt ein user ein Konto auf Server A und B, und will A auf user-Daten zugreifen die auf B liegen,
+    kann A um Erlaubnis für den Zugriff beim user anfragen.
+    -> Wenn der user zustimmt, bekommt A von einem Authorization Server ein Token, mit dem A
+        auf die Daten vom user auf B zugreifen kann.
+        -> A Braucht nicht die Login-Daten des users um auf dessen Daten zuzugreifen, der Token reicht aus.
+            -> Vorher musste A aber die user-Daten an B gesendet haben.
+
+- Der gleiche Server kann gleichzeitig Authorization Server und Ressource Owner sein.olkp  
+
+- Rollen/Ablauf nach OAuth-Protokoll
+-> Ressource Owner: Ihm gehören Ressourcen und er kann Zugriff auf diese gewähren.
+
+-> Client: Benötigt Zugriff auf geschützte Ressourcen.
+    -> Mit einem Access Token kann er auf geschützte Ressourcen zugreifen.
+
+-> Authorization Server: Der Ressource Owner kann sich bspw. mit username und password auf diesen autorisieren.
+    -> Der Client fragt nach einem Access Token beim Authorization Server nach und bekommt diesen,
+        wenn der Ressource Owner dem zustimmt.
+    -> Der Authorization Server macht zwei Endpunkte verfügbar:
+        -> Authorization Endpunkt: Managed die Authentifizierung und Zustimmung des Nutzers.
+        -> Token Endpunkt: Ist in einer Maschine zu Maschine Interaktion beteiligt.
+
+-> Ressource Server: Beinhaltet die geschützten Ressourcen.
+    -> Er akzeptiert und validiert Access Tokens vom Client und sendet dann die entsprechenden Ressourcen.
+        -> Der Client ist hierbei ein Server, der auf die user-Daten auf einem anderen Server (Ressource Server) mithilfe des Tokens zugreift.
+
+- Access Tokens und Authorization Code
+-> Der Authorization Server händigt nicht immer gleich ein Access Token an den Client aus, stattdessen
+    gibt er dem Client einen Authorization Code der gegen einen Access Token ausgetauscht werden kann.
+
+- Funktionsweise
+-> Als erstes muss der Client Zugriffsdaten beim Authorization Server erwerben, um einen Access Token ODER Authorization-code anfragen zu können.
+    authorization-code wird benötigt um einen Token für den Zugriff auf den Ressource Server zu erhalten).
+    -> client_id.
+    -> client_secret
+
+-> Bei dem OAuth-Protokoll wird die Anfrage vom Client gestellt, wobei der Client sein kann: a mobile app, website, smart TV app, desktop application, usw..
+
+- Token Anfrage, Token Austausch und Antwort
+    -> 1. Der Client stellt eine Anfrage an den Authorization Server, in der er seine Zugriffsdaten (client_id und client_secret) und
+        Logindaten für den Ressource Server vom user übermittelt.
+
+    -> 2. Der Authorization Server überprüft die Zugriffsdaten und, wenn alles in Ordnung ist, generiert einen Authorization Code oder Access Token.
+
+    -> 3. Der Authorization Server gibt den Authorization Code an den Client zurück und informiert ihn, dass er nun einen Access Token anfordern kann.
+
+    -> 4. Der Client sendet eine weitere Anfrage an den Authorization Server, in der er den Authorization Code und seine Zugriffsdaten übermittelt.
+
+    -> 5. Der Authorization Server validiert den Authorization Code und, wenn alles in Ordnung ist, generiert ein Access Token und sendet es zurück an den Client.
+
+    -> 6. Der Client kann jetzt mit dem Access Token auf die geschützten Ressourcen auf dem Ressource Server zugreifen.
+    
+        -> Oft gibt der Authorization Server direkt einen Token zurück, dann fallen Punkt 3, 4 und 5 weg.
+
+- Unterschied OAuth und OAuth 2.0
+-> OAuth 1.0 verfolgt ein zweistufiges Verfahren, bei dem der Client zuerst einen Request Token vom Authorization Server erhält, der anschließend gegen einen 
+    Access Token eingetauscht wird. Dieser Access Token wird dann verwendet, um Zugriff auf die geschützten Ressourcen zu erlangen.
+
+-> OAuth 2.0 hingegen hat ein einstufiges Verfahren, bei dem der Client direkt einen Access Token vom Authorization Server erhält. Hierbei kann es sich um 
+    einen direkten Token-Response oder einen Response mit einem Authorization Code handeln, der dann gegen einen Access Token eingetauscht wird.
+
+-> Außerdem gibt es in OAuth 2.0 ein erweitertes Set an Grant-Typen, wie z.B. Implicit Grant, Client Credentials Grant oder Resource Owner Password Credentials Grant, 
+    welche es ermöglichen den Zugang zu Ressourcen auf verschiedene Arten zu erlangen.
+
+- Grant Types (Grant = Gewärung)
+-> Ein Client muss die Authorisierung bekommenu um auf Ressourcen zugreifen zu können.
+    -> Dabei gibt es verschiedene möglichkeiten, die Authorisierung zu erlangen: Authorization Code, Implicit, PKCE, 
+        -> Diese Möglichkeiten nennt man auch Grants. 
+        
+-> Erteilung des Autorisierungscodes: Der Autorisierungsserver gibt einen einmalig verwendbaren Autorisierungscode an den Client zurück, 
+    der dann gegen ein Zugriffstoken ausgetauscht wird. Dies ist die beste Option für herkömmliche Web-Apps, bei denen der Austausch sicher serverseitig 
+    erfolgen kann. Der Ablauf des Autorisierungscodes kann von Single Page Apps (SPA) und mobilen/nativen Apps verwendet werden. Hier kann das Client-Geheimnis 
+    jedoch nicht sicher gespeichert werden, sodass die Authentifizierung während des Austauschs allein auf die Verwendung der Client-ID beschränkt ist. 
+    Eine bessere Alternative ist der Autorisierungscode mit PKCE-Erteilung unten.
+
+-> Implicit Grant: Ein vereinfachter Ablauf, bei dem das Zugriffstoken direkt an den Client zurückgegeben wird. 
+    Im impliziten Ablauf kann der Autorisierungsserver das Zugriffstoken als Parameter im Rückruf-URI oder als Antwort auf einen 
+    Formularbeitrag zurückgeben. Die erste Option ist jetzt aufgrund eines möglichen Token-Lecks veraltet.
+
+-> Authorization Code Grant with Proof Key for Code Exchange (PKCE): Dieser Autorisierungsablauf ähnelt der Autorisierungscodegewährung, 
+    jedoch mit zusätzlichen Schritten, die es für mobile/native Apps und SPAs sicherer machen.
+
+-> Resource Owner Credentials Grant Type: Bei dieser Berechtigung muss der Client zunächst die Berechtigungsnachweise 
+    des Ressourceneigentümers abrufen, die an den Autorisierungsserver weitergeleitet werden. Es ist daher auf vollständig vertrauenswürdige Clients beschränkt. 
+    Es hat den Vorteil, dass keine Umleitung zum Autorisierungsserver erforderlich ist, sodass es in den Anwendungsfällen anwendbar ist, in denen eine Umleitung nicht möglich ist.
+
+-> Client Credentials Grant Type: Wird für nicht interaktive Anwendungen verwendet, z. B. automatisierte Prozesse, Microservices usw. 
+    In diesem Fall wird die Anwendung per se authentifiziert, indem ihre Client-ID und ihr Geheimnis verwendet werden.
+
+-> Device Authorization Flow: Eine Gewährung, die die Verwendung durch Apps auf Geräten mit eingeschränkter Eingabe, wie z. B. Smart-TVs, ermöglicht.
+
+-> Refresh Token Grant: Der Ablauf, der den Austausch eines Refresh Token gegen ein neues Access Token umfasst.
+

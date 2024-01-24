@@ -1,0 +1,98 @@
+ - RE ist erkenntnisgetrieben, daher kommen neue Anforderungen hinzu, ältere ändern sich oder bleiben gleich.
+	-> Deshalb ändert sich der Status einer Anforderung, z. B. ist sie erst eine Idee, dann ein Konzept usw..
+- Eigenschaften von Anforderungen (Attribute)
+	-> Sind Metadaten (Daten die andere Daten beschreiben) von Anforderungen.
+		-> Verwaltung der Metadaten: Händisch oder rechnergestützt.
+	-> Mit den Eigenschaften/Attributen werden Anforderungen über den kompletten Softwareentwiklungsprozess
+		nachvollziehbar gemacht.
+	-> Typische Attribute:
+		-> Identifizierer (ID) z. B. Anforderung 27
+		-> Name 
+		-> Beschreibung
+		-> Autor
+		-> Quelle
+		-> Versionsnummer
+		-> Stabilität z. B. fest oder gefestigt
+			-> Typische Zustände/Status:
+				-> Aufgenommen: Ermittelt und dokumentiert aber noch nicht abgestimmt.
+				-> In Abstimmung: Bspw. könnten noch Konflikte bestehen.
+				-> Umgesetzt: Die Anforderung ist bereits implementiert.
+				-> Kritikalität und Priorität: Geben Auskunft über die Wichtigkeit einer Anforderung.
+- Sichten auf Anforderungen
+	-> Erzeugung der Sichten auf Basis der Metadaten.
+	-> Da es sehr viele und komplexe Anforderungen gibt, werden Sichten benötigt um Mengen von Anforderungen 
+		darstellbar zu machen.
+	-> Die Sicht auf eine Menge an Anforderungen dient immer einen Darstellungszweck, z. B. Die Menge aller 
+		abgestimmten Anforderungen, bspw. für den Adressat Management.
+	-> Es gibt Verwaltungsprogramme mit deren Werkzeugen und Filter automatisch Sichten erstellt werden können.
+	-> Zwei wichtige sichten: Selektive Sicht und verdichtende Sicht.
+		-> Selektive Sicht
+			-> Darstellung: Nur ein Teil der gesamten verfügbaren Informationen einer Anforderung.
+				-> Z. B.: Auswahl bestimmter Anforderungen für die menge oder Weglassen von Attributen.
+		-> Verdichtende Sicht
+			-> Alle Attribute der Anforderungen werden aggregiert (Zusammengefasst).
+				-> Dadurch sind Aussagen über alle Anforderungen möglich.
+- Versionierung von Anforderungen
+	-> Nachvollziehbarkeit von Änderungen.
+	-> Zurückgreifen auf ältere Versionen.
+	-> Identifikation über eindeutige Versionsnummer.
+- Anforderungskonfiguration
+	-> Kombination von Anforderungen, jede in einer bestimmten Version. 
+	-> Besteht aus Zwei Dimensionen
+	-> Produktdimension: Zeigt einzelne, ausgewählte Anforderungen.
+	-> Versionsdimension: Zeigt einzelne veränderungszustände der Anforderungen.
+- Lebenszyklus von Anforderungen im Softwareprozess
+	-> Anforderungen werden Spezifiziert, mithilfe der Spezifikation implementiert, dann getestet und so werden
+		die Anforderungen zur Software transformiert. Dann wird die Software vom Kunden abgenommen und
+		in seiner Umgebung produktiv eingesetzt.
+- Techniken zur Priorisierung von Anforderungen.
+	-> Faktoren zur Festlegung der Priorität
+		-> Wert: Geldverdienst oder Kostenreduktion durch die Anforderung oder bspw. die Kundenzufriedenheit.
+		-> Kosten
+		-> Risiko: Anforderung wird nicht oder nicht ausreichend getestet oder umgesetzt.
+		-> Abhängigkeiten: Können Reihenfolge der Bearbeitung beeinflussen.
+	- MoSCoF-Methode
+		-> Anforderungen werden in eine von vier Prioritätskategorien eingeordnet.
+						
+				-> Muss (engl. Must): Anforderungen in dieser Kategorie sind essenziell und nicht verhandelbar. 
+				Für einen erfolgreichen Projektabschluss müssen sie umgesetzt werden.
+
+				-> Soll (engl. Should): Anforderungen dieser Kategorie sind zwar nicht kritisch, 
+				jedoch spielen sie für den Erfolg des Projekts eine sehr große Rolle.
+
+				-> Kann (engl. Could): Anforderungen in dieser Kategorie sind für den Projekterfolg nicht relevant 
+				und werden dann berücksichtigt, falls alle Soll-Anforderungen bearbeitet sind.
+
+				-> Nicht umsetzen (engl. Won’t): Anforderungen dieser Kategorie werden momentan nicht umgesetzt, 
+				jedoch vielleicht im späteren Verlauf des Projekts.
+				
+	- Wert-Risiko-Matrix
+		-> Technik zur Priorisierung von Anforderungen.
+		-> Wert wird dem Risiko gegenübergestellt.
+			-> Abhängigkeit, Kosten, Kundenzufriedenheit werden nicht berücksichtig.
+		-> Prinzip: Wert hoch, Risiko gering dann als erstes bearbeiten usw.
+
+	- Kundenzufriedenheit nach Kano	
+		-> Klassifiziert Anforderungen hinsichtlich der wichtigkeit für Stakeholder.
+		-> Basisfaktoren, Leistungsfaktoren, Begeisterungsfaktoren.
+		-> Basisfaktoren: Für Stakeholder selbstverständliche Anforderungen.
+		-> Leistungsfaktoren: 
+		-> Begeisterungsfaktoren: Unerwartete Anforderungen die der Stakeholder als angenehm wahrnimmt.
+
+	- Team Estimation Game
+		-> Alle Anforderungen werden durchnummeriert.
+		-> Die kleinste Zahl einer Anforderung hat die höchste Priorität, die größte die niedrigste.
+			-> Dadurch ist klar, in welche Reihenfolge die Abarbeitung erfolgen muss.
+			-> Einigung über Reihenfolge durch Team Estimation Game
+		-> Vorgehen:
+			-> Sortierkritärium festlegen: Kritärien sind bspw.: Relevanz, Aufwand, Größe, Komplexität. 
+			-> Anforderungen auf Karteikarte bringen.
+			-> Karteikarten als verdeckter Stapel auf den Tisch legen.
+			-> Erste Karte Ziehen und offen auf den Tisch legen (Vorbereitung).
+			-> Erster Spieler Zieht eine Karte und legt sie, neben der zuvor gezogenen Karte, ab. (erster Spielzug).	
+				-> Links: Der Spieler hält sie für wichtiger. Rechts: Der Spieler hält sie für unwichtiger.
+			-> Zweiter Spieler hat zwei Optionen:
+				-> Er Zieht eine Karte und sortiert sie an die für ihn richtige Stelle ein.
+				-> Oder er vertauscht zwei Karten.
+			-> nächster Spieler ist an der Reihe.
+			-> Sind keine Karten mehr im verdeckten Stapel, tauschen die Spieler bis keiner mehr Tauschen will.

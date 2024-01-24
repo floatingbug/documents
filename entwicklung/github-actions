@@ -1,0 +1,57 @@
+--- Komponenten von Github Actions ---
+
+--- Workflows
+- Ein Workflow kann bei einem Ereignis ausgelöst werden, bspw. wenn ein push ausgeführt wird.
+
+- In einem Workflow sind Aufträge die nacheinander oder gleichzeitig ausgeführt werden.
+
+- Werden in einer yaml-Datei definiert (.yml).
+    -> muss im Ordner .github/workflows gespeichert werden.
+
+
+--- Runner
+- Ist ein Server auf dem die Workflows ausgeführt werden.
+
+
+--- Ereignisse
+- Wird bei einer Aktivität im Repository ausgelöst, bspw. wenn ein commit per push in das Repository übertragen wird.
+
+- Das Ereignis löst ein Workflow aus, also eine yaml Datei.
+
+
+--- Aufträge
+- Mehrere Schritte in einem Workflow, die im selben Runner ausgeführt werden.
+
+
+--- Beispiel
+name: learn-github-actions // 
+run-name: ${{ github.actor }} 
+on: [push] 
+jobs: 
+  check-bats-version: 
+    runs-on: ubuntu-latest 
+    steps:        
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+
+-> Zusammenfassun:
+    -> name: Optional: Name des Workflows der auf der Registerkarte "Actionen" im GitHub-Repository angezeigt wird.
+    -> run-name: Name des jenigen, der das event ausgelöst hat.
+    -> on: Angabe bei welchen event das Workflow ausgeführt werden soll.
+    -> jobs: Gruppiert alle Aufträge die ausgeführt werden sollen.
+    -> name-des-Auftrags: Im beispiel lautet der Auftragsname check-bats-version.
+    -> runs-on: Auf welchem Runner der Worlflow ausgeführt werden soll. Im beispiel wird eine ubuntu vm auf GitHub ausgeführt.
+    -> steps: Gruppiert alle Schritte die im Auftrag check-bats-version ausgeführt werden sollen (separate Aktionen oder Shellskripte).
+        -> Schritte werden dann auf der vm ausgeführt.
+    -> - uses: Referenziert eine vordefinierte Aktion oder eine Benutzer definierte Aktion.
+        -> Der Ort der Aktion wird als Wert übergeben.
+        -> Im Beispiel wird aus dem öffentlichen Repository actions die Aktionen checkout@v3 und setup-node@v3 referenziert.
+        -> Mit - uses actions/checkout@v3 wird das eigen Repository in den Workflo-Repository des Runners geclont,
+            wodurch Skripte und andere Aktionen auf dem runner auf das Repository ausgeführt werden können.
+    -> with: übergibt Einstellungen oder Parameter an eine Aktion. Im Beispiel wird der Aktion setup-node@v3 mitgeteilt, dass die node-version:
+        14 installiert werden soll (auf dem Runner).
+    -> run: Angaben für Shell-Befehle auf dem Runner.

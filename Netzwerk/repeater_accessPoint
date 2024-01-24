@@ -1,0 +1,27 @@
+- Repeater
+-> Ist eine Kombination aus client (wlan-adapter) und einem AP über den sich andere clients verbinden können.
+-> Der repeater muss mit dem gleichen w-lan-schlüssel wie der w-lan-router, die Daten verschlüsseln damit der w-lan-router mit
+     dem gleichen Schlüssel die Daten auch wieder entschlüsseln kann.
+-> Der client ist eine wlan-adapter, der wlan-frames empfangen und senden kann.
+-> Verbindet sich mit einem w-lan-protocoll mit dem AP des w-lan-router.
+-> Datenstrom bei Ausgabe:
+    -> switch (w-lan-router) -> AP (w-lan-router) -> Client (repeater) -> AP (repeater) -> client.
+
+-> Arbeitet auf Schicht 1
+    -> Empfängt Daten und leitet sie weiter, nicht mehr.
+        -> Empfang und Weiterleitung nur durch wlan-key.        
+
+- Accesspoint
+-> Wird auch als Expander bezeichnet.
+-> Wandelt eingehende w-lan-signale in ethernet-frames um und ethernet-frames in w-lan-signale zum versenden.
+    -> Mit hilfe von w-lan-protocollen.
+-> Ermöglicht Verbindungen zu einem Kabelgebundenen Netzwerk (Ethernet).
+    -> Dabei verbindet sich ein client mit dem AP der wiederum mittels Kabel
+        mit einem switch verbunden ist.
+-> Damit sich ein client mit einem AP verbinden kann, muss der client den 
+    w-lan-schlüssel des AP kennen.
+
+-> Kann (durch MAC-Adresse) Frames an andere, mit dem AP verbundene 
+    Geräte, senden.
+    -> Durch eigene MAC-Tabelle
+        -> AP arbeitet daher auf Schicht 1 (daten empfangen) und auf Schicht 2 (daten durch MAC weiterleiten).

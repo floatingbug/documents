@@ -1,0 +1,32 @@
+- PGP = Pretty Good Privacy.
+- Ist ein Programm.
+- Alternatives Programm: OpenPGP
+- Verschlüsselung und Signierung von Nachrichten.
+- Verschlüsselungsverfahren mit öffentlichen und Privaten Schlüssel.
+- Man kann auswählen ob man die Nachricht: Verschlüsseln, Signieren oder Verschlüsseln und Signieren möchte.
+- Signatur:
+    -> Weist nach, dass eine Nachricht auch vom erwarteten sender Stammt und nicht manipuliert wurde.
+    -> Signatur Ablauf:
+        -> Sender fügt der Nachricht eine Signatur hinzu.
+            -> PGP erzeugt aus dem Klartext der Nachricht, über kryptographische Hashverfahren, einen
+                eindeutigen digitalen Fingerprint, der deutlisch kürzer als der Klartext ist.
+            -> Sender verschlüsselt den Fingerprint mit dem privaten Schlüssel und fügt diesen dann
+                der Nachricht hinzu.
+    -> Signatur Bestätigung:
+        -> Empfänger erzeugt mit den gleichen Hashverfahren aus dem Klartext den Fingerprint.
+        -> Der chiffrierte Fingerprint wird mit dem öffentlichen Schlüssel dechiffriert und mit
+            dem zuvor erstelltem Fingerprint verglichen.
+            -> Stimmen alle Zeichen überein, wurde der Klartext nicht manipuliert.
+- Verschlüsselung:
+    -> Mit dem Öffentlichen Schlüssel (vom Empfänger) kann jeder Nachrichten verschlüsseln.
+    -> Nur der Empfänger hat den Privaten Schlüssel mit dem die Nachrichten entschlüsselt werden.
+    -> Verschlüsselungsvorgang:
+        -> Die Nachricht wird mit einem zuvor generierten Session-Schlüssel chiffriert (Session-Schlüssel wird
+            vor jedem Senden neu zufällig erstellt).
+        -> Der Session-Schlüssel wird mit dem öffentlichen Schlüssel chiffriert.
+        -> Der chiffrierte Session-Schlüssel wird an die Nachricht angehängt.
+            -> Es wird ein Session-Schlüssel verwendet, da eine chiffrierung mit dem öffentlichen Schlüssel
+                zu rechenintensiv wäre.
+
+- Austausch der Schlüssel über Web Of Trust
+    -> Die Nutzer vertrauen darauf, dass die Schlüssel von den benannten Personen stammen.

@@ -1,0 +1,8 @@
+- Fachlich
+-> Bezieht sich immer auf den Zweck den eine Komponente oder ein System erfüllt.
+    -> Beispiel: Komponente A in GUI ist für das Updaten des Beziehungsstatus einer Person zuständig.
+        -> Das ist eine fachliche beschreibung.
+        -> Wenn beschrieben wird welches Datenformat zur speicherung in einer DB verwendet werden soll,
+            handelt es sich um eine technische Beschreibung.
+            -> Die API nimmt fachliche Aufträge entgegen und übersetzt sie in technische Aspekte.
+                -> Also übernimmt die API die Übersetzung des fachlichen in das technische.

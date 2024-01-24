@@ -1,0 +1,80 @@
+- Alles in JS passiert im Execution Context
+	-> Besteht aus zwei Komponenten: Memory (variable environment), Code (Thread of Execution)
+		-> Memory
+			-> Key-Value-Paare
+				-> Key: Value
+					-> Beispiel: 
+						a: 12
+						fn: {...}
+		-> Code
+			-> Der Bereich, indem der code steht, der ausgeführt werden soll.
+				-> Der Interpreter führt diesen code Zeile für Zeile aus.
+
+- Wie js-code ausgefürht wird
+	-> Es gibt zwei Phasen: Memory Creation, Code Execution
+		-> Memory Creation (Phase 1)
+			-> JS vordert den benötigten Speicher für alle Variablen und Funktionen an,
+				indem der Interpreter jede Zeile durchgeht.
+				-> Variablen werden mit dem Wert undefined gespeichert.
+					-> a: undefined
+				-> Bei Funktionen wird der gesammte code der Funktion gespeichert.
+					-> fn: {...}
+		-> Code Execution (Phase 2)
+			-> Interpreter führt den code Zeile für Zeile aus.
+				-> Variablen die in Phase 1 undefined waren, werden Werte zugewiesen.
+			-> Trift der Interpreter auf eine Zeile, in der eine Funktion aufgerufen wird,
+				wird ein neuer execution context erstellt.
+				-> Durch return einer Funktion, wird der execution context der Funktion 
+					verlassen und der zurück gegebene Wert wird an der Stelle des 
+					execution contexts abgelegt, an der die Funktion durch einen 
+					execution context aufgerufen wurde.
+	-> Wenn ein JS-Programm gestartet wird, wird der Global Execution Context (GEC)
+		in den Call-Stack geladen.
+		-> Wird eine Funktion im Code des GEC aufgerufen, wird der execution context
+			der Funktion in den Call-Stack geladen. 
+
+- Asynchrone Funktionen
+    -> Asynchrone Funktionen geben einen Wert nicht durch return zurück, sondern
+        übergeben den Wert an eine cb.
+    -> Callback-Funktionen und asynchrone Funktionen
+	    -> Eine asynchrone Funktion wird eine cb übergeben.
+            -> Wurde die asynchrone Operation durchgeführt, gibt die Funktion nicht 
+                über return das ergebnis zurück, sondern übergibt das Ergebnis an 
+                Parameter der cb.
+                -> Die cb wird dann ich die cb-queue gesendet.
+    -> callback-hell:
+        fn(cb){
+            cb()
+        }
+
+        fn(()=>{
+            console.log("first callback")
+            fn(()=>{
+                console.log("second callback")
+                fn(()=>{
+                    console.log("third callback")                 
+                }            
+            }        
+        })
+
+- let vs var
+    -> Ist eine Variable mit let definiert, hat sie nur in dem Block{} (also scope) gültigkeit, 
+        in der sie definiert wurde.
+        -> var definierte Variablen, haben auch Auserhalb des scopes gültigkeit.
+
+- Schleifen
+    -> for(let a in b)
+        -> In a werden die indizes von b gespeichert.
+    -> for(let a of b)
+        -> In a werden die Werte von b gespeichert.
+
+- Iteratoren
+    -> Abstrahieren das Iterieren über Datenstrukturen.
+    -> Ein Iterator ist ein Objekt, das einen Zeiger enthält, der auf ein Element in einer 
+        Datenstruktur zeigt.
+        -> Durch next() erhält der Zeiger die Adresse zum nächsten Element.
+            -> Gleichzeitig gibt der Zeiger das Element zurück.
+            -> next() gibt ein Objekt mit dem Wert des Elements und der Eigenschaft done zurück.
+                -> {value: "wert des elements", done: false}
+                    -> Ist der Wert von done: true, ist das Ende des Objekts erreicht und
+                        es wurde über alle Werte iteriert.

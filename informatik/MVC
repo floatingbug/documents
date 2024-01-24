@@ -1,0 +1,14 @@
+- Model (Modell)
+	-> Ist für das Management der Daten zuständig.
+		-> Dient also zur Speicherung der Daten.
+	-> Kommunikation mit externen Datenquellen wie Datenbanken.
+	-> Es bekommt Anweisungen von dem Controller.
+- View (Darstellung/Präsentatione)
+	-> Visualisiert Daten der Modelle
+	-> Bei Änderungen im Modell passt eine View automatisch die Darstellung an.
+	-> Visualisierung von Status- und Fehlermeldungen von Controllern.
+- Controller (Steuerung)
+	-> Interagiert mit dem Modell.
+	-> Erhält Request und macht Response.
+	-> Validiert den userinput.
+	-> Umsetzung der Komponentenlogik.

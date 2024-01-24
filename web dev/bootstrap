@@ -1,0 +1,96 @@
+-----------------------------------------Grid System--------------------------------------------------
+
+→ Extra smal device (mobile phone) Bootstrap-Class: .col-xs-“number of coloms“
+→ Smal device (tablets) Bootstrap-Class: .col-sm-“number of coloms“
+→ Medium device Bootstrap-Class: .col-md-“number of coloms“
+→ Large device Bootstrap-Class: .col-lg-“number of coloms“
+
+-> Jede Zeile ist in 12 Spalten aufgeteilt.
+	-> Wieviele Spalten ein Element belegt kann angegeben werden.
+		<div class='row'>
+			<div class='col-xs-6'><h2>Hello There</h2></div>
+			<div class='col-xs-6'><h2>Hello :)</h2></div>	
+		</div>
+    
+    -> Werden mehrere Anzeigebereiche angegeben (viewports z.B. .col-xs-4 .col-md-2) belegt das Element, entsprechend
+        des aktuellen viewport, die angegebene Spaltenanzahl.
+        <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-6">Element</div>
+        </div>
+ 
+    -> Wird nur ein viewport, ohne angaben der Spalten angegeben, belegt das Element, wenn der viewport kleiner gleich des angegebenen 
+        viewports ist, alle Spalten also 12.
+        <div class="row">
+            <div class="col-md">Element</div>
+        </div>
+
+    -> Ohne angaben von einem viewport, belegt das Element immer die angegebene Anzahl an Spalten, egal welcher viewport genutzt wird.
+        <div class="row">
+            <div class="col-4>Element</div>
+            <div class="col-6>Element</div>        
+        </div>
+
+-> container ohne margin-left und margin-right (Raum um den container).
+    -> container haben bei default ein margin-left und margin-right.
+
+    -> .container-md
+        -> Wird der Anzeigebereich (viewport) kleiner als md (medium device), verschwindet margin-left und margin-right.
+
+    -> .container-fluid
+        -> margin-left und margin-right ist nicht vorhanden.
+
+-> Gutter
+    -> Mit Gutter erzeugt man Raum zwischen den Elementen in einem container (Padding).
+    
+    -> Horizontalen Raum erzeugen (Maximalwert ist 5).
+		<div class='row gx-5'>
+			<div class='col-xs-6'><h2>Hello There</h2></div>
+			<div class='col-xs-6'><h2>Hello :)</h2></div>	
+		</div>
+        
+
+    -> Vertikalen Raum erzeugen (Maximalwert ist 5).
+		<div class='row gy-5'>
+			<div class='col-xs-6'><h2>Hello There</h2></div>
+			<div class='col-xs-6'><h2>Hello :)</h2></div>	
+		</div>
+
+
+    -> Horizontalen und Vertikalen Raum erzeugen (Maximalwert ist 5).
+		<div class='row g-5'>
+			<div class='col-xs-6'><h2>Hello There</h2></div>
+			<div class='col-xs-6'><h2>Hello :)</h2></div>	
+		</div>
+        
+        
+---Layout mit bootstrap---
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-2'>
+			Left Sidebar
+		</div>
+		<div class='col-md-8'>
+			Main Content
+		</div>
+		<div class='col-md-2'>
+			Right Sidebar
+		</div>
+	</div>
+</div>
+
+-> Offset
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-offset-2'>
+			Left Sidebar
+		</div>
+		<div class='col-md-2'>
+			Right Sidebar
+		</div>
+	</div>
+</div>
+
+
+
+
+

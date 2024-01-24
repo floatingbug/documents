@@ -1,0 +1,40 @@
+--- Single-Threaded ---
+- Immer nur eine Antwort auf einmal.    
+    -> Obwohl Node.js mehrere Sockets für offene Client-Verbindungen verwalten kann, kann es immer nur eine Antwort 
+        gleichzeitig an einen Socket senden. Das liegt daran, dass Node.js single-threaded ist und 
+        ein Thread immer nur eine Antwort auf einmal in einen Socket schreiben kann.
+
+--- Aufbau von Node.js ---
+- libuv
+    -> Eine dynamische Bibliothek in C geschrieben.
+
+    -> Node.js ruft Funktionen von libuv auf, um asynchrone Operationen durchzuführen.
+        -> Node.js muss teilweise in C programmiert sein, damit im C-Code diese Aufrufe stattfinden können.
+        -> In libuv sind Systemnahe Funktionen um bspw. auf das Dateisystem zuzugreifen und Threads zu erstellen.
+
+- Thread-Pool
+    -> Beinhaltet Threads für die IO-Operationen.
+
+    -> Node.js verwendet automatisch 4 Threads, wobei über die Umgebungsvariable UV_THREADPOOL_SIZE
+        die Anzahl der Threads angegeben werden kann.
+        -> Durch probieren soll herausgefunden werden, mit welcher Anzahl an Threads der Server am 
+            effizientesten Arbeitet.
+            -> Dabei sollte UV_TREADPOOL_SIZE den Wert erhalten, der die Anzahl der Threads der CPU entsprechen.
+
+- V8
+    -> V8 hat eine integrierte C++ API, die es Node.js ermöglicht, JavaScript-Werte in C++-Objekte umzuwandeln und 
+        umgekehrt. Das ermöglicht es, JavaScript-Code mit der C++-Welt zu verbinden und auf C++-Bibliotheken zuzugreifen.
+        -> Dadurch kann auch auf libuv zugegriffen werden.
+
+    -> V8 besteht aus dem Heap und den Stack (Thread).
+
+    -> Beim Starten des Programms übersetzt V8 den JavaScript-Code in sogenannten "Bytecode". Dieser Bytecode wird dann 
+        während der Ausführung des Programms von der V8-Engine in Maschinencode übersetzt.
+        -> Der Bytecode wird in der V8-VM auf einer virtuellen CPU ausgeführt, die Teil der Laufzeitumgebung von V8 ist. 
+        
+    -> V8 ist auch ein Just-in-Time (JIT) Compiler.
+        -> Häufig verwendeter JavaScript-Code wird in Maschinencode übersetzt, um die Ausführung zu beschleunigen. 
+            -> Dabei wird der Code zunächst in Bytecode übersetzt und dann während der Laufzeit des Programms in Maschinencode umgewandelt. 
+                -> Dieser Maschinencode wird dann im Speicher gespeichert und bei Bedarf ausgeführt, um die Ausführungsgeschwindigkeit zu erhöhen.
+
+

@@ -1,0 +1,51 @@
+--- Anfrage und Antwort
+- 1. Webserver erhält eine Anfrage auf eine PHP-Seite durch die entsprechende URL.
+- 2. Der Webserver leitet die Anfragedaten an den PHP-Interpreter, außerdem stellt er die HTTP-Anfrage (HTTP-Header + Payload) zur verfügung.
+- 3. Der PHP-Interpreter lädt das entsprechende PHP-Skript anhand der URL.
+- 4. Der PHP-Interpreter leitet die Antwort (HTTP-Header + Payload) an den Webserver weiter.
+- 5. Der Webserver sendet den Response.
+
+--- Schnittstellen von Webserver zu PHP-Interpreter ---
+ 
+- CGI-Protokoll muss im Webserver und im PHP-Interpreter implementiert sein.
+
+- CGI nutzt stdin und stdout als buffer.
+
+- Apache-Modul "mod_php".
+    -> Es wird kein CGI verwendet.    
+
+- Apache-Modul "mod_php".
+
+    -> Keine Kommunikation zwischen PHP-Interpreter und Webserver.
+        -> Da der PHP-Interpreter-Prozess, von mod_php, direkt in den Webserver-Prozess
+            geladen wird.
+    -> mod_php lädt den PHP-Interpreter-Prozess in den Webserver-Prozess (bspw. Apache).
+        -> Bei jedem PHP-Script-Aufruf startet der Webserver einen PHP-Interpreter-Prozess.
+        -> Gute Leistung und skallierbarkeit, da der Overhead durch die Kommunikation zwischen 
+            Webserver und Interpreter entfällt.
+
+- NGINX 
+    -> Ist ein Server.
+    -> Zwei häufig verwendete Module, um PHP auf dem NGINX-Server auszufühern:    
+        -> NGINX-Modul:
+            -> Der PHP-Interpreter ist direkt in dem Server Implementiert.
+            -> Für kleine bis mittelgroße Projekte.        
+        -> php-fpm (FastCGI Process Manager):
+            -> Das FastCGI-Protokoll muss im Server und PHP-Interpreter implementiert sein.
+                -> Auf dem Server muss dafür das FastCGI_Modul meist nachinstalliert werden.
+                    -> Der server lädt das Modul.
+                -> Der PHP-Interpreter implementiert meist eine FastCGI-Schnittstelle.
+            -> Bei jeder Anfrage wird ein eigener Prozess für diese Anfrage erstellt.
+            -> Neben Server und PHP-Interpreter kann das Prozess-Manager-Tool verwendet werden.
+                -> verantwortlich für php-prozesse zu: starten, stoppen und verwalten.
+                -> Da für jede Anfrage ein eigener Prozess gestartet wird, kann der Prozess-Manager
+                    Die Ausführung der einzelnen Prozesse überwachen.
+                -> Empfehlenswert, da Leistung gesteigert wird.
+            -> Für komplexe und leistungshungrige Websites.
+
+
+- NGINX-Modul "php-fpm".
+    
+    -> PHP-Interpreter wird als seperater Prozess ausgeführt.
+    -> Kommunikation zwischen den Prozessen durch 
+

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/fullscreen", {data:[{}],fetch:{},mutations:void 0});

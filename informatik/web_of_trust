@@ -1,0 +1,18 @@
+- Für den Austausch von Daten kann jeder public-keys zur Verfügung stellen.
+    -> Damit man sicher gehen kann, dass der public-key auch von der angegebenen Person stammt,
+        muss man die Authentizität (Echtheit bzw. wirklich vom Urheber) des Schlüssels prüfen können.
+
+- Die Echtheit des public-key kann von einer Instanz durch ein digitales-Zertifikat (sign) bestätigt werden.
+    -> Bei Public-Key-Infrastrukturen ist dies eine Zertifizierungsstelle;
+        im Web of Trust hingegen übernehmen alle Teilnehmer diese Funktion.
+
+- Im WOT vertraut man darauf, dass die von anderen user erstellten Zertifikate für ein public-key
+    korrekt ist.
+    -> Die Zertifikate sind fingerprints.
+
+- Funktionsprinzip:
+    -> Eine Person signiert (sign) einen public-key.
+        -> Die Signierung ist ein fingerprint der dem public-key hinzugefügt wird.
+    -> Der public-key wird zusammen mit der Signatur/fingerprint auf einen Schlüsselserver hochgeladen.
+    -> Personen die den Schlüsselinhaber nicht kennen, vertrauen auf die Zertifikate, die dem Schlüssel auf dem
+        Schlüsselserver hinzugefügt wurden.

@@ -1,0 +1,116 @@
+-----Grundlagen und Begriffe-----
+- Geschäftsprozess (GP)
+	-> Festgelegte Aufgaben (Aufbauorganisation) die in festgelegter Reihenfolge (Ablauforganisation) ausgeführt werden um ein Ziehl zu erreichen.
+		-> Aufgabe kann von einem Mitarbeiter in einem Zug, ohne Wechsel des Arbeitsplatzes, erledigt werden.
+	-> GP wird Arbeitsteilig ausgeführt.
+	-> GP dient der Erstellung von Leistung/Wertschöpfung. 
+- Geschäftsprozesse im RE
+	-> GP werden durch IT-Systeme unterstützt.
+	-> Geschäftsprozessmodelle sind Dokumentationsformen für GPs.
+		-> Darstellung des Ist- und Soll-Zustand von betrieblichen Abläufen.
+			-> Ist-Zustand: Geschäftsprozessmodell ist vorhanden.
+			-> Soll-Zustand: Geschäftsprozessmodell muss noch erstellt werden.
+		-> Ableitung der Anforderungen aus den Geschäftsprozessmodellen.
+- Aufbauorganisation
+	-> Organisationsstruktur eines Unternehmens.
+	-> Legt Rahmenbedingungen für die Bearbeitung von Aufgaben fest.
+		-> Legt fest, welche Aufgaben von welchen Menschen mit welchen Sachmitteln erledigt werden sollen.
+	-> Ziele: 
+		-> Arbeitsteilige Gliederung und Ordnung der Betrieblichen Handlungsprozesse, durch generierung und
+			Verteilung von Aufgaben.
+		-> Führungsstrukturen/Weisungsbefugnisse in einer Hierarchie bilden, dadurch Zuordnung von Aufgaben möglich.
+	-> Mehrere Organisationsformen: Einlinien- und Mehrliniensystem und Stablinienorganisation.
+		-> Einliniensystem
+			-> Jede Ebene in der Hierarchie hat eine übergeordnete Ebene.
+				-> Beispiel: Hauptabteilungsleiter -> Abteilungsleiter -> Teamleiter -> Mitarbeiter
+			-> Eine Lienie von Oben nach unten (von Hauptabeilungsleiter bis Mitarbeiter) heißt Dienstweg.
+			-> Vorteile: Klare Weisungsbefugnis, Eindeutige Zuordnung von Stellen in der Hierarchie.
+			-> Nachteile: Lange Informationswege, da Kommunikation nur über die übergeordnete Ebene möglich ist und nicht z. B. von Teamleiter zu Teamleiter. Dadurch kann es zur Überforderung der übergeordneten Ebenen führen.
+		-> Mehrliniensystem
+			-> Mitarbeiter von Team A können sich direkt an den Teamleiter von Team B wenden und umgekehrt.
+				der weg über den Abteilungsleiter ist nicht weiter notwendig.
+			-> Vorteile: Kürzere Informationswege.
+			-> Nachteile: Kompetenzkonflikten.
+		-> Stabliniensystem
+			-> Erweitertes Einliniensystem durch Stabstelle.
+			-> Ein Stab ist ein Experte in bestimmten Gebieten.
+			-> Ein Stab steht beratend zur Seite, vergibt aber keine Arbeitsanweisungen.
+			-> Vorteile: Wie bei Einliniensystem + verbesserte Entscheidungsqualität.
+			-> Nachteil: Gefahr von selektiven Informationsweitergabe und zusätzliche Kosten für die Stabstelle.
+- Ablauforganisation
+	-> Beschreibt den Ablauf innerhalb einer Aufbauorganisation.
+	-> Dokumentiert die Gestaltung der Arbeitsabläufe der Aufbauorganisation.
+		-> Verkettung der einzelnen Arbeitsschritte unter Nutzung der Ressourcen (Stellen, Abteilungen, Rollen, Instanzen, Aufgaben) der Aufbauorganisation.			
+	-> Die Ablauforganisation ist durch GPs definiert.
+	-> GPs können durch Teilprozesse und Aktivitäten verfeinert werden, eine Hierarchie entsteht wobei die oberste Ebene der GP ist.
+		-> Teilprozesse können in einer Menge von Aktivitäten zerlegt werden.
+		-> Ein GP kann mehrere Teilprozesse haben und die Teilprozesse werden durch mehrere Aktivitäten durchgeführt.
+		-> Aktivitäten können dann in einem Zug erledigt werden.
+- Unterschied zwischen Aufbau- und Ablauforganisation
+	-> Aufbauorganisation: Welche Aufgabn werden erledigt, von wem werden sie erledigt, mit welchen Sachmitteln werden sie erledigt.
+	-> Ablauforganisation: Wie werden die Aufgaben erledigt und in welcher Reihenfolge.
+- Elemente von Geschäftsprozessen
+	-> Prozesse können aus Teilprozessen bestehen und diese wieder aus Teilprozessen.
+	-> Prozesse/Teilprozesse bestehen aus Aktivitäten (Aktivitäten zur Erfüllung des Prozesses).
+	-> Nutzer: Führen Aktivitäten aus.
+	-> Rolle: Nutzer haben eine Rolle.
+	-> Organisationsheinheit: Nutzer bzw. Rolle gehört einer Organisationseinheit an z. B. Vertrieb.
+	-> Geschäftsobjekte: Werden in Aktivitäten erzeugt/bearbeitet.
+	-> Geschäftsregel: Beschreibt die Reihenfolge der auszuführenden Aktivitäten.
+	-> Ereignis: Löst Prozess aus.	
+	-> Zustand: In welchem Zustand sich eine Prozess/Geschäftsobjekt befindet.
+
+-----Business Process Model and Notation (BPMN)-----
+-> Notation zur Modelierung von Geschäftsprozessen.
+-> Elemente:
+	-> Aktivität: Nicht weiter aufteilbar (wird von einer Person in einem Zug ausgeführt).
+	-> Teilprozess: Besteht aus Aktivitäten und Teilprozessen.
+	-> Ereignisse: Startereignis, Ereignis, Endereignis.
+	-> Datenobjekte: Werden zur Ausführung von Aktivitäten gebraucht oder erzeugt (z. B. Schadensakte).
+	-> Pool/Organisationseinheit: Partitioniert Prozesse. Jeder Pool ist ein Teilprozess und benötigt daher ein Start- und Endereignis. Beinhaltet: Rollen, Aktivitäten, Teilprozesse... .
+		-> Können als Black Boxes dargestellt werden.
+	-> Lanes: Fassen Aufgaben zusammen z. B. Rollen.
+	-> Nachrichten: Nachrichtenflüsse oder als Bestandteil von Ereignissen z. B. Email als Startereignis.
+	-> Annotationen: Notizen, Kommentare.
+-> Verbindungen
+	-> Verbindungstypen: im BPMN gibt es: Sequenzfluss, Nachrichtenfluss und Assoziationen.
+		-> Sequenzfluss: Gibt Reihenfolge der Aktivitäten vor.
+			-> Können über Lane-Grenzen gehen aber nicht über Pool-Grenzen.
+		-> Nachrichtenfluss: Verbindet Pools miteinander.
+		-> Assotiationen: Verbinden Datenobjekte und Annotationen mit Flussobjekten (Aktivitäten, Prozessen).
+-> Gateways
+	-> Arten: Exklusive, inklusive, parallele und Ereignisbasierte Gateways.
+		-> Exklusives ODER XOR: Immer nur ein Sequenzfluss wird gegangen.
+			-> Zeichen: Raute mit X.
+		-> Logisches ODER OR: Es können mehrere Sequenzflüsse gegangen werden.
+			-> Zeichen: Raute mit O.
+		-> Parallele Gateways: Sequenzflüsse wrden gleichzeitig ausgeführt.
+			-> Zeichen: Raute mit +.
+		-> Ereignisbassierte Gateways: Auswahl der Sequenz in Abhängigkeit eines Ereignisses.
+			-> Zeichen: Raute mit zwei Kreisen und Pentagram in der Mitte.
+-----Modellierung mit Ereignisgesteuerten Prozessketten-----
+- Zur Modellierung von Betrieblichen Abläufen (wie BPMN).
+- Erweiterte ereignisgesteuerte Prozessketten (eEPK): Erhöhung der Ausdrucksmächtigkeit durch zusätzliche Elemente.
+- Hauptelemente
+	-> Funktionselement: Bearbeitung/Aktivität.
+	-> Ereigniselemente: Passive, trift selbst keine Entscheidungen.
+- Funtions- und Ereigniselement müssen sich immer Abwechseln F->E->F->E... .
+- Jeder Geschäftsprozess hat mindestens ein Start- und Endereignis.
+- Konnektoren
+	-> Split-Konnektoren teilen Kontrollflüsse auf, Join-Konnektoren führen Kontrollflüsse zu einen Kontrollfluss zusammen.
+	-> Ein Konnektor ist entweder ein Split oder ein Join.
+		-> Aber nie beide gleichzeitig.
+		-> Wurden Flüsse durch ein Split auf mehrere Flüsse aufgeteilt, müssen diese durch einen Join wieder zusammengeführt werden.
+	-> UND-Konnektor: Gleichzeitiges Ausführen der Ausgehenden Kontrollflüsse.
+		-> Symbol: Pyramide. 
+	-> ODER-Konnektor: Alternatives Ausführen der Ausgehenden Kontrollflüsse (mehrere Pfarde möglich).
+	-> XOR-Konnektor: Wie ODER aber nur ein Phad möglich.
+- eEPK
+	-> Organisationseinheit: Rolle, Nutzer, Organisationseinheit z. B. IT-Abteilung.
+		- Erscheinung: Gelb ausgefüllter ovaler Kreis.
+	-> Geschäftsobjekt: Z. B. Antrag.
+		Erscheinung: Rechteck das blau ausgefüllt ist.
+	-> Prozess bzw. Subprozess: Z. B. Antragsbearbeitung.
+		-> Erscheinung: Weißes Rechteck.
+	-> System: Z. B. Antragssystem.
+		-> Erscheinung: Blau ausgefülltes Rechteck mit 4 Strichen.

@@ -1,0 +1,109 @@
+--- Konstruktorfunktion
+- definition Konstruktorfunktion:
+-> Eine Funktion wird als Konstruktorfunktion betrachtet, wenn sie mit dem Schlüsselwort "function" definiert wird und einen Namen hat. Sie wird dann verwendet, 
+	um Objekte zu erstellen, die durch das Schlüsselwort "new" instanziiert werden. Wenn die Funktion mit der Literal-Schreibweise definiert wird, z.B. 
+	let myFunc = function() {};, wird sie nicht als Konstruktorfunktion betrachtet und kann nicht verwendet werden, um Objekte zu erstellen.
+
+- Was geschied beim Aufruf von new Konstruktorfunktion():
+-> Ein neues leeres Objekt wird erstellt.
+-> Das neu erstellte Objekt wird als this an die Konstruktorfunktion übergeben.
+-> Die Konstruktorfunktion initialisiert das Objekt mit den gewünschten Eigenschaften und Methoden.
+-> Das neu erstellte Objekt erhält die Referenz __proto__, die auf die prototype Eigenschaft von der Konstruktorfunktion zeigt.
+-> Das neu erstellte Objekt wird als Rückgabewert zurückgegeben, es sei denn, die Konstruktorfunktion gibt explizit einen anderen Wert zurück.
+
+
+- __proto__ ist veraltet, stattdessen verweißt die Eigenschaft [[Prototype]] auf die eigenschaft prototype einer Funktion.
+-> Wie __proto__ ist auch [[Prototype]] eine eigenschaft eines Objekts die nur vom Interpreter verwendet wird und für den 
+	Programmiere nicht zugänglich ist.
+-> Weiterhin haben nur Funktionen die Eigenschaft prototype aber nicht Objekte. Objekte haben die Eigenschaft [[Prototype]] die auf prototype verweißt.
+
+
+- Konstruktorfunktionsname.prototype.constructor
+-> Diese Eigenschaft wird, von javaScript, automatisch für die Konstruktorfunktion erstellt.	 
+-> Die constructor-Eigenschaft ist ein Verweiß auf die Funktion, die das Objekt mit new erstellt hat.
+-> Wird benutzt, um zu überprüfen, von welcher Funktion ein Objekt erstellt wurde.
+	-> Jedes Objekt das mit new und einer Konstruktorfunktion erstellt wurde, erhält die eigenschaft constructor.
+-> Beispiel:
+function Person(name) {
+  this.name = name;
+}
+
+let person = new Person('John');
+
+console.log(person.constructor === Person); // true
+
+-> Alternative:
+console.log(person instanceof Person); // true
+
+- Vererbung 
+
+-> Beispiel 1
+
+//Jedes Objekt das mit new A() erstellt wird, erhält eine Kopie der Eigenschaft prop1.
+//Jedes Objekt das mit new A() erstellt wird, erhält eine Referenz [[Prototype]] auf die prototype Eigenschaft der Konstruktorfunkton.
+function A() {
+  this.prop1 = 'prob1';
+}
+  
+
+//Wird ein Objekt mit new B() erstellt, wird die Konstruktorfunktion A aufgerufen. Die this Referenz in A.call(this) zeigt auf das erstellte Objekt,
+//das durch new B() erstellt wurde. Dadurch wird die Konstruktorfunktion A in dem Objekt B aufgerufen.
+//prop1 wird in das neu erstellte Objekt kopiert.
+//Wenn das Objekt B erstellt wurde, erhält es die Referenz [[Prototype]] auf B.prototype.
+//A.call(this) bedeutet, dass A() in dem Objekt B aufgerufen wird, weil this auf B zeigt.	
+function B() {
+  A.call(this);
+  this.prop2 = 'prop2';
+}
+
+-> Beispiel 2.
+
+// Definieren der Konstruktorfunktion A
+function A(propA) {
+  this.propA = propA;
+}
+
+// Definieren der Konstruktorfunktion B
+function B(propA, propB) {
+  A.call(this, propA); // Erben der Eigenschaften von A
+  this.propB = propB;
+}
+
+// Erben der Methoden von A
+// Object.create(A.prototype); erstellt ein neues Objekt, das nur die Referenz [[Prototype]] auf A.prototype enthält.
+// Die Eigenschaft B.prototype zeigt jetzt auf eine neues Objekt. Somit zeigt B.prototype.constructor nicht mehr auf 
+// die Konstruktorfunktion B sondern auf A.
+B.prototype = Object.create(A.prototype);
+B.prototype.constructor = B;
+
+// Erstellen eines Objekts von B
+var b = new B("Property A", "Property B");
+
+// Überprüfen der vererbten Eigenschaft von A
+console.log(b.propA); // Ausgabe: "Property A"
+
+
+--- Prototypische Vererbung 
+- Bei der Prototypischen vererbung erben immer Objekte von Objekten.
+
+- Erbt ein Objekt b von Objekt a, dann erhält b eine Referenz [[Prototype]], die auf das Objekt a verweist.
+-> Beispiel:
+
+// Erstellen des Objekts a
+const a = {
+  prop1: "prop1"
+};
+
+// Ein neues Objekt wird erstellt dessen [[Prototype]] auf a zeigt.
+// dieses Objekt wird in b gespeichert.
+const b = Object.create(a);
+b.prop2 = "prop2";
+
+const c = Object.create(b);
+c.prop3 = "prop3";
+
+// Testen der Vererbung
+console.log(c.prop1); // "prop1" von a geerbt
+console.log(c.prop2); // "prop2" von b geerbt
+console.log(c.prop3); // "prop3" von c selbst definiert
+

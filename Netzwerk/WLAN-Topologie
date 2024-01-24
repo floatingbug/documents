@@ -1,0 +1,24 @@
+----- Wesentliche bestandteile eines w-lan-netzwerkes
+- WAP (Wireles Access Point) oder auch AP (Access Point).
+-> W-lan Basisstation.
+
+-> Verbindet ein W-lan mit dem Ethernet bzw. dem Switch.
+    -> Beispiel: AP im w-lan-router zum Switch im w-lan-router.
+
+-> Mehrere clients können sich mit dem AP mittels wlan-key verbinden.
+
+
+
+- Clients die sich mit dem AP verbinden.
+-> benötigen einen WLAN-Adapter
+
+- WLAN-Adapter 
+-> Daten senden:
+    -> 1. WLAN-Adapter Bettet ethernet-frame in ein wlan-frame ein.
+    -> 2. Moduliert die Daten in elektrische Signale und sendet diese aus.
+
+-> Daten Empfangen:
+    -> 1. Demodeliert elektrische Signale in binärer Form um.
+    -> 2. Ließt wlan-frame.
+    -> 3. Ist der frame für den Adapter bestimmt (Adresse im wlan-header), 
+            dann an IP-Schicht. Wenn nicht, dann verwerfen.

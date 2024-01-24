@@ -1,0 +1,164 @@
+{
+  "main": {
+    "id": "7253cfeaf4eccec4",
+    "type": "split",
+    "children": [
+      {
+        "id": "1e9e2db86f482131",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f3a980291ac4dcfb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "pixi.js.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ee41ec10d1b9a740",
+    "type": "split",
+    "children": [
+      {
+        "id": "f03bcc196aaf5343",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "23c729c12f925c25",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b4f20a3649d967c3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "stage",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0109caa6b3de2c1e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f1ea406b94d9b444",
+    "type": "split",
+    "children": [
+      {
+        "id": "b3e3919d03f02ca9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bfc3ac3585a116f7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "pixi.js.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8aa5f74def349c76",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "pixi.js.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a0866bfcfefb4b53",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "149b6060c894779b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "pixi.js.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "f3a980291ac4dcfb",
+  "lastOpenFiles": [
+    "Index.md",
+    "pixi.js.md",
+    "Architektur.md",
+    "Beispiel 1.md",
+    "Begriffe.md",
+    "Assets laden.md",
+    "Culling.md",
+    "VRAM.md",
+    "Render Loop.md",
+    "Unbenannt.canvas",
+    "Game_Development.md",
+    "2023-09-20.md"
+  ]
+}

@@ -1,0 +1,69 @@
+→ vi erweitern durch installieren von vim (weiterhin aufrufen mit vi Dateiname).
+→ Mit (i) in den Schreibmodus wechseln. Mit (ESC) in den Editiermodus wechseln.
+→ vi verlassen mit: :q	
+	→ Änderungen verwerfen mit: :q!
+→ Speichern mit: :w
+→ Schreiben und verlassen: :wq
+→ String suchen mit: /string
+	→ mit (n) nächsten string suchen.
+
+--Plugins--
+→ In Home ist die config Datei .vimrc und der Ordner .vim mit allen installierten plugins.
+
+--movements--
+→ gg → gehe zum Anfang des Dokuments.
+→ shift + g → gehe ans ende des Dokuments.
+
+--Buffer--
+-> Geöffnete Dateien in vim können in den Hintergrund geschoben werden.
+	Sie befinden sich dann in dem Buffer.
+-> Buffer anzeigen: :buffers oder :ls
+-> Datei öffnen oder neu erstellen: :e "Dateiname" 
+-> Nächste Datei im Buffer auswählen: :bn
+-> Vorherige Datei im Buffer auswählen: :bp
+-> Buffer mit Buffernummer auswählen: :b"nummer"
+-> Buffer löschen: :bd
+-> Alle Buffer Schreiben: :wa
+-> Alle Buffer Schreiben und verlassen: :wqa
+
+--Tabs--
+-> Datei in neuen Tab öffnen: :tabedit "Dateiname"
+-> Zum nächsten Tab gehen: :tabn oder gt
+-> Zum vorigen Tab gehen: :tabp oder gT
+-> Navigieren geht auch mich: strg + bild-hoch oder bild-runter Taste
+-> Neues Tab erstellen: :tabnew
+	-> Datei speichern mit: :w "Dateiname"
+-> Tab schließen: :q oder :tabclose
+	->Datei befindet sich weiterhin im Buffer
+-> Alle Dateien im Buffer als Tabs öffnen: :tab ball
+-> Ein leeren Tab erzeugen: :vsplit
+
+--NERDTree--
+-> NERDTree aufrufen: :NERDTree
+-> Switch between windows: strg + ww
+-> Optionen anzeigen lassen: m
+-> Datei in neuem tab anzeigen: t
+
+--Visual Mode--
+-> Mit der taste (v) geht geht man in den visual mode.
+-> Mit (V) markiert man immer ganze Zeilen.
+
+--Find and Replace--
+-> :%s/"wort, das ersetzt werden soll"/"wort, dass das alte wort ersetzt"/g
+	-> Ohne Anführungszeichen.
+	-> s = search, g = global (jedes wort soll ersetzt werden).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

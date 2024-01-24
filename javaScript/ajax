@@ -1,0 +1,11 @@
+-----Beispile: von Browser an Server senden-----
+
+let xhr = new XMLHttpRequest();
+let json = {name: "bla"};
+
+xhr.open('post', '/url', true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.send(JSON.stringify(json));
+
+-> Über das Internet können nur serialisierte Daten (Zeichenketten und keine Objekte) versendet werden.
+	Daher JSON.stringify mit der man json-objekte serialisieren kann.

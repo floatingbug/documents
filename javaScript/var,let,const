@@ -1,0 +1,14 @@
+- const
+-> Inhalt der Variable ist nicht mehr änderbar.
+
+- let vs var
+-> let ist blockscoped.
+    -> {let x = 5 {let x = 6}}
+        -> Zwei unterschiedliche Variablen die an ihrem scope/block gebunden sind.
+        -> Befindet sich x nicht im inneren scope, ist das x aus dem äußeren scope im inneren verfügbar.
+
+-> var ist functionscoped.  
+    -> {var x = 5 {var x = 34}
+        -> x ist immer die gleiche Variable.
+            -> x im äußeren scope ist gleich dem x im inneren scope.
+            -> x wird im inneren scope überschrieben.

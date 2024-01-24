@@ -1,0 +1,11 @@
+<!--
+  Regler (range)
+-->
+<input type='range' id='r' min='0' max='100' step='1' value='0'>
+
+<script>
+  let range = document.getElementById('r');
+  range.addEventListener('input', function(e){
+    console.log(range.value);
+  });
+</script>

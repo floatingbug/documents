@@ -1,0 +1,228 @@
+-----Grundlegender Aufbau von Computersystemen-----
+- CPU holt Befehle, wie eine Maschine, in Form von Maschinencode, 
+    aus dem Speicher und führt diese aus (CPU kann auch bspw. Daten von hdd anfordern oder in hdd schreiben). 
+    Diesen Zyklus wiederholt die CPU bis der Computer ausgeschalten wird.
+	-> Einen Zyklus nennt man Von-Neumann-Zyklus.
+	-> Den Aufbau eines Computers/Rechners nennt man Von-Neumann-Architektur.
+	-> Alle modernen Rechner, vom Smartphone bis zum Hochleistungsserver, arbeiten nach diesem Prinzip.
+	-> Die Architektur wurde von John von Neumann 1945 vorgestellt.
+- Kernelemente der Von-Neumann-Architektur
+	-> Prozessor
+	-> Hauptspeicher
+	-> Ein-/Ausgabe-Komponenten
+	-> Kommunikationssystem
+- Prozessor besteht aus Steuerwerk und Rechenwerk.
+	-> Steuerwerk
+		-> Leitet die Ausführung des Programms.
+		-> Ladet Befehle in der richtigen Reihenfolge aus dem Hauptspeicher in den Prozessor.
+		-> Decodiert die Befehle.
+	-> Rechenwerk
+		-> Führt Befehle aus.
+		-> Ist mit arithmetischen und logischen Funktionen ausgestattet und wird deshalb auch ALU (Arithmetic Logical Unit) genannt.
+- Hauptspeicher
+	-> Wahlfreie Adressierbarkeit.
+		-> CPU hat wahlfreien Zugriff auf Daten und Instruktionen.
+	-> Organisiert in Zellen die jeweils eine Adresse haben.
+	-> Kleinste adressierbare Größe ist ein Byte.
+- Ein-/Ausgabe-Komponenten
+	-> Tastatur, Maus, Bildschirm, Festplatte, andere Computersysteme über Datennetze.
+-Kommunikationssysteme 					
+	-> Abwicklung der Kommunikation zwischen den Von-Neumann-Architektur-Elementen durch ein Bus-System.
+		-> Adressbus: CPU teilt RAM mit, aus welcher Speicherzelle ausgelesen werden soll.
+		-> Datenbus: Inhalt einer Speicherzelle wir an CPU geleitet.
+- Der Von-Neumann-Zyklus
+	-> Befehl Holen
+		-> CPU Schick, über den Adressbus, den Inhalt des Programmzähler (Adresse zum nächsten Befehl im RAM) an den RAM.
+			 RAM schickt den Inhalt der Speicherzelle, über den Datenbus, an die CPU.
+	-> Befehl decodieren
+		-> Die für jeden Prozessor spezifische Maschinensprache wird decodiert z. B. Addiere.
+	-> Operand Holen
+		-> Operand wird aus dem RAM geladen.
+	-> Befehl ausführen
+		-> Nachdem Das Steuerwerk alle Daten in den Prozessor geladen hat, führt das Rechenwerk die Operation aus.
+	-> Ergebnis speichern
+		-> Ergebnis in RAM Speichern oder Ergebnis in Register der CPU Zwischenspeichern.
+	- Will man zwei Operanden miteinander verrechnen, muss die CPU zwei Zyklen durchführen, beim ersten Zyklus wird der Operand in einem Registry der CPU zwischengespeichert.
+- Erweiterungen bei modernen Rechnersystemen
+	- Überlappungen der einzelnen Von-Neumann-Zyklen durch Befehls-Pipelining.
+		-> Die Einheiten die zur Bearbeitung der einzelnen Schritte notwendig sind, laufen Parallel.
+			-> Pro Taktschritt kann ein Befehl des Programmcodes fertiggestellt werden.
+				-> Idealfall: In jedem Taktschritt einen Von-Neumann-Zyklus durchlaufen.
+	- Nicht nur Berechnung von zwei Operanden in einem Taktschritt sondern Berechnung von vielen Operanden gleichzeitig.
+		-> Vektoreinheiten der Vektorverarbeitung bei x86-Architekturen sind: MMX, SSE, AVX... .
+			-> Erweiterung von Vektorbefehlen und Vektorregister.
+	- Parallele Verarbeitung also durch: Pipelining und Vektorverarbeitung aber auch Multicoresystemen.
+- Speicherhierarchie: Rigister 1ns, lvl1-cache 2ns, lvl2-cache 5ns, RAM 10ns, hdd 1000ns.  
+- Die Rolle des Betriebssystems
+	-> Laden der Programme in den Arbeitsspeicher.
+	-> Verwalten der Programme im Arbeitsspeicher.
+	-> Kernel
+		-> Software die vom Prozessor im privilegierten Modus ausgeführt wird.
+			-> Bedeutet: CPU hat Maschinenbefehle die auf die HW zugreift. Nur der Kernel sendet diese
+				Maschinenbefehle an die CPU. Die Kernelsoftware kann nur ausgeführt werden, wenn
+				die CPU in dem privilegierten Modus geschaltet hat.
+		-> Nicht alle Maschinenbefehle dürfen von Programmen direkt ausgeführt werden. 
+			Es gibt auch Maschinenbefehle, die nur über Befehle des Betriebssystems (Kernel Mode) 
+			im Prozessor ausgeführt werden können.
+		-> Anwerndermodus (User Mode) Maschinenbefehle können direkt im Prozessor
+			ausgeführt werden.
+		-> Betriebssystemmodus (Kernel Mode) Maschinenbefehle werden über Betriebssystembefehele ausgeführt.
+		-> Kritische Maschinenbefehle sendet das OS bzw. der Kernel im Kernel Mode der CPU an die CPU,
+			da sie der HW schaden könnten.
+- Systemaufrufe
+	-> Will ein Programm auf die HW zugreifen, z. B. HDD oder Grafikkarte, macht es, über die Schnittstellen
+		des Betriebssystems, einen Funktionsaufruf. Das Betriebssystem sendet dann die entsprechenden Befehel,
+		in Form von Maschinencode, an die CPU, die sich im Kernel Mode befinden muss.
+		-> Bei einem Systemaufruf wird in den Betriebssystemmodus (Kernel Mode) gewechselt. Dabei Kommuniziert
+			Das Betriebssystem mit der CPU. Anschließend wir in den Anwerndermodus gewechselt, in dem Maschinencode
+			ausgeführt wird, der nicht auf die HW zugreift.
+	-> Systemaufrufe sind in Systembibliotheken gekapselt und stellen die Schnittstellen 
+		für Systemaufrufe dar. Systembibliotheken befinden sich im User-Mode. 
+		Anwendungen greifen auf diese zu (Systemaufruf). 
+			-> In diesen Systembibliotheken sind Funktionen, die das Programm aufruft, das ist dann
+				ein Systemaufruf. Die Funktionen veranlassen das OS Maschinenbefehle an die CPU zu senden.
+		Der Kernel veranlasst dann, über einen Maschinenbefehl, dass die CPU in den Kernel-Mode schaltet.
+		Das OS sendet dann, für die Anwendung, die Maschinenbefehle an die CPU.
+	-> Spezielle Maschinenbefehle der jeweiligen Prozessorfamilien veranlassen die CPU in den User- Kernel-Mode 
+		zu wechseln.
+	-> Eine Anwendung greift, wenn sie einen Systemaufruf macht, auf eine Funktion in der Systembibliothek zu, Dies
+		geschieht noch im User-Mode.
+		Dann senden bspw. Treiber oder der Kernel selbst Maschinenbefehle an die CPU oder GPU.
+		Die CPU sendet dann die Befehle an die jeweilige HW.
+- Interrupt
+	-> Ein Interrupt-Controller verarbeitet bpsw. eingehende Signale von Peripferiegeräten und kann Interrupt-Signale
+		über eine spezielle Steuerleitung an die CPU senden. Die CPU Unterbricht dann die aktuelle Ausführung und das
+		Betriebssystem übernimmt die Ausführung.
+	-> Sprünge
+		-> Der Programmzähler enthält immer die Adresse des Nächsten Befehls, sodass die Befehle nacheinander
+			abgearbeitet werden.
+		-> Bei einem Sprung wird der Inhalt des Programmzälers auf die Adresse des Sprungziels gesetzt.
+		-> Bei Ausnahmen oder Unterbrechungen passiert ähnliches wie bei einem Sprungbefehl.
+			-> Programmzähler wird, nach einem interrupt, mit einer Zieladresse aus dem
+				Prozesskontrollblock gefüllt, sodass ein Prozess wieder an der richtigen stelle seine Ausführung
+				fortsetzen kann.
+				Der unterschied zwischen einen einfachen Sprungbefehl ist, dass der alte Wert des 
+				Programmzähler zwischengespeichert wird (im Prozesskontrollblock), 
+				sodass die abarbeitung des Prozesses wieder 
+				an richtiger Stelle aufgenommen werden kann.
+			-> Bei solch einer Unterbrechung Schaltet der Prozessor automatisch in den Kernel-Mode, sodass
+				das Betriebssystem auch privilegierte Maschinenbefehle senden kann.
+	-> Ein Prozess kann gleichzeitig von mehreren Kernen abgearbeitet werden, wenn bei der Programmierung 
+		Threads benutzt wurden.
+- Der Wechsel zwischen verschiedenen Prozessen (auch kooperatives-Multitasking genannt)
+	-> Prozesse bestehen nicht nur aus Maschineninstruktionen, sondern auch aus Status wie
+		 bspw. der Stand des Programmzählers.
+		-> Betriebssystem verwaltet die Status in der Datenstruktur Prozesskontrollblock, die im RAM abgelegt ist.
+	-> Das Betriebssystem verwaltet die Prozesskontrollblöcke, wobei jeder Prozess einen Prozesskontrollblock besitzt.
+	-> Ist ein Prozess abgeschlossen erfolg ein Systemaufruf, durch den die Kontrolle der CPU an das 
+		Betriebssystem gegeben wird, das dann einen anderen Prozess die CPU zur verfügung stellt.
+	-> Prozesswechsel Beispiel:
+		Prozess sendet Leseaufforderung über Systemaufruf an das OS, OS setzt den Status des Prozesses
+		auf blokiert und entzieht ihm die CPU. OS leitet Leseanfrage and Festplattenkontroller weiter, der
+		selbstständig die Daten von der Festplatte ließt und zwischenspeichert (Buffer). Befinden sich alle
+		Daten im Buffer, sendet der Festplattenkontroller ein Interruptsignal, mit hilfe des Interrupt-Kontrollers,
+		an den Prozessor. Das OS erhält wieder Kontrolle über die CPU und stellt dem Prozess die Daten zur 
+- Prozesse und Threads
+		Verfügung und setzt seinen Status auf bereit. Irgendwann wird dem Prozess die CPU zur Verfügung gestellt und
+		zwar dann, wenn ein anderer Prozess ein Systemcall macht und der Prozess bspw. an der Reihe Ist.	
+		-> Durch Speicherung des Programmzählers, kann der Prozess an der richtigen stelle weiter 
+			verarbeitet werden.
+	-> Bei jedem Prozesswechsel speichert die CPU den Inhalt des Programmzählers, sodass das Betriebssystem
+		 den Inhalt in dem Prozesskontrollblock des Prozesses im RAM speichern kann.
+		 -> Die CPU trägt bei einem Wechsel den Wert (Adresse im RAM) in das Programmzählerregister ein, womit die CPU 
+		 	mit der Abarbeitung beginnt.
+	-> Problem: nur bei einem Systemaufruf wird dem Prozess die CPU entzogen. Dadurch können bspw. Endlosschleifen die CPU
+		blockieren.
+		->Präemptives Multitasking wird benötigt um dem entgegen zu wirken.
+	-> Multitasking: Mehrere Prozesse werden durch Prozesswechsel "gleichzeitig" ausgeführt.
+	-> Multiprozessing: Gleichzeitige ausführung von Befehlen eines Prozesses durch Threads.
+- Präemptives Multitasking
+	-> Vor der Übergabe der CPU an ein Prozess wird ein "HW-Wecker" aufgezogen. Bei ablauf des Weckers, löst der
+		Interrupt-Controller automatisch eine Unterbrechung aus und das Betriebssystem bekommt die Kontrolle
+		über die CPU.
+- Threads
+	-> Zwei Arten: User Level Thread und Kernel Level Thread.
+		-> User level Thread
+			-> Betriebssystem weiß nichts von den Threads.
+			-> Können immer nur auf einer CPU/Kern laufen.
+		-> Kernel Level Threads
+			-> Threads werden wie Prozesse vom Betriebssystem behandelt.
+			-> Können auch auf zwei oder mehreren Kernen zur Ausführung gebracht werden. 
+----- Speicherverwaltung -----
+	-> Programme können, durch Funktionen von Betriebssystemen, Speicher allokieren (Anfordern) und wieder frei geben.
+		Verwaltung welche Speicherbereiche frei sind findet im System statt.
+	-> OS verwaltet den Speicher durch Abstraktion.
+		-> Ein Prozess "glaubt", beim Präemptiven Multitasking, ihm gehöre alleine die CPU und ein Prozess "glaubt" 
+			ihm gehöre allein der Speicher.
+	-> Dynamische Speicherverwaltung
+		-> Prozess "weiß" erst zur Laufzeit, wie viel Speicher er benötigt, z. B. wird durch Userinteraktionen 
+			ein Objekt instanziiert, dieses Objekt befindet sich dann im Heap des Prozesses.
+				-> Bei jedem erzeugten Objekt wächst der Heap.
+	-> Durch ständiges Allokieren (Anfordern) von Speicherbereiche und wieder Freigeben, kann Speicher-Fragmentierung
+		entstehen. 
+		-> Zwischen den Allokierten Speicherbereichen sind kleine, freie Speicherbereiche vorhanden, 
+			können aber nicht genutzt werden, wenn größere Speicherbereiche benötigt werden.	
+	-> First Fit: Nächster passender Speicherbereich/Speicherblock wird gesucht.
+	-> Next Fit: Nachster passender Speicherblock wird gesucht aber von der Adresse des letzten
+		allokierten Speicherblockes.
+	-> Best Fit: Gesamter Adressraum wird durchsucht.
+	-> Worst Fit: Suche nach Speicherblock, der bei einer Zuteilung die größte Lücke hinterlässt.
+- Speicherschuntz und Multitasking
+	-> Schutz, damit Prozesse immer nur auf ihren eigenen Adressraum zugreifen können.
+	-> Schutz durch HW: Prozessor muss erkennen können, dass ein Prozess nicht Adressen verwendet die nicht in 
+		seinem Adressraum liegen.
+		-> Schutz durch Grenzregister in der CPU.
+- Logische und Physische Speicheradressen
+	-> CPU verarbeitet Prozesse mit logischen Adressen die, wenn Speicherzellen angesprochen werden, in physische
+		HW-Adresse umgerechnet werden müssen, also umrechnung bevor sie auf den Adressbus gelegt werden.
+	-> Die logische Adresse eines Prozesses beginnt immer bei NULL.
+		-> Umrechnung durch Memory Management Unit der CPU (MMU).
+			-> Größenregister: Länge des bewilligten Adressraums.
+				-> Ist der vom Prozess geforderte Adressraum größer als der Wert im Größenregister,
+					liegt eine Speicherschutzverletzung vor. Das OS bekommt dann die Kontrolle über die
+					CPU und muss die Ausnahme behandeln.
+			-> Verschieberegister: Startadresse, also NULL.
+				-> Umrechnung: Verschieberegister mit physikalischer Startadresse des Blocks addieren.
+		-> Nachteil: Keine dynamische Speicherverwaltung... virtuelle Speicherverwaltung wird dazu benötigt.
+			-> Befindet sich zwischen dem Prozess der Speicher allokieren will und dem nächsten Prozess nicht mehr
+				ausreichend Platz, kann der Prozess keinen weiteren Speicher allokieren.	
+- Virtuelle Speicherverwaltung
+	-> Dynamische Speicherverwaltung möglich.
+	-> realisierung durch Paging.
+		-> Hauptspeicher wird in Seiten (Pages) eingeteilt.
+			-> werden vom Betriebssystem, im zusammenspiel mit der MMU, in Form von Tabellen, verwaltet.
+		-> In der Tabelle Steht, welcher Speicherblock bzw. welche Seite, an welcher Stelle im Speicher liegt.
+		-> Jede Seite hat eine Adresse.
+	-> Blöcke: der Physische Hauptspeicher wird in Blöcke eingeteilt.
+		-> Blöcke nennt man Kacheln oder Seitenrahmen (Pageframe).
+			-> Auf jede Kachel kann genau eine Seite abgelegt werden (Sie haben beide die selbe größe).
+		-> Startadresse von Pageframes sind immer ein Vielfaches der Pageframes z. B. Startadresse von
+			pageframe 5 wäre, wenn jeder Pageframe 8 bit groß wäre, 5*8 also 40. 
+	-> Eine virtuelle Adresse besteht aus zwei teilen:
+		-> Seitennummer: Intex für den Eintrag in der Pagetable.
+			-> Seitennummer in der Pagetabelle verweißt auf Pageframe.
+		-> Offset: Gibt die Distanz von der Startadresse einer Seite zur entsprechenden Adresse
+			in der Seite bzw. Segment an. 
+			-> Beispiel: 0100|000101, der erste Teil ist die Seitennummer, der zweite der Offset.
+				0100 verweißt in der Seitentabelle bspw. auf die Adresse 0111 (die Adressen sind eigentlich
+				10 bit lang, die restlichen 6 bit kommen gleich noch hinzu). 
+				Die gewünschte Adresse in der Seite ist noch 000101 entfernt, also muss
+				der Offset einfach angehängt werden. 
+				Die Adresse lautet also: 0111|000101.
+	-> Demand Paging
+		-> Erst bei bedarf (demand) werden Seiten in den Hauptspeicher eingelesen. Bei zu vollem
+			Speicher können sie auch wieder auf die Festplatter ausgelagert werden.	
+	-> I-Node
+		-> I-Nodes sind Datenstrukturen.
+		-> Ein I-Node beschreibt eine Datei oder ein Ordner.
+		-> Enthält Metadaten über eine Datei oder Ordner.
+			-> z. B. Größe, Zugriffsrechte, Verweise auf Datenblöcke zu den Inhalten einer Datei.
+		-> Eindeutig über ID adressiert.
+		-> Sind in Datenblöcke gespeichert, genauso wie Dateien nur an anderer Stelle.
+		-> Verweise werden in einer Liste in der I-Node-Datenstruktur gespeichert.
+			Wenn die Datei so groß wird, dass die Liste nicht mehr ausreicht, verweisen die verweise 
+			auf Blöcke die ebenfalls Verweise haben.
+	-> Verzeichnisse
+		-> Ist eine Datei mit einer Tabelle von Dateinamen und I-Node-Adressen.
+			-> Dateinamen werden I-Node-Adressen zugeordnet, die die Einstiegspunke zu den Informationen der Dateien
+				liefern.

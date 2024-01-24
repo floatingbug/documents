@@ -1,0 +1,48 @@
+- Voraussetzung
+-> SSL/TLS-Zertifikate werden normalerweise für Domänennamen ausgestellt, da sie für den Benutzer leichter zu merken sind und eine höhere Sicherheit bieten, 
+	da der Domänenname im Zertifikat aufgeführt ist und somit die Identität des Servers bestätigt wird. 
+	Wenn also ein Zertifikat für eine IP-Adresse benötigt wird, muss normalerweise ein spezielles Zertifikat beantragt werden, das für die IP-Adresse ausgestellt ist.
+
+-> Erwerb des Zertifikates:
+	-> Entweder Zertifikat von einer Zertifizierungsstelle (Certificate Authority, CA) kaufen oder ein kostenloses Zertifikat von einer CA wie Let's Encrypt anfordern.
+	
+- Authentifizierung
+-> Vorbereitung:
+0. Das Zertifikat beinhaltet einen öffentlichen Schlüssel, der von einem erzeugten Schlüsselpaar stammt, das auf dem Webserver erstellt wurde und 
+	einen öffentlichen Schlüssel der von einem Schlüsselpaar stammt, das auf der CA erstellt wurde.
+1. Ein Webserver-Administrator beantragt ein Zertifikat bei einer Zertifizierungsstelle (CA).
+2. Der Administrator erstellt ein Schlüsselpaar (einen öffentlichen und einen privaten Schlüssel) auf dem Webserver und schickt den öffentlichen Schlüssel an die CA.
+	-> Erstellung des Schlüsselpaares mit: openssl genpkey -algorithm RSA -out private.key -aes256
+		-> openssl: Erstellung und Verwaltung von Zertifikaten und Schlüsseln.
+		-> Dieses Schlüsselpaar wird nur vür die verschlüsselte Kommunikation verwendet aber nicht zur Authentifizierung.
+3. Die CA erstellt ein Zertifikat mit dem öffentlichen Schlüssel des Webservers und den öffentlichen Schlüssel der CA und signiert das Zertifikat mit dem privaten Schlüssel der CA *1 (siehe unten).
+4. Die CA schickt das signierte Zertifikat an den Webserver-Administrator zurück.
+5. Der Webserver-Administrator installiert das Zertifikat auf dem Webserver.
+	-> Installation: Zertifikat in Schlüsselspeicher des Webservers importieren.
+	-> Konfiguration: nginx.conf
+
+- Ablauf des HTTPS Protokolls:
+1. Der Client (z. B. ein Webbrowser) sendet eine Anfrage an den Webserver (z. B. einen Webserver), um eine HTTPS-Verbindung herzustellen.
+2. Der Webserver sendet sein SSL/TLS-Zertifikat an den Client. Das Zertifikat enthält den öffentlichen Schlüssel des Webservers und ist von einer vertrauenswürdigen Zertifizierungsstelle (CA) signiert.
+3. Der Client überprüft das Zertifikat des Servers, um sicherzustellen, dass es von einer vertrauenswürdigen CA ausgestellt wurde und dass es nicht manipuliert wurde.
+	1. Der Client empfängt das Zertifikat des Webservers beim Verbindungsaufbau.
+	2. Der Client extrahiert den öffentlichen Schlüssel des Webservers aus dem Zertifikat.
+	3. Der Client überprüft, ob das Zertifikat von einer vertrauenswürdigen Zertifizierungsstelle (CA) ausgestellt wurde. Hierzu überprüft der Client, ob die CA im Zertifikatspeicher des Clients als vertrauenswürdig eingetragen ist.
+	4. Der Client überprüft, ob das Zertifikat noch gültig ist. Hierzu wird das Gültigkeitsdatum im Zertifikat mit der aktuellen Uhrzeit des Clients verglichen.
+	5. Der Client überprüft, ob das Zertifikat für den angeforderten Webserver ausgestellt wurde. Hierzu wird der in dem Zertifikat eingetragene Servername oder die IP-Adresse mit der angeforderten Serveradresse verglichen.
+	6. Der Client überprüft, ob das Zertifikat nicht manipuliert wurde, indem er die Signatur des Zertifikats mit dem öffentlichen Schlüssel der ausstellenden CA verifiziert *1 (siehe unten).
+4. Wenn das Zertifikat vertrauenswürdig ist, generiert der Client einen zufälligen Schlüssel (Session Key) und verschlüsselt ihn mit dem öffentlichen Schlüssel des Webservers aus dem Zertifikat.
+5. Der Webserver empfängt die verschlüsselte Nachricht und entschlüsselt sie mit seinem privaten Schlüssel, um den Session Key zu erhalten.
+6. Der Client und der Webserver verwenden den Session Key, um alle Daten, die während der HTTPS-Verbindung übertragen werden, zu verschlüsseln und zu entschlüsseln.
+7. Der Client und der Server können nun sicher und verschlüsselt miteinander kommunizieren.
+
+-> Dieser Prozess stellt sicher, dass der Server authentifiziert ist und dass die Daten während der Übertragung verschlüsselt und geschützt sind.
+
+*1 Allgemeiner Ablauf einer Authentifizierung durch einer Signatur:
+-> Digitale Unterschrift (Signatur).
+-> Die digitale Signatur besteht aus einem Hashwert, der durch eine bestimmte mathematische Funktion aus der Nachricht berechnet wird. 
+-> Der Hashwert wird anschließend mit dem privaten Schlüssel des Signierers verschlüsselt, was die digitale Signatur ergibt. Diese Signatur wird an 
+	die zu versendende Nachricht angehängt und kann von Empfängern mit dem öffentlichen Schlüssel des Signierers entschlüsselt und überprüft werden. 
+-> Diese Überprüfung beinhaltet in der Regel das Berechnen eines neuen Hashwerts aus der Nachricht und Vergleich mit dem entschlüsselten Hashwert aus der Signatur. 
+-> Wenn die beiden Hashwerte übereinstimmen, ist die Integrität der Nachricht und die Authentizität des Signierers bestätigt. In HTTPS wird dieser Prozess verwendet 
+    um sicherzustellen, dass ein Zertifikat tatsächlich von einer Zertifizierungsstelle (CA) stammt.

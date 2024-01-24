@@ -1,0 +1,24 @@
+--- Architektur ---
+--- Multi-Threaded Variante
+- Der Webserver erstellt bei jeder Anfrage einen eigenen Thread, um die Anfrage zu verarbeiten.
+    -> Dabei lädt der Webserver in diesen Thread eine Instanz des PHP-Interpreters und die PHP-Scripte
+        werden in diesem Thread ausgeführt.
+
+--- Multi-Process Variante
+- Für jede Anfrage erstellt der Webserver einen eigenen Prozess.
+    -> Wird auch als PHP-FPM (FastCGI-Process-Manager) bezeichnet.
+    -> Jeder Prozess hat eine eigene Instanz des PHP-Interpreter, der die entsprechenden
+        Scripte laden kann.
+    -> Der Webserver kann immer nur eine Antwort auf einmal von einem Prozess erhalten, wenn 
+        der Prozess die Anfrage fertig bearbeitet hat.
+        -> Dies liegt daran, dass der Server nur auf einem Thread ausgeführt wird.
+    -> Der Server kann auf mehreren Threads gleichzeitig ausgeführt werden, sodass jeder 
+        Thread eine Antwort von einem Prozess empfangen kann.
+        -> Der Server kann dann mehrere Antworten gleichzeigig an die Clients senden.
+        -> Jeder Thread muss auf einem Thread der CPU ausgeführt werden.
+        -> Jeder verbundene client erhält einen eigenen socket auf dem Webserver, 
+            sodass gleichzeitig Antworten von jedem Thread gegeben werden können.
+
+--- Bessere Variante
+- Multi-Process 
+    -> Also PHP-FPM.

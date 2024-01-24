@@ -1,0 +1,22 @@
+--Partitions-Tabellen--
+-> es gibt: MBR und GPT.
+
+--BIOS--
+-> auch legacy-boot
+-> BIOS sucht, auf den angeschlossenen Speichermendien, nach einem MBR.
+    -> Die Reihenfolge, auf welchen Speichermendien zuerst gesucht wird, kann im BIOS eingestellt werden.
+-> Der erste physische 512 Byte große Datensektor wird in den Arbeitsspeicher geladen
+    und der Bootloader, der sich am Anfang dieses Sektors befindet, übernimmt die Steuerung.
+-> nach dem Booten ist das BIOS inaktiv, nur noch das OS verwaltet.
+
+
+--UEFI--
+-> nutzt GPT.
+	-> steht für: GUID Partition Table.
+		-> GUID steht für: Global Unique IDentifier.
+		
+
+--Bootvorgang--
+-> BIOS sucht nach MBR, UEFI sucht nach GPT.
+-> bei mehreren installierten OS's startet ein Bootloader z.B. GRUB.
+

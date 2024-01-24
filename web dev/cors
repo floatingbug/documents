@@ -1,0 +1,15 @@
+- Cross-Origin-Request
+-> Client (Browser) wird von einem Script beauftragt, auf eine Ressource auf einem server zu zugreifen.
+    -> Das ausgelieferte Script stammt aber nicht von dem Server, auf dem die Ressource angefragt werden soll.
+    -> Der Client setzt den HTTP-Header origin: "url", in dem die Ursprungsadresse des Scripts steht.
+
+-> Der Server entscheidet, anhand der Adresse in origin: "url", ob der Client auf die Ressource zugreifen darf.
+    -> Wenn der Client auf die Ressource zugreifen darf, schickt der Server eine Antwort, mit dem
+        HTTP-Header Access-Controll-Allow-Origin: "url", an den Client zurück.
+        -> Wenn die url in Access-Controll-Allow-Origin mit der url in origin übereinstimmt,
+            erlaubt der Browser die Anfrage.
+    -> Erst jetzt wird die eig. HTTP-Anfrage an den Server gesendet.
+
+- Middleware cors
+-> Wenn ein Origin-Header beim Server eintrifft, erkennt das die Middleware cors.
+    -> cors managed dann jeden cors-request.

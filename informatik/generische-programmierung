@@ -1,0 +1,5 @@
+-> Kann ein code-Abschnitt mehrere Ereignisse abdeken und oder kann mit mehreren Datentypen umgehen, ist er generisch.
+    -> Desto Allgemeingültiger ein code-Abschnitt ist, desto generischer ist er.
+        -> Beispiel: Funktionen und Klassen werden möglichst Allgemeingültig (generisch) geschrieben, damit sie für
+            unterschiedliche Datentypen nutzbar sind.
+        -> Ein anderes Beispiel wäre eine if-else-Verzweigung die alle eventualitäten abdeckt.

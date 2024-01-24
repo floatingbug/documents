@@ -1,0 +1,30 @@
+-> Teilnehmer verbinden sich über das vpn-protocol mit einem loginserver.
+    -> Teilnehmer erhalten nach verbindungsaufbau eine private ip.
+-> Alle ip-pakete die gesendet werden, werden verschlüsselt und in ip-pakete gepakt
+    die nicht verschlüsselt sind.
+    -> Dadurch können die Pakete die router des vpn erreichen, da im öffentlichen ip-header (nicht verschlüsselt)
+        die ip des vpn-Netzes eingetragen ist.
+        ein router des vpn entschlüsseln das ip-paket indem die zieladresse (z.B. bs.to)
+        und die private ip des vpn-users eingetragen ist (die private ip wird benötigt, damit der jeweilige
+        vpn-router den vpn-user wieder erreichen kann).
+        -> Das entschlüsselte ip-paket wird dann an das Ziel gesendet.
+        -> Das Ziel antwortet an den vpn-router der das ip-paket verschlüsselt in das öffentliche
+            ip-paket verpakt und zum isp sendet.
+        -> der isp sendet das paket and den vpn-user der das private ip-paket entschlüsselt also:
+
+            isp_server -> user_router -> user_tcp/ip-stack -> user_socket ->
+            user_vpnTool(decode the ip-paket) -> user_tcp/ip-stack -> user_socket -> Browser
+
+    -> Das versenden von ip-paketen:
+
+            user_browser -> user_socket -> user_tcp/ip-stack -> user_vpnTool(encode the ip-package) ->
+            user_socket -> user_tcp/ip-stack -> user_router -> isp_server
+
+    -> Vereinfachte Darstellung:
+
+            Senden:
+
+                user_browser -> socket -> user_vpnTool(encode the ip-package) -> socket -> user-router
+
+    -> Das user_vpnTool ist wie eine virtuelle Netzwerkkarte, da sie wie eine physische Netzwerkkarte
+        mit dem tcp/ip-stack interagiert.

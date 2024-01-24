@@ -1,0 +1,9 @@
+- Veschlüsseln
+    -> mit einem key werden Daten verschlüsselt.
+
+- Signatur
+    -> Soll versichern, dass der Sender der Daten auch der ist, für den er sich ausgibt und die
+        Daten nicht manipuliert wurden (Integrität).
+        -> Sender verschlüsselt den fingerprint der Daten mit dem private-key.
+            -> Der Empfänger kann mit dem public-key überprüfen, ob die Signatur (Digitale Signatur)
+                auch die vom Sender ist.

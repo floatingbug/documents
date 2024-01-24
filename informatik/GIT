@@ -1,0 +1,131 @@
+﻿GIT
+
+Repository:
+→ beinhaltet Ordner, die Versionen eines Projektes repräsentieren, z.B. ist in einem Ordner (einer Version) noch eine zusätzliche Datei.
+
+Workspace:
+→ Repository ist Unterordner von Workspace.
+→ in Workspace kann eine Version (ein Ordner) geladen werden z.B:
+Die Version 3 wird geladen und wird mit einer neueren Version, z.B. Version 2.1 gemerged (fusionieren, verschmelzen), die Version 3.1 entsteht.
+
+Origin/Master:
+-> origin: Name für das Repository auf dem Server (der Name repräsentiert die URL des Repositories auf dem Server.
+-> master: master-branch. 
+
+commit:
+-> commit ist die speicherung des Workspaces in das Repository (.git) als neue version.
+
+locales repository mit remote repository verknüpfen:
+-> $ git remote add origin https://github.com/username/dein-repository.git
+
+
+Pointer/References:
+    -> Helfen git commits wieder zu finden.
+    -> Branch-Pointer 
+        -> Zeigen auf das letzte commit.
+        -> Der Branch-Pointer des Hauptbranches heißt meistens master. 
+            -> erstellt man einen anderen Zweig, erhält der Branch-Pointer dieses Zweigs den namen des Zweigs.   
+    -> HEAD-Pointer
+        -> Zeigt auf den commit, der aktuell in den Workspace geladen ist.
+            -> Eig. zeigt er auf den Branch-Pointer der wiederum auf den letzten commit zeigt.        
+        -> Kann auf einen Branch-Pointer oder commit zeigen. 
+    -> Der HEAD-Pointer zeigt im normalfall auf den Branch-Pointer.
+        -> [HEAD-Pointer]->[Branch-Pointer]->[der letzt commit]
+
+log:
+-> Zeigt alle commits an
+	-> $ git log
+-> Kurze Ausgabe
+    -> $ git log --oneline
+
+Versionen aus .git in den workspace laden:
+-> Der HEAD-Pointer zeigt immer auf den commit, der sich aktuell im workspace befindet.
+    -> Wird der HEAD-Pointer auf ein anderen commit bewegt, zeigt er nicht mehr auf den Branch-Pointer, sondern auf 
+        auf ein commit der automatisch in den workspace geladen wird.
+        -> $ git checkout "hash-wert des commits"
+    -> Es ist auch möglich, dass statt den Hash-Wert zu nutzen, Zahlen anzugeben z.B.:
+        HEAD~1 zeigt auf den zweiten commit und HEAD~2 zeigt auf den dritten commit.
+        -> $ git checkout HEAD~1
+    -> Man kann den HEAD-Pointer wieder auf den Branch-Pointer zeigen lassen
+        -> $ git checkout master
+            -> Dadurch befindet sich wieder der letzte gemachte commit im workspace.
+
+
+commits löschen:
+-> git reset --hard "hash-wert auf den der Branch-Pointer zeigen soll"
+    -> dadurch wandert der Branch-Pointer zu einen früheren commit, wodurch alle vorherigen commits abgehängt
+        und somit gelöscht werden.
+
+
+Zustände in denen sich Dateien befinden können:
+-> untracked (unversioniert)
+	-> Datei wird nicht von der Versionskontrolle berücksichtigt.
+		-> commit, add usw. haben keine auswirkung auf die Datei.
+-> modified (bearbeitet)
+	-> Datei im workspace wurde seit dem letzten commit geändert.
+-> unmodified (unbearbeitet)
+	-> Datei im workspace wurde nicht geändert.
+-> staged
+	-> Eine geänderte Datei ist für den nächsten commit vorgesehen.
+
+
+Anzeigen lassen, was sich in einer Datei geändert hat:
+$ git diff test.txt
+
+
+Anzeigen lassen, was sich im workspace geändert hat:
+$ git status
+
+
+Anzeigen lassen, auf welchem branch man sich befindet:
+$ git branch
+
+
+
+Branches:
+% git checkout -b „GUI“ ein neuer Zweig mit dem Namen GUI wird erstellt, auf dem sich genau EINE Versionen für ein bestimmtes Teilgebiet des Projektes befinden, z.B. GUI. Die branches können wieder zusammen gemerged werden.
+→ master ist der Haupt Entwicklungsstrang.
+→ neue Versionen werden nur auf den Zweig geschrieben, auf dem man sich befindet.
+$ git branch -d nameDesZweiges  löscht einen Zweig
+$ git checkout master  wechsel auf den master branche.
+$ git checkout GUI  wechsel auf den GUI branch.
+
+Datei löschen:
+$ git rm test.txt
+$ git commit -m „datei test.txt gelöscht“
+
+Konflikte:
+<<<<<<< Upstream, based on origin/master
+    	//Ich mag Sommer
+=======
+    	//Ich mag Frühling
+>>>>>>> c3d434b Ich habe was geändert!
+-> Alles oberhalb von ======= zeigt den Inhalt der Datei an, die sich im lokalen Repository befindet.
+-> ALles unterhalb von ======= zeigt den Inhalt der Datei an, die sich im entfernten Repository befindet.
+
+Konflikt durch unterschiedliche Commits:
+-> Normalerweise holt sich das lokale repository, bei einem pull, den neuesten commit aus dem remote repository und läd diesen dann in den Workspace.
+	-> Wenn aber im lokalen Repository ein Commit ist, der noch nicht auf dem remote ist und auf dem remote einer, der noch nicht auf dem lokalen ist, dann funktioniert 
+		pull nicht, denn dann würde der Commit aus dem remode in den lokalen repository und workspace geladen. Die Änderungen des zuvor gemachten Commits auf dem lokalen
+		repository wären dann hinter dem Commit des remotes.
+		-> Mit $ pull --rebase wird der remote Commit gedownloadet und die Änderungen im lokalen Commit werden in den remote Commit übernommen. 
+			Das lokale repository enthält dann den gleichen Commit wie auf dem remote zusätzlich die lokalen änderungen des lokalen Commits.
+			Der alte Commit auf dem lokalen repository wird gelösch. 
+
+
+Mergen:
+$ git merge nameDesZweiges
+
+Ein lokalen (LAN) repository erstellen:
+-> Der lokale repository beinhaltet kein workspace (in ihm wird nicht gearbeitet)
+$ git init --bare
+
+-> Rechner im lan auf das Repository in anderem Rechner zugreifen:
+$ git init
+$ git remote add origin user@ip:/adresseZumRepository
+    -> Alternative: $ git clone user@ip:/adresseZumRepository
+
+-> Rechner auf dem sich das repo befindet
+$ git init 
+$ git remote add origin file:///home/user/ordnerMitRepo .
+    -> Alternative: git clone file:///home/user/ordnerMitRepo .

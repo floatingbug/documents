@@ -1,0 +1,13 @@
+<Button>:
+    #set size relative to parent widget (FloatLayout).
+    size_hint: 0.3, 0.2
+
+<FloatLayout>:
+    Button:
+        text: "button1"
+        pos_hint: {'x': 0.2, 'top': 1}
+
+    Button:
+        text: "button2"
+        #set position relativ to paren widget
+        pos_hint: {'x': 0.5, 'top': 1}

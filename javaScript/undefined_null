@@ -1,0 +1,39 @@
+- undefined
+    -> Wurde einer Variable noch kein Wert zugewießen (nicht initialisiert), 
+        ist der Wert der Variable undefined.
+        -> Die Variable existiert also, ihr wurde aber noch kein Wert zugewießen.
+    -> Der Wert undefined ist nicht dafür gedacht, ihn einer variable zu zuordnen.
+        -> Er wird automatisch bei einer nicht initialisierung einer Variable zugeordnet.
+    -> Es ist ein Datentyp daher wird beim Vergleich kein String angegeben.
+        -> Beispiel:
+            if(var1 === undefined)
+        -> typeof gibt aber den Typ als String zurück.
+            -> if(typeof var1 === "undefined")
+    -> undefined === false
+        -> Beispiel:
+            if(undefined){
+                console.log("wird niemals angezeigt");
+            }
+
+
+- null
+    -> Um auszudrücken, dass eine Objektvariable auf kein Objekt zeigt, 
+        wird in anderen Programmiersprachen der Objektvariable null zugewießen.
+    -> In JavaScript wird einer Variable explizit der Wert null zugewießen,
+        um auszudrücken, dass diese keinen Wert enthält.
+    -> Es ist ein Datentyp daher wird beim Vergleich kein String angegeben.
+        -> Beispiel:
+            if(var1 === null)
+        -> typeof gibt aber den Typ als String zurück.
+            -> if(typeof var1 === "undefined")
+    -> null === false
+        -> Beispiel:
+            if(null){
+                console.log("wird niemals angezeigt");
+            }
+
+- Prüfen ob eine Variable überhaup existiert
+-> Beispiel:
+    if(typeof blub === 'undefined'){
+        console.log("Variable blub existiert nicht");    
+    }
