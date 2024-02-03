@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e5816805ee143584",
+        "id": "382688b30299f509",
         "type": "tabs",
         "children": [
           {
-            "id": "d3f578c2076fc3ea",
+            "id": "d7d4d33f68062bdb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Mongodb/MongoDB Driver für Node.js.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mongodb/MongoDB Driver für Node.js.md",
+                "file": "CRUD.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +98,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mongodb/MongoDB Driver für Node.js.md",
+                "file": "CRUD.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +121,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mongodb/MongoDB Driver für Node.js.md"
+                "file": "CRUD.md"
               }
             }
           }
@@ -146,9 +142,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d3f578c2076fc3ea",
+  "active": "bfe6e56df8f84720",
   "lastOpenFiles": [
     "Mongodb/index.md",
+    "CRUD.md",
     "Mongodb/MongoDB Driver für Node.js.md",
     "Mongodb",
     "create a link.md",

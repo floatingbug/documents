@@ -17,8 +17,14 @@
 
 # V8 (JavaScript Engine)
 ### Call Stack
-Beinhaltet alle Funktionen und Variablen die aktuell ausgefürht werden.
-Befindet sich eine Funktion in Ausführung und ruft eine andere Funktion auf, dann befinden sich beide Funktionen im Call Stack bis die Ausführung beendet ist.
+**Zuständig für Temporäre Speicherung von:** Funktionsaufrufen, Methoden und Variablen.
+Beinhaltet alle Funktionen und Variablen die aktuell Ausgeführt werden werden.
+**LIFO-Prinzip:** Ruft Funktion a die Funktion b auf, wird erst Funktion b vom Stack entfernt, dann erst Funktion a.
+
+### Heap
+Speichert Objekte auf die vom Stack aus zugegriffen werden kann.
+Der Speicher vergrößert sich, wenn Objekte hinzugefügt werden und verkleiner sich, wenn sie wieder entfernt werden.
+Dieser Bereich des Speichers ist für die Verwaltung von dynamisch zugewiesenen Daten wie Objekten und Arrays zuständig.
 
 ---
 
@@ -32,7 +38,7 @@ Wenn Die Event Loop ausgeführt wird, überprüft sie bspw. ob in der Callback-Q
 Für Ereignisse können Callback-Functions Registriert werden, bspw. socket.on("data", callback).
 Diese Ereignisse werde in der Event-Queue gespeichert.
 Die Event Loop entnimmt diese Ereignisse und ruft die für die Ereignisse registrierten Callback-Functions auf.
-Ereignisse können vom Betriebssystem an Node.js gesendet werden, bspw. "data" wenn Daten in einem Socket vorhanden sind. 
+Ereignisse können vom Betriebssystem an Node.js gesendet werden, bspw. "data" wenn Daten in einem Socket vorhanden sind. Wenn das Betriebssystem das "data" Ereignis an Node sendet, wird es in der Event-Queue gespeichert.
 Ereignisse können auch in der V8 Engine ausgelöst werden, wenn bspw. eine Node-API-Funktion aufgerufen werden soll, sorgt der Aufruf von fs.readFile() (im Call Stack von V8) dafür, dass ein Ereignis in die Event-Queue gespeichert wird. wird dieses Ereignis dann von der Event Loop behandelt, wird readFile in einem Worker Thread ausgeführt.
 ### Node-API-Funktionen
 Node-API-Funktionen sind mit C oder C++ geschrieben und verwenden die Libuv Bibliothek um auf Bitriebssystem-APIs zuzugreifen um bspw. Dateioperationen durchzuführen.
@@ -42,7 +48,7 @@ Node-API-Funktionen sind mit C oder C++ geschrieben und verwenden die Libuv Bibl
 
 # Code Execution
 Wird im Call Stack setTimeout aufgerufen, wird diese Funktion nicht im Call Stack ausgefürht, denn setTimeout gehört nicht zu JavaScript, setTimeout gehört zu Node und wird durch die Node API aufgerufen. Die Event Loop fügt setTimeout in die Event-Queue. Ist setTimeout als Nächstes an der Reihe, wird setTimeout von der Event Loop zur Ausführung gebracht, wobei die Ausführung dann nicht auf dem Call Stack von V8 ausgefürht wird, sondern von einem [[Worker Thread]].
-der st die Ausführung von setTimeout beendet, wird die Callback-Funktion von setTimeout durch die Event Loop in die Callback-Queue gebracht. Ist der Call-Stack Frei, wird die Callback-Funktion durch e Event Loop auf den Call-Stack gebracht und ausgefürht.
+Ist die Ausführung von setTimeout beendet, wird die Callback-Funktion von setTimeout durch die Event Loop in die Callback-Queue gebracht. Ist der Call-Stack Frei, wird die Callback-Funktion durch die Event Loop auf den Call-Stack gebracht und ausgefürht.
 
 Ist der Call Stack und die Event Queue leer, wird Node beendet.
 Damit Node nicht beendet wird, darf die Event Queue nicht leer sein. Beispielsweise wird die Event Queue niemals leer sein, wenn ein HTTP-Server gestartet wurde.
@@ -55,7 +61,7 @@ Dadurch das jede Datei mit JavaScript code innerhalb einer umgebenen Funktion st
 
 ### 5 Schritte die die require Funktion macht, wenn eine Datei geladen wird
 ##### Erster Schritt:
-Lokalisieren des Datei im Dateisystem des Betriebssystems.
+Lokalisieren der Datei im Dateisystem des Betriebssystems.
 
 ##### Zweiter Schritt:
 Der Inhalt der Datei wird in den Arbeitsspeicher geladen.
@@ -64,7 +70,7 @@ Der Inhalt der Datei wird in den Arbeitsspeicher geladen.
 Der Inhalt der Datei wird von der umgebenden Funktion eingeschlossen.
 
 ##### Vierter Schritt:
-Der Inhalt der Datei wird von V8 evaluiert.
+Der Inhalt der Datei wird von V8 evaluiert. Alle Funktionen und Variablen sind dann dort verfügbar, in der die Datei mit require importiert wurde.
 
 ##### Fünfter Schritt:
 Der evaluierte Inhalt wird cached.
