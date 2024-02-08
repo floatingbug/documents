@@ -22,7 +22,7 @@ curl Optionen... URL
 	- die Daten werden in den Payload geschrieben.
 	- für urlencoding muss --data-urlencoding angegeben werden.
 ```shell
-curl -X post -d {json-data} URL
+curl -X post -d "{'json-data'}" URL
 ```
 
 ##### JSON Daten Senden

@@ -67,7 +67,7 @@ function emitEvent(){
 # Slots
 #### Bestehen aus:
 
-- **Slot Content:** Inhalt den das Elternkomponente zur Verfügung stellt.
+- **Slot Content:** Inhalt den die Elternkomponente zur Verfügung stellt.
 	- Inhalt steht in der Kindkomponente: 
 	```vue 
 	<Kindkomponente>
@@ -77,7 +77,7 @@ function emitEvent(){
 	 ```
 
 - **Slot Outlet:** Zeigt an, wo der Inahlt der Elternkomponente gerendert werden soll.
-	- Dies geshiet mit dem slot-tag
+	- Dies geschiet mit dem slot-tag
  ```vue
 <template>
 	<button>
@@ -138,7 +138,7 @@ Dazu muss das Attribut name des slot-tag verwendet werden:
 ```
 
 ### Scoped Slots
-Wenn im slot-tag Attribute erstellt werden, kann die Elternkomponente auf diese zugreifen:
+Wenn in der Kindkomponente Attribute erstellt werden, kann die Elternkomponente auf diese zugreifen:
 ```vue
 //Kindkomponente
 <template>
