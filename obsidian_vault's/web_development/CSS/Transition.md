@@ -81,15 +81,16 @@ Elemente haben bspw. folgende Zustände: Normalzustand, Hover-Zustand, Acriv-Zus
 **Kurzschreibweise für alle transition Eigenschaften.**
 
 **Syntax der transition Eigenschaft (ohne Anführungszeichen):**
-transition: "duration" "delay (optional)" "timing (optional)" "Element", "nächster Übergang ist durch ein Komma getrennt"
+transition: "Property" "duration" "timing (optional)" "delay (optional)", "nächster Übergang ist durch ein Komma getrennt"
 
 **Beispiel:** Erst in 100ms beginnt der Übergang.
 ```css
 .box {
-	transition: 500ms 100ms ease-in transform
+	transition: transform 500ms ease-in 100ms
 }
 
 .box:hover {
 	transform: rotate(30deg);
 }
 ```
+

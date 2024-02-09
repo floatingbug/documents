@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "6860942dc9521814",
+        "id": "563aeaf7bc6cc8e6",
         "type": "tabs",
         "children": [
           {
-            "id": "223061e77185205c",
+            "id": "0c05f08e8dd04e07",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSS/Pseudo Elements.md",
+                "file": "CSS/Animation.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSS/Pseudo Elements.md",
+                "file": "CSS/Animation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSS/Pseudo Elements.md",
+                "file": "CSS/Animation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSS/Pseudo Elements.md"
+                "file": "CSS/Animation.md"
               }
             }
           }
@@ -146,12 +146,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "223061e77185205c",
+  "active": "0c05f08e8dd04e07",
   "lastOpenFiles": [
     "CSS/content.md",
-    "CSS/Pseudo Elements.md",
     "CSS/index css.md",
+    "CSS/Pseudo Elements.md",
+    "CSS/Scroll-Timeline.md",
+    "CSS/Transform.md",
     "CSS/Transition.md",
+    "CSS/Animation.md",
     "CSS",
     "Curl.md",
     "DNS.md",
@@ -174,7 +177,6 @@
     "Vue.js/index Vue.js.md",
     "Node.js/Untitled",
     "Node.js",
-    "Vue.js/Direktiven (directives).md",
     "Authorization and Authentication",
     "Authorization and Authentication/images/Bildschirmfoto vom 2023-10-30 09-12-19.png",
     "Vue.js",
