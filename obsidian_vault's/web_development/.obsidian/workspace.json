@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSS/Animation.md",
+                "file": "Webdesign/Color.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSS/Animation.md",
+                "file": "Webdesign/Color.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSS/Animation.md",
+                "file": "Webdesign/Color.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSS/Animation.md"
+                "file": "Webdesign/Color.md"
               }
             }
           }
@@ -148,13 +148,15 @@
   },
   "active": "0c05f08e8dd04e07",
   "lastOpenFiles": [
+    "CSS/Animation.md",
+    "Webdesign/Color.md",
+    "Webdesign",
     "CSS/content.md",
     "CSS/index css.md",
     "CSS/Pseudo Elements.md",
     "CSS/Scroll-Timeline.md",
     "CSS/Transform.md",
     "CSS/Transition.md",
-    "CSS/Animation.md",
     "CSS",
     "Curl.md",
     "DNS.md",
@@ -174,7 +176,6 @@
     "Node.js/Worker Thread.md",
     "Node.js/Ereignis \"data\".md",
     "Node.js/arguments.md",
-    "Vue.js/index Vue.js.md",
     "Node.js/Untitled",
     "Node.js",
     "Authorization and Authentication",
