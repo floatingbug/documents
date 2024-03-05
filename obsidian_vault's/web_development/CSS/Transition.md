@@ -1,6 +1,6 @@
 ### Was sind Transitions (Übergänge)
 **Um Übergänge von einem Zustand in den Nächsten zu definieren.**
-Elemente haben bspw. folgende Zustände: Normalzustand, Hover-Zustand, Acriv-Zustand usw.
+Elemente haben bspw. folgende Zustände: Normalzustand, Hover-Zustand, Aktiv-Zustand usw.
 
 ---
 

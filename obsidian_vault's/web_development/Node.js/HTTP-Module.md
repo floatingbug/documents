@@ -21,14 +21,10 @@ server.on('request', (request, response) => {
 });
 ```
 
-1. Wenn eine Anfrage an ein Socket gesendet wurde, sendet das Betriebssystem das "data" Event an Node. 
-2. Das "data" Event wird von der Event-Loop in die Event-Queue gespeichert.
-3. Ist das "data" Event an der Reihe, wird die für dieses Event registrierte Callbal-Function in die Callback-Queue gespeichert.
-4. Ist die Callback-Function an der Reihe, wird sie in den Call-Stack gespeichert in der die Funktion dann aus dem Socket ließst.
-5. Die Callback-Function wird von dem web-server-object aufgerufen, daher kann das web-server-object feststellen, wenn es sich bei den Daten um eine HTTP-Anfrage handelt.
-6. Handelt es sich um eine HTTP-Anfrage, Emitiert das web-server-object das "request" Event.
-7. Ist das "request" Event in der Event-Queue als nächstes an der Reihe, wird eine Instanz der für das "request" Event registrierten Callback-Function erstellt und in die Callback-Queue gespeichert.
-8. Ist die Callback-Function in der Callback-Queue an der Reihe und ist der Call-Stack leer, wird sie in dem Call-Stack ausgeführt.
+1. Wenn eine Anfrage an ein Socket gesendet wurde, wird das "data" Event vom Betriebssystem direkt in die Event-Queue des Node-Prozess gespeichert. Das Event enthält die Daten aus dem Socket und den Dateidescriptor.
+3. Ist das "data" Event an der Reihe, speichert die Event-Loop die für dieses Event registrierte Callbal-Function in die Callback-Queue ( die Callback-Function vom Net-Module (socket.on("data", cb)) ). Der Callback-Function wird das Event data als Argument übergeben.
+4. In der Callback-Function wird geprüft, ob es sich um eine HTTP-Anfrage handelt. Wenn dem so ist, wird das request Event emitiert, das die HTTP-Anfrage enthält. Zuvor wird die HTTP-Anfrage als Objekte (request und response) geparst und in dem request Event gespeichert.
+5. Die Callback-Function vom http-module (server.on("request", cb)) wird aufgerufen, und dieser das request-event übergeben.
 ##### Verarbeitung der HTTP-Anfrage
 Das "request"-Ereignis wird ausgelöst, wenn das Webserver-Object die vollständige HTTP-Anfrage durch das Net-Modul erfangen hat. Das Websocket-Object überprüft die Daten auf HTTP-Anfragezeichen und handhabt den Aufbau und das Parsen von HTTP-Anfragen (es erstellt also die Objekte req und res mit Hilfe der HTTP-Anfrage).
 #### Für jede Anfrage eine Instanz des Request Handler

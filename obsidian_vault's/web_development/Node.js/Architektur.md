@@ -18,7 +18,7 @@
 # V8 (JavaScript Engine)
 ### Call Stack
 **Zuständig für Temporäre Speicherung von:** Funktionsaufrufen, Methoden und Variablen.
-Beinhaltet alle Funktionen und Variablen die aktuell Ausgeführt werden werden.
+Beinhaltet alle Funktionen und Variablen die aktuell Ausgeführt werden.
 **LIFO-Prinzip:** Ruft Funktion a die Funktion b auf, wird erst Funktion b vom Stack entfernt, dann erst Funktion a.
 
 ### Heap

@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Webdesign/Color.md",
+                "file": "CSS/Pseudo Elements.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a364352e4de2a9cf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Node.js/HTTP-Module.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Webdesign/Color.md",
+                "file": "Node.js/HTTP-Module.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Webdesign/Color.md",
+                "file": "Node.js/HTTP-Module.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Webdesign/Color.md"
+                "file": "Node.js/HTTP-Module.md"
               }
             }
           }
@@ -146,17 +159,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0c05f08e8dd04e07",
+  "active": "a364352e4de2a9cf",
   "lastOpenFiles": [
+    "Node.js/Ereignis \"data\".md",
+    "Node.js/arguments.md",
+    "Node.js/Architektur.md",
+    "Node.js/Index Node.js.md",
+    "JS/Intersection Observer.md",
+    "assets/swagger.png",
+    "assets/openapi.png",
+    "CSS/Scroll-Timeline.md",
+    "CSS/index css.md",
+    "CSS/content.md",
     "CSS/Animation.md",
+    "API Dokumentation.md",
+    "assets/Bildschirmfoto vom 2024-02-29 14-38-34.png",
+    "assets",
+    "CSS/Pseudo Elements.md",
+    "CSS/Transition.md",
+    "CSS/Transform.md",
+    "Vue.js/Components.md",
+    "JS",
     "Webdesign/Color.md",
     "Webdesign",
-    "CSS/content.md",
-    "CSS/index css.md",
-    "CSS/Pseudo Elements.md",
-    "CSS/Scroll-Timeline.md",
-    "CSS/Transform.md",
-    "CSS/Transition.md",
     "CSS",
     "Curl.md",
     "DNS.md",
@@ -168,14 +193,7 @@
     "Authorization and Authentication/API-Token (Schlüssel).md",
     "Vue.js.md",
     "test.md",
-    "Vue.js/Components.md",
-    "Node.js/Architektur.md",
-    "Node.js/Index Node.js.md",
     "Node.js/EventEmitter.md",
-    "Node.js/HTTP-Module.md",
-    "Node.js/Worker Thread.md",
-    "Node.js/Ereignis \"data\".md",
-    "Node.js/arguments.md",
     "Node.js/Untitled",
     "Node.js",
     "Authorization and Authentication",

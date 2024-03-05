@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pixi.js.md",
+                "file": "Architektur.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pixi.js.md",
+                "file": "Architektur.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pixi.js.md",
+                "file": "Architektur.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pixi.js.md"
+                "file": "Architektur.md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "f3a980291ac4dcfb",
   "lastOpenFiles": [
-    "Index.md",
     "pixi.js.md",
+    "Index.md",
     "Architektur.md",
     "Beispiel 1.md",
     "Begriffe.md",

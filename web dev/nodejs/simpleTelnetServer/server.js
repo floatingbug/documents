@@ -23,4 +23,4 @@ let server = net.createServer(function(socket){
 
 server.listen(8000);
 
-console.log("server running on pot: 8000");
+console.log("server running on port: 8000");
