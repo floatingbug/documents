@@ -66,4 +66,14 @@ Außerdem hat FindCursor zwei Methoden, mit denen über die Ergebnisse iteriert 
 		```javascript 
 		const docs = await cursor.toArray() 
 		```
-	
+
+---
+
+# Delete
+
+## Ein Dokument aus einer Collection entfernen
+
+```javascript
+const result = collection.deleteOne(query)
+```
+

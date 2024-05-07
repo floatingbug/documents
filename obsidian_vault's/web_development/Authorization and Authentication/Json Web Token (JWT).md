@@ -1,11 +1,11 @@
 # Anwendung
 - Authorization (nicht Authentication).
-- Token wird benutzt, um sicherzustellen, dass der bereits eingeloggte Benutzer der den Request sendet auch berechtigt ist den Request zu tätigen, also das der Request auf dem Server ausgeführt wird.
+- Token wird benutzt, um sicherzustellen, dass der bereits eingeloggte Benutzer der den Request sendet, auch berechtigt ist den Request zu tätigen, also das der Request auf dem Server ausgeführt wird.
 
 # Vergleich JWT und Sessions
 ### Authorization ohne JWT
 - Der Server verwendet Sessions in denen die Benutzerdaten gespeichert werden, bspw. express-session.
-	- Bei jedem Request sendet der Benutzer die Session-Id mit der die Session des Benutzers auf dem Server Identifiziert wird in der die Benutzerdaten vorhanden sind.
+	- Bei jedem Request sendet der Benutzer die Session-Id, mit der die Session des Benutzers auf dem Server Identifiziert wird in der die Benutzerdaten vorhanden sind.
 
 ### Authorization mit JWT
 - Wie bei Sessions muss sich der Benutzer mit seinem Password anmelden. Der Server erstellt bei der Anmeldung keine Session sondern erstellt ein Token den er mit seinem geheimen Schlüssel signiert.
@@ -32,6 +32,13 @@
 - Der Client sendet bei jeder Anfrage den Token.
 - Der Server signiert den vom Client gesendeten Token erneut.
 	- Header + Body + Secret Key (nur auf Server vorhanden) = Signatur.
-	- Stimmt diese Signatur mit der vom Client gesendeten Token überein (Header, Body, Signatur), wurde die Nachricht nicht manipuliert.
+	- Stimmt diese Signatur mit der vom Client gesendeten  Signatur überein, wurde die Nachricht nicht manipuliert.
+		- Verfügt aber der Client über den Secret Key, kann der Client eine gültige Signatur erzeugen.
+
+# HTTP
+Der Token wird meist im HTTP-Header Authentication gesendet 
+also: Authentication: Bearer "Tokenstring".
+Vor dem Token steht, welches Authentifizierungsschema angewendet wird. Beim JWT handelt es sich um einen Bearer Token (Zugriffstoken) der verwendet wird, um auf dem Server auf geschützte Ressourcen zuzugreifen.
+Es wird "Bearer" genannt, da der Client es einfach "mit sich trägt" (englisch: "to bear"), um seine Identität zu authentifizieren.
 
 # Beispiel mit node.js
