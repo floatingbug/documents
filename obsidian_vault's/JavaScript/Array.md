@@ -28,10 +28,9 @@ zahlen.forEach(function(zahl, index, array){
 
 # Elemente finden
 ### arrayName.find
-- Wie bei forEach wird einer Funktion nacheinander jedes Element übergebe.
+Wie bei forEach wird einer Funktion nacheinander jedes Element übergebe.
 in der Funktion wird dann überprüft, ob es sich um das gesuchte Element handelt.
-Handelt es sich um das gesuchte Element, wird dieses zurückgegeben, wird das 
-Element nicht gefunden, wird undefined zurückgegeben.
+Handelt es sich um das gesuchte Element, wird dieses zurückgegeben und die Funktion find wird verlassen, wird das Element nicht gefunden, wird undefined zurückgegeben.
 ```JavaScript
 const zahl = zahlen.find(zahl => zahl == 1);
 ```
@@ -50,4 +49,40 @@ const map1 = array1.map((x) => x * 2);
 
 console.log(map1);
 // Ausgabe: Array [2, 8, 18, 32]
+```
+
+---
+
+# Array Filtern
+
+**Mit array.filter() wird jedes Element im neuen Array gespeichert, wenn das Kriterium in der Callback Funktion erfüllt ist.**
+
+```JavaScript
+const array1 = [1, 4, 9, 16];
+
+const newArray = array1.filter(n => {
+	if(n === 9){
+		return n
+	}
+})
+
+//Ausgabe: Array [9]
+console.log(newArray);
+```
+
+---
+
+# Elemente eines Arrays überprüfen
+
+Mit array.every wird überprüft, ob alle Elemente von einem bestimmten type sind.
+Gibt die übergebene Funktion (die Funktion die every übergeben wird) bei enem element false zurück, gibt die Funktion every ebenfalls false zurück und wird beendet.
+gibt die an every übergebene Funktion für alle Elemente true zurück, gibt every am Ende ebenfalls true zurück.
+
+```JavaScript
+const array1 = [1, 4, 9, 16];
+
+const isTypeNumber = array1.every(n => typeof n === "string");
+
+console.log(isTypeNumber);
+// Ausgabe: true
 ```

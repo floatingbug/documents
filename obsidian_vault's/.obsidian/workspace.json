@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databases/Mongodb/CRUD.md",
+                "file": "web_development/nginx.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Mongodb/CRUD.md",
+                "file": "web_development/nginx.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Mongodb/CRUD.md",
+                "file": "web_development/nginx.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Mongodb/CRUD.md"
+                "file": "web_development/nginx.md"
               }
             }
           }
@@ -148,13 +148,36 @@
   },
   "active": "646344c6108d703d",
   "lastOpenFiles": [
-    "Databases/Mongodb/Replica Set und Cluser.md",
-    "Databases/Mongodb/Transaktionen.md",
-    "Databases/Mongodb/Aggregation.md",
-    "Databases/Mongodb/CRUD.md",
+    "Linux/Systeminformationen.md",
+    "web_development/nginx.md",
+    "web_development/pm2.md",
+    "web_development/reCaptcher.md",
+    "web_development/CORS.md",
     "web_development/Curl.md",
-    "web_development/Authorization and Authentication/Json Web Token (JWT).md",
-    "web_development/Authorization and Authentication/API-Token (Schlüssel).md",
-    "web_development/Authorization and Authentication/index Authorization and Authentication.md"
+    "Informatik/Netzwerk/Grundlagen.md",
+    "Programmiersprachen/c/POSIX.md",
+    "JavaScript/Array.md",
+    "Programmiersprachen/c/errno.md",
+    "Programmiersprachen/c",
+    "Programmiersprachen",
+    "Informatik/Docker/index Docker.md",
+    "Informatik/Netzwerk",
+    "Informatik/Docker/Image (Dateisystem).md",
+    "Informatik/Docker/Funktionsweise.md",
+    "web_development/JS/Intersection Observer.md",
+    "Informatik/Docker",
+    "flex-box.md",
+    "web_development/CSS/index css.md",
+    "Databases/Mongodb/CRUD.md",
+    "Linux/Shell/Shell Kommandos.md",
+    "web_development/Vue.js/Components.md",
+    "Databases/Mongodb/Replica Set und Cluser.md",
+    "Linux/Shell/Shell Skripting.md",
+    "Databases/Mongodb/index.md",
+    "Databases/Mongodb/Transaktionen.md",
+    "Databases/Mongodb/MongoDB Driver für Node.js.md",
+    "Databases/Mongodb/Aggregation.md",
+    "web_development/SSL (Secure Socket Layer).md",
+    "Linux/Shell/Pasted image 20231219134355.png"
   ]
 }

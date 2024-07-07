@@ -81,6 +81,9 @@
         -> Erhält jedes Item: flex: 1; sind alle Items gleich groß.
         -> 1 ist eine verhältnisangabe.
             -> Wird einem Item: flex: 2; zugewießsen, ist dieses doppelt so groß als die anderen.
+        -> flex: 1; ist eine Kurzschreibweise für: flex-grow: 1; flex-shrink: 1; und flex-basis: 0%;
+	-> flex: 0 0 100%; setzt flex-grow und flex-shrink auf 0. Da die basis auf 100% gesetzt ist, nimmt das 
+		Element immer 100% der größe des Elternelements ein.
 
     -> flex-grow: 0;
         -> Items dürfen nicht größer werden.

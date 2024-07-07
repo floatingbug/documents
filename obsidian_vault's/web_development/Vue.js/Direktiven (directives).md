@@ -10,7 +10,7 @@ input {ref} from "vue";
 const userName = ref("Gandalf");
 </ script>
 
-//userName wird dirch Gandalf ersetzt.
+//userName wird durch Gandalf ersetzt.
 //ändert sich die Variable userName, erhält der Wert der Eigenschaft (name) des //DOM-Elements (input) den Wert der Variable im JavaScript-Code (das DOM-Element //reagiert auf die Änderung der Daten im JavaScript-Code).
 <template>
 	<input v-bind:name="userName" />

@@ -17,7 +17,7 @@ Insgesammt können so viele Anfragen parallel beantwortet werden, wie es Prozess
 #### Ablauf einer HTTP-Anfrage
 1. Aufbau der TCP-Verbindung bspw. durch den Server-Socket mit dem Port 80.
 	2. Ein neuer Socket mit den Portnummern und IP-Adressen von Server und Client werden für die Verbindung erstellt.
-2. HTTP-Request wird an den neu erstellten Socket gesendet.
+2. HTTP-Request wird an den neu erstellten Socket gesendet und gelangt von diesem in den nginx worker-process.
 3. Nginx führt den Server-Block aus, indem der Port und der HTTP-Header Host mit dem im Server-Block stehenden Port und Host übereinstimmt.
 
 ---
@@ -64,3 +64,76 @@ server {
 }
 ```
 
+---
+
+# Eine Homepage über nginx hosten
+
+Standardmäßig werden Webinhalte unter `/var/www/` abgelegt. Dort wir ein neues Verzeichnis für die Homepage erstellen. In dem neu erstellten Verzeichnis wird dann die Homepage abgelegt (index.html, style.css usw.).
+
+### NGINX Konfiguration
+
+NGINX verwendet Dateien im Verzeichnis `/etc/nginx/sites-available/` für die Konfiguration der Websites. Diese Dateien werden normalerweise nach `/etc/nginx/sites-enabled/` verlinkt, um sie zu aktivieren.
+
+#### Erstellen der Konfigurationsdatei
+
+Eine neue Konfigurationsdatei wird in `/etc/nginx/sites-available/` erstellt, bspw. `/etc/nginx/sites-available/homepageName`
+
+```nginx
+server {
+    listen 80;
+    server_name mywebsite.com www.mywebsite.com;
+
+    root /var/www/mywebsite;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        internal;
+    }
+}
+```
+- **`listen 80;`**: Der Server hört auf Port 80 (HTTP).
+- **`server_name mywebsite.com www.mywebsite.com;`**: Gibt den Domainnamen an. Ersetze `mywebsite.com` durch deine Domain.
+- **`root /var/www/mywebsite;`**: Der Pfad zu deinen Website-Dateien.
+- **`index index.html;`**: Die Indexdatei.
+
+#### Aktivieren der Konfiguration
+
+Einen symbolischen Link in `/etc/nginx/sites-enabled/` erstellen:
+
+```shell
+sudo ln -s /etc/nginx/sites-available/mywebsite /etc/nginx/sites-enabled/
+```
+
+#### NGINX neu starten
+
+Überprüfe die Konfiguration auf Fehler:
+`sudo nginx -t`
+
+Wenn keine Fehler vorliegen, starte NGINX neu:
+`sudo systemctl restart nginx`
+
+### 3. Hosts-Datei bearbeiten (Optional)
+
+Falls du lokal testen möchtest, füge die Domain zu deiner `/etc/hosts`-Datei hinzu:
+`sudo nano /etc/hosts`
+
+Füge folgende Zeile hinzu:
+`127.0.0.1 mywebsite.com`
+
+### Zusammenfassung
+
+- **Webinhalte**: `/var/www/mywebsite`
+- **Konfigurationsdatei**: `/etc/nginx/sites-available/mywebsite`
+- **Symbolischer Link**: `/etc/nginx/sites-enabled/mywebsite`
+
+Durch diese Schritte wird NGINX so konfiguriert, dass es deine Homepage bereitstellt. Stelle sicher, dass deine Domain richtig konfiguriert ist und auf deinen Server zeigt, um die Website im Internet zugänglich zu machen.

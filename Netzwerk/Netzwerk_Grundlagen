@@ -1,6 +1,10 @@
 ---ISP (Internet Service Provider)
 → Das Ethernet/LAN (meist Sterntopologie) ist über einen Router mit dem ISP-Netz verbunden.
 	Dieses Netz ist mit anderen Netzen verbunden.
+	-> Der Router bzw. das Modem, welches im Router meist integriert ist, ist mit einem Gerät (DSLAM) dauerhaft verbunden.
+		Beim Aufbau der Verbindung wird meist das PPPoE Protokoll verwendet.
+		Der Router sendet seine IP-Pakete an das Modem. Das Modem kodiert die IP-Pakete in elektrische Signale und sendet diese an den DSLAM.
+		Der DSLAM dekodiert die Signale in die ursprünglichen IP-Pakete und sendet diese an ein Router des ISP.
 
 ---IP (Internet Protokol)
 -> Das Internet Protokol (in Router/Computer implementiert) leitet Pakete von Netz
