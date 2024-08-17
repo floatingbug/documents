@@ -26,6 +26,10 @@ Speichert Objekte auf die vom Stack aus zugegriffen werden kann.
 Der Speicher vergrößert sich, wenn Objekte hinzugefügt werden und verkleiner sich, wenn sie wieder entfernt werden.
 Dieser Bereich des Speichers ist für die Verwaltung von dynamisch zugewiesenen Daten wie Objekten und Arrays zuständig.
 
+### Integration in node.js
+Die V8 Engine wird nach Spezifikation und mit Hilfe von Funktionen einer speziellen Bibliothek in das Programm node.js implemntiert.
+Der V8 Engine wird zusätzliche Funktionalität im Programmcode zugefügt, damit API-Aufrufe für Operationen gemacht werden können, die in Worker-Threads ausgeführt werden.
+
 ---
 
 # Libuv (Event Loop)

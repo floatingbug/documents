@@ -1,12 +1,12 @@
 # Farben auswählen
 ### Dominierende Farbe Auswählen
-**Die dominierende Farbe is die Farbe, die am häufigsten vorkommt.
+**Die dominierende Farbe ist die Farbe, die am häufigsten vorkommt.
 
 # 60-30-10 Regel
 
 Die Farbe mit dem stärksten Akzent (sehr auffällig) hat 10%.
 
-Die Base-Farbe wird nicht explizit in diesem Schema erwähnt, da sie oft als Ausgangspunkt für die anderen Farben dient und möglicherweise nicht direkt sichtbar ist. Sie könnte jedoch Teil der Primärfarbe sein oder als Hintergrundfarbe für die gesamte Website oder Anwendung dienen. Die genaue Prozentzahl für die Base-Farbe kann je nach Gestaltung und Designpräferenzen variieren.
+Die Base-Farbe wird nicht explizit im Schema genutzt, da sie oft als Ausgangspunkt für die anderen Farben dient und möglicherweise nicht direkt sichtbar ist. Sie könnte jedoch Teil der Primärfarbe sein oder als Hintergrundfarbe für die gesamte Website oder Anwendung dienen. Die genaue Prozentzahl für die Base-Farbe kann je nach Gestaltung und Designpräferenzen variieren.
 
 ### 60 % 
 Dominante Farbe (Primary Color).

@@ -29,3 +29,22 @@ du -h --max-depth=1 /path/to/folder
 
 ```shell
 ```
+
+---
+
+# Partitionen anzeigen mit lsblk
+
+- lsbl steht für list block devices.
+- Zeigt alle Festplatten (Block Geräte) und Partitionen.
+
+Mit der Option `-f` wird zusätzlich das Dateisystem, bspw. etx4 oder FAT32, mit angezeigt
+```shell
+lsblk -f
+```
+
+
+---
+
+
+# HW Informationen anzeigen
+

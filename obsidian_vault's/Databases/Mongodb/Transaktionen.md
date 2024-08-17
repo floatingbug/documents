@@ -12,3 +12,4 @@ Bei einer Transaktion werden die ACID Eigenschaften genutzt.
 
 ## Abhängigkeiten
 Für Transaktionen in MongoDB wird ein replica set oder ein shared cluster benötigt.
+

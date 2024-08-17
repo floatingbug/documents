@@ -6,13 +6,14 @@
 
 - Was geschied beim Aufruf von new Konstruktorfunktion():
 -> Ein neues leeres Objekt wird erstellt.
--> Das neu erstellte Objekt wird als this an die Konstruktorfunktion übergeben.
+-> Die Referenz des neu erstellte Objekts wird in this in der Konstruktorfunktion gespeichert. Dadurch kann auf das Objekt in der Konstruktorfunktion zugegriffen werden.
 -> Die Konstruktorfunktion initialisiert das Objekt mit den gewünschten Eigenschaften und Methoden.
 -> Das neu erstellte Objekt erhält die Referenz __proto__, die auf die prototype Eigenschaft von der Konstruktorfunktion zeigt.
--> Das neu erstellte Objekt wird als Rückgabewert zurückgegeben, es sei denn, die Konstruktorfunktion gibt explizit einen anderen Wert zurück.
+-> Die Referenz des neu erstellte Objekts wird zurückgegeben, es sei denn, die Konstruktorfunktion gibt explizit einen anderen Wert zurück.
 
 
-- __proto__ ist veraltet, stattdessen verweißt die Eigenschaft [[Prototype]] auf die eigenschaft prototype einer Funktion.
+- __proto__ ist veraltet, stattdessen verweißt die Eigenschaft [[Prototype]] auf die eigenschaft prototype einer Konstruktorfunktion.
+-> Wie __proto__ verweißt auch [[Prototype]] vom Objekt aus auf die prototype-Eigenschaft der Konstruktorfunktion.
 -> Wie __proto__ ist auch [[Prototype]] eine eigenschaft eines Objekts die nur vom Interpreter verwendet wird und für den 
 	Programmiere nicht zugänglich ist.
 -> Weiterhin haben nur Funktionen die Eigenschaft prototype aber nicht Objekte. Objekte haben die Eigenschaft [[Prototype]] die auf prototype verweißt.
