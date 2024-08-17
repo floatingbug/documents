@@ -1,6 +1,6 @@
 {
   "main": {
-    "id": "716af3dd6cc14f2d",
+    "id": "f6df485c9b451020",
     "type": "split",
     "children": [
       {
@@ -25,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "3c52aeb3c2244171",
+    "id": "51ddd50f2b53fd0c",
     "type": "split",
     "children": [
       {
-        "id": "a0f8a3e56d62627e",
+        "id": "850bb85b1543b56a",
         "type": "tabs",
         "children": [
           {
-            "id": "a1d4584a4b67816d",
+            "id": "98fbaef6a6cec32b",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +43,7 @@
             }
           },
           {
-            "id": "85673dddb6f65160",
+            "id": "6ba87d1fdb71a8c3",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +58,7 @@
             }
           },
           {
-            "id": "a5174e63f84b8a80",
+            "id": "545bed8391e79d0d",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,15 +72,15 @@
     "width": 300
   },
   "right": {
-    "id": "dca11d4facb2f04b",
+    "id": "b09931163efab1e8",
     "type": "split",
     "children": [
       {
-        "id": "4353cd4ee2742e82",
+        "id": "c641465f528b9812",
         "type": "tabs",
         "children": [
           {
-            "id": "792d7eea5f9fd5b7",
+            "id": "d6107b5844ced781",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -97,7 +97,7 @@
             }
           },
           {
-            "id": "3fbc5734e4ded559",
+            "id": "723a3bc00edc918c",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -109,7 +109,7 @@
             }
           },
           {
-            "id": "36092b5c813c4c7d",
+            "id": "58215e9dd9241ab1",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,7 +120,7 @@
             }
           },
           {
-            "id": "e6786656ebc10e59",
+            "id": "9a9fec95bf4b094b",
             "type": "leaf",
             "state": {
               "type": "outline",

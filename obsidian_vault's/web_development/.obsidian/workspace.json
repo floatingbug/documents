@@ -25,14 +25,38 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "API Dokumentation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c6439fcd11ad02f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Node.js/HTTP-Module.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "83386b3d1d31fcfb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SSL (Secure Socket Layer).md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -98,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Node.js/HTTP-Module.md",
+                "file": "SSL (Secure Socket Layer).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Node.js/HTTP-Module.md",
+                "file": "SSL (Secure Socket Layer).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Node.js/HTTP-Module.md"
+                "file": "SSL (Secure Socket Layer).md"
               }
             }
           }
@@ -159,12 +183,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a364352e4de2a9cf",
+  "active": "83386b3d1d31fcfb",
   "lastOpenFiles": [
+    "Curl.md",
+    "Node.js/Index Node.js.md",
+    "Node.js/Architektur.md",
+    "Node.js/HTTP-Module.md",
     "Node.js/Ereignis \"data\".md",
     "Node.js/arguments.md",
-    "Node.js/Architektur.md",
-    "Node.js/Index Node.js.md",
     "JS/Intersection Observer.md",
     "assets/swagger.png",
     "assets/openapi.png",
@@ -183,7 +209,6 @@
     "Webdesign/Color.md",
     "Webdesign",
     "CSS",
-    "Curl.md",
     "DNS.md",
     "nginx.md",
     "SSL (Secure Socket Layer).md",
@@ -193,7 +218,6 @@
     "Authorization and Authentication/API-Token (Schlüssel).md",
     "Vue.js.md",
     "test.md",
-    "Node.js/EventEmitter.md",
     "Node.js/Untitled",
     "Node.js",
     "Authorization and Authentication",
