@@ -18,19 +18,20 @@
 - Die shell sucht das Programm anhand des Kommandonamens und der in PATH angegebenen Pfaden.
 #### Kommunikation zwischen terminal und shell
 
-- Jedes Terminal ist mit drei Dateien verbunden.
+- Jedes Terminal wird durch eine Gerätedateien representiert, bspw. `/dev/tty`, `/dev/pts/0` (bei einem Pseudo-Terminal wie einem Terminalemulator) oder `/dev/console`.
+- Jedes Terminal, bzw. Gerätedatei des Terminals, ist mit drei Dateien verbunden.
 	- Diese Dateien sind stdin, stdout und stderr.
-		- Diese Dateien können als Buffer betrachtet werden, sodass in diese Daten geschrieben und gelesen werden können. In Unix gilt das Prinzip alles ist eine Datei, sodass auch Buffer genau wie gewöhnliche Dateien behandelt werden können, in denen geschrieben und von denen gelesen werden können.
+		- Diese Dateien sind Dateideskriptoren.
+		- Beim Start eines Terminals wird eine Shell Instanz erzeugt und diese Shell Instanz erhält die Dateideskriptoren: stdin, stdout und stderr, bzw.: 0, 1 und 2.
+		- Die Dateideskriptoren verweißen direkt auf die Gerätedatei des Terminals.
+		- Das Terminal selbst erhält ebenfalls einen Dateideskriptor der nicht notwendigerweise 0, 1 oder 2 ist, aber ebenfalls auf die Gerätedatei verweißt.
 	 
-	  -  Standardeingabe (Tastatur): stdin.
-		- Eingaben werden von dem Terminal in die Datei stdin der shell geschrieben und die shell erhält die Daten.
+	  -  Standardeingabe: stdin.
+		- Da das Terminal den Dateideskriptor der Gerätedatei kennt, schreibt das Terminal die Eingaben in diese. Die Shell ließt direkt aus der Gerätedatei.
 			- Die shell erhält nach und nach die Daten. Ist das Ende der Daten erreicht, wird dies durch ein backslash und "n" der shell signalisiert und sie führt die Anweisung aus.
 	
-	-  Standardausgabe (Bildschirm): stdout.
-		- Die shell schreibt ergebnisse in stdout des Terminals und das Terminal zeigt dann die Daten an.
-
-	 - Standard-Fehlerausgabe (Bildschirm): stderr
-		- Wie stdout.
+	-  Standardausgabe und Standard-Fehlerausgabe: stdout/stderr.
+		- Die Shell schreibt Ergebnisse in die Gerätedatei, wenn 1 oder 2 ebenfalls auf die Gerätedatei des Terminals verweisen und das Terminal zeigt dann die Daten an.
   
 
 - Die shell kann angewiesen werden, die Ausgabe umzuleiten bspw. in eine Datei.

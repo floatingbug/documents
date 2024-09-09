@@ -1,3 +1,43 @@
+# Hue
+
+Hue ist die pure Farbe ohne Zusatz von Schwarz oder Weis.
+
+---
+
+# Tint
+
+- Eine Farbe, der Weis hinzugefügt ist.
+- Tint ist eine hellere Version von Hue
+
+---
+
+# Shade
+
+- Eine Farbe, der Schwarz hinzugefügt ist.
+- Shade ist eine dunklere Version von Hue
+
+---
+
+# Tone
+
+- Eine Farbe, der Grau hinzugefügt ist, also Weis und Schwarz.
+
+---
+
+# Saturation
+
+- Je weniger einer Farbe Weis hinzugefügt ist, desto mehr Saturation hat sie.
+- Eine Farbe ohne Weis Anteil hat 100% Saturation.
+
+---
+
+# Brightnes
+
+- Eine Farbe der mehr Weis als Schwarz hinzugefügt ist, hat mehr brightnes als eine Farbe der mehr Schwarz hinzugefügt ist.
+- 100% Brightnes hat 100% Weiß Anteil, 0% Brightnes hat 100% Schwarz Anteil.
+
+---
+
 # Farben auswählen
 ### Dominierende Farbe Auswählen
 **Die dominierende Farbe ist die Farbe, die am häufigsten vorkommt.

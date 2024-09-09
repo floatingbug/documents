@@ -21,10 +21,26 @@ server.on('request', (request, response) => {
 });
 ```
 
-1. Wenn eine Anfrage an ein Socket gesendet wurde, wird das "data" Event vom Betriebssystem direkt in die Event-Queue des Node-Prozess gespeichert. Das Event enthält die Daten aus dem Socket und den Dateidescriptor.
-3. Ist das "data" Event an der Reihe, speichert die Event-Loop die für dieses Event registrierte Callbal-Function in die Callback-Queue ( die Callback-Function vom Net-Module (socket.on("data", cb)) ). Der Callback-Function wird das Event data als Argument übergeben.
-4. In der Callback-Function wird geprüft, ob es sich um eine HTTP-Anfrage handelt. Wenn dem so ist, wird das request Event emitiert, das die HTTP-Anfrage enthält. Zuvor wird die HTTP-Anfrage als Objekte (request und response) geparst und in dem request Event gespeichert.
-5. Die Callback-Function vom http-module (server.on("request", cb)) wird aufgerufen, und dieser das request-event übergeben.
+1. **libuv beauftragt beim Betriebssystem einen Server-Socket zu erstellen.** 
+	- Dies geschiet durch den Aufruf von server.listen(), wobei libuv socket() aus der glibc Bibliothek aufruft.
+
+2. **Nach einem erfolgreichen TCP-Handshake teilt das betriebssystem dies libuv mit, worauf libuv die Funktion accept() aufruft.**
+	- accept() signalisiert dem Betriebssystem, dass libuv die eingehende Verbindung akzeptiert.
+	- accept() gibt den File Descriptor (fd) des neu erstellten Client-Sockets zurück.
+	- Libuv speichert diesen fd und verwendet ihn für die Kommunikation mit dem Client-Socket. erstellt das Betriebssystem einen Client-Socken und übergibt libuv den fd des Client-Socket.
+
+3. **Nachdem das Betriebssystem Daten empfangen und diese in den Client-Socket geschrieben hat, signalisiert es libuv über einen Mechanismus wie epoll (Linux), kqueue (macOS/BSD) oder IOCP (Windows), dass Daten zum Lesen im Client-Socket verfügbar sind.**
+
+4. **Nachdem libuv das Signal erhalten und die Daten aus dem Client-Socket gelesen hat, fügt libuv ein I/O-Event in die Event-Queue ein.** 
+	 - In diesem Event ist ein Zeiger auf den Puffer, indem die Daten, die libuv aus dem socket gelesen hat, von libuv gespeichert wurden.
+
+5. **Die Node.js-Event-Loop entnimmt dieses Event der Event-Queue, speichert den Zeiger in das "data"-Event und löst das "data"-Event aus.**
+
+6. **Die Event-Loop entnimmt das data-Event und übergibt den Zeiger als Argument an die cb die für das data-Event registriert wurde.**
+
+7. **Dann setzt die Event-Loop die cb in die Callback-Queue.**
+
+8. **wird die cb auf dem stack ausgeführt, kann diese durch den Zeiger direkt auf die Daten zugreifen.**
 ##### Verarbeitung der HTTP-Anfrage
 Das "request"-Ereignis wird ausgelöst, wenn das Webserver-Object die vollständige HTTP-Anfrage durch das Net-Modul erfangen hat. Das Websocket-Object überprüft die Daten auf HTTP-Anfragezeichen und handhabt den Aufbau und das Parsen von HTTP-Anfragen (es erstellt also die Objekte req und res mit Hilfe der HTTP-Anfrage).
 #### Für jede Anfrage eine Instanz des Request Handler

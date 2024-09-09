@@ -8,6 +8,7 @@ Erst müssen die richtigen Vektoren berechnet werden (Vektor für hozizontale un
 
 - Mit dem Arkustangens berechnet man den Winkel Apha.
 	- Math.atan2(x, y) gibt den Winkel im Boganmaß zurück, von -π bis +π. Bei einem Winkel von 135° wäre das  3/4π, 3/4π sind ungefär 2.3561945. Bei einem Winkel von 225° wäre das 5/4π aber atan2 gibt nur Werte von -π zu π zurück. atan2 würde -3/4π zurück geben, was ebenfalls einen Winkel von 225° entspricht und somit auch 5/4π. Der Wert -3/4π ist ungefär -2.3561945.
+	- ![[Bogenmaß_2.png]]
 - Horizontaler Vektor: sin(alpha).
 - Vertikaler Vektor: cos(alpha).
 

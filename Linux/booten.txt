@@ -27,25 +27,44 @@
 -> Nutzen keine Zylinder und Köpfe.
 -> Sektoren sind Vorhanden (jeder Sektor ist 512 MB groß).
 
+--- MBR und GPT ---
+- Sowohl MBR (Master Boot Record) als auch GPT (GUID Partition Table) sind Methoden zur Verwaltung von Festplattenpartitionen, 
+	starten des Betriebssystems.
+
+--- Bootmanager ---
+- Ermöglicht die Auswahl von Bootloadern oder weiteren Bootmanagern.
+
+
+--- Bootloader --
+- Läd das Betriebssystem
+
 --- MBR ---
 - Jede Festplatte hat einen Bereich der sich Master Boot Record nennt.
 -> Ist immer der Erste Sektor der Festplatte oder der SSD.
--> Beinhaltet Code zum starten des Betriebssystems.
--> Beinhaltet: Bootcode, Partitionstabelle.
-	-> Partitionstabelle: Definiert Größe und Lage der Partitionen.
-		-> Jeder Eintrag enthält die Information über Startposition und größe der Partition.
+- Bootvorgang:
+-> MBR-Code: Der MBR-Bereich enthält den Bootloader-Code (nicht den Bootloader), der als erstes aufgerufen wird, wenn der Computer startet. 
+	Dieser Code ist normalerweise sehr einfach und hat die Aufgabe, den Bootmanager oder den Bootloader des Betriebssystem von der Partition zu laden, 
+	die im MBR als "aktiv" markiert ist.
+-> Partitionstabelle: Der MBR-Bereich enthält die Partitionstabelle, die Informationen über die Partitionen auf der Festplatte speichert. 
+	Der Bootloader-Code im MBR verwendet diese Informationen, um die aktive Partition zu identifizieren.
+	-> Aktive Partition: Enthält entweder ein Bootloader von einem Betriebssystem mit den, für den Bootvorgang notwendigen, Dateien, oder ein Bootmanager.
 		
---- Boot-Partition ---
-- In der Partitionstabelle ist die Information enthalten, welche Partition die Boot-Partition ist.
+--- GPT ---
+- GPT besteht nicht nur aus einem Bereich auf der Festplatte, sondern aus mehreren.
+-> GPT Header: Enthält Informationen über die GPT-Tabelle, die Größe und Position der Partitionstabelle und Prüfziffern (Checksummen).
+	Befindet sich im zweiten Sektor der Festplatte.
+-> Partition Entry Array: Eine Liste von Partitionseinträgen (Partitionstabelle), die Details zu den Partitionen enthält (wie Größe und Typ).
+	Befindet sich im dritten Sektor der Festplatte.
+-> Backup GPT Header: Am Ende der Festplatte gespeichert, ist eine Sicherung des GPT-Headers und der Partitionstabelle.
+- Bootvorgang:
+-> UEFI (nicht bios) sucht, nach dem Einschalten des Computers, in der Partitionstabelle nach der EFI System Partition (ESP).
+	-> UEFI sieht im GPT Header wo die Partitionstabelle ist und ließt dann aus dieser, also aus dem Partition Entry Array. 
+	-> EFI System Partition (ESP): Diese spezielle Partition ist mit dem Dateisystem FAT32 formatiert und enthält die Bootloader für die installierten Betriebssysteme. 
+		Der ESP enthält Verzeichnisse, die Bootloader und weitere Dateien wie Konfigurationsdateien oder Treiber für verschiedene Betriebssysteme enthalten.
 
-- Beinhaltet
--> Boot-Loader (z.B. GRUB): Lädt und startet das Betriebssystem.
-	-> Kann mehrere mehrere Bitriebssystem Anzeigen.
-		-> wenn ein Betriebssystem ausgewählt wird, wird der entsprechende Bootsektor der ausgewählten Partition geladen. 
-			Der Bootsektor enthält den Code, der das Betriebssystem lädt und startet. 
-			Der Bootloader lädt zunächst den Bootsektor in den Speicher und gibt die Kontrolle dann an den Code im Bootsektor weiter, 
-			der das Betriebssystem lädt.
-
+- GRUB (Grand Unified Bootloader) ist sowohl ein Bootloader als auch ein Bootmanager. Es übernimmt beide Rollen und bietet die Möglichkeit, 
+	zwischen verschiedenen Betriebssystemen zu wählen (Bootmanager-Funktion) und dann das gewählte Betriebssystem zu laden (Bootloader-Funktion).
+		
 
 --- Legacy ROM und EFI Compatible ROM ---
 - Option-ROM's
@@ -75,29 +94,3 @@ UEFI kann eine Option-ROM-Liste führen, um zu entscheiden, welche Option-ROMs g
 UEFI kann Option-ROMs verwenden, um eine Bootreihenfolge zu erstellen.
 UEFI kann Option-ROMs verwenden, um Firmware-Updates durchzuführen.
 UEFI kann Option-ROMs deaktivieren, um Sicherheitsrisiken zu minimieren.
-
---- UEFI ---
-- Hat eine eigene Systempartiton (EFI-Systempartition), auf das die UEFI-Firmware zugreift.
-	-> Befindet sich in Linux unter /boot/efi
-	-> Beinhaltet die Partitionstabelle GPT.
-	-> Beinhaltet die EFI-Bootloader: GRUB-Bootloader und Windows-Bootloader.
-		-> Also alle Bootloader der Installierten Betriebssysteme.
-
-- GPT-Partitionstabelle.
--> In GPT muss zu jeder Partition der Anfang und das Ende gespeichert werden, damit UEFI-BOOT-Manager die Bootloader laden kann.
-	-> Die Bootloader befinden sich immer am Anfang einer Partition.
--> Zusätzlich ist die Information enthalten, welcher Bootloader für welches Betriebssystem geladen werden soll.
-
-- UEFI-BOOT-Manager 
--> Der UEFI-BOOT-Manager kann selbst keine Betriebssysteme starten, er kann nur bootloader von Betriebssysteme in den Arbeitsspeicher laden, die dann das Betriebssystem starten.
--> Sind mehrere Betriebssysteme installiert, wird der UEFI-BOOT-Manager alle Bootloader der Betriebssysteme auflisten.
--> Lädt den Windows- oder Grub-Bootloader aus der EFI-Systempartition.
-	-> Diese Bootloader (bspw. Grub), laden dann das Betriebssystem.
-	-> Sowohl der Windows-Bootloader als auch der Grub-Bootloader werden als EFI-Bootloader bezeichnet.
-
-- Bei der Installation wird der Bootloader des Betriebssystems in die EFI-Systempartition kopiert und konfiguriert. 
-
-- GRUB als Boot-Manager
--> Grub kann auch als Boot-Manager verwendet werden.
--> Grub muss die Startposition einer Partition kennen, um den Bootloader aus dieser Partition zu laden und auszuführen. Diese Information bezieht Grub aus GPT.
--> Es gibt also zwei Optionen Betriebssystem zur Auswahl bei Systemstart anzeigen zu lassen: Grub als Boot-Manager oder UEFI-Boot-Manager.

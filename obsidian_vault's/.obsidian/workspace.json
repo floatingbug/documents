@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/Systeminformationen.md",
+                "file": "web_development/Node.js/HTTP-Module.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/Systeminformationen.md",
+                "file": "web_development/Node.js/HTTP-Module.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linux/Systeminformationen.md",
+                "file": "web_development/Node.js/HTTP-Module.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/Systeminformationen.md"
+                "file": "web_development/Node.js/HTTP-Module.md"
               }
             }
           }
@@ -149,42 +149,42 @@
   },
   "active": "10b2329a4c918402",
   "lastOpenFiles": [
-    "templates/REST API.md",
+    "web_development/Node.js/Architektur.md",
+    "Informatik/Netzwerk/Grundlagen.md",
+    "Informatik/System-Calls.md",
+    "web_development/Node.js/HTTP-Module.md",
+    "Linux/Shell/Shell Kommandos.md",
     "Linux/SSH (Secure Shell).md",
     "Linux/index Administration.md",
     "Linux/Benutzer und Gruppen.md",
+    "Linux/Add a user.md",
     "Linux/Systeminformationen.md",
+    "Databases/Mongodb/Replica Set und Cluser.md",
+    "Databases/Mongodb/Transaktionen.md",
+    "web_development/JS/Validation.md",
+    "web_development/JS/Intersection Observer.md",
+    "JavaScript/index.md",
+    "web_development/Curl.md",
+    "Linux/Shell/Shell Skripting.md",
     "Linux/Shell/index Shell.md",
-    "Mathe/Trigonometrie/Verständnis für Partikelbewegungen.md",
-    "Mathe/Trigonometrie/Grundlagen.md",
-    "Mathe/Trigonometrie/Bogenmaß und Gradmaß.md",
-    "Mathe/Vektoren/Grundlagen.md",
+    "web_development/CSS/Hindergrund.md",
+    "web_development/Webdesign/Color.md",
+    "web_development/Webdesign/Spacing.md",
+    "web_development/Vue.js/Components.md",
+    "web_development/Vue.js/Watchers.md",
+    "Linux/Shell/was ist die Shell.md",
+    "JavaScript/Math.md",
+    "web_development/CSS/Transform.md",
     "Mathe/Vektoren",
     "Mathe/assets/Bogenmaß_1.png",
     "Mathe/assets",
-    "1.md",
     " 1",
     "Mathe/Trigonometrie/bogenmaß1.png",
     "Mathe/Trigonometrie/bla",
-    "Excalidraw/Drawing 2024-08-15 17.16.52.excalidraw.md",
-    "Excalidraw/Drawing 2024-08-15 17.14.52.excalidraw.md",
-    "tldraw/Tldraw 2024-08-15 5.14PM.md",
     "Excalidraw",
-    "tldraw/Tldraw 2024-08-15 5.13PM.md",
     "tldraw",
-    "tldraw/Tldraw 2024-08-15 5.09PM.md",
-    "Databases/Mongodb/CRUD.md",
     "Mathe/Trigonometrie",
-    "web_development/CSS/flex-box.md",
     "Mathe",
-    "web_development/CSS/Grid.md",
-    "Untitled.md",
-    "JavaScript/Math.md",
-    "web_development/CSS/Hindergrund.md",
-    "web_development/Webdesign/Color.md",
-    "web_development/Vue.js/Components.md",
-    "web_development/Vue.js/Computed Properties.md",
-    "web_development/nginx.md",
     "JavaScript/Arrays.canvas",
     "Linux/Shell/Pasted image 20231219134355.png",
     "web_development/git",

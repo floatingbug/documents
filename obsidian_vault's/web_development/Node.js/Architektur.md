@@ -33,6 +33,10 @@ Der V8 Engine wird zusätzliche Funktionalität im Programmcode zugefügt, damit
 ---
 
 # Libuv (Event Loop)
+
+### libuv verbindet Node.js mit dem Betriebssystem
+Node.js nutzt die dynamische Bibliothek, um mit dem Betriebssystem zu kommunizieren. libuv verwaltet beispielsweise sockets, indem es Funktion wie listen() oder accept() von glibc aufruft.
+
 ### Event Loop
 Node ruft Funktionen der dynamischen Bibliothek Libuv beim Start auf, um die Event Loop zu erstellen. Außerdem verwendet Node Funktionen der Bibliothek, um die Event Loop zu verwalten.
 
