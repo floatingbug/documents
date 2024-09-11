@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "84b8697704bd3bec",
+        "id": "aa7e1542660b3586",
         "type": "tabs",
         "children": [
           {
-            "id": "e1bbbf65e84c5717",
+            "id": "10b2329a4c918402",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web_development/Authorization and Authentication/Json Web Token (JWT).md",
-                "mode": "preview",
+                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -94,7 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 485.5
   },
   "right": {
     "id": "b09931163efab1e8",
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Informatik/Netzwerk/Grundlagen.md",
+                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Informatik/Netzwerk/Grundlagen.md",
+                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,11 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Informatik/Netzwerk/Grundlagen.md"
+                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -171,16 +172,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4c2d30d68e73f842",
+  "active": "10b2329a4c918402",
   "lastOpenFiles": [
-    "web_development/Vue.js/Components.md",
-    "Programmiersprachen/c++/Warum Header-Dateien.md",
-    "Programmiersprachen/c++",
-    "web_development/Authorization and Authentication/index Authorization and Authentication.md",
-    "Linux/Shell/was ist die Shell.md",
-    "Linux/Shell/index Shell.md",
+    "Databases/Mongodb/Replica Set und Cluser.md",
+    "JavaScript/async await.md",
+    "JavaScript/Promise.md",
+    "Linux/Shell/Shell Kommandos.md",
+    "Linux/Systeminformationen.md",
+    "Linux/Benutzer und Gruppen.md",
+    "Untitled.md",
+    "web_development/Node.js/HTTP-Module.md",
+    "web_development/Node.js/Worker Thread.md",
+    "web_development/Node.js/Architektur.md",
     "Informatik/Netzwerk/Grundlagen.md",
-    "Programmiersprachen/c/errno.md",
-    "Programmiersprachen/c/POSIX.md"
+    "Informatik/System-Calls.md",
+    "Linux/SSH (Secure Shell).md",
+    "Linux/index Administration.md",
+    "Linux/Add a user.md",
+    "Databases/Mongodb/Transaktionen.md",
+    "web_development/JS/Validation.md",
+    "web_development/JS/Intersection Observer.md",
+    "JavaScript/index.md",
+    "web_development/Curl.md",
+    "Linux/Shell/Shell Skripting.md",
+    "Linux/Shell/index Shell.md",
+    "web_development/CSS/Hindergrund.md",
+    "web_development/Webdesign/Color.md",
+    "web_development/Webdesign/Spacing.md",
+    "web_development/Vue.js/Components.md",
+    "Mathe/Vektoren",
+    "Mathe/assets/Bogenmaß_1.png",
+    "Mathe/assets",
+    " 1",
+    "Mathe/Trigonometrie/bogenmaß1.png",
+    "Mathe/Trigonometrie/bla",
+    "Excalidraw",
+    "tldraw",
+    "Mathe/Trigonometrie",
+    "Mathe",
+    "JavaScript/Arrays.canvas",
+    "Linux/Shell/Pasted image 20231219134355.png",
+    "web_development/git",
+    "Programmiersprachen/c"
   ]
 }

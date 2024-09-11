@@ -5,42 +5,87 @@ Jede Zeile die mit # beginnt, wird als Kommentarzeile bewertet.
 
 ## Semikolon
 
-Verwendung: Trennung von einzelnen Befehlen in einer einzelnen Zeile. Ermöglicht das Auführen von aufeinanderfolgenden Befehlen in einer einzelnen Zeile. Ohne Semikolon wird die komplette Zeile als einzelnen Befehl von der Shell interpretiert.
-### 1. Mehrere Befehle in einer Zeile
+Verwendung: Trennung von einzelnen Befehlen in einer einzelnen Zeile. Ermöglicht das Ausführen von aufeinanderfolgenden Befehlen in einer einzelnen Zeile. Ohne Semikolon wird die komplette Zeile als einzelnen Befehl von der Shell interpretiert. 
+### 1. Mehrere Befehle/Kommandos in einer Zeile
 
-Du kannst mehrere Befehle nacheinander ausführen, indem du sie mit einem Semikolon trennst:
+es können mehrere Befehle nacheinander ausgeführen werden, indem die Befehle mit einem Semikolon getrennt werden:
 
 ```bash
 `echo "Erster Befehl"; echo "Zweiter Befehl"; echo "Dritter Befehl"`
 ```
 
-### 2. In `if`-Anweisungen
+Ohne das Semikolon, würde die shell die nachfolgenden eingaben als Argumente für das echo-Kommando bewerten: echo, "Zweiter Befehl", echo und "Dritter Befehl".
+Durch das Semikolon wird nicht nur einmal ein echo-Kommando ausgeführt, mit nachfolgenden Argumenten, sondern drei mal und jedes echo-Kommando hat seine eigenen Argumente.
 
-Das Semikolon wird auch in `if`-Anweisungen verwendet, um den Befehlsteil vom Bedingungsteil zu trennen:
+### 2. if-Anweisungen
+
+**Bestehen aus Schlüsselwörter (keine eigenständigen Programme) und Kommandos (eigenständige Programme)**
+#### Schlüsselwörter:
+
+- `if`
+- `then`
+- `else`
+- `fi`
+
+#### Kommandos:
+
+- `[ $# -eq 0 ]` (dies ist ein Testkommando, auch bekannt als `test`, das überprüft, ob die Anzahl der Argumente gleich null ist)
+	- **Kommando `[`**:
+	- Es ist ein Synonym für das Kommando `test`.
+	- `[ ... ]`, ruft die Shell tatsächlich das eingebaute `test`-Kommando auf.
+	- `[` und `test` prüfen Bedingungen und geben `0` (Erfolg) oder `1` (Fehler) zurück, basierend auf der Bedingung.
+	- **Operatoren:** 
+	- `$#` und `-eq` sind Operatoren und keine Kommandos oder Schlüsselwörter.
+	- Operatoren sollten immer von Leerzeichen umgeben sein, damit die Shell jeden Operator richtig interpretieren kann.
+- `echo "Keine Argumente übergeben."` (dies ist das `echo`-Kommando, das den Text "Keine Argumente übergeben." ausgibt)
+- `echo "Argumente wurden übergeben."` (dies ist das `echo`-Kommando, das den Text "Argumente wurden übergeben." ausgibt)
 
 ```bash
-`if [ $# -eq 0 ]; then echo "Keine Argumente übergeben."; else echo "Argumente wurden übergeben."; fi`
+if [ $# -eq 0 ]; then 
+	echo "Keine Argumente übergeben."; 
+else 
+	echo "Argumente wurden übergeben."; 
+fi
+```
+
+Die Einrückungen der Anweisungen für then und else sind nicht notwendig, da die shell durch die Schlüsselwörter then und else erkennt, was wann ausgeführt werden soll. fi ist notwendig, damit die shell interpretieren kann, dass die nächsten Kommandos oder Schlüsselwörter nicht mehr zu else gehören.
+Folgendes Skript würde also auch funktionieren:
+
+```bash
+if [ $# -eq 0 ]; then 
+echo "Keine Argumente übergeben."; 
+else 
+echo "Argumente wurden übergeben."; 
+fi
 ```
 
 ### 3. In `for`-Schleifen
 
-Es kann auch verwendet werden, um die einzelnen Teile einer `for`-Schleife zu trennen:
+- `for`: Beginnt die Schleife.
+- `in`: Gibt an, dass die nachfolgenden Werte durchlaufen werden.
+- `do`: Beginnt den Block von Befehlen, die in jeder Iteration ausgeführt werden.
+- `done`: Beendet den Block von Befehlen.
+
+Die Schlüsselwörter `for` und `in` benötigen kein Semikolon zur Trennung, da sie zusammen die Schleifenbedingung definieren und die Shell diesen Teil der Schleife als zusammengehörig erkennt.
 
 ```bash
-`for i in 1 2 3; do echo "Nummer $i"; done`
+for i in 1 2 3; do echo "Nummer $i"; done
+# Ausgabe: 
+# Number 1
+# Number 2
+# Number 3
 ```
 
-### Beispiel:
-
-Hier ist ein vollständiges Beispiel, das verschiedene Verwendungen des Semikolons zeigt:
+Beispliel ohne Semikolon:
+Durch Zeilenumbrüche werden keine Semikolons benötigt (erklärung weiter oben).
+Ein Semikolon wird zwischen `for` und `in` nicht benötigt, weil die Shell diese als eine zusammenhängende Schleifenanweisung interpretiert.
 
 ```bash
-`#!/bin/bash  # Mehrere Befehle in einer Zeile echo "Starte Skript"; date; echo "Beendet Skript"  # if-Anweisung mit Semikolon if [ $# -eq 0 ]; then     echo "Keine Argumente übergeben." else     echo "Argumente wurden übergeben." fi  # for-Schleife mit Semikolon for i in 1 2 3; do echo "Nummer $i"; done`
+for i in 1 2 3
+do
+    echo "Nummer $i"
+done
 ```
-
-### Zusammengefasst:
-
-Das Semikolon ermöglicht das Erstellen von kompakteren und oft übersichtlicheren Skripten, indem es die Notwendigkeit reduziert, jeden Befehl in einer neuen Zeile zu schreiben.
 
 ---
 
@@ -63,6 +108,10 @@ echo $variableName
 ```
 
 Die Shell interpretiert Variablen die nicht existieren mit einer leeren Zeichenkette.
+
+## Parametererweiterung
+
+**wird verwendet, um den Wert einer Variablen abzurufen, wobei ein Standardwert verwendet wird, falls die Variable nicht gesetzt ist oder einen leeren Wert hat.**
 
 **${_Variablenname_:-_Wert_}**
 
@@ -95,7 +144,7 @@ read -p "Bitte geben Sie Vor und Zunamen ein: " VNAME ZNAME
 ```
 
 Nachdem der Satz „Bitte geben Sie Vor und Zunamen ein: “ auf den Bildschirm geschrieben wurde, ließt der read-Befehl zwei Namen ein, der erste wird in der Variable VNAME gespeichert, der zweite in ZNAME.
-Mit der Option -p kann ein Satz auf dem Bildschirm ausgegeben werden, der ohne abschließenden Zeilentrenner ausgegeben wird, bevor Eingaben gelesen werden. Dieser Satz muß in Anführungszeichen stehen, wenn er Leerzeichen enthält, sonst würde alles nach dem ersten Wort schon als Variablennamen gewertet.
+Mit der Option -p (print) kann ein Satz auf dem Bildschirm ausgegeben werden, der ohne abschließenden Zeilentrenner ausgegeben wird, bevor Eingaben gelesen werden. Dieser Satz muß in Anführungszeichen stehen, wenn er Leerzeichen enthält, sonst würde alles nach dem ersten Wort schon als Variablennamen gewertet.
 
 ---
 
@@ -138,59 +187,169 @@ Enthält die Anzahl der übergebenen Argumente. Wurden keine Argumente übergebe
 
 ---
 
-# Kontrollstrukturen
+# Anführungszeichen 
 
-## Bedingungsüberprüfung
+In Shell gibt es einen Unterschied in der Verwendung von einfachen Anführungszeichen (`'`) und doppelten Anführungszeichen (`"`), insbesondere wenn es um die Verwendung von Variablen geht:
 
-#### then
+1. **Einfache Anführungszeichen (`'`)**:
+    
+    - Wenn eine Zeichenkette in einfachen Anführungszeichen steht, werden die darin enthaltenen Variablen nicht interpretiert oder erweitert. Das bedeutet, dass der gesamte Inhalt der Zeichenkette wörtlich genommen wird.
 
-Leitet den Block ein, der ausgeführt wird, wenn die Bedingung wahr ist.
-
-#### else
-
-Leitet den Block ein, der ausgeführt wird, wenn die Bedingung falsch ist.
-
-#### fi
-
-Schließt die if-Anweisung
-
-### Ausführungsprinzip
-
-Eine if-Anweisung wird durch ein Semikolon abgeschlossen, wenn then darauf in der selben Zeile folg, anderenfalls wird kein Semikolon benötigt. Das Ergebnis der Bedingungsüberprüfung wird zwischengespeichert um Nachfolgende Anweisungen in then und else auszuführen, je nach Ergebnis, auszuführen. 
-Das Schlüsselwort `fi` markiert das Ende der `if`-Struktur. Es zeigt an, dass keine weiteren Anweisungen innerhalb dieser `if`-Struktur ausgeführt werden sollen.
-Nach `fi` wird das Ergebnis der Bedingungsüberprüfung verworfen und die Shell fährt mit der Ausführung des Skripts fort.
-
-``` bash
-if [ Bedingung ]
-then
-	Anweisungen
-else
-	Anweisungen
-fi
+Beispiel:
+``` shell
+name="John" echo 'Hello $name'  # Ausgabe: Hello $name`
 ```
 
-Das Nachfolgende Beispiel ist äquivalent
+Hier wird der Wert der Variable `name` (`John`) nicht ausgegeben, da er innerhalb einfacher Anführungszeichen steht.
 
-``` bash
-if [ Bedingung ]; then
-	Anweisung
-else
-	Anweisung
-fi
+1. **Doppelte Anführungszeichen (`"`)**:
+    
+    - Wenn eine Zeichenkette in doppelten Anführungszeichen steht, werden Variablen innerhalb der Zeichenkette erweitert, d.h., ihre Werte werden eingesetzt.
+
+Beispiel:
+```bash
+name="John" echo "Hello $name"  # Ausgabe: Hello John`
+``` 
+
+ Hier wird der Wert der Variable `name` innerhalb der doppelten Anführungszeichen ersetzt und ausgegeben.
+
+## Escapesequenz
+
+Mit der \ escapesequence, wird der Shell mitgeteilt, dass das nachfolgende Zeichen als Literal bewertet werden soll. Dadurch kann man in einem String doppelte Anführungszeichen nutzen, ohne dass der String abgebrochen wird.
+
+Beispiel:
+```Shell
+name=Bob
+
+echo "My name is \"$name\"."
+
+# Ausgabe: My name is "Bob".
 ```
 
-Die Klammer `[` ist ein symbolischer Link auf das Programm test. Aus diesem Grund muss zwischen den Klammer ein Leerzeichen stehen, damit die Shell das Programm test von der zu überprüfenden Bedingung unterscheiden kann.
-Das Folgende Beispiel ist zu den beiden vorherigen Beispielen äquivalent.
+Ohne escapesequence:
+```Shell
+name=Bob
 
-``` bash
-if test Bedingung; then
-	Anweisung
-else
-	Anweisung
-fi
+echo "My name is "$name"."
+
+# Ausgabe: My name is Bob.
 ```
+Die Anführungszeichen werden nicht ausgegeben, da sie als String-Zeichen interpretiert wreden und $name als eigenständiger String interpretiert wird.
+Da sich der String $name in einem umgebenen String befindet, werden beide Strings als ein String interpretiert.
+
+## Bei Argumente für Kommandos funktionieren Escapesequenze nicht
+
+**Beispliel mit curl:**
+curl erwartet einen JSON-String ohne zusätzliche Escape-Zeichen um den gesamten JSON-Inhalt. Daher würde folgendes nicht funktionieren:
+``` bash
+json="{
+    \"name\": \"$name\",
+    \"email\": \"$email\",
+    \"password\": \"$password\"
+}"
+
+echo $json
+
+curl -v \
+http://localhost:3000/add-user \
+-H "Content-Type: application/json" \
+-d \"$json\"
+
+```
+
+**Stattdessen muss ein Here-Document verwendet werden:**
+``` bash
+json=$(cat <<EOF
+{
+    "name": "$name",
+    "email": "$email",
+    "password": "$password"
+}
+EOF
+)
+
+echo $json
+
+curl -v \
+http://localhost:3000/add-user \
+-H "Content-Type: application/json" \
+-d "$json"
+
+```
+
 
 ---
+
+# Here-Document
+
+**Ein Here-Dokument wird verwendet, um mehrzeilige Texte zu definieren, die an eine Anwendung oder ein Kommando übergeben werden sollen.**
+
+## Prinzip
+
+für die Delimiter in einem Here-Dokument können beliebige Wörter gewählt werden, solange sie eindeutig sind und nicht in den Text des Here-Dokuments selbst vorkommen. Das bedeutet, dass der Delimiter als Markierung verwendet wird, um den Beginn und das Ende des Textblocks innerhalb des Here-Dokuments zu kennzeichnen.
+Als Konvention verwendet man das Wort EOF.
+**<<**: Dies ist der Here-Dokument-Operator, der auch als "Here-Dokument-Redirect" bezeichnet wird. Es wird verwendet, um ein Here-Dokument zu starten, das den Text enthält, der anschließend an ein commando weitergeleitet oder in eine Datei geschrieben wird.
+
+``` shell
+command << DELIMITER
+Text
+Text
+...
+DELIMITER
+
+```
+
+**Beispiel:**
+``` bash
+cat << bla > example.txt
+Dies ist der Inhalt des Here-Dokuments.
+Es enthält mehrere Zeilen.
+bla
+
+```
+
+- `cat` liest den Inhalt des Here-Dokuments und gibt ihn aus oder schreibt ihn in die Datei `example.txt`.
+- `<< bla` markiert den Beginn des Here-Dokuments mit dem Delimiter `bla`.
+- `> example.txt` leitet die Ausgabe des Here-Dokuments in die Datei `example.txt`.
+
+**Beispiel mit Shell-Substitution:**
+``` bash
+json=$(cat <<EOF
+{
+    "name": "$name",
+    "email": "$email",
+    "password": "$password"
+}
+EOF
+)
+```
+- **$(...)**: Dies ist eine Shell-Substitution. In einer Shell-Substitution wird immer ein Kommando ausgeführt und das Ergebnis des Kommandos ersetzt dann die Shell-Substitution, also $(...) wird durch das Ergebnis ersetzt. In der Shell-Substitution wird dem Befehl cat als Argument das here-document übergeben. An der Stelle der Shell-Substitution wird dann das Ergebnis von cat zurückgegeben. Das Ergebnis wird dann der Variable json zugewießen.
+    
+- **cat << EOF**: Der Befehl `cat` liest den Inhalt des Here-Dokuments, das zwischen `<< EOF` und `EOF` liegt. `<< EOF` signalisiert den Beginn des Here-Dokuments mit dem Delimiter `EOF`.
+    
+- **EOF**: Dies ist der Delimiter, der das Ende des Here-Dokuments markiert. Alle Zeilen zwischen `<< EOF` und `EOF` werden als Text behandelt und in die Variable `json` geschrieben.
+
+**Ein Here-Document kann direkt in eine Datei geleitet werden oder an ein Programm übergeben werden, aber um den Inhalt eines Here-Documents in eine Variable zu schreiben, benötigt man einen Befehl wie `cat`, der den Inhalt liest und ausgibt.**
+
+---
+
+# Umgebungsvariablen
+
+## Setzen einer Umgebungsvariable
+
+``` bash
+export MY_VARIABLE="mein_wert"
+```
+
+Wenn ein Skript ausgeführt wird, wird für das Skript eine neue Shell gestartet, in der das Skript ausgeführt wird. Damit die Umgebungsvariable in der Shell nach ausführen des Skriptes verfügbar ist, muss das Skript mit source aufgerufen werden, damit für das Skript nicht eine eigene Shell aufgerufen wird und stattdessen in der aktuellen Shell ausgeführt wird. 
+
+``` bash
+
+```
+
+``` bash
+
+```
 
 ``` bash
 

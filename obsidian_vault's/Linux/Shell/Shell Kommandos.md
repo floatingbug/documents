@@ -102,3 +102,9 @@ lsof -i :80    # Prozesse, die Port 80 (HTTP) verwenden
 lsof -i @192.168.1.10   # Prozesse, die mit der IP-Adresse 192.168.1.10 verbunden sind
 ```
 
+---
+
+# Prozesse
+
+## Prozesse beenden
+

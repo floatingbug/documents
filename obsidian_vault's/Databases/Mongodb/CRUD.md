@@ -1,15 +1,39 @@
 # Create
-## Ein Dokument einer Kollektion hinzufügen
+## Ein Dokument in einer Kollektion hinzufügen
 
 ```javaScript
-const result = collection.insertOne(Dokument)
+const result = collection.insertOne(doc)
 ```
 
 ### Rückgabe:
 `insertOne` gibt ein Objekt zurück. 
+
 Die properties des Objekts sind:
 - acknowledged: true oder false.
 - insertedId: ID des eingefügten Dokuments.
+
+`insertOne` gibt entweder das Objekt zurück oder es wird ein Fehler geworfen.
+
+## Mehrere Dokumente in einer Kollektion hinzufügen
+
+```javascript
+const result = collection insertMany(docs)
+```
+
+### Parameter:
+- Array mit Objekten (jedes Objekt ist ein Dokument).
+
+### Rückgabe:
+
+`insertMany` gibt ein Objekt zurück.
+Properties des Objekts sind:
+- acknowledged: true/false.
+- insertedCount: number.
+- insertedIds: string
+
+## Achtung
+
+Auch wenn kein Dokument hinzugefügt wurde, gibt insertMany ein Objekt mit dem Wert true des propery acknowledged zurück, wenn insertMany ein leeres array übergeben wurde.
 
 ---
 
@@ -66,6 +90,8 @@ Außerdem hat FindCursor zwei Methoden, mit denen über die Ergebnisse iteriert 
 		```javascript 
 		const docs = await cursor.toArray() 
 		```
+
+## Read Operators
 
 ---
 
@@ -126,7 +152,7 @@ updateOne gibt volgendes Objekt zurück:
 ## Ein Dokument aus einer Collection entfernen
 
 ```javascript
-const result = collection.deleteOne(query)
+const result = collection.deleteOne(doc)
 ```
 
 ## Rückgabe

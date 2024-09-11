@@ -142,35 +142,42 @@ Wenn in der Kindkomponente Attribute erstellt werden, kann die Elternkomponente 
 ```vue
 //Kindkomponente
 <template>
-	<button v-bind:text="reactiveText"></button>
+	<slot name="testSlot" testAttribute="blablabla">
+	</slot>
 </template>
 
 //Elternkomponente
 <template>
-	<Kindkomponente v-slot="slotProps">
-		{{slotProps.text}}
+	<Kindkomponente>
+		<template v-slot:testSlot="slotProps">
+			{{slotProps.text}}
+		</template>
 	</Kindkomponente>
 </template>
 
 //Andere Variante
 //Elternkomponente
 <template>
-	<Kindkomponente v-slot="{text, attribut1, attribut2, attribut3}">
-		{{text}}
-		{{attribut1}}
-		{{attribut2}}
-		{{attribut3}}
+	<Kindkomponente>
+		<template v-slot:testSlot="{text, attribut1, attribut2, attribut3}">
+			{{text}}
+			{{attribut1}}
+			{{attribut2}}
+			{{attribut3}}
+		</template>
 	</Kindkomponente>
 </template>
 
 //Verkürzte Variante
 //Elternkomponente
 <template>
-	<Kindkomponente #="{text, attribut1, attribut2, attribut3}">
-		{{text}}
-		{{attribut1}}
-		{{attribut2}}
-		{{attribut3}}
+	<Kindkomponente>
+		<template #testSlot="{text, attribut1, attribut2, attribut3}">
+			{{text}}
+			{{attribut1}}
+			{{attribut2}}
+			{{attribut3}}
+		</template>
 	</Kindkomponente>
 </template>
 ```

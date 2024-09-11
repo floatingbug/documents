@@ -42,7 +42,7 @@ systemLog:
   destination: file
   path: /var/log/mongodb/mongod2.log
   logAppend: true
-net:
+net
   bindIp: 127.0.0.1
   port: 27018
 replication:
@@ -69,7 +69,7 @@ Type=forking
 WantedBy=multi-user.target
 ```
 
-etc/systemd/system/mongo2.service
+etc/systemd/system/mongod2.service
 ```ini
 [Unit]
 Description=MongoDB Database Server - Instance 2

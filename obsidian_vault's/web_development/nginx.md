@@ -55,6 +55,10 @@ server {
 }
 
 # Der Wert von server_name ist der Hostname.
+# Bei Anfragen an Port 8080, bei denen im host-header der http-anfrage
+# test.example.com steht, wird dieser server-block ausgefürht.
+# In dem IP-Header steht die Server-IP-Adresse aber im HTTP-host-Header 
+# steht der Domain-Name, der vom DNS in die Server-IP-Adresse aufgelöst wurde.
 server {
     listen 8080;
     server_name test.example.com;
