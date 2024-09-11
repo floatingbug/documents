@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web_development/Node.js/HTTP-Module.md",
+                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 485.5
   },
   "right": {
     "id": "b09931163efab1e8",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "web_development/Node.js/HTTP-Module.md",
+                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "web_development/Node.js/HTTP-Module.md",
+                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "web_development/Node.js/HTTP-Module.md"
+                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md"
               }
             }
           }
@@ -149,17 +149,21 @@
   },
   "active": "10b2329a4c918402",
   "lastOpenFiles": [
+    "Databases/Mongodb/Replica Set und Cluser.md",
+    "JavaScript/async await.md",
+    "JavaScript/Promise.md",
+    "Linux/Shell/Shell Kommandos.md",
+    "Linux/Systeminformationen.md",
+    "Linux/Benutzer und Gruppen.md",
+    "Untitled.md",
+    "web_development/Node.js/HTTP-Module.md",
+    "web_development/Node.js/Worker Thread.md",
     "web_development/Node.js/Architektur.md",
     "Informatik/Netzwerk/Grundlagen.md",
     "Informatik/System-Calls.md",
-    "web_development/Node.js/HTTP-Module.md",
-    "Linux/Shell/Shell Kommandos.md",
     "Linux/SSH (Secure Shell).md",
     "Linux/index Administration.md",
-    "Linux/Benutzer und Gruppen.md",
     "Linux/Add a user.md",
-    "Linux/Systeminformationen.md",
-    "Databases/Mongodb/Replica Set und Cluser.md",
     "Databases/Mongodb/Transaktionen.md",
     "web_development/JS/Validation.md",
     "web_development/JS/Intersection Observer.md",
@@ -171,10 +175,6 @@
     "web_development/Webdesign/Color.md",
     "web_development/Webdesign/Spacing.md",
     "web_development/Vue.js/Components.md",
-    "web_development/Vue.js/Watchers.md",
-    "Linux/Shell/was ist die Shell.md",
-    "JavaScript/Math.md",
-    "web_development/CSS/Transform.md",
     "Mathe/Vektoren",
     "Mathe/assets/Bogenmaß_1.png",
     "Mathe/assets",

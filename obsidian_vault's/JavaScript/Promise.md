@@ -8,12 +8,10 @@ Die handler Funktion wird also erst aufgerufen, wenn die Callback Funktion resol
 
 ---
 
-# Mechanismus
+# Micro Taskqueue
 
-Dem Promise-Objekt wird als Argument eine Funktion übergeben, das zwei Parameter enthält (nennen wir die Funktion func). Wenn das Promise-Objekt erstellt wird, ruft es func auf und übergibt den beiden Parameter als Referenzen die Funktionen resolve und reject. Diese Funktionen sind Funktionen des Promise-Objekts.
-Dem Promise-Objekt wird eine handler Funktion übergeben, die von resolve aufgerufen wird. 
-Durch diesen Mechanismus, kann In einer Callback Funktion einer asynchronen Funktion resolve das Ergebnis übergeben und aufgerufen werden. Erst wenn die Callback Funktion auf dem call stack ausgeführt wird, wird resolve aufgerufen, daher kann in zwischenzeit anderer code auf dem call stack ausgeführt werden. resolve führt dann die handler Funktion aus, der das Ergebnis der asynchronen Operation von resolve als Argument übergebin wird.
-
+Bei einem **Promise-Objekt** wird in die **Microtask-Queue** der **Callback (Handler)** gesetzt, der durch die Methode `then()`, `catch()`, oder `finally()` hinzugefügt wird, und zwar, nachdem das Promise-Objekt den Zustand `resolved` oder `rejected` erreicht hat.
+Sobald `resolve()` oder `reject()` aufgerufen wird, ändert das Promise seinen Zustand zu entweder "fulfilled" (erfüllt) oder "rejected" (abgelehnt).
 
 ---
 
@@ -23,12 +21,16 @@ Durch diesen Mechanismus, kann In einer Callback Funktion einer asynchronen Funk
 
 ``` JavaScript
 function doSomething(resolve, reject){
-    resolve("hello promise");
+    setTimeout(() => {
+	    resolve("hello promise");    
+    }, 0)
 }
 
 
 function doSomeOtherWork(resolve, reject){
-    resolve("some other work");
+    setTimeout(() => {
+	    resolve("some other work");
+	}, 0)
 }
 
 //doSomething werden die Argumente resolve und reject übergeben.

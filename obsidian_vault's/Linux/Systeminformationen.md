@@ -1,38 +1,52 @@
-# Speicherplatz anzeigen mit du
 
-- du (disc usage) zeigt die Speicherplatzbelegung von Dateien und Verzeichnisse an.
+## uname
 
-Beispiel:
-- `-h` (human-readable): Zeigt die Größe in einem lesbaren Format (K, M, G) an.
-``` shell
-du -h /path/to/file_or_folder
-```
+Gibt grundlegende Informationen über das aktuelle Betriebssystem und die Systemumgebung aus.
 
-`-s` (summarize): Zeigt nur die Gesamtsumme für das Verzeichnis an.
-```shell
-du -sh /path/to/folder
-```
-
-`--max-depth=1`: zeigt nur die größen der Dateien und Verzeichnisse in der ersten ebene an
-```shell
-du -h --max-depth=1 /path/to/folder
-```
+**Beispiel:** 
 
 ```shell
+uname -a
 ```
 
-```shell
-```
-
-```shell
-```
-
-```shell
-```
+- Mit der Option -a werden alle Informationen, die mit dem Programm uname ermittelt werden können, ausgegeben.
+- Die erste Spalte ist der Name des Betriebssystems, die zweite der Netzwerk-Hostname also der Name des Computers im Netzwerk.
 
 ---
 
-# Partitionen anzeigen mit lsblk
+# Festplatten und Partitionen
+
+## Speicherplatz anzeigen mit du
+
+Gibt die Datei und Verzeichnisgrößen aus. du steht für disc usage.
+
+**Beispiel:**
+
+```shell
+du -sh /pfad/zum/verzeichnis
+```
+
+- `-s` steht für "summarize" und zeigt nur die Gesamtgröße des Verzeichnisses oder der Datei an.
+- `-h` steht für "human-readable" und zeigt die Größe in einem lesbaren Format (z.B. KB, MB, GB).
+
+**Beispiel 2:**
+
+```shell
+du -h /pfad/zum/verzeichnis
+```
+
+- Dies listet die Größen aller Dateien und Unterverzeichnisse auf.
+
+**Beispiel 3:**
+
+```shell
+du -h --max-depth=1
+```
+
+- `--max-depth=1` zeigt die Größen des aktuellen Verzeichnisses und seiner direkten Unterverzeichnisse.
+
+
+## Partitionen anzeigen mit lsblk
 
 - lsbl steht für list block devices.
 - Zeigt alle Festplatten (Block Geräte) und Partitionen.
