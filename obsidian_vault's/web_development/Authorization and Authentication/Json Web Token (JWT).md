@@ -9,6 +9,7 @@
 
 ### Authorization mit JWT
 - Wie bei Sessions muss sich der Benutzer mit seinem Password anmelden. Der Server erstellt bei der Anmeldung keine Session sondern erstellt ein Token den er mit seinem geheimen Schlüssel signiert.
+	- Dieser Token wird im Client und nicht im Server gespeichert.
 - In dem Token, der bei jedem Request gesendet wird, befinden sich die Benutzerdaten.
 
 # Technische Umsetzung
@@ -36,8 +37,8 @@
 		- Verfügt aber der Client über den Secret Key, kann der Client eine gültige Signatur erzeugen.
 
 # HTTP
-Der Token wird meist im HTTP-Header Authentication gesendet 
-also: Authentication: Bearer "Tokenstring".
+Der Token wird meist im HTTP-Header Authorization gesendet 
+also: Authorization: Bearer "Tokenstring".
 Vor dem Token steht, welches Authentifizierungsschema angewendet wird. Beim JWT handelt es sich um einen Bearer Token (Zugriffstoken) der verwendet wird, um auf dem Server auf geschützte Ressourcen zuzugreifen.
 Es wird "Bearer" genannt, da der Client es einfach "mit sich trägt" (englisch: "to bear"), um seine Identität zu authentifizieren.
 

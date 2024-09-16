@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
+                "file": "Databases/Mongodb/CRUD.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6c41f6037b9a1c73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JavaScript/JavaScript Funktionsweise.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
+                "file": "JavaScript/JavaScript Funktionsweise.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md",
+                "file": "JavaScript/JavaScript Funktionsweise.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Mongodb/MongoDB Driver für Node.js.md"
+                "file": "JavaScript/JavaScript Funktionsweise.md"
               }
             }
           }
@@ -147,34 +160,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "10b2329a4c918402",
+  "active": "6c41f6037b9a1c73",
   "lastOpenFiles": [
-    "Databases/Mongodb/Replica Set und Cluser.md",
+    "JavaScript/assets/executenContext.png",
+    "JavaScript/JavaScript Funktionsweise.md",
+    "JavaScript/Array.md",
+    "JavaScript/assets",
+    "Databases/Mongodb/CRUD.md",
     "JavaScript/async await.md",
     "JavaScript/Promise.md",
+    "Informatik/System-Calls.md",
+    "Untitled 1.md",
+    "web_development/Validierung mit JavaScript.md",
+    "Linux/Shell/Shell Skripting.md",
+    "web_development/Curl.md",
+    "web_development/Authorization and Authentication/Json Web Token (JWT).md",
+    "Databases/Mongodb/Replica Set und Cluser.md",
+    "Databases/Mongodb/Transaktionen.md",
+    "vim/Grundlagen.md",
+    "vim/netrw.md",
+    "vim",
+    "Untitled.md",
+    "Databases/Mongodb/CLI-Kommandos.md",
+    "Databases/Mongodb/Aggregation.md",
+    "Databases/Mongodb/MongoDB Driver für Node.js.md",
+    "web_development/Node.js/Index Node.js.md",
     "Linux/Shell/Shell Kommandos.md",
     "Linux/Systeminformationen.md",
     "Linux/Benutzer und Gruppen.md",
-    "Untitled.md",
     "web_development/Node.js/HTTP-Module.md",
     "web_development/Node.js/Worker Thread.md",
-    "web_development/Node.js/Architektur.md",
-    "Informatik/Netzwerk/Grundlagen.md",
-    "Informatik/System-Calls.md",
-    "Linux/SSH (Secure Shell).md",
-    "Linux/index Administration.md",
-    "Linux/Add a user.md",
-    "Databases/Mongodb/Transaktionen.md",
-    "web_development/JS/Validation.md",
-    "web_development/JS/Intersection Observer.md",
-    "JavaScript/index.md",
-    "web_development/Curl.md",
-    "Linux/Shell/Shell Skripting.md",
-    "Linux/Shell/index Shell.md",
-    "web_development/CSS/Hindergrund.md",
-    "web_development/Webdesign/Color.md",
-    "web_development/Webdesign/Spacing.md",
-    "web_development/Vue.js/Components.md",
     "Mathe/Vektoren",
     "Mathe/assets/Bogenmaß_1.png",
     "Mathe/assets",
@@ -186,8 +201,6 @@
     "Mathe/Trigonometrie",
     "Mathe",
     "JavaScript/Arrays.canvas",
-    "Linux/Shell/Pasted image 20231219134355.png",
-    "web_development/git",
-    "Programmiersprachen/c"
+    "Linux/Shell/Pasted image 20231219134355.png"
   ]
 }

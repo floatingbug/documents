@@ -286,7 +286,7 @@ http://localhost:3000/add-user \
 
 ## Prinzip
 
-für die Delimiter in einem Here-Dokument können beliebige Wörter gewählt werden, solange sie eindeutig sind und nicht in den Text des Here-Dokuments selbst vorkommen. Das bedeutet, dass der Delimiter als Markierung verwendet wird, um den Beginn und das Ende des Textblocks innerhalb des Here-Dokuments zu kennzeichnen.
+für die Delimiter in einem Here-Dokument können beliebige Wörter gewählt werden, solange sie eindeutig sind und nicht in dem Text des Here-Dokuments selbst vorkommen. Das bedeutet, dass der Delimiter als Markierung verwendet wird, um den Beginn und das Ende des Textblocks innerhalb des Here-Dokuments zu kennzeichnen.
 Als Konvention verwendet man das Wort EOF.
 **<<**: Dies ist der Here-Dokument-Operator, der auch als "Here-Dokument-Redirect" bezeichnet wird. Es wird verwendet, um ein Here-Dokument zu starten, das den Text enthält, der anschließend an ein commando weitergeleitet oder in eine Datei geschrieben wird.
 
@@ -324,12 +324,14 @@ EOF
 )
 ```
 - **$(...)**: Dies ist eine Shell-Substitution. In einer Shell-Substitution wird immer ein Kommando ausgeführt und das Ergebnis des Kommandos ersetzt dann die Shell-Substitution, also $(...) wird durch das Ergebnis ersetzt. In der Shell-Substitution wird dem Befehl cat als Argument das here-document übergeben. An der Stelle der Shell-Substitution wird dann das Ergebnis von cat zurückgegeben. Das Ergebnis wird dann der Variable json zugewießen.
-    
+	
+-  Der cat Befehl übersetzt das here-document als String und gibt diesen zurück.
+	
 - **cat << EOF**: Der Befehl `cat` liest den Inhalt des Here-Dokuments, das zwischen `<< EOF` und `EOF` liegt. `<< EOF` signalisiert den Beginn des Here-Dokuments mit dem Delimiter `EOF`.
     
 - **EOF**: Dies ist der Delimiter, der das Ende des Here-Dokuments markiert. Alle Zeilen zwischen `<< EOF` und `EOF` werden als Text behandelt und in die Variable `json` geschrieben.
 
-**Ein Here-Document kann direkt in eine Datei geleitet werden oder an ein Programm übergeben werden, aber um den Inhalt eines Here-Documents in eine Variable zu schreiben, benötigt man einen Befehl wie `cat`, der den Inhalt liest und ausgibt.**
+**Ein Here-Document kann direkt in eine Datei geleitet werden oder an ein Programm übergeben werden, aber um den Inhalt eines Here-Documents in eine Variable zu schreiben, benötigt man einen Befehl wie `cat`, der den Inhalt liest, in ein String umwandelt und ausgibt.**
 
 ---
 

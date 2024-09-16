@@ -1,9 +1,24 @@
 
-**Beispiel 1:** Wenn das Schlüsselwort `await` vor einer Funktion steht (z.B. `asynchroneFunktion`), die ein Promise zurückgibt, wird der nachfolgende Code erst ausgeführt, wenn das Promise entweder erfüllt  oder abgelehnt wurde, also wenn `resolve`  oder `reject` aufgerufen wurde.
-```javaScript
-async function asynchroneFunktion(){}
+**async function:**
+- Gibt sofort ein Promise zurück.
+- Promise wird auf fullfilled gesetzt, wenn etwas zurück gegeben wird.
 
-const result = await asynchroneFunktion();
+**await:**
+- Solange das Promise im zustand pending ist, wird die Funktion, in der await aufgerufen wurde pausiert.
+- Ist das Promise im Zustand resolve oder rejected, fügt die JS-Engine den Code, der ab der Zeile await pausiert wurde, in die Microtask-Queue.
+
+**Beispiel 1:**  fun_a gibt sofort ein Promise zurück, das aber nicht in result gespeichert wird, Stattdessen wird der code der Funktion fun_a, bis zu return "Hello Promise.", weiter ausgeführt.
+Solange das Promise im Zustand pending ist, wird die Funktion, die fun_a aufgerufen hat, pausiert.
+Bei return "Hello Promise." setzt die JS-Engine das Promise auf fullfilled und übergibt dem Promise den Wert, der von fun_a zurückgegeben wurde.
+Dann wird der Code, nach der Zeile in der await steht, in die Microtask-Queue gespeichert. 
+Wird der Code im Callstack aufgerufen, wird das Ergebnis von der engine aus dem Promise in result gespeichert und console.log(result) aufgerufen.
+```javaScript
+async function fun_a(){
+	return "Hello Promise."
+}
+
+const result = await fun_a();
+console.log(result);
 ```
 
 **Beispiel 2:** Die Funktion foo ersetzt die Händler-Funktion, die man normalerweise then() übergibt und in der definiert wird, was geschehen soll, wenn die asynchrone Funktion einen Wert zurückgegeben hat.

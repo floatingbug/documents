@@ -93,6 +93,13 @@ Außerdem hat FindCursor zwei Methoden, mit denen über die Ergebnisse iteriert 
 
 ## Read Operators
 
+## Logische Operatoren
+
+**$or**: Das Dokument wird ausgewählt, wenn min. eine Eigenschaft übereinstimmt.
+```js
+{ $or: [{ field1: condition1 }, { field2: condition2 }] }
+```
+
 ---
 
 # Update

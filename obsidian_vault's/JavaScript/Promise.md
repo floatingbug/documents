@@ -10,8 +10,8 @@ Die handler Funktion wird also erst aufgerufen, wenn die Callback Funktion resol
 
 # Micro Taskqueue
 
-Bei einem **Promise-Objekt** wird in die **Microtask-Queue** der **Callback (Handler)** gesetzt, der durch die Methode `then()`, `catch()`, oder `finally()` hinzugefügt wird, und zwar, nachdem das Promise-Objekt den Zustand `resolved` oder `rejected` erreicht hat.
-Sobald `resolve()` oder `reject()` aufgerufen wird, ändert das Promise seinen Zustand zu entweder "fulfilled" (erfüllt) oder "rejected" (abgelehnt).
+Wird resolve oder rejected in dem call-stack aufgerufen, durchsucht die JS-Engine eine Liste im Promise-Objekt nach der Handler-Funktion, die durch die Methode `then()`, `catch()`, oder `finally()` hinzugefügt wurde. Alle Handler-Funktion die gefunden werden, werden von der JS-Engine in die Microtask-Queue gesetzt. Das Ergebnis der asynchronen Operation wurde resolve oder reject übergeben, dieses wird der Handler-Funktion übergeben, wenn sie aus der Microtask-Queue in den call-stack gesetzt wird.
+Sobald resolve oder rejected aufgerufen wird, wird das Promise-Objet auf fullfilled oder rejected gesetzt.
 
 ---
 
@@ -39,8 +39,8 @@ function doSomeOtherWork(resolve, reject){
 //in p wird die Referenz des Promise-Objekts gespeichert.
 const p = new Promise(doSomething);
 
-//then wird eine handler Funktion übergeben, die aufgerufen wird, wenn resolve aufgerufen wird.
-//der handler Funktion wird als Argument übergeben, was resolve übergeben wurde, also das Ergebnis einer asynchronen Operation.
+//then wird eine handler Funktion übergeben, die in die Microtask-queue gesetzt wird, wenn resolve aufgerufen wird.
+//der handler Funktion wird als Argument übergeben, was resolve übergeben wurde, sobald diese aus der Microtask-Queue auf dem Call-Stack zu ausführung gebracht wurde.
 p.then((result) => {
     console.log(result);
     
@@ -48,7 +48,7 @@ p.then((result) => {
 }).then((result) => {
     console.log(result);
 });
-//wird in then ein Promise Objekt zurück gegeben, gibt then dieses promise zurück und mit dem Punkt Operator (.) kann dann auf dieses Promise Objekt zugegriffen wreden. Die zweite then Funktion ist also die then Funktion vom Promise Objekt das von der ersten then Funktion zurück gegeben wurde.
+//wird in der Handler-Funktion ein Promise Objekt zurück gegeben, kann mit dem punkt Operator auf dieses Promise zugreifen. Durch den Punkt Operator wird die then Methode des zurück gegebene Promise aufgerufen und eine Handler-Funktion übergeben.
 ```
 
 **Beispiel 2:**
