@@ -30,6 +30,30 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "82d8126b7f4e5ce8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Programmiersprachen/c++/Warum Header-Dateien.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4c2d30d68e73f842",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Informatik/Netzwerk/Grundlagen.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
         "currentTab": 1
