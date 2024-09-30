@@ -1,20 +1,19 @@
+
+**Reihenfolge der rechte ist immer: Gruppe, Besitzer, alle anderen.**
+
 # Gruppen
 
 ## Kommandos
 
-### chgrp
-
-Ändert den Benutzer einer Datei oder eines Verzeichnisses.
+### Die Gruppe einer Datei oder Verzeichnisses ändern.
 
 **Beispiel:**
 
 ```shell
-chgrp [name der gruppe] [name der Datei oder des Verzeichnisses]
+chgrp [Name der Gruppe] [name der Datei oder des Verzeichnisses]
 ```
 
-### chown
-
-Der `chown`-Befehl ändert sowohl den Besitzer als auch die Gruppe einer Datei oder eines Verzeichnisses.
+### Sowohl den Besitzer als auch die Gruppe einer Datei oder eines Verzeichnisses ändern.
 
 **Beispiel:**
 
@@ -22,4 +21,15 @@ Der `chown`-Befehl ändert sowohl den Besitzer als auch die Gruppe einer Datei o
 chown [neuer_besitzer]:[neue_gruppe] [datei_oder_verzeichnis]
 ```
 
+
+### Benutzer einer Gruppe hinzufügen
+
+**Der Befehl `usermod` wird verwendet, um die Kontoinformationen eines Benutzers in einem Linux-System zu ändern.**
+
+```shell
+	usermod -aG [Name der Gruppe] [Benutzer]
+```
+
+- `-a`:  Append: Sorgt dafür, dass der Benutzer nicht aus den bestehenden Gruppen entfernt wird, wenn neue Gruppen hinzugefügt werden.
+- `-G`: Um eine oder mehrere Gruppen angeben zu können, zu denen der Benutzer hinzugefügt werden soll.
 

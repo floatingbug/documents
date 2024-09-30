@@ -55,11 +55,7 @@ Node-API-Funktionen sind mit C oder C++ geschrieben und verwenden die Libuv Bibl
 ---
 
 # Code Execution
-Wird im Call Stack setTimeout aufgerufen, wird diese Funktion nicht im Call Stack ausgefürht, denn setTimeout gehört nicht zu JavaScript, setTimeout gehört zu Node und wird durch die Node API aufgerufen. Die Event Loop fügt setTimeout in die Event-Queue. Ist setTimeout als Nächstes an der Reihe, wird setTimeout von der Event Loop zur Ausführung gebracht, wobei die Ausführung dann nicht auf dem Call Stack von V8 ausgefürht wird, sondern von einem [[Worker Thread]].
-Ist die Ausführung von setTimeout beendet, wird die Callback-Funktion von setTimeout durch die Event Loop in die Callback-Queue gebracht. Ist der Call-Stack Frei, wird die Callback-Funktion durch die Event Loop auf den Call-Stack gebracht und ausgefürht.
 
-Ist der Call Stack und die Event Queue leer, wird Node beendet.
-Damit Node nicht beendet wird, darf die Event Queue nicht leer sein. Beispielsweise wird die Event Queue niemals leer sein, wenn ein HTTP-Server gestartet wurde.
 
 Node umschließt jeglichen JavaScript Code in eine Funktion.
 Beispiel: Führt man mit Node eine Datei aus, die nur console.log([[arguments]]) als Code enthält, werden alle Argumente, die der Funktion übergeben wurden, angezeigt. 
@@ -72,13 +68,13 @@ Dadurch das jede Datei mit JavaScript code innerhalb einer umgebenen Funktion st
 Lokalisieren der Datei im Dateisystem des Betriebssystems.
 
 ##### Zweiter Schritt:
-Der Inhalt der Datei wird in den Arbeitsspeicher geladen.
-
+Der Module Execution Context (MEC) wird erstellt, siehe [[JavaScript Funktionsweise]].
 ##### Dritter Schritt:
-Der Inhalt der Datei wird von der umgebenden Funktion eingeschlossen.
-
+Der gesamte Inhalt des Moduls wird in eine Funktion eingebettet, ähnlich einer **Immediately Invoked Function Expression (IIFE)**. Dadurch wird sichergestellt, dass die Variablen und Funktionen im Modul **lokal** sind und keinen Einfluss auf den globalen Scope haben.
 ##### Vierter Schritt:
-Der Inhalt der Datei wird von V8 evaluiert. Alle Funktionen und Variablen sind dann dort verfügbar, in der die Datei mit require importiert wurde.
+Der Code-Bereich des MEC wird von der JS-Engine ausgeführt (evaluiert):
+- Alle Funktionen die direkt im Module aufgerufen werden, werden ausgeführt.
+- Variablen wird eine Wert zugewiesen.
 
 ##### Fünfter Schritt:
 Der evaluierte Inhalt wird cached.

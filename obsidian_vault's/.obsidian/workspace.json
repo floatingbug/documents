@@ -13,50 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databases/Mongodb/CRUD.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6c41f6037b9a1c73",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "JavaScript/JavaScript Funktionsweise.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "82d8126b7f4e5ce8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programmiersprachen/c++/Warum Header-Dateien.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4c2d30d68e73f842",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Informatik/Netzwerk/Grundlagen.md",
+                "file": "Databases/Mongodb/Documents filtern.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -122,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JavaScript/JavaScript Funktionsweise.md",
+                "file": "Databases/Mongodb/Documents filtern.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "JavaScript/JavaScript Funktionsweise.md",
+                "file": "Databases/Mongodb/Documents filtern.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JavaScript/JavaScript Funktionsweise.md"
+                "file": "Databases/Mongodb/Documents filtern.md"
               }
             }
           }
@@ -184,46 +147,48 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c41f6037b9a1c73",
+  "active": "10b2329a4c918402",
   "lastOpenFiles": [
-    "JavaScript/assets/executenContext.png",
-    "JavaScript/JavaScript Funktionsweise.md",
-    "JavaScript/Array.md",
-    "JavaScript/assets",
     "Databases/Mongodb/CRUD.md",
-    "JavaScript/async await.md",
-    "JavaScript/Promise.md",
-    "Informatik/System-Calls.md",
-    "Untitled 1.md",
+    "Databases/Mongodb/Documents filtern.md",
+    "Untitled.canvas",
+    "web_development/Next.js/Grundlagen.md",
+    "web_development/React/Grundlagen.md",
+    "web_development/Next.js",
+    "web_development/React/Untitled",
     "web_development/Validierung mit JavaScript.md",
-    "Linux/Shell/Shell Skripting.md",
-    "web_development/Curl.md",
-    "web_development/Authorization and Authentication/Json Web Token (JWT).md",
-    "Databases/Mongodb/Replica Set und Cluser.md",
-    "Databases/Mongodb/Transaktionen.md",
-    "vim/Grundlagen.md",
-    "vim/netrw.md",
-    "vim",
-    "Untitled.md",
-    "Databases/Mongodb/CLI-Kommandos.md",
-    "Databases/Mongodb/Aggregation.md",
-    "Databases/Mongodb/MongoDB Driver für Node.js.md",
-    "web_development/Node.js/Index Node.js.md",
-    "Linux/Shell/Shell Kommandos.md",
-    "Linux/Systeminformationen.md",
+    "web_development/React",
+    "Untitled 1.md",
+    "web_development/CSS/Images.md",
     "Linux/Benutzer und Gruppen.md",
-    "web_development/Node.js/HTTP-Module.md",
-    "web_development/Node.js/Worker Thread.md",
+    "Linux/Systeminformationen.md",
+    "web_development/DevOps/nginx.md",
+    "web_development/DevOps/git/Webhook auf gitHub.com.md",
+    "vim/Grundlagen.md",
+    "web_development/DevOps/pm2.md",
+    "web_development/SSL (Secure Socket Layer).md",
+    "web_development/CSS/Transition.md",
+    "web_development/DevOps",
+    "web_development/CSS/Transform.md",
+    "web_development/CSS/Scroll-Timeline.md",
+    "web_development/CSS/Pseudo Elements.md",
+    "web_development/CSS/index css.md",
+    "web_development/CSS/Hindergrund.md",
+    "web_development/CSS/Grid.md",
+    "web_development/CSS/flex-box.md",
+    "web_development/Vue.js/Pinia.md",
+    "web_development/Vue.js/Watchers.md",
+    "JavaScript/Promise.md",
+    "JavaScript/JavaScript Funktionsweise.md",
+    "JavaScript/assets/executenContext.png",
+    "JavaScript/assets",
+    "vim",
     "Mathe/Vektoren",
     "Mathe/assets/Bogenmaß_1.png",
     "Mathe/assets",
     " 1",
     "Mathe/Trigonometrie/bogenmaß1.png",
     "Mathe/Trigonometrie/bla",
-    "Excalidraw",
-    "tldraw",
-    "Mathe/Trigonometrie",
-    "Mathe",
     "JavaScript/Arrays.canvas",
     "Linux/Shell/Pasted image 20231219134355.png"
   ]

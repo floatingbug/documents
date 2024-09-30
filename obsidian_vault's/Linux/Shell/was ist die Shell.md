@@ -34,4 +34,4 @@
 		- Die Shell schreibt Ergebnisse in die Gerätedatei, wenn 1 oder 2 ebenfalls auf die Gerätedatei des Terminals verweisen und das Terminal zeigt dann die Daten an.
   
 
-- Die shell kann angewiesen werden, die Ausgabe umzuleiten bspw. in eine Datei.
+- Die shell kann angewiesen werden, die Ausgabe umzuleiten, bspw. in eine Datei und nicht in die Gerätedatei des Terminals.

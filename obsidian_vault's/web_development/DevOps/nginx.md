@@ -72,7 +72,7 @@ server {
 
 # Eine Homepage über nginx hosten
 
-Standardmäßig werden Webinhalte unter `/var/www/` abgelegt. Dort wir ein neues Verzeichnis für die Homepage erstellen. In dem neu erstellten Verzeichnis wird dann die Homepage abgelegt (index.html, style.css usw.).
+Standardmäßig werden Webinhalte unter `/var/www/` abgelegt. Dort wird ein neues Verzeichnis für die Homepage erstellen. In dem neu erstellten Verzeichnis wird dann die Homepage abgelegt (index.html, style.css usw.).
 
 ### NGINX Konfiguration
 

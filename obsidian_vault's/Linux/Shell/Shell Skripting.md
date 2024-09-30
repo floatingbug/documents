@@ -1,11 +1,11 @@
 # Grundlegendes
 
-Jede Zeile ohne # wird als Befehlszeile bewertet.
+Jede Zeile ohne # wird als eine Kommando an die Shell bewertet.
 Jede Zeile die mit # beginnt, wird als Kommentarzeile bewertet.
 
 ## Semikolon
 
-Verwendung: Trennung von einzelnen Befehlen in einer einzelnen Zeile. Ermöglicht das Ausführen von aufeinanderfolgenden Befehlen in einer einzelnen Zeile. Ohne Semikolon wird die komplette Zeile als einzelnen Befehl von der Shell interpretiert. 
+Verwendung: Trennung von einzelnen Kommandos in einer einzelnen Zeile. Ermöglicht das Ausführen von aufeinanderfolgenden Kommandos in einer einzelnen Zeile. Ohne Semikolon wird die komplette Zeile als einzelnes Kommando von der Shell interpretiert. 
 ### 1. Mehrere Befehle/Kommandos in einer Zeile
 
 es können mehrere Befehle nacheinander ausgeführen werden, indem die Befehle mit einem Semikolon getrennt werden:
@@ -14,12 +14,21 @@ es können mehrere Befehle nacheinander ausgeführen werden, indem die Befehle m
 `echo "Erster Befehl"; echo "Zweiter Befehl"; echo "Dritter Befehl"`
 ```
 
-Ohne das Semikolon, würde die shell die nachfolgenden eingaben als Argumente für das echo-Kommando bewerten: echo, "Zweiter Befehl", echo und "Dritter Befehl".
+**Ohne das Semikolon, würde die shell die nachfolgenden eingaben als Argumente für das echo-Kommando bewerten**: echo, "Zweiter Befehl", echo und "Dritter Befehl".
 Durch das Semikolon wird nicht nur einmal ein echo-Kommando ausgeführt, mit nachfolgenden Argumenten, sondern drei mal und jedes echo-Kommando hat seine eigenen Argumente.
 
 ### 2. if-Anweisungen
 
 **Bestehen aus Schlüsselwörter (keine eigenständigen Programme) und Kommandos (eigenständige Programme)**
+
+**Beispiel:**
+```bash
+if [ $# -eq 0 ]; then 
+	echo "Keine Argumente übergeben."; 
+else 
+	echo "Argumente wurden übergeben."; 
+fi
+```
 #### Schlüsselwörter:
 
 - `if`
@@ -31,21 +40,28 @@ Durch das Semikolon wird nicht nur einmal ein echo-Kommando ausgeführt, mit nac
 
 - `[ $# -eq 0 ]` (dies ist ein Testkommando, auch bekannt als `test`, das überprüft, ob die Anzahl der Argumente gleich null ist)
 	- **Kommando `[`**:
-	- Es ist ein Synonym für das Kommando `test`.
-	- `[ ... ]`, ruft die Shell tatsächlich das eingebaute `test`-Kommando auf.
-	- `[` und `test` prüfen Bedingungen und geben `0` (Erfolg) oder `1` (Fehler) zurück, basierend auf der Bedingung.
+		- Es ist ein Synonym für das Kommando `test`.
+		- `[ ... ]`, ruft die Shell tatsächlich das eingebaute `test`-Kommando auf.
+		- `[` und `test` prüfen Bedingungen und geben `0` (Erfolg) oder `1` (Fehler) zurück, basierend auf der Bedingung.
 	- **Operatoren:** 
-	- `$#` und `-eq` sind Operatoren und keine Kommandos oder Schlüsselwörter.
-	- Operatoren sollten immer von Leerzeichen umgeben sein, damit die Shell jeden Operator richtig interpretieren kann.
+		- `$#` und `-eq` sind Operatoren und keine Kommandos oder Schlüsselwörter.
+		- Operatoren sollten immer von Leerzeichen umgeben sein, damit die Shell jeden Operator richtig interpretieren kann.
 - `echo "Keine Argumente übergeben."` (dies ist das `echo`-Kommando, das den Text "Keine Argumente übergeben." ausgibt)
 - `echo "Argumente wurden übergeben."` (dies ist das `echo`-Kommando, das den Text "Argumente wurden übergeben." ausgibt)
 
+
+**Verarbeitung einer if-Anweisung:**
+
+- **Zeile 1:** Die Shell führt das test-Kommando aus und speichert den Rückgabewert (true oder false). Durch das Semikolon weiß die Shell, dass then nicht zum test-Kommando gehört.
+- **Zeile 1:** Die Shell führt, durch das Schlüsselwort then, die nächste Zeile aus, wenn test true zurückgegeben hat, andernfalls führt die Shell die Zeile nach dem Schlüsselwort else aus.
+- **Zeile 5:** Durch das Schlüsselwort fi, weiß die Shell, dass das if-Statement abgeschlossen ist.
+
 ```bash
-if [ $# -eq 0 ]; then 
-	echo "Keine Argumente übergeben."; 
-else 
-	echo "Argumente wurden übergeben."; 
-fi
+1 if [ $# -eq 0 ]; then 
+2 	echo "Keine Argumente übergeben."; 
+3 else 
+4 	echo "Argumente wurden übergeben."; 
+5 fi
 ```
 
 Die Einrückungen der Anweisungen für then und else sind nicht notwendig, da die shell durch die Schlüsselwörter then und else erkennt, was wann ausgeführt werden soll. fi ist notwendig, damit die shell interpretieren kann, dass die nächsten Kommandos oder Schlüsselwörter nicht mehr zu else gehören.
@@ -85,6 +101,17 @@ for i in 1 2 3
 do
     echo "Nummer $i"
 done
+```
+
+### 4. Kommando in nächster Zeile fortführen
+
+Mit einem Backslash `\` kann man ein Kommando in der nächsten Zeile fortführen und die Shell erkennt, dass es sich um das selbe Kommando handelt:
+
+```shell
+curl -i \
+	-H "Content-Type: application/json" \
+	-d '{"prop": "value"}' \
+	http://localhost:3000/testi
 ```
 
 ---
@@ -150,7 +177,7 @@ Mit der Option -p (print) kann ein Satz auf dem Bildschirm ausgegeben werden, de
 
 # Datenausgabe
 
-Der Befehl echo schreibt alles in stdout
+Der Befehl echo schreibt alles in stdout, also in die Gerätedatei des Terminals.
 
 ``` bash
 echo Das hier $variableName ist der Inhalte einer Variable.
@@ -197,7 +224,8 @@ In Shell gibt es einen Unterschied in der Verwendung von einfachen Anführungsze
 
 Beispiel:
 ``` shell
-name="John" echo 'Hello $name'  # Ausgabe: Hello $name`
+name="John" 
+echo 'Hello $name'  # Ausgabe: Hello $name`
 ```
 
 Hier wird der Wert der Variable `name` (`John`) nicht ausgegeben, da er innerhalb einfacher Anführungszeichen steht.
@@ -208,7 +236,8 @@ Hier wird der Wert der Variable `name` (`John`) nicht ausgegeben, da er innerhal
 
 Beispiel:
 ```bash
-name="John" echo "Hello $name"  # Ausgabe: Hello John`
+name="John"
+echo "Hello $name"  # Ausgabe: Hello John`
 ``` 
 
  Hier wird der Wert der Variable `name` innerhalb der doppelten Anführungszeichen ersetzt und ausgegeben.

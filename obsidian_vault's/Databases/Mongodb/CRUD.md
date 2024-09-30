@@ -60,8 +60,8 @@ const result = collection.find(query)
 - Keine Parameter: Alle Dokumente werden zurück gegeben.
 
 ### Return
-- FindCursor: wenn mindestens ein Dokument gefunden wurde.
-- null: wenn kein Dokument gefunden wurde.
+- FindCursor: Es wird auch ein cursor zurückgegeben wenn kein document gefunden wurde.
+- null: Wenn ein Fehler bei der Datenbankoperation auftrat.
 
 ### FindCursor
 Ist ein Objekt mit Methoden und einem Zeiger auf die geladenen Dokumente.
