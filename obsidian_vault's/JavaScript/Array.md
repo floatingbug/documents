@@ -84,5 +84,5 @@ const array1 = [1, 4, 9, 16];
 const isTypeNumber = array1.every(n => typeof n === "string");
 
 console.log(isTypeNumber);
-// Ausgabe: true
+// Ausgabe: false
 ```

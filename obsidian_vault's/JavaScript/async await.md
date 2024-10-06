@@ -8,6 +8,15 @@
 - Ist das Promise im Zustand resolve oder rejected, fügt die JS-Engine den Code, der ab der Zeile await pausiert wurde, in die Microtask-Queue.
 
 **Beispiel 1:**  
+```javaScript
+async function fun_a(){
+	return "Hello Promise."
+}
+
+const result = await fun_a();
+console.log(result);
+```
+
 1. fun_a wird aufgerufen und der EC wird auf den Callstack gelegt.
 	- fun_a gibt sofort ein Promise zurück, das aber nicht in result gespeichert wird, Stattdessen wird der code der Funktion fun_a, bis zu return "Hello Promise.", ausgeführt.
 
@@ -28,14 +37,6 @@
 6. Ist der Code in der Microtask-Queue an der Reihe, wird ein EC für diesen Code erstellt und auf den Callstack gelegt.
 	- Noch bevor der Code-Bereich des EC ausgeführt wird, wird das Ergebnis von der engine aus dem Promise in result gespeichert. Erst dann wird der Code-Bereich des EC ausgeführt und console.log(result) aufgerufen.
 
-```javaScript
-async function fun_a(){
-	return "Hello Promise."
-}
-
-const result = await fun_a();
-console.log(result);
-```
 
 **Beispiel 2:** 
 ```javascript
