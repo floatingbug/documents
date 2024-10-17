@@ -16,12 +16,29 @@
 
 ### Alle anfragen erlauben
 
-```javascript
-app.use(cors());
-```
+- **`origin: "*"`**: Erlaubt Anfragen von allen Ursprüngen (Domains).
+- **`allowedHeaders: ["Content-Type", "Authorization"]`**: Gibt an, welche HTTP-Header der Client in seinen Anfragen senden darf.
 
 ```javascript
+app.use(cors({
+	origin: "*"
+}));
 ```
 
+### Erlauben welche Header der client senden darf
+
 ```javascript
+app.use(cors({
+	allowedHeaders: ["Content-Type", "Authorization"]
+}));
+```
+
+### Header in javaScript zugänglich machen
+
+Es gibt Header, wie Authorization, die von javaScript nicht gelesen werden können. Erst wenn der Header Access-Control-Expose-Headers auf true gesetzt ist, kann javaScript auf diesen zugreifen. 
+
+```javascript
+app.use(cors({
+	exposedHeaders: ["Authorization"]
+}));
 ```

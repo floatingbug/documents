@@ -7,6 +7,8 @@
 
 # Props
 
+-  Parant components können den properties einer child component werte zuweißen.
+
 Beispiel:
 ```vue
 //---Datei App.vue---

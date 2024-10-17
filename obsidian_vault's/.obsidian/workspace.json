@@ -13,13 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web_development/React/Grundlagen.md",
+                "file": "web_development/Node.js/HTTP-Module.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "46412507478bdc7d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Node.js HTTP-Module.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8501170d3f623412",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "web_development/Node.js/net-module.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "web_development/React/Grundlagen.md",
+                "file": "web_development/Node.js/net-module.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "web_development/React/Grundlagen.md",
+                "file": "web_development/Node.js/net-module.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "web_development/React/Grundlagen.md"
+                "file": "web_development/Node.js/net-module.md"
               }
             }
           }
@@ -147,39 +172,40 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9f3660d1af5a89a0",
+  "active": "8501170d3f623412",
   "lastOpenFiles": [
+    "web_development/Node.js/HTTP-Module.md",
+    "web_development/Node.js/net-module.md",
+    "web_development/Vue.js/Components.md",
+    "Databases/Mongodb/Replica Set und Cluser.md",
+    "web_development/DevOps/git/Grundlagen.md",
+    "Linux/SSH (Secure Shell).md",
+    "web_development/DevOps/nginx.md",
+    "web_development/DevOps/pm2.md",
+    "Databases/Mongodb/Documents filtern.md",
     "Databases/Mongodb/CRUD.md",
+    "web_development/CORS.md",
+    "Node.js HTTP-Module.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "web_development/React/Grundlagen.md",
+    "web_development/Next.js/Grundlagen.md",
+    "web_development/Next.js/routes1.png",
     "web_development/Vue.js/Computed Properties.md",
     "web_development/reCaptcher.md",
     "JavaScript/Array.md",
     "Linux/Shell/Shell Skripting.md",
-    "Untitled.md",
     "JavaScript/async await.md",
     "JavaScript/Promise.md",
-    "Databases/Mongodb/Documents filtern.md",
     "Untitled.canvas",
-    "web_development/Next.js/Grundlagen.md",
-    "web_development/React/Grundlagen.md",
     "web_development/Next.js",
     "web_development/React/Untitled",
     "web_development/Validierung mit JavaScript.md",
     "web_development/React",
-    "Untitled 1.md",
     "web_development/CSS/Images.md",
     "Linux/Benutzer und Gruppen.md",
     "Linux/Systeminformationen.md",
-    "web_development/DevOps/nginx.md",
-    "web_development/DevOps/git/Webhook auf gitHub.com.md",
-    "vim/Grundlagen.md",
-    "web_development/DevOps/pm2.md",
-    "web_development/SSL (Secure Socket Layer).md",
-    "web_development/CSS/Transition.md",
     "web_development/DevOps",
-    "web_development/CSS/Transform.md",
-    "web_development/CSS/Scroll-Timeline.md",
-    "web_development/CSS/Pseudo Elements.md",
-    "web_development/CSS/index css.md",
     "JavaScript/assets/executenContext.png",
     "JavaScript/assets",
     "vim",

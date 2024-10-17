@@ -29,6 +29,12 @@
 - Das übersetzen übernimmt babel.
 - Der script-type muss text/jsx sein.
 
+
+### Single Page Application
+
+- index.html ist, neben anderen Dateitypen, die einzige html Datei die an den client gesendet wird.
+- Anhand der routen (in der Browser Leiste), wird aus der entsprechenden Komponente der DOM erstellt und dieser ersetzt dann den vorigen DOM.
+
 ---
 
 # Components
@@ -111,7 +117,7 @@ function Header(props) {
 }
 ```
 
-**Eine function in JSC-code ausführen und den Wert zurückgeben:**
+**Eine function in JSX-code ausführen und den Wert zurückgeben:**
 
 ```javascript
 function createTitle(title) {
@@ -198,7 +204,7 @@ function HomePage() {
 }
 ```
 
-**Das erste Element ist reactive (Änderun haben Auswirkung auf das dom):**
+**Das erste Element ist reactive (Änderung haben Auswirkung auf das dom):**
 
 ```javascript
 function HomePage() {

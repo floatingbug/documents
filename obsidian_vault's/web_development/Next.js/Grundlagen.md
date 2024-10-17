@@ -59,7 +59,49 @@ export default function RootLayout({ children }) {
 
 # Routing
 
-**Statt routen wie /home oder /about für das Navigieren zu nutzen, werden Verzeichnisse und Dateien als routen verwendet:**
+**Statt routen wie /home oder /about für das Navigieren zu nutzen, werden Verzeichnisse und Dateien als routen verwendet.**
+- Verzeichnisse und Dateien befinden sich im Verzeichnis app.
+	- Der Router nutzt dieses Verzeichnis.
+- Verzeichnisse mit `()` werden vom routing-system ignoriert.
+
+**Beispiel:**
+![[routes1.png]]
+
+- `/about`: wird bspw. `homepage.com/about` aufgerufen rendert next.js die page.js Datei und sendet diese an den Client.
+- Das Verzeichnis `(shop)` wird vom routing-system ignoriert aber account nicht, daher kann `/account` aufgerufen werden aber `/shop/account` nicht.
+
+### Der Platzhalter {children}
+
+**Wenn in einem Verzeichnis sowohl eine `layout.js` als auch eine`page.js` Datei vorhanden ist, wird der Inhalt von `page.js` automatisch in das `{children}`Platzhalter-Element der `layout.js` Datei eingefügt und `layout.js` wird gerendert.**
 
 ---
 
+# Bedingt Klassennamen setzen
+
+**Das module clsx wird benötigt.**
+
+**Beispiel:** 
+```javascript
+import clsx from 'clsx';
+ 
+export default function InvoiceStatus({ status }: { status: string }) {
+  return (
+    <span
+      className={clsx(
+        'inline-flex items-center rounded-full px-2 py-1 text-sm',
+        {
+          'class-pending': status === 'pending',
+          'class-paid': status === 'paid',
+        },
+      )}
+    >
+    // ...
+)}
+```
+
+- class-pending wird nur gesetzt, wenn status gleich pending.
+- class-paid wird nur gesetzt, wenn status gleich paid.
+
+---
+
+	
