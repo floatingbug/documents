@@ -8,14 +8,14 @@
 - **Navigieren zu "Settings" -> "Webhooks".**
 - **Klicken auf "Add webhook".**
 - **Payload-URL des Servers eingeben.**
-    - Beispiel: `http://servername.com/webhook`
+    - Beispiel: `http://ip:port`
 - **"application/json" als Content type wählen.**
 - **"Just the push event" auswählen.**
 - **Klicken auf "Add webhook".**
 
 ### Schritt 2: Webhook-Skript auf Ihrem Server einrichten
 
-Erstellen eines einfaches Webhook-Skript auf dem Server, das den `git pull` Befehl ausführt, wenn eine Push-Benachrichtigung (per post) empfangen wird.
+Erstellen eines einfachen Webhook-Skripts auf dem Server, das den `git pull` Befehl ausführt, wenn eine Push-Benachrichtigung (per post) empfangen wird.
 
 1. **Verzeichnis für das Webhook-Skript erstellen:**
 

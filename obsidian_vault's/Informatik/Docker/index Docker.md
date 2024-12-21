@@ -1,2 +1,2 @@
-[[Funktionsweise]]
+[[Informatik/Docker/Funktionsweise]]
 [[Image (Dateisystem)]]

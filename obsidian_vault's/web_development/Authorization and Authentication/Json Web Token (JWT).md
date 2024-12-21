@@ -43,3 +43,5 @@ Vor dem Token steht, welches Authentifizierungsschema angewendet wird. Beim JWT 
 Es wird "Bearer" genannt, da der Client es einfach "mit sich trägt" (englisch: "to bear"), um seine Identität zu authentifizieren.
 
 # Beispiel mit node.js
+
+

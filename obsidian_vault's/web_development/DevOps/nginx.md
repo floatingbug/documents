@@ -43,7 +43,7 @@ Direktiven die in keiner Block-Direktive vorhanden sind, gehören zum main conte
 
  Beispiel: 
 ```nginx
-# location ist die URI die in einer HTTP-Anfrage steht, also bspw. GET /XXX # # # HTTP/1.1, wobei /XXX die Ressource darstellt.
+# location ist die angefragte Resource die in einer HTTP-Anfrage steht, also bspw. GET /resource.
 # root ist der absolute Pfad zur Ressource /XXX wobei die Ressource, also /XXX # # nicht mit angegeben wird.
 server {
     listen 80;
@@ -141,3 +141,51 @@ Füge folgende Zeile hinzu:
 - **Symbolischer Link**: `/etc/nginx/sites-enabled/mywebsite`
 
 Durch diese Schritte wird NGINX so konfiguriert, dass es deine Homepage bereitstellt. Stelle sicher, dass deine Domain richtig konfiguriert ist und auf deinen Server zeigt, um die Website im Internet zugänglich zu machen.
+
+---
+
+# Automatisch ssh-Zertifikat installieren
+
+**Certbot**. Es wird von der **Let's Encrypt**-Initiative bereitgestellt und automatisiert die Beantragung, Installation und Erneuerung von SSL-Zertifikaten.
+
+### Hauptfunktionen von Certbot:
+
+1. **Automatische SSL-Zertifikat-Beantragung**: Es beantragt ein Zertifikat bei Let's Encrypt.
+2. **Automatische Konfiguration von Webservern**: Certbot kann SSL-Zertifikate direkt in **Nginx** oder **Apache** konfigurieren.
+3. **Automatische Erneuerung**: Certbot überwacht und erneuert Zertifikate vor ihrem Ablauf.
+
+---
+
+### Installation von Certbot:
+
+Die Installation hängt von deinem Betriebssystem ab. Hier ein Beispiel für Ubuntu:
+
+bash
+
+Code kopieren
+
+`sudo apt update sudo apt install certbot python3-certbot-nginx`
+
+---
+
+### Zertifikat für Nginx anfordern:
+
+Nach der Installation kannst du mit einem einzigen Befehl ein Zertifikat anfordern und es automatisch in die Nginx-Konfiguration einfügen lassen:
+
+bash
+
+Code kopieren
+
+`sudo certbot --nginx`
+
+---
+
+### Zertifikat automatisch erneuern:
+
+Certbot installiert einen Cron-Job oder Systemd-Timer, um Zertifikate automatisch zu erneuern. Du kannst es aber manuell testen:
+
+bash
+
+Code kopieren
+
+`sudo certbot renew --dry-run`

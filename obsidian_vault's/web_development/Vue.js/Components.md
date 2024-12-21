@@ -1,4 +1,4 @@
-## Definition
+_k:· ˝^## Definition
 - Components sind Dateien die Javascript, HTML und CSS enthalten.
 - Dateiendung ist .vue.
 - Können in anderen components importiert werden.

@@ -14,6 +14,7 @@ Die properties des Objekts sind:
 
 `insertOne` gibt entweder das Objekt zurück oder es wird ein Fehler geworfen.
 
+
 ## Mehrere Dokumente in einer Kollektion hinzufügen
 
 ```javascript

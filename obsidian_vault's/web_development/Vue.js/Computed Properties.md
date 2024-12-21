@@ -1,7 +1,7 @@
 # Einer Variable ein Computed Property zuweißen
 
 computed() gibt hier ein ref zurück, dass im Template genutzt werden kann, mit der ausnahme, dass .value nicht benötigt wird.
-Ändert sich der Wert von count zu 0, wird isCountZero auf false gesetzt.
+Ändert sich der Wert von count zu 0, wird isCountZero auf true gesetzt.
 
 ```javascript
 import { ref, computed } from 'vue';

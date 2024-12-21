@@ -29,8 +29,7 @@ zahlen.forEach(function(zahl, index, array){
 # Elemente finden
 ### arrayName.find
 Wie bei forEach wird einer Funktion nacheinander jedes Element übergebe.
-in der Funktion wird dann überprüft, ob es sich um das gesuchte Element handelt.
-Handelt es sich um das gesuchte Element, wird dieses zurückgegeben und die Funktion find wird verlassen, wird das Element nicht gefunden, wird undefined zurückgegeben.
+Gibt die cb true zurück, wird das element, das von der cb überprüft wurde, von find zurück gegeben und find wird beendet.
 ```JavaScript
 const zahl = zahlen.find(zahl => zahl == 1);
 ```

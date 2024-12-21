@@ -106,5 +106,12 @@ lsof -i @192.168.1.10   # Prozesse, die mit der IP-Adresse 192.168.1.10 verbunde
 
 # Prozesse
 
-## Prozesse beenden
+### Prozesse beenden
+
+##### Prozess anhand des namens beenden
+
+**Beispiel:**
+```shell
+pkill <prozessname>
+```
 

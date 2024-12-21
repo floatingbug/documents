@@ -5,6 +5,15 @@
 - Verschlüsselung der Kommunikation zwischen Web-Server und Client (meist Browser).
 - Nachweis für den Client, dass die Domain auch von dem Domain Besitzer stammt. Das ist möglich, weil der Domain Besitzer vor dem Erhalt des Zertifikats von einer CA validiert wurde (validiert von der CA).
 
+#### Erst SSL-Handshake dann HTTP-Anfrage
+Bevor eine verschlüsselte HTTP-Anfrage gesendet werden kann, einigen sich Server und Client am Ende des SSL-Handshake auf ein symmetrischen Schlüssel, mit dem die HTTP-Daten verschlüsselt und entschlüsselt werde.
+Dadurch, dass Client und Server die HTTP-Pakete, mit Hilfe des symmetrischen Schlüssels, verschlüsselt über die TCP-Verbindung austauschen, bezeichnet man die TCP-Verbindung als verschlüsselt. Diese Verschlüsselte Verbindung bezeichnet man als HTTPS.
+Bevor der SSL/TLS-Handshake beginnen kann, wird eine **TCP-Verbindung** über Port 443 aufgebaut.
+### **Wichtige Details**
+
+- **Verschlüsselte Verbindung:** HTTPS bezeichnet eine Kombination aus HTTP (für die Datenübertragung) und SSL/TLS (für die Verschlüsselung). Die TCP-Verbindung selbst bleibt unverändert, wird aber durch die Verschlüsselung der übertragenen Daten sicher.
+- **HTTPS ≠ neue Verbindung:** HTTPS nutzt die bestehende TCP-Verbindung, fügt jedoch eine Verschlüsselungsschicht hinzu.
+
 #### Erhalt eines SSL-Zertifikats
 Ein SSL-Zertifikat stammt von einer Zertifizierungsstelle (CA). 
 Der Antragsteller erstellt ein Schlüsselpar und bettet den Public-Key in den Zertifikatsantrag (CSR: Certificate Signed Request). Mit dem Privat-Key wird die Signatur des CSR verschlüsselt. Dann sendet der Antragsteller den CSR an die CA.
