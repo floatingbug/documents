@@ -58,3 +58,21 @@ server.listen(8001);
 - **Event-Loop** entnimmt das **data** event und ruft für dieses den entsprechenden Handler auf.
 	- **Event-Loop** übergibt dem Händler die Daten, die sich im **data** event befinden als Argument.
 	- Wenn noch eine Instanz der callback Funktion für das **data** event existie
+
+### **Ablauf bei der Datenverarbeitung in Node.js**
+1. **Empfang der Daten im Kernel-Buffer:**
+    
+    - Wenn Daten von einem Netzwerk-Socket oder einer Datei eingehen, werden diese zunächst im Kernel-Buffer gespeichert.
+    - Der Kernel verwaltet diesen Puffer und stellt sicher, dass die Daten verfügbar sind, bis sie vom Benutzerprozess abgeholt werden.
+2. **Übertragung in den Node.js-Prozess:**
+    
+    - Node.js verwendet **libuv**, eine asynchrone I/O-Bibliothek, um die Daten aus dem Kernel-Buffer zu lesen.
+    - Libuv macht dafür Systemaufrufe wie `read()` (für Dateien) oder `recv()` (für Netzwerkverbindungen), um die Daten in den Speicherbereich des Node.js-Prozesses zu übertragen.
+3. **Speicherung im Node.js-Puffer:**
+    
+    - Die empfangenen Daten werden in einem **Buffer-Objekt** innerhalb des Node.js-Prozesses gespeichert.
+    - Dieser Buffer ist eine spezielle Datenstruktur in Node.js, die für die Arbeit mit Binärdaten optimiert ist.
+4. **Verarbeitung im Node.js-Puffer:**
+    
+    - Node.js gibt die Daten als `Buffer` an die Event-Callback-Funktion weiter, z. B. für das `"data"`-Event eines Streams.
+    - Der Prozess kann die Daten direkt aus diesem Buffer verarbeiten, in andere Speicherstrukturen kopieren oder sie für spätere Verarbeitung speichern.
