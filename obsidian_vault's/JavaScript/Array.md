@@ -54,7 +54,7 @@ console.log(map1);
 
 # Array Filtern
 
-**Mit array.filter() wird jedes Element im neuen Array gespeichert, wenn das Kriterium in der Callback Funktion erfüllt ist.**
+**array.filter() :** Jedesmal wenn die Callback true zurück gibt, wird das aktuell geprüfte Element im neuen Element gespeichert.
 
 ```JavaScript
 const array1 = [1, 4, 9, 16];

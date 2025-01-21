@@ -105,7 +105,7 @@ Außerdem hat FindCursor zwei Methoden, mit denen über die Ergebnisse iteriert 
 
 # Update
 
-## Ein Dokument ändern
+### Ein Dokument ändern
 
 Um ein Dokument zu ändern wird den Methoden updateOne oder update ein update-document übergeben, sowie ein filter document um das zu ändernde document auswählen zu können.
 Das update document enthält den update operator als property. Dieser gibt an, welche Art von Update durchgeführt werden soll, bspw. ein Wert ersetzen oder ein property entfernen.
@@ -126,7 +126,7 @@ const updateDocument = {
 const result = await coll.update(filter, updateDocument);
 ```
 
-## update operators
+### update operators
 
 **$set:** Ein Wert einer property ersetzen.
 
@@ -135,6 +135,31 @@ const result = await coll.update(filter, updateDocument);
 **$unset:** Ein property entfernen.
 
 **$inc:** Den Wert einer property erhöhen oder senken (Inkrement, Dekrement).
+
+### Beispiel: einem Array ein element hinzufügen
+
+```javascript
+const filter = {id: idNumber};
+const update = { $push: { arrayField: "newElement" } };
+
+const result = await collection.update(filter, update)
+```
+
+### Beispiel: Prüfen, ob eine ID aus einem Array (`arrayAusIds`) in einem Objekt innerhalb eines Arrays von Objekten (`arrayMitObjecten`) vorhanden ist.
+
+```javascript 
+const query = {
+	arrayAusObjekten: {
+		$elemMatch: {
+			id: {
+				$in: ["id1", "id2", "id3"]
+			}
+		}
+	}
+}
+
+const result = await db.collection.find(query);
+```
 
 # updateOne
 

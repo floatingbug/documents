@@ -1,10 +1,9 @@
 # Remotes
 
-1. **Definition von Remotes**:
+1. **Definition von Remotes**:    
+    - Remotes sind Verbindungen zu entfernten (nicht lokalen) Git-Repositories, die es ermöglichen, Änderungen zwischen lokalen Repository und entfernten Repositories zu synchronisieren (gleicher commit sowohl auf dem lokalen als auch entfernten repository).
     
-    - Remotes sind Verbindungen zu entfernten (nicht lokalen) Git-Repositories, die es ermöglichen, Änderungen zwischen lokalen Repository und entfernten Repositories zu synchronisieren.
-2. **Remotes**:
-    
+1. **Remotes**:
     - Es können beliebig viele Remotes hinzufügen werden, aber typischerweise gibt es:
         - **`origin`**: Das ist standardmäßig das Remote-Repository, das geklont wurde, meistens das persönliche entfernte repository/fork.
         - **`upstream`**: Wird typischerweise verwendet, um das originale Repository zu bezeichnen, von dem bspw. der Fork erstellt wurde.
@@ -60,7 +59,17 @@ git pull origin main
 
 **git remote -v**
 
-Dieser Befehl zeigt alle konfigurierten Remotes (wie `origin` und `upstream`) sowie die zugehörigen URLs:
+Dieser Befehl zeigt alle konfigurierten Remotes (wie `origin` und `upstream`) sowie die zugehörigen URLs.
+```shell
+git remote -v
+```
+
+**git remote set-url origin**
+
+Speichert die URL des remote repository in origin:
+```shell
+git remote set-url origin git@github.com:<benutzer>/<repository>.git
+```
 
 ---
 

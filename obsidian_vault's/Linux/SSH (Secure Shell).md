@@ -56,8 +56,10 @@ ssh -i /pfad/zum/privatekey user@hostname
 ## Schlüsselpaare erstellen
 
 ```shell
-ssh-keygen
+ssh-keygen -t rsa
 ```
+
+- `-t` steht für type. Dadurch kann der Typ des Schlüsselpaars angegeben werden.
 
 ---
 
@@ -101,15 +103,22 @@ scp -r testordner user@ipadresse:/home/user/folder
   
 # SSH-Agent
 
-Bei einem SSH-Verbindungsaufbau reicht der Client die Herausforderung vom Server weiter an den SSH-Agent der die Herausforderung (challenge) löst. Der SSH-Agent reicht das Ergebnis an den Client und dieser sendet die Lösung an den Server. 
+Bei einem SSH-Verbindungsaufbau reicht der Client die Herausforderung vom Server weiter an den SSH-Agent der die Herausforderung (challenge), mit Hilfe des private keys, löst. Der SSH-Agent reicht das Ergebnis an den Client und dieser sendet die Lösung an den Server. 
 Ist die SSH-Verbindung aufgebaut, is der SSH-Agent wärend der Verbindung nicht mehr involviert.
 
-## Verbindung mit den SSH-Agent
+### Aufgaben des SSH-Agents
+
+- Lösen der Herausforderung.
+	- Der Agent speichert alle Privaten Schlüssel (im RAM).
+	- Er nutzt zum Entschlüsseln der Herausforderung den passenden privaten Schlüssel.
+		- Der Server sendet mit der Herausforderung auch die Information, welcher öffentliche Schlüssel zur Verschlüsselung verwendet wurde. Anhand dieser Information ermittelt der Agent den passenden privaten Schlüssel.
+
+### Verbindung mit den SSH-Agent
 
 Der SSH-Agent erstellt einen Socket, damit zwischen dem SSH-Agent Prozess und anderen Prozessen Daten ausgetauscht werden können.
 Der Pfad zum Socket wird in der Umgebungsvariable `SSH_AUTH_SOCK` gespeichert, sodass `ssh-add` und andere SSH-Client-Programme wissen, wie sie den Agenten erreichen können.
 
-## SSH-Agent starten
+### SSH-Agent starten
 
 **Beispiel:** 
 
