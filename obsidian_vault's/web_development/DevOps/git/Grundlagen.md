@@ -80,3 +80,10 @@ git remote set-url origin git@github.com:<benutzer>/<repository>.git
 ```shell
 
 ```
+
+---
+
+# Commits
+
+### Commits löschen
+

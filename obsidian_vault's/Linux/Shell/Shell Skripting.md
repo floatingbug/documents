@@ -1,6 +1,6 @@
 # Grundlegendes
 
-Jede Zeile ohne # wird als eine Kommando an die Shell bewertet.
+Jede Zeile ohne # wird von der Shell als Kommando interpretiert.
 Jede Zeile die mit # beginnt, wird als Kommentarzeile bewertet.
 
 ## Semikolon

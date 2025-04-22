@@ -1,4 +1,4 @@
-
+w
 **Beispiel:** Das Bild nimmt die gesamte Breite des Elternelements ein. Durch `height: auto` wird die Höhe des Bildes automatisch eingepasst, sodass das bild nicht gestaucht wird.
 
 ```css

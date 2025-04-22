@@ -17,9 +17,9 @@
 ### Token Zusammensetzung
 - Der Token besteht aus dem Header, Payload und der Signatur. Diese Daten sind im JSON-Format.
 	- Header: In ihm steht, welcher Algorithmus zum Kodieren und Dekodieren des tokens benutzt wird und um welche Art von Token es sich handelt.
-		- base64 dekodiert, aber nicht verschlüsselt.
+		- base64 kodiert, aber nicht verschlüsselt.
 	- Payload: Benutzerinformationen.
-		- base64 dekodiert, aber nicht verschlüsselt.
+		- base64 kodiert, aber nicht verschlüsselt.
 	- Signatur: Der Algorithmus (ein Hash-Algorithmus), der ein String aus den Daten (Header, Payload und Secret Key) erzeugt (der String ist also die Signatur).
 		- Der Server überprüft den Token, indem er den base64 decodierten Header und Payload dekodiert, den Secret Key hinzufügt und erneut signiert. Stimmt diese Signatur mit der an dem Token angehängte Signatur überein, wurde die Nachricht nicht manipuliert.
 	- ![[Bildschirmfoto vom 2023-10-30 09-12-19.png]]

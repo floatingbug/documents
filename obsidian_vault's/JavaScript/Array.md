@@ -1,87 +1,72 @@
-# Iterieren
-### arrayName.forEach
-- Für jedes Element wird eine Funktion aufgerufen, der das Element übergeben wird.
-``` javascript
-const zahlen = [1,2,3,4,5];
+# JavaScript Array-Methoden
 
-zahlen.forEach(function(zahl){
-	console.log(zahl)
-})
+## forEach
 
-//mit arrow function
-zahlen.forEach((zahl)=>{
-	console.log(zahl)
-})
-
-//kurze Schreibweise (wenn nur ein argument übergeben wird, können die runden und geschweiften Klammern werggelassen werden).
-zahlen.forEach(zahl=>console.log(zahl))
-```
-- Der Funktion können neben dem Element auch noch zwei weitere Argumente übergeben werden.
-```JavaScript
-zahlen.forEach(function(zahl, index, array){
-	console.log(`die Zahl ${zahl}, hat den index ${index} und 
-	befindet sich im array ${array}.`)
-})
+- **Beschreibung:** Iteriert über jedes Element eines Arrays und führt eine Callback-Funktion aus. Es wird kein neues Array zurückgegeben.
+- **Beispiel:**
+  ```js
+  [1, 2, 3].forEach(num => console.log(num));
 ```
 
----
 
-# Elemente finden
-### arrayName.find
-Wie bei forEach wird einer Funktion nacheinander jedes Element übergebe.
-Gibt die cb true zurück, wird das element, das von der cb überprüft wurde, von find zurück gegeben und find wird beendet.
-```JavaScript
-const zahl = zahlen.find(zahl => zahl == 1);
+## map
+
+- **Beschreibung:** Erzeugt ein neues Array, indem es eine Callback-Funktion auf jedes Element des Arrays anwendet.
+- **Beispiel:**
+    ```js
+const doubled = [1, 2, 3].map(num => num * 2); console.log(doubled); // [2, 4, 6]
 ```
 
----
 
-# Array Transformieren
+## every
 
-**Mit array.map() wird für jedes Element eine Funktion aufgerufen. Mit Hilfe der Funktion kann dann jedes Element bspw. verändert werden. Nach jedem Aufruf der Funktion, wird das Ergebnis der Funktion in ein Array gespeichert, das nach dem letzten Funktionsaufruf zurückgegeben wird.
+- **Beschreibung:** Prüft, ob **alle** Elemente eines Arrays eine bestimmte Bedingung erfüllen. Gibt `true` zurück, wenn dies der Fall ist, sonst `false`.
+- **Beispiel:**
+    ```js
+const allPositive = [1, 2, 3].every(num => num > 0); console.log(allPositive); // true`
+    ```
 
-```JavaScript
-const array1 = [1, 4, 9, 16];
 
-// Funktion übergeben
-const map1 = array1.map((x) => x * 2);
+## find
 
-console.log(map1);
-// Ausgabe: Array [2, 8, 18, 32]
+- **Beschreibung:** Liefert das **erste** Element, das die angegebene Bedingung erfüllt. Wird kein Element gefunden, wird `undefined` zurückgegeben.
+- **Beispiel:**
+```js
+const found = [1, 2, 3].find(num => num > 1); console.log(found); // 2`
 ```
 
----
 
-# Array Filtern
+## reduce
 
-**array.filter() :** Jedesmal wenn die Callback true zurück gibt, wird das aktuell geprüfte Element im neuen Element gespeichert.
-
-```JavaScript
-const array1 = [1, 4, 9, 16];
-
-const newArray = array1.filter(n => {
-	if(n === 9){
-		return n
-	}
-})
-
-//Ausgabe: Array [9]
-console.log(newArray);
+- **Beschreibung:** Reduziert ein Array auf einen einzigen Wert, indem eine Callback-Funktion auf einen Akkumulator und jedes Element angewendet wird.
+- **Beispiel:**
+```js
+const sum = [1, 2, 3].reduce((acc, num) => acc + num, 0); console.log(sum); // 6`
 ```
 
----
+## filter
 
-# Elemente eines Arrays überprüfen
+- **Beschreibung:** Erzeugt ein neues Array, das alle Elemente enthält, die eine definierte Bedingung erfüllen.
+- **Beispiel:**
+```js
+const evens = [1, 2, 3, 4].filter(num => num % 2 === 0); console.log(evens); // [2, 4]
+```
 
-Mit array.every wird überprüft, ob alle Elemente von einem bestimmten type sind.
-Gibt die übergebene Funktion (die Funktion die every übergeben wird) bei enem element false zurück, gibt die Funktion every ebenfalls false zurück und wird beendet.
-gibt die an every übergebene Funktion für alle Elemente true zurück, gibt every am Ende ebenfalls true zurück.
+## flatMap
 
-```JavaScript
-const array1 = [1, 4, 9, 16];
+- **Beschreibung:** Bei einem Array von Arrays werden die inneren Arrays  "entpackt" , sodass deren Inhalte in einem einzigen Array gespeichert werden.
+- **Beispiel:**
+```js
+const data = [
+  [1, 2],
+  [3, 4],
+  [5, 6]
+];
 
-const isTypeNumber = array1.every(n => typeof n === "string");
+// flatMap mit einer Identitätsfunktion (es wird jedes innere Array "entpackt")
+const flattenedArray = data.flatMap(innerArray => innerArray);
 
-console.log(isTypeNumber);
-// Ausgabe: false
+console.log(flattenedArray);
+
+// Ausgabe: [1, 2, 3, 4, 5, 6]
 ```

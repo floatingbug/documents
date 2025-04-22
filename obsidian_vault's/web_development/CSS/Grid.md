@@ -71,7 +71,7 @@ Das Raster besteht aus Zellen und jedes Kindelement wird einer Zelle zugeordnet.
 **Beispiel:**
 ```css
 .container {
-	justify-self: stretch;
+	justify-items: stretch;
 }
 ```
 
@@ -80,7 +80,7 @@ Das Raster besteht aus Zellen und jedes Kindelement wird einer Zelle zugeordnet.
 **Beispiel:**
 ```css
 .container {
-	justify-self: start;
+	justify-items: start;
 }
 ```
 
@@ -90,7 +90,7 @@ Das Raster besteht aus Zellen und jedes Kindelement wird einer Zelle zugeordnet.
 **Beispiel:**
 ```css
 .container {
-	justify-self: end;
+	justify-items: end;
 }
 ```
 
@@ -100,7 +100,7 @@ Das Raster besteht aus Zellen und jedes Kindelement wird einer Zelle zugeordnet.
 **Beispiel:**
 ```css
 .container {
-	justify-self: center;
+	justify-items: center;
 }
 ```
 
@@ -112,18 +112,18 @@ Das Raster besteht aus Zellen und jedes Kindelement wird einer Zelle zugeordnet.
 **Beispiel:**
 ```css
 .container {
-	align-self: stretch;
+	align-items: stretch;
 }
 ```
 
-### justify- und align-self in einer Zeile
+### justify- und align-items in einer Zeile
 
 **Erstes Argument ist align-self, zweites Argument ist justify-self.**
 
 **Beispiel:**
 ```css
 .container {
-	place-self: start end;
+	place-items: start end;
 }
 ```
 

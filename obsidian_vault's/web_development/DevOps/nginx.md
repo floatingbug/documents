@@ -6,18 +6,23 @@ Nginx Besteht aus den Processen: master process und den worker-processes.
 Der master process ließt und evaluiert die Konfiguration und verwaltet die worker-processes.
 Die worker-processes verwalten die Verbindungen und Verarbeiten die HTTP-Anfragen.
 #### Worker-Prozesse
-Nginx erstellt so viele Worker-Prozesse, wie es Prozessor-Kerne gibt.
-Jeder Worker-Prozess kann mehrere Sockets mit Hilfe von Worker-Connections verwalten. 
+- Nginx erstellt so viele Worker-Prozesse, wie es Prozessor-Kerne gibt.
+- Jeder Worker-Prozess kann mehrere Sockets mit Hilfe von Worker-Connections verwalten. 
+- Worker-Prozesse werden von dem master process beim starten von nginx gestartet und sind dann autonome unabhängige Prozesse.
+- Der master process kann die Worker-Prozesse bspw. starten oder stoppen.
 
 Ein Worker-Prozess erstellt für jeden Socket sogenannte Worker-Connections die der Verwaltung der Sockets dienen, bspw. Lesen aus dem Socket und Schreiben in den Socket oder das Beenden der Verbindung. 
 
 Der Worker-Prozess nutzt seine Worker-Connection um aus einen Socket zu Lesen und gelangt so zur HTTP-Anfrage. Der Worker-Prozess bearbeitet dann die HTTP-Anfrage entsprechend der Konfiguration in nginx.conf und nutzt dann die entsprechende Worker-Connection um die HTTP-Antwort in den entsprechenden Socket zu schreiben.
 
 Insgesammt können so viele Anfragen parallel beantwortet werden, wie es Prozessor-Kerne gibt. Die Anzahl von Anfragen die Bearbeitet werden können ergibt sich aus der Multiplikation von Worker-Prozessen und Worker-Connections.
+
+**Beispiel:** Server mit zwei Kernen kann zwei Anfragen gleichzeitig verarbeiten.
+![[nginx-parallel-processing.png]]
 #### Ablauf einer HTTP-Anfrage
 1. Aufbau der TCP-Verbindung bspw. durch den Server-Socket mit dem Port 80.
 	2. Ein neuer Socket mit den Portnummern und IP-Adressen von Server und Client werden für die Verbindung erstellt.
-2. HTTP-Request wird an den neu erstellten Socket gesendet und gelangt von diesem in den nginx worker-process.
+2. HTTP-Request wird an den neu erstellten Socket gesendet und gelangt von diesem in einen von nginx erstellten Worker-Prozessen.
 3. Nginx führt den Server-Block aus, indem der Port und der HTTP-Header Host mit dem im Server-Block stehenden Port und Host übereinstimmt.
 
 ---
@@ -37,7 +42,7 @@ Signale sind:
 # Konfiguration
 Konfigurationsdatei ist meist unter: /etc/nginx/nginx.conf.
 Nginx besteht aus Modulen die durch Direktiven in nginx.conf konfiguriert werden.
-Es gibt einfache Direktiven und Block-Direktiven. Einfacha Direktiven bestehen aus dem Namen des Moduls, dessen Parameter und enden mit einem Semikolon. Block-Direktiven bestehen ebenfalls aus dem Modul-Namen und dessen Parameter aber dann folgen geschweifte Klammern, in denen Anweisungen stehen.
+Es gibt einfache Direktiven und Block-Direktiven. Einfache Direktiven bestehen aus dem Namen des Moduls, dessen Parameter und enden mit einem Semikolon. Block-Direktiven bestehen ebenfalls aus dem Modul-Namen und dessen Parameter aber dann folgen geschweifte Klammern, in denen Anweisungen stehen.
 Wenn eine Block-Direktive weitere Direktiven enthält, nennt man den Block auch Kontext.
 Direktiven die in keiner Block-Direktive vorhanden sind, gehören zum main context.
 

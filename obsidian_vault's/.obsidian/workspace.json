@@ -4,24 +4,51 @@
     "type": "split",
     "children": [
       {
-        "id": "18e2618e84ebe63c",
+        "id": "8e08cd8a067f9a79",
         "type": "tabs",
         "children": [
           {
-            "id": "2c37b370691f6d36",
+            "id": "3750db99aaa77c60",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaScript/Array.md",
+                "file": "web_development/CSS/Grid.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Array"
+              "title": "Grid"
+            }
+          },
+          {
+            "id": "7ef875b9ddb11787",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "web_development/CORS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CORS"
+            }
+          },
+          {
+            "id": "80fc77171aa226c3",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/promise.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "promise.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -40,7 +67,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -164,39 +192,47 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2c37b370691f6d36",
+  "active": "7ef875b9ddb11787",
   "lastOpenFiles": [
-    "web_development/DevOps/git/Grundlagen.md",
-    "Informatik/Virtualisierung.md",
-    "Informatik/Docker/Funktionsweise.md",
-    "Informatik/Docker/Docker Netzwerk.md",
-    "web_development/Node.js/net-module.md",
-    "Informatik/Netzwerk/Netzwerk.md",
-    "Informatik/Docker/Kommandos.md",
-    "Informatik/Dateisystem.md",
-    "Informatik/Docker/index Docker.md",
-    "Informatik/Docker/Image (Dateisystem).md",
-    "Linux/Systeminformationen.md",
-    "web_development/CSS/flex-box.md",
+    "web_development/CSS/Transition.md",
+    "web_development/CSS/Variablen (CSS-Custom-Properties).md",
+    "web_development/CSS/Transform.md",
+    "web_development/CSS/Scroll-Timeline.md",
+    "web_development/CSS/Pseudo Elements.md",
+    "web_development/CSS/index css.md",
     "web_development/CSS/Images.md",
-    "Databases/Mongodb/CRUD.md",
-    "JavaScript/Promise.md",
-    "JavaScript/async await.md",
+    "web_development/CSS/Grid.md",
+    "web_development/CSS/flex-box.md",
+    "web_development/CSS/content.md",
+    "web_development/DevOps/nginx.md",
+    "web_development/Vue.js/Components.md",
     "JavaScript/Array.md",
-    "Linux/SSH (Secure Shell).md",
-    "Informatik/Netzwerk/Daten von Netzwerkkarte zur App.md",
-    "Excalidraw/router.md",
-    "Excalidraw/Drawing 2025-01-05 15.53.54.excalidraw.md",
+    "web_development/JS/Intersection Observer.md",
+    "web_development/CSS/Hindergrund.md",
+    "Databases/Mongodb/CRUD.md",
+    "JavaScript/Destruktion.md",
+    "JavaScript/Datum.md",
+    "web_development/DevOps/pm2.md",
+    "web_development/Vue.js/Computed Properties.md",
+    "Databases/Mongodb/MongoDB Driver für Node.js.md",
+    "JavaScript/async await.md",
+    "JavaScript/Arrays.canvas",
+    "web_development/CORS.md",
+    "web_development/Vue.js/Verzeichnisstruktur.md",
+    "JavaScript/Promise.md",
+    "Excalidraw/promise.excalidraw.md",
+    "Excalidraw/promise.excalidraw.png",
+    "Excalidraw/3-layer-architecture.png",
+    "web_development/Architektur",
+    "Excalidraw/nginx-parallel-processing.png",
+    "Excalidraw/assets_YJIGb4i01jvw0SRdL5Bt_acadb0ce7d6240639e448d55136c04a6.webp",
+    "Excalidraw/Drawing 2025-02-03 16.49.06.excalidraw.png",
+    "Excalidraw/assets_YJIGb4i01jvw0SRdL5Bt_acadb0ce7d6240639e448d55136c04a6.webp.crdownload",
+    "web_development/Tailwind",
     "Excalidraw/router.png",
-    "vim/netrw.md",
-    "vim/Grundlagen.md",
-    "Untitled.md",
-    "Informatik/Netzwerk/Streams.md",
-    "Informatik/System-Calls.md",
     "tmux",
     "Excalidraw/Drawing 2024-12-23 07.24.06.excalidraw.png",
     "web_development/Next.js/routes1.png",
-    "JavaScript/Arrays.canvas",
     "Untitled.canvas",
     "web_development/Next.js",
     "web_development/React/Untitled",
@@ -205,11 +241,6 @@
     "JavaScript/assets/executenContext.png",
     "JavaScript/assets",
     "vim",
-    "Mathe/Vektoren",
-    "Mathe/assets/Bogenmaß_1.png",
-    "Mathe/assets",
-    " 1",
-    "Mathe/Trigonometrie/bogenmaß1.png",
-    "Linux/Shell/Pasted image 20231219134355.png"
+    "Mathe/assets/Bogenmaß_1.png"
   ]
 }
