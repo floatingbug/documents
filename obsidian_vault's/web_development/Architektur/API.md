@@ -311,3 +311,5 @@ Diese Fehler sollten direkt in der **Service-Schicht** oder sogar in einem globa
 #### 2. **Geschäftslogikfehler (z. B. "Benutzer nicht gefunden")**
 
 Fehler, die mit der Geschäftslogik zu tun haben und die der Client erwarten kann, sollten im **Controller** direkt behandelt werden, indem eine verständliche Antwort zurückgegeben wird.
+
+

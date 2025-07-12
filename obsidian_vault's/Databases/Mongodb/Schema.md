@@ -1,0 +1,2 @@
+Ein schema gibt an, welche Form die Daten haben die in der DB abgespeichert werden. Bspw. gibt es ein Feld name in dem nur strings gespeichert werden.
+Damit ein bestimmtes schema eingehalten wird, werden die user inputs im controller validiert.

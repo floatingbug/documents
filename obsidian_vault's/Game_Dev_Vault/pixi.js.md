@@ -1,4 +1,4 @@
-### [[Architektur]]
+### [[Game_Dev_Vault/Architektur]]
 
 ### [[Render Loop]]
 

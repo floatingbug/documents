@@ -1,5 +1,39 @@
 # JavaScript Array-Methoden
 
+## splice
+
+- Lösche Element an einem angegebenem Index.
+- das erste Argument ist der Index ab dem gelöscht wird, das zweite Element gibt die Anzahl an Elementen an die gelöscht werden sollen.
+
+**Beispiel:**
+```javascript
+let arr = [1, 2, 3, 4];
+arr.splice(2, 1); // löscht das Element an Index 2 (also die "3")
+```
+
+## pop
+
+- Löscht das letzte Element
+
+**Beispiel:**
+``` javascript
+arr.pop(); // entfernt das letzte Element des Arrays
+```
+
+## slice
+
+- Kopiert Elemente in einem Array.
+- Erstes Argument gibt den Startindex an, ab welchem Element kopiert wird. Das Zweite Argument gibt den Endindex an, bis zu dem kopiert wird.
+
+**Beispiel:**
+```javascript
+let arr = [1, 2, 3, 4, 5, 6];
+let neu = arr.slice(2, 5); // kopiert die Elemente an Index 2, 3, 4 → [3, 4, 5]
+console.log(neu); // [3, 4, 5]
+console.log(arr); // [1, 2, 3, 4, 5, 6] (unverändert)
+```
+
+
 ## forEach
 
 - **Beschreibung:** Iteriert über jedes Element eines Arrays und führt eine Callback-Funktion aus. Es wird kein neues Array zurückgegeben.

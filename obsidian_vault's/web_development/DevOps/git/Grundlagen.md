@@ -87,3 +87,22 @@ git remote set-url origin git@github.com:<benutzer>/<repository>.git
 
 ### Commits löschen
 
+---
+
+# staging area 
+
+### staging area anzeigen
+
+```shell
+git status
+```
+
+### resetten
+
+```shell
+git reset
+```
+
+
+
+

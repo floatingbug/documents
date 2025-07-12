@@ -1,0 +1,639 @@
+-------------------------------------------------------------------
+                                ERROR                              
+-------------------------------------------------------------------
+<BlizzardError.Summary:>
+Overwatch - 2.17.0.0: UNKNOWN (0x80000100)
+<:BlizzardError.Summary>
+
+<BlizzardError.Assertion:>
+UNKNOWN (0x80000100)
+
+**Crashing Thread** (ID: 2688)
+DBG-ADDR<00006FFFFFC0D107>()
+DBG-ADDR<00006FFFFB57B385>()
+DBG-ADDR<00006FFFFB5719BF>()
+DBG-ADDR<0000000141ADEFA0>()
+DBG-ADDR<0000000141ADF5C5>()
+DBG-ADDR<0000000141ADE16B>()
+DBG-ADDR<00000001419778CB>()
+DBG-ADDR<000000014197753C>()
+DBG-ADDR<000000014050A9EF>()
+
+<:BlizzardError.Assertion>
+
+-------------------------------------------------------------------
+                             SYSTEM INFO                           
+-------------------------------------------------------------------
+Application:               C:\Program Files (x86)\Overwatch\_retail_/Overwatch.exe
+Build:                     Overwatch_139475_Retailx64
+Is Elevated:               0
+Created:                   19:56:05 Jun 11 2025
+Game Server IP:            0.0.0.0
+Bnet Account ID:           -1
+Game Account ID:           -1
+Is Remote Session:         0
+Operating System:          Windows v10.0 Professional
+Operating System Version:  Unknown (OS Build 19045)
+Operating System Platform: 64-bit
+Application Platform:      64-bit
+Is WINE:                   1
+WINE Version:              10.0.0
+WINE Host:                 Linux 6.15.4-200.fc42.x86_64
+System Model:              B450 Steel Legend
+System Manufacturer:       To Be Filled By O.E.M.
+Boot Time:                 2025-07-05T09:28:38Z
+GPU Type:                  AMD Radeon RX 590 Series (RADV POLARIS10)
+GPU Driver:                31.0.21902.5 - aticfx32.dll
+GPU Driver Date:           20250831000000.000000-000
+GPU Core Delta Freq:       0
+GPU Memory Delta Freq:     0
+GPU Voltage Delta Freq:    0
+Graphics API:              Dx11
+Physical Resolution:       0x0
+Effective Resolution:      0x0
+Display Mode:              Windowed
+Number of physical cores:  12
+Logical core:              0  - physical mapping: 0  (group 0) - efficiency class: 0
+Logical core:              1  - physical mapping: 0  (group 0) - efficiency class: 0
+Logical core:              2  - physical mapping: 1  (group 0) - efficiency class: 0
+Logical core:              3  - physical mapping: 1  (group 0) - efficiency class: 0
+Logical core:              4  - physical mapping: 2  (group 0) - efficiency class: 0
+Logical core:              5  - physical mapping: 2  (group 0) - efficiency class: 0
+Logical core:              6  - physical mapping: 3  (group 0) - efficiency class: 0
+Logical core:              7  - physical mapping: 3  (group 0) - efficiency class: 0
+Logical core:              8  - physical mapping: 4  (group 0) - efficiency class: 0
+Logical core:              9  - physical mapping: 4  (group 0) - efficiency class: 0
+Logical core:              10 - physical mapping: 5  (group 0) - efficiency class: 0
+Logical core:              11 - physical mapping: 5  (group 0) - efficiency class: 0
+Total Memory:              15850 MBs
+Available Memory:          9294 MBs
+Total Page File:           24042 MBs
+Avail Page File:           17486 MBs
+GPU Memory:                7936 MBs
+GPU Allocated Memory:      0 MBs
+GPU Peak Memory:           0 MBs
+GPU Temp:                  0 C
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+                          APPLICATION STATE                        
+-------------------------------------------------------------------
+Command Line:           C:\Program Files (x86)\Overwatch\_retail_\Overwatch.exe -uid prometheus
+Tank State:             Starting Up
+Video Device State:     Active
+Device Ext Refs Count:  0
+Last OS Error:          0x0
+Resource Errors:        false
+Running Time:           0:00:01  (H:M:S)
+Most Recent Logs:
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:25.968Z]: prism: Info: luid: 0x00000000000003f4
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:25.968Z]: prism: Info: index: 0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:25.968Z]: prism: Info: systemId: 0x0000000084222325
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:25.968Z]: prism: Info: Hybrid Graphics: 0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:25.968Z]: prism: Info: memory: 7936 MiB
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:25.968Z]: prism: Info: sharedMemory: 7936 MiB
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:25.968Z]: prism: Info: Max queues: 1 graphics, 1 compute, 1 copy
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: Display 0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: name: Display1
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: pos: 0,0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: size: 2560x1440
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: refreshRate: 60000/1000
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: manufacturerId: 0x0000
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: productId: 0x0000
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: systemId: 0x000000009629cf97
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: nativeIndex: 1
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: nativeSize: 2560x1440
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: nativeRefreshRate: 60/1
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: supports4k: 0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: supportsHdr: 0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: supports120Hz: 0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: isPrimary: 1
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: hdrEnabled: 0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: isInternal: 1
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: freesync: 0
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: mode count: 38
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: prism: Info: --------------------------------------------
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: Enumerated 1 adapters.
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.434Z]: Selected GPU: AMD Radeon RX 590 Series (RADV POLARIS10)
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.435Z]: Selected Display: Display1
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.435Z]: Selected Graphics API: Dx11
+[ALW] [Engine] [External(0)] [External()] [2025-07-05T09:29:26.435Z]: Selected VidDeviceType: Dx11
+
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+                             STACK TRACE                           
+-------------------------------------------------------------------
+0x63948518 (ID: 2688)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<00000001419FACB6>()
+DBG-ADDR<00006FFFFFC6AFB9>()
+DBG-ADDR<00006FFFFFF837A8>()
+DBG-ADDR<00006FFFFFF4F8A4>()
+DBG-ADDR<00006FFFFFF83107>()
+DBG-ADDR<00006FFFFFF85787>()
+DBG-ADDR<00006FFFFD05F837>()
+DBG-ADDR<00006FFFFFF4FA6F>()
+DBG-ADDR<00006FFFFFC0D107>()
+DBG-ADDR<00006FFFFB57B385>()
+DBG-ADDR<00006FFFFB5719BF>()
+DBG-ADDR<0000000141ADEFA0>()
+DBG-ADDR<0000000141ADF5C5>()
+DBG-ADDR<0000000141ADE16B>()
+DBG-ADDR<00000001419778CB>()
+DBG-ADDR<000000014197753C>()
+DBG-ADDR<000000014050A9EF>()
+
+0x61895732 (ID: 2880)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<0000000141A13332>()
+DBG-ADDR<0000000141A91FAE>()
+DBG-ADDR<000000014197CBC2>()
+
+0xDE5C1A77 (ID: 2884)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<0000000141A13332>()
+DBG-ADDR<0000000141A91FAE>()
+DBG-ADDR<000000014197CBC2>()
+
+0xDE5C1A77 (ID: 2888)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<0000000141A13332>()
+DBG-ADDR<0000000141A91FAE>()
+DBG-ADDR<000000014197CBC2>()
+
+0xDE5C1A77 (ID: 2892)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<0000000141A13332>()
+DBG-ADDR<0000000141A91FAE>()
+DBG-ADDR<000000014197CBC2>()
+
+0xA7A7B913 (ID: 2908)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<0000000141A13332>()
+DBG-ADDR<00000001419E382E>()
+DBG-ADDR<00000001419E5489>()
+DBG-ADDR<000000014197CBC2>()
+
+0xDEB5E266 (ID: 2904)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<0000000141A13332>()
+DBG-ADDR<0000000141A3E341>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown Thread (ID: 2828)
+DBG-ADDR<00006FFFFFF4FB98>()
+
+Unknown Thread (ID: 2832)
+DBG-ADDR<00006FFFFFF4FB98>()
+
+Unknown Thread (ID: 2836)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<00006FFFFCEFD1B6>()
+
+Unknown Thread (ID: 2848)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<00006FFFFCE893E9>()
+
+Unknown Thread (ID: 2868)
+DBG-ADDR<00006FFFFFF4E084>()
+DBG-ADDR<00006FFFFFC664BE>()
+DBG-ADDR<00000001419FD039>()
+DBG-ADDR<0000000141A0F2F6>()
+DBG-ADDR<00000001419F5EC9>()
+
+Unknown Thread (ID: 2896)
+DBG-ADDR<00006FFFFFF4E5C4>()
+DBG-ADDR<00006FFFFFC560C2>()
+DBG-ADDR<00006FFFFB6E3C78>()
+
+Unknown Thread (ID: 2912)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<0000000142342FB7>()
+DBG-ADDR<00000001428AABAE>()
+DBG-ADDR<00000001428AB097>()
+DBG-ADDR<000000014233D44A>()
+
+Unknown Thread (ID: 2916)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC753ED>()
+DBG-ADDR<00006FFFFF9B1D00>()
+DBG-ADDR<00000001428A99C3>()
+DBG-ADDR<00000001428AAA8D>()
+DBG-ADDR<000000014233D44A>()
+
+Unknown Thread (ID: 2940)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<00006FFFFFC75390>()
+DBG-ADDR<0000000142342FB7>()
+DBG-ADDR<00000001428A8676>()
+DBG-ADDR<00000001428A883D>()
+DBG-ADDR<000000014233D44A>()
+
+Unknown Thread (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown Thread (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown Thread (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown Thread (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown Thread (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown Thread (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown Thread (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+Unknown Thread (ID: 2944)
+DBG-ADDR<00006FFFFFF4F6A4>()
+DBG-ADDR<00006FFFFFC752F3>()
+DBG-ADDR<0000000141AD66E2>()
+DBG-ADDR<0000000141AD69DF>()
+DBG-ADDR<000000014197CBC2>()
+
+-------------------------------------------------------------------
+                               MODULES                             
+-------------------------------------------------------------------
+<Exception.DebugModules:>
+DBG-MODULE<0000000140000000 00000000042F5000 "Overwatch.exe" "Overwatch.pdb" 0 {3bac938a-07be-4f2c-b8ccf7224a32fa00} 1 1749697291>
+DBG-MODULE<0000000180000000 0000000000002000 "??" "" 0 {00000000-0000-0000-0000000000000000} 0 -167502136>
+DBG-MODULE<00006FFFFB180000 000000000000E000 "amdxc64.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB1A0000 000000000037C000 "d3d12core.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422881>
+DBG-MODULE<00006FFFFB530000 0000000000029000 "d3d12.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422881>
+DBG-MODULE<00006FFFFB570000 0000000000038000 "atiadlxx.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB5C0000 000000000000E000 "cryptbase.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1745271881>
+DBG-MODULE<00006FFFFB5E0000 000000000000C000 "wldp.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB600000 0000000000016000 "cryptnet.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB630000 0000000000011000 "msasn1.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB660000 000000000001F000 "secur32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB690000 000000000000C000 "Windows.Networking.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB6B0000 000000000000B000 "winepulse.drv" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB6D0000 000000000002D000 "mmdevapi.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB730000 0000000000024000 "wineopenxr.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB770000 000000000002F000 "winevulkan.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB7B0000 000000000001D000 "compstui.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB7E0000 0000000000031000 "winspool.drv" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB830000 000000000003B000 "wbemprox.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB880000 000000000000C000 "sfc_os.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB8A0000 0000000000028000 "WINTRUST.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB8E0000 00000000000D3000 "CRYPT32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFB9D0000 000000000001E000 "jsproxy.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFBA00000 0000000000043000 "WINHTTP.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFBA60000 000000000000B000 "SensApi.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFBA80000 0000000000C66000 "vivoxsdk.dll" "vivoxsdk.pdb" 0 {b52e2992-0c76-41f2-84f6d079ecc10ce1} 1 1724351624>
+DBG-MODULE<00006FFFFC700000 000000000006A000 "bink2w64.dll" "bink2w64.pdb" 0 {cce62ba6-9690-41ea-b7ee80ddf137c292} 1 1715801639>
+DBG-MODULE<00006FFFFC780000 00000000002A1000 "dxgi.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422882>
+DBG-MODULE<00006FFFFCA40000 00000000003E1000 "d3d11.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422882>
+DBG-MODULE<00006FFFFCE40000 000000000000E000 "dwmapi.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFCE60000 000000000081C000 "Overwatch_loader.dll" "loader.pdb" 0 {7e11b412-6339-57f4-4c4c44205044422e} 1 1749697612>
+DBG-MODULE<00006FFFFD6F0000 0000000000141000 "comctl32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFD8E0000 0000000000010000 "??" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFDAD0000 000000000000D000 "version.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFDAF0000 0000000000020000 "msacm32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFDB20000 00000000000C1000 "WINMM.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFDC00000 000000000001B000 "bcrypt.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE280000 0000000000064000 "dbghelp.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE350000 0000000000030000 "oleacc.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE4A0000 0000000000034000 "uxtheme.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE580000 000000000000D000 "??" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE5A0000 000000000000B000 "winex11.drv" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE5C0000 0000000000015000 "dnsapi.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE5F0000 000000000002A000 "IPHLPAPI.DLL" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE6A0000 000000000001E000 "IMM32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE830000 0000000000079000 "SETUPAPI.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFE8C0000 00000000000DD000 "oleaut32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFEB10000 0000000000017000 "shcore.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFEB40000 000000000004E000 "SHLWAPI.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFEBA0000 0000000000940000 "SHELL32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF4F0000 000000000001C000 "coml2.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF520000 0000000000083000 "rpcrt4.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF5C0000 000000000003C000 "win32u.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF610000 00000000001B9000 "user32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF7E0000 000000000007F000 "gdi32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF870000 000000000004E000 "combase.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF8D0000 00000000000B8000 "ole32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF9A0000 0000000000026000 "WS2_32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFF9E0000 00000000000CE000 "ucrtbase.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFFAC0000 000000000001F000 "sechost.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFFAF0000 000000000009F000 "msvcrt.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFFBA0000 0000000000042000 "advapi32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFFC00000 00000000002A6000 "kernelbase.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFFEC0000 0000000000064000 "kernel32.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+DBG-MODULE<00006FFFFFF40000 00000000000B0000 "ntdll.dll" "" 0 {00000000-0000-0000-0000000000000000} 0 1751422883>
+
+<:Exception.DebugModules>
+
+Unloaded Module: 0 00006FFFFB860000 000000000000C000 686497A3 0002060C "powrprof.dll"
+Unloaded Module: 1 00006FFFFB730000 0000000000024000 686497A3 00052BF5 "wineopenxr.dll"
+Unloaded Module: 2 00006FFFFB690000 000000000000D000 686497A3 0001D3AC "winealsa.drv"
+Unloaded Module: 3 00006FFFFB640000 000000000000E000 686497A3 00020AEA "Kerberos.dll"
+Unloaded Module: 4 00006FFFFB5D0000 000000000000C000 686497A3 0001F176 "netutils.dll"
+Unloaded Module: 5 00006FFFFB5F0000 0000000000027000 686497A3 0004C23B "netapi32.dll"
+Unloaded Module: 6 00006FFFFB630000 0000000000011000 686497A3 0001A064 "MSV1_0.dll"
+Unloaded Module: 7 00006FFFFB3E0000 00000000001C3000 686497A3 001CE2BD "nvapi64.dll"
+
+-------------------------------------------------------------------
+                              REGISTERS                            
+-------------------------------------------------------------------
+  RAX: 000000000011D058
+  RBX: 00006FFFFFECF39C
+  RCX: 000000000011D030
+  RDX: 0000000000000000
+  RSI: 000000000011D100
+  RDI: 00006FFFFB5719A8
+  RBP: 000000000011D110
+  RSP: 000000000011D010
+  RIP: 00006FFFFFC0D107
+   R8: 00006FFFFB57ED87
+   R9: 000000000011D108
+  R10: 0000000140000000
+  R11: 000000000011D6A8
+  R12: 00006FFFFB57A900
+  R13: 00006FFFFB57A940
+  R14: 0000000000000000
+  R15: 00006FFFFB574270
+  FLG: 00000202
+   CS: 0033
+   DS: 002B
+   ES: 002B
+   FS: 0000
+   GS: 0000
+   SS: 002B
+ XMM0: 23232323 23232323 23232323 23232323 - 0.000000 0.000000 0.000000 0.000000
+ XMM1: FF600000 00006FFF FF610000 00006FFF - -297747071055821155530452781502797185024.000000 0.000000 -299076299051606071403356588563077529600.000000 0.000000
+ XMM2: FF860000 00006FFF FF870000 00006FFF - -nan 0.000000 -nan 0.000000
+ XMM3: FF990000 00006FFF FF9A0000 00006FFF - -nan 0.000000 -nan 0.000000
+ XMM4: FFAB0000 00006FFF FFAC0000 00006FFF - -nan 0.000000 -nan 0.000000
+ XMM5: FFEB0000 00006FFF FFEC0000 00006FFF - -nan 0.000000 -nan 0.000000
+ XMM6: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+ XMM7: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+ XMM8: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+ XMM9: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+XMM10: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+XMM11: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+XMM12: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+XMM13: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+XMM14: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+XMM15: 00000000 00000000 00000000 00000000 - 0.000000 0.000000 0.000000 0.000000
+
+-------------------------------------------------------------------
+                              PROCESSES                            
+-------------------------------------------------------------------
+  PID      PF       WS     PRIVATE  PEAK-PF  PEAK-WS  PROCESS HASH                       PROCESS
+[  340]   392 MB   465 MB     0  B   392 MB   512 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  a7c]   346 MB   519 MB     0  B   346 MB   557 MB   a398e6e432bd8e6-1dc4c99759290cd8  C:\Program Files (x86)\Overwatch\_retail_\Overwatch.exe
+[  684]   342 MB   464 MB     0  B   342 MB   472 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  9b4]   295 MB   351 MB     0  B   295 MB   357 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  764]   280 MB   333 MB     0  B   280 MB   399 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  740]   279 MB   301 MB     0  B   279 MB   307 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  a74]   234 MB   259 MB     0  B   234 MB   259 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  27c]   232 MB   370 MB     0  B   232 MB   409 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  2b4]   216 MB   236 MB     0  B   216 MB   238 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  2ac]   203 MB   223 MB     0  B   203 MB   223 MB  f3b305b5cce0eae1-fd075f8f1ef0c310
+[  120]    70 MB    97 MB     0  B    70 MB    98 MB  56e022bb6c7ec5ed-53febd9e48ac1866
+[  1a0]    46 MB    98 MB     0  B    46 MB    99 MB  21bacd1bdd173991-4d38c098eaa7f8f8
+[  b38]    32 MB    55 MB     0  B    32 MB    99 MB  7e1c146b41e951b0-980475f2f5517fad
+[   38]    13 MB    22 MB     0  B    13 MB    23 MB  91ff34056fcb1f3f-376603f26202195b
+[   44]    13 MB    28 MB     0  B    13 MB    31 MB  91ff34056fcb1f3f-9df5bf5ba119a850
+[   a4]    13 MB    34 MB     0  B    13 MB    34 MB  91ff34056fcb1f3f-9df5bf5ba119a850
+[   80]    11 MB    60 MB     0  B    11 MB    63 MB  91ff34056fcb1f3f-93291e4078031384
+[  118]    11 MB    30 MB     0  B    11 MB    32 MB  91ff34056fcb1f3f-128f754a353081e7
+[   68]    11 MB    23 MB     0  B    11 MB    23 MB  91ff34056fcb1f3f-4b6a1257dae46031
+[  1b4]  9167 kB    25 MB     0  B  9167 kB    25 MB  91ff34056fcb1f3f-3b46136e5b68e19b
+[   f4]  7660 kB    16 MB     0  B  7660 kB    16 MB  91ff34056fcb1f3f-4bc30e63170adc3c
+[   88]  3596 kB    11 MB     0  B  3596 kB    11 MB  91ff34056fcb1f3f-902898b01845ed59
+
+           PF       WS     PRIVATE
+ TOTAL   3059 MB  4021 MB     0  B
+
+-------------------------------------------------------------------
+                              BUG DATA                             
+-------------------------------------------------------------------
+<BlizzardError.IssueType> exception
+
+<Exception.ProjectId> 166
+
+<Jira.JiraProjectId> 10700
+
+<Jira.JiraProjectKey> T4
+
+<BlizzardError.BuildNumber> 139475
+
+<BlizzardError.Priority> 4 - Low
+
+<BlizzardError.Field4> 1 - Critical Impact
+
+<Locale> German
+
+<Region> Europe
+
+<Executable> Overwatch
+
+<Branch> 2.17.0.0
+
+<Operating_System> Windows v10.0 Professional
+
+<CPU_Details> AMD Ryzen 5 5500                               
+
+<CPU_Processors> 1
+
+<CPU_Cores> 12
+
+<CPU_Threads> 12
+
+<Graphics_API> Dx11
+
+<Video_Card> AMD Radeon RX 590 Series (RADV POLARIS10)
+
+<Video_Driver_Version> 31.0.21902.5
+
+<Video_Memory> 7936 MB
+
+<Video_Memory_Allocated> 0 MB
+
+SoundDevices: 1
+
+Selected:
+SoundDevice: 
+SoundDevice_Manufacturer: The Wine Project
+SoundDevice_Error: 
+SoundDevice_Status: 3
+SoundDevice_LastError: 0
+
+SoundDrivers: 0
+
+<BlizzardError.Comments:>
+Platform: Windows
+BNet Account ID: -1
+Game Account ID: -1
+Build: 139475
+PID: 2684
+Locale: German
+Speech Locale: German
+Region: Europe
+Build Created: 19:56:05 Jun 11 2025
+<:BlizzardError.Comments>
+
+<BlizzardError.PrimaryAssignment> PrometheusExceptions
+
+<Exception.HashBlock:>
+UNKNOWN (0x80000100)
+DBG-OPTIONS<NoImage NoAddress NoFileLine NoFuncOffset NoDbgAddr>
+[Failed to trace threads]: DBG-ADDR<00006FFFFFC0D107>()
+DBG-ADDR<00006FFFFB57B385>()
+DBG-ADDR<00006FFFFB5719BF>()
+DBG-ADDR<0000000141ADEFA0>()
+DBG-ADDR<0000000141ADF5C5>()
+DBG-ADDR<0000000141ADE16B>()
+DBG-ADDR<00000001419778CB>()
+
+
+DBG-OPTIONS<>
+<:Exception.HashBlock>
+
+-------------------------------------------------------------------
+ Cpu Details
+-------------------------------------------------------------------
+
+Section: Cpu #0
+AddressWidth: 64
+Architecture: 9
+Caption: 'AMD64 Family 25 Model 80 Stepping 0'
+CpuStatus: 65
+CurrentClockSpeed: 4268
+DataWidth: 64
+Description: 'AMD64 Family 25 Model 80 Stepping 0'
+DeviceID: 'CPU0'
+Family: 2
+Level: 25
+Manufacturer: 'AuthenticAMD'
+MaxClockSpeed: 4268
+Name: 'AMD Ryzen 5 5500'
+NumberOfCores: 6
+NumberOfLogicalProcessors: 12
+ProcessorId: '178BFBFF00A50F00'
+ProcessorType: 3
+Revision: 20480
+Version: 'Model 80, Stepping 0'
+
+-------------------------------------------------------------------
+ Extra Cpu Details
+-------------------------------------------------------------------
+CpuVendor: AuthenticAMD
+CpuFamily: 0x19
+CpuModel: 0x00
+CpuStepping: 0x00
+CpuUpdateRevision: 0x0000000000000000
+
+-------------------------------------------------------------------
+ Motherboard Details
+-------------------------------------------------------------------
+
+Section: BaseBoard #0
+Manufacturer: 'ASRock'
+Model: 'Base Board'
+Name: 'Base Board'
+Product: 'B450 Steel Legend'
+SerialNumber: 'C86521EF11BA484396CAD71F38906A68'
+Tag: 'Base Board'
+Version: '1.0'
+
+-------------------------------------------------------------------
+ Bios Details
+-------------------------------------------------------------------
+
+Section: Bios #0
+Description: 'Default System BIOS'
+EmbeddedControllerMajorVersion: 255
+EmbeddedControllerMinorVersion: 255
+Manufacturer: 'American Megatrends Inc.'
+Name: 'Default System BIOS'
+ReleaseDate: '20220225000000.000000+000'
+SerialNumber: 'Serial number'
+SMBIOSBIOSVersion: 'P4.30'
+SMBIOSMajorVersion: 3
+SMBIOSMinorVersion: 0
+Status: 'OK'
+SystemBiosMajorVersion: 255
+SystemBiosMinorVersion: 255
+Version: 'WINE   - 1'
+
+-------------------------------------------------------------------
+ Memory Details
+-------------------------------------------------------------------
+
+Section: Memory #0
+BankLabel: 'BANK 0'
+Capacity: '16620199936'
+Caption: 'Physical Memory'
+ConfiguredClockSpeed: 1600
+DeviceLocator: 'DIMM 0'
+FormFactor: 8
+MemoryType: 9
+PartNumber: ''
+SerialNumber: ''
+
