@@ -1,0 +1,1 @@
+Erlaubt es dem LLM, **sicher und strukturiert** mit externen Tools, Datenbanken oder lokalen Dateien zu interagieren.

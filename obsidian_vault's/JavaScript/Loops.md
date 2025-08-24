@@ -56,3 +56,8 @@ for (let x of obj){
 
 // Ausgabe: prop 1, prop 2, prop 3
 ```
+
+---
+
+# for await...of loop
+

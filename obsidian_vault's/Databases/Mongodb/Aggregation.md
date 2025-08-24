@@ -12,7 +12,68 @@ Operationen wie Filtern, Gruppieren, Sortieren und Berechnen von Werten werden v
 
 ---
 
-# Lookup Operator
+# Aggregation-Stages Überblick
+
+Aggregation Stages führen auf dem mongod-server nacheinander Operationen aus.
+
+**Beispiel:**
+```javascript
+const pipeline = [
+  {
+    $match: {
+      userId: '686d2f729a4d48c011a12af8'
+    }
+  },
+  {
+    $addFields: {
+      spaceObjectId: { $toObjectId: "$spaceId" }
+    }
+  },
+  {
+    $lookup: {
+      from: "spaces",
+      localField: "spaceObjectId",
+      foreignField: "_id",
+      as: "space"
+    }
+  }
+];
+
+const cursor = await db.collection("bookings").aggregate(pipeline);
+const result = cursor.toArray();                                   
+```
+
+### 1. `$match`: Nur Bookings eines bestimmten Users
+- **Was es macht:** Diese Stage filtert alle Dokumente in der `bookings`-Collection und lässt nur die durch, bei denen das Feld `userId` dem angegebenen Wert entspricht.
+    
+- **Warum:** Damit **nur die Bookings eines bestimmten Users** geladen wird.
+
+### **2. `$addFields`: spaceId-String in ObjectId konvertieren**
+
+- **Was es macht:** Fügt jedem Booking-Dokument ein neues Feld `spaceObjectId` hinzu, indem es das bestehende Feld `spaceId` (ein **String**) mit `$toObjectId` in einen echten `ObjectId` umwandelt.
+    
+- **Warum:** Weil in der `spaces`-Collection das `_id`-Feld vom Typ `ObjectId` ist – und MongoDB `lookup`-Verknüpfungen nur funktionieren, wenn **beide Felder denselben Datentyp** haben.
+    
+- Ohne diese Umwandlung würde der Join mit `spaces._id` fehlschlagen.
+    
+
+#### **3. `$lookup`: Verknüpft zugehörige Spaces**
+
+- **Was es macht:** Führt eine "Left Outer Join"-Operation durch:
+    
+    - Für jedes Dokument aus `bookings` (das jetzt `spaceObjectId` hat),
+        
+    - sucht es in der Collection `spaces` nach Dokumenten, bei denen `_id == spaceObjectId`.
+        
+    - Die gefundenen Space-Dokumente werden im Array `space` gespeichert.
+        
+- **Warum:** Damit **Details über den Space** (Name, Ort, Beschreibung usw.) bekommst, zu dem das jeweilige Booking gehört.
+
+---
+
+# Aggregation-Stages
+
+### Lookup Operator
 
 Mit dem Lookup Operator können mehrere documents geladen werden, die durch ID's miteinander in Relation stehen. Die geladenen documents werden dann zusammengeführt (aggregiert), sodass aus den in Beziehung stehenden documents ein document wird.
 
@@ -34,8 +95,8 @@ Mit dem Lookup Operator können mehrere documents geladen werden, die durch ID's
 db.collectionA.aggregate({
 	$lookup: {
 		from: "collectionB",
-		localField: "orderId",
-		foreignField: "orderId",
+		localField: "orderId", // von document aus collectionA
+		foreignField: "orderId", // von document aus collectionB
 		as: "orders"
 	}
 })

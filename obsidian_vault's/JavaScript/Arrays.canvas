@@ -1,9 +1,0 @@
-{
-	"nodes":[
-		{"id":"a7830d521ce3664d","x":-1140,"y":-1120,"width":665,"height":580,"type":"file","file":"Array.md"},
-		{"id":"4b8a62ffc3a52a58","type":"text","text":"Methods","x":-932,"y":-1320,"width":250,"height":60,"color":"1"}
-	],
-	"edges":[
-		{"id":"d8da2791ebac1471","fromNode":"4b8a62ffc3a52a58","fromSide":"bottom","toNode":"a7830d521ce3664d","toSide":"top"}
-	]
-}
