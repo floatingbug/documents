@@ -1,4 +1,4 @@
-### Documents anhand von Elementen im Array finden
+ ### Documents anhand von Elementen im Array finden
 
 **Beispiel:**
 

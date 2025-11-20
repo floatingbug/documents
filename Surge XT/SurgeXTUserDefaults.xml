@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!-- User Defaults for Surge XT Synthesizer -->
+<defaults version="1">
+  <default key="defaultSkin" value="dark-mode.surge-skin/" type="1"/>
+  <default key="defaultSkinRootType" value="1" type="2"/>
+  <default key="use3DWavetableView" value="0" type="2"/>
+  <default key="wsAnalysisOverlayLocation" firstvalue="449" secondvalue="238" type="3"/>
+  <default key="wsAnalysisOverlayLocationTearOut" firstvalue="1138" secondvalue="661" type="3"/>
+  <default key="wsAnalysisOverlayTearOutAlwaysOnTop_Plugin" value="0" type="2"/>
+</defaults>

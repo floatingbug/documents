@@ -1,17 +1,9 @@
-# Bestandteile von Node
-### V8
-### Libuv
-### Core Modules
-
-### C++ Bindings
-
-### Node API
-
-### Externe Abhängigkeiten
-##### http-parser
-##### c-ares
-##### OpenSSL
-##### zlib
+| Bereich                       | Thread-Verhalten             | Bemerkung                                           |
+| ----------------------------- | ---------------------------- | --------------------------------------------------- |
+| **Dein JavaScript-Code (V8)** | 🧵 **Single-Threaded**       | Läuft komplett auf einem Thread                     |
+| **libuv Thread-Pool (Node)**  | 🧵🧵🧵🧵 **Mehrere Threads** | Für I/O, Crypto, etc.                               |
+| **V8 intern**                 | 🧵🧵 **Hintergrund-Threads** | GC, JIT usw.                                        |
+| **Worker Threads (optional)** | 🧩 **Separate Isolates**     | Echte Parallelität, aber getrennte Speicherbereiche |
 
 ---
 

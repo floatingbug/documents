@@ -1,6 +1,6 @@
 # JavaScript Array-Methoden
 
-## splice
+## splice (herausschneider/herausreißen)
 
 - Lösche Element an einem angegebenem Index.
 - das erste Argument ist der Index ab dem gelöscht wird, das zweite Element gibt die Anzahl an Elementen an die gelöscht werden sollen.
@@ -8,10 +8,10 @@
 **Beispiel:**
 ```javascript
 let arr = [1, 2, 3, 4];
-arr.splice(2, 1); // löscht das Element an Index 2 (also die "3")
+arr.splice(2, 1); // löscht das Element an Index 2 (das dritte Element)
 ```
 
-## pop
+## pop (vom Ende entfernen)
 
 - Löscht das letzte Element
 
@@ -20,9 +20,9 @@ arr.splice(2, 1); // löscht das Element an Index 2 (also die "3")
 arr.pop(); // entfernt das letzte Element des Arrays
 ```
 
-## slice
+## slice (Ausschneiden)
 
-- Kopiert Elemente in einem Array.
+- Kopiert Elemente in einem Array (ein Ausschnitt von Elementen eines Arrays).
 - Erstes Argument gibt den Startindex an, ab welchem Element kopiert wird. Das Zweite Argument gibt den Endindex an, bis zu dem kopiert wird.
 
 **Beispiel:**

@@ -8,7 +8,7 @@ w
 }
 ```
 
-## Die eigenschaft object-fit
+### Die eigenschaft object-fit
 
 **Beispiel:** Das Bild behält seine Originalgröße. Durch `object-fit: cover` wird das Bild zentriert und alles was über dem Elternelement hinausragt, wird nicht dargestellt. Dadurch wird nur das dargestellt, was sich in der Mitte des Bildes befindet, wenn das Bild größer ist als das Elternelement. 
 
@@ -19,3 +19,8 @@ w
 	object-fit: cover;
 }
 ```
+
+### Aspect ratio
+
+
+
