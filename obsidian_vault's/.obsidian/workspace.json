@@ -4,11 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "d78dab0861a409f9",
+        "id": "c68c05cc6ceccf30",
         "type": "tabs",
+        "dimension": 49.54175152749491,
         "children": [
           {
-            "id": "69aa299704871187",
+            "id": "acc3ae16770e50e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,9 +21,17 @@
               "icon": "lucide-file",
               "title": "Beispiel eines Systementwurfs"
             }
-          },
+          }
+        ],
+        "stacked": true
+      },
+      {
+        "id": "a49e7361a255ab6f",
+        "type": "tabs",
+        "dimension": 50.4582484725051,
+        "children": [
           {
-            "id": "fb1644470085508a",
+            "id": "53cb7f552088f7b7",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,8 +44,7 @@
               "title": "Zusammenfassung"
             }
           }
-        ],
-        "stacked": true
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,21 +192,28 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "69aa299704871187",
+  "active": "acc3ae16770e50e6",
   "lastOpenFiles": [
     "Development/Systementwurf/Zusammenfassung.md",
     "Development/Systementwurf/Beispiel eines Systementwurfs.md",
+    "Databases/Mongodb/CRUD.md",
+    "JavaScript/JavaScript Funktionsweise.md",
+    "web_development/Authorization and Authentication/Json Web Token (JWT).md",
+    "web_development/Authorization and Authentication/index Authorization and Authentication.md",
+    "web_development/Authorization and Authentication/API-Token (Schlüssel).md",
+    "JavaScript/Rest und Spread Operator.md",
+    "web_development/Node.js/net-module.md",
+    "web_development/Node.js/HTTP-Module.md",
+    "web_development/Node.js/Architektur.md",
     "Development/DevOps/pm2.md",
     "Development/Systementwurf",
     "Linux/Systeminformationen.md",
     "web_development/CSS/Box-shadow.md",
     "Databases/Mongodb/Arrays in documents.md",
-    "JavaScript/Rest und Spread Operator.md",
     "JavaScript/Array.md",
     "Databases/Mongodb/Begriffserklärungen.md",
     "JavaScript/Datum.md",
     "web_development/Vue.js/v-model Kommunikation zwischen Parent und Child.md",
-    "web_development/Node.js/Architektur.md",
     "web_development/CSS/Images.md",
     "web_development/Datei Upload.md",
     "web_development/Vue.js/Computed Properties.md",
@@ -206,14 +221,7 @@
     "web_development/CSS/index css.md",
     "web_development/JS/Intersection Observer.md",
     "Development/Architektur/Front- Backent-Architekturen.md",
-    "web_development/SSL (Secure Socket Layer).md",
-    "Development/Architektur/API.md",
-    "Development/Checkliste Fullstack Developer.md",
-    "Untitled.md",
     "Development",
-    "web_development/CSS/Grid.md",
-    "web_development/CSS/flex-box.md",
-    "web_development/Vue.js/Components.md",
     "chatGPT Chatverläufe",
     "KI",
     "JavaScript/Arrays.canvas",

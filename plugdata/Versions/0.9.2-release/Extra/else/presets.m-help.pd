@@ -1,0 +1,13 @@
+#N canvas 450 38 554 544 12;
+#X text 90 71 see -->;
+#X obj 150 71 about.MERDA;
+#X text 161 450 based on;
+#X text 39 109 Put [presets.m] by last in your patch \, save it and reopen. Then you can use the radio buttons to set a preset number and hit bang to save a preset., f 38;
+#X text 44 357 And just like that \, via pure ninja magic \, all parameters in the MERDA modules in your patch get saved and restored next time you open the patch. The presets get saved with the patch., f 35;
+#X obj 370 163 else/sig.m~;
+#A saved 0.0333343;
+#A saved;
+#X obj 95 199 else/presets.m;
+#A saved 1460-sig-0 0.2 || \; 1460-sig-0 -0.233333 || \; 1003-sig-0 -0.7 || \; 1003-sig-0 0.716666 || \; 1003-sig-0 0 || \; 1003-sig-0 -1 || \; 1003-sig-0 1 || \; 1003-sig-0 0.0333343 || \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;;
+#X obj 166 477 else/presets;
+#A saved -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;;
