@@ -68,6 +68,8 @@
 - Authentication and role rules: JWT authentication, user can only access their own notes
 - Versioning strategy: /api/v1/...
 
+Link to the api documentation: https://documenter.getpostman.com/view/42238271/2sB3dMyrUx#intro
+
 ---
 
 # 5. Architecture
