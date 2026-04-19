@@ -1,0 +1,10 @@
+Vertigo> === x86_64 Optimization Status ===
+Vertigo> CPU Features: 0x6
+Vertigo> CPU_AVX2: SET
+Vertigo> CPU_FMA: SET
+Vertigo> Using: AVX2 + FMA (16 oscillators/call) (ACTIVE)
+Vertigo> === x86_64 Optimization Status ===
+Vertigo> CPU Features: 0x6
+Vertigo> CPU_AVX2: SET
+Vertigo> CPU_FMA: SET
+Vertigo> Using: AVX2 + FMA (16 oscillators/call) (ACTIVE)

@@ -38,7 +38,7 @@ console.log(arr); // [1, 2, 3, 4, 5, 6] (unverändert)
 
 - **Beschreibung:** Iteriert über jedes Element eines Arrays und führt eine Callback-Funktion aus. Es wird kein neues Array zurückgegeben.
 - **Beispiel:**
-  ```js
+```js
   [1, 2, 3].forEach(num => console.log(num));
 ```
 
@@ -47,7 +47,7 @@ console.log(arr); // [1, 2, 3, 4, 5, 6] (unverändert)
 
 - **Beschreibung:** Erzeugt ein neues Array, indem es eine Callback-Funktion auf jedes Element des Arrays anwendet.
 - **Beispiel:**
-    ```js
+```js
 const doubled = [1, 2, 3].map(num => num * 2); console.log(doubled); // [2, 4, 6]
 ```
 
@@ -56,9 +56,10 @@ const doubled = [1, 2, 3].map(num => num * 2); console.log(doubled); // [2, 4, 6
 
 - **Beschreibung:** Prüft, ob **alle** Elemente eines Arrays eine bestimmte Bedingung erfüllen. Gibt `true` zurück, wenn dies der Fall ist, sonst `false`.
 - **Beispiel:**
-    ```js
+
+```js
 const allPositive = [1, 2, 3].every(num => num > 0); console.log(allPositive); // true`
-    ```
+```
 
 
 ## find

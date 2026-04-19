@@ -1,4 +1,24 @@
 
+### Was ist ein Stream?
+
+**Ein Stream ist die Logik, die den Datenfluss zwischen Produzent und Konsument steuert.**
+
+Beispiel:
+```txt
+Produzent  →  Stream-Logik  →  Konsument
+```
+
+**Beispiel in Node.js:**
+
+- `Readable` ist der **Produzent**
+- `Writable` ist der **Konsument**
+- Daten gehen **vom Readable zum Writable**
+- Backpressure wird berücksichtigt
+
+Wenn readable Daten enthält, bspw. durch readable.emit("data", buffer), nutzt readable writable.write(daten), um daten in der writable-buffer zu schreiben.
+
+---
+
 ### Wofür braucht man Streams
 
 - Wenn ein Sender mehr Daten sendet als der Prozess beim Empfänger verarbeiten kann, werden die Daten in einem **Buffer** gespeichert und erst wenn dieser voll ist, 

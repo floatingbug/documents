@@ -3,7 +3,11 @@
 
 Wenn eine Applikation mit node gestarted wird, entsteht ein einzelner Prozess mit mehreren threads und einem Main Thread.
 In diesem Main Thread ruft Node Funktionen aus den dynamischen Bibliotheken libuv und V8 auf.
-
+##### Wer nutzt den gleichen Stack noch?
+- JS (V8)
+- Node Core (C++)
+- libuv (C)
+- Kernel-Syscalls (temporär)
 
 # Threads im node Prozess
 
@@ -67,6 +71,19 @@ Der Heap speichert **alle dauerhaft existierenden Daten**, also alles, was **nic
 - Lexical Environments (z. B. den Module Execution Context)
 - globales Objekt
 - interne V8-Strukturen
+
+---
+
+## Wer darf was?
+
+| Schicht         | Darf was tun                           |
+| --------------- | -------------------------------------- |
+| **OS / Kernel** | TCP, Socket-Buffer, epoll, read, write |
+| **libuv**       | ruft OS-Syscalls auf                   |
+| **Node (C++)**  | ruft **libuv-Funktionen** auf          |
+| **JS**          | ruft **Node-Funktionen** auf           |
+
+👉 Node **steuert libuv**, libuv **steuert das OS**.
 
 ---
 
